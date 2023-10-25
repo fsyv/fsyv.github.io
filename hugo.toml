@@ -198,28 +198,34 @@ uglyURLs = false
         pre = "internal"
         post = "archive"
     [[menu.main]]
+        pageref = "/books/"
+        name = "Books"
+        weight = 3
+        pre = "internal"
+        post = "book" 
+    [[menu.main]]
         pageref = "/categories/"
         name = "Categories"
-        weight = 3
+        weight = 4
         pre = "internal"
         post = "th"
     [[menu.main]]
         pageref = "/tags/"
         name = "Tags"
-        weight = 4
+        weight = 5
         pre = "internal"
         post = "tags"
     [[menu.main]]
         pageref = "/about/"
         name = "About"
-        weight = 5
+        weight = 6
         pre = "internal"
         post = "user-circle"
     [[menu.main]]
-        weight = 6
+        weight = 7
         identifier = "theme-switcher"
     [[menu.main]]
-        weight = 7
+        weight = 8
         identifier = "lang-switcher"
     # [[menu.main]]
     #     weight = 8
