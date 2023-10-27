@@ -49,7 +49,7 @@ highlightCurrentMenuArea = true
   showDate = true
   showViews = false
   showLikes = false
-  showDateUpdated = false
+  showDateUpdated = true
   showAuthor = true
   showHero = false
   # heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
@@ -71,7 +71,7 @@ highlightCurrentMenuArea = true
   showTaxonomies = false
   showAuthorsBadges = false
   showWordCount = true
-  # sharingLinks = [ "linkedin", "twitter", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
+  sharingLinks = [ "linkedin", "twitter", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
 
 [list]
   showHero = false
