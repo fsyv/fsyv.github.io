@@ -1,0 +1,26 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+# 网页的标签
+title = "Jinyu Chen's homepage"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  # 标签
+  logo = "img/logo.png"
+  # secondaryLogo = "img/secondary-logo.png"
+  description = "Jinyu Chen's homepage"
+  # copyright = "Copy, _right?_ :thinking_face:"
+
+[author]
+  name = "Jinyu Chen"
+  image = "img/avatar.png"
+  headline = "Hi, welcome to my homepage!"
+  bio = "A little bit about you"
+  links = [
+    { github = "https://github.com/fsyv" },
+    { email = "mailto:fsyv.me@gmail.com" },
+  ]
