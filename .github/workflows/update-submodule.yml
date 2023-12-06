@@ -30,7 +30,7 @@ jobs:
         run: |
           if [ -z "${{ steps.check_changes.outputs.changes }}" ]; then
             echo "No submodule changes detected. Stopping the workflow."
-            exit 1
+            exit 0
           fi
 
       - name: Create branch
