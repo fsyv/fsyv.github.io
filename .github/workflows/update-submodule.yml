@@ -4,7 +4,7 @@ name: Update submodules
 on:
   # Allows you to run this workflow manually from the Actions tab
   schedule:
-    - cron: "0 14 * * *"  # 每天14点更新
+    - cron: "0 14 1 * *"  # 每月22点更新
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -27,8 +27,8 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --global ${{ secrets.USER_NAME }}
-          git config --global ${{ secrets.USER_EMAIL }}
+          git config --global user.name ${{ secrets.USER_NAME }}
+          git config --global user.email ${{ secrets.USER_EMAIL }}
           git add .
           git commit -am "Update submodules"
 
