@@ -4,7 +4,7 @@ name: Update submodules
 on:
   # Allows you to run this workflow manually from the Actions tab
   schedule:
-    - cron: "0 14 1 * *"  # 每月22点更新
+    - cron: "0 4 7 * *"  # 每月7号12点更新
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -30,7 +30,7 @@ jobs:
         run: |
           if [ -z "${{ steps.check_changes.outputs.changes }}" ]; then
             echo "No submodule changes detected. Stopping the workflow."
-            exit 0
+            exit 1
           fi
 
       - name: Create branch
