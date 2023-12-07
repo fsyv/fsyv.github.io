@@ -47,12 +47,12 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           branch: submodule-update
-          github_token: ${{ secrets.TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           base: main
           branch: submodule-update
           title: "Update submodule"
