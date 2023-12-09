@@ -4,16 +4,16 @@ date: {{ .Date }}
 draft: true
 description: ""
 tags: ["markdown", "css", "html", "sample"]
-type: "sample"
+type: "Posts"
 
-showDate: false
-showDateUpdated: false
+showDate: true
+showDateUpdated: true
 showHeadingAnchors: false
 showPagination: false
-showReadingTime: false
-showTableOfContents: false
+showReadingTime: true
+showTableOfContents: true
 showTaxonomies: false
-showWordCount: false
-showSummary: false
-sharingLinks: false
+showWordCount: true
+showSummary: true
+sharingLinks: true
 ---
