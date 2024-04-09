@@ -15,7 +15,7 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
       - name: Pull & update submodules recursively
         run: |
@@ -50,10 +50,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: update submodule
+          title: Update submodule
+          body: This PR updates the submodule.
+          bbranch: submodule-update
           base: main
-          branch: submodule-update
-          title: "Update submodule"
-          body: "This PR updates the submodule."
