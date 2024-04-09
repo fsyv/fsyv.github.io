@@ -56,5 +56,5 @@ jobs:
           commit-message: update submodule
           title: Update submodule
           body: This PR updates the submodule.
-          bbranch: submodule-update
+          branch: submodule-update
           base: main
