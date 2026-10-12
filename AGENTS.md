@@ -54,11 +54,12 @@
 - 修改前检查 `git status`，保护用户工作。保留域名、CNAME、Blowfish 子模块和 Pages 流程；不无故更新主题。不要增加固定概念/命题/联系/演化目录，不增加后台、数据库或额外付费 API。
 - 修改后运行 `node scripts/check-kb.mjs`、`hugo --minify`、`node scripts/check-kb.mjs --site public` 和 `git diff --check`。修改模板、链接适配或校验器时再运行 `node scripts/test-links.mjs`。检查所有内部链接、元数据/id、模板未发布、导航和产物公开范围。失效 `.md` 链接应使 Hugo 构建失败。
 - 运行当前客户端可提供的 Agent 配置检查；仅通过 TOML 解析不等于已成功调用。Obsidian 无法启动或 Hugo 不可用时如实报告静态检查范围。
-- 提交前查看完整 diff 和未跟踪文件，确保无无关/敏感内容。发布与远程推送须有用户授权。
+- 提交前查看完整 diff 和未跟踪文件，确保无无关/敏感内容。用户已授权本项目的公开功能分支在 commit 后直接 push；需要合并时创建或更新 PR，无需再次询问。已有开放 PR 则更新，已合并或关闭则创建新的 PR。研究候选继续使用 Draft PR。
+- 上述授权不包括直接推送 main、自动合并、强制推送或公开私有知识。私有区的独立 Git 只在本地提交，不添加远端；本地研究快照不得推送。
 
 ## 每日自主研究与审核
 
-每日任务完整入口为 `research/prompts/daily-research.md`，策略为 `research/config.md`。用户已授权正式启用后推送研究分支并创建/更新 Draft PR；本次基础实现与本地模拟不得推送，不能把这份授权扩大到 main、基础改造或自动合并。
+每日任务完整入口为 `research/prompts/daily-research.md`，策略为 `research/config.md`。正式研究任务推送研究分支并创建/更新 Draft PR；本地模拟与 local-snapshot 模式不得推送，不自动合并。
 
 - 三个独立通道 A 问题深入 / B 领域动态 / C 开放探索按研究投入 40/35/25 分配，不是产出配额。C 先选择未覆盖领域，由 Sol 初筛后再交 Astra；不能因反馈减少到零。最终最多 5 个发现，可为零。
 - 先读正式知识、去重/轮换状态、明确反馈，以及尚未合并研究 PR 的可追溯来源记录；候选 PR 不构成已接受的知识。定期回访重要开放问题，记录遗漏原因与下一次回访时间。
