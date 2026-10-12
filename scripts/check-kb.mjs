@@ -15,7 +15,8 @@ if (
   !(args.length === 2 && args[0] === '--site')
 )
   throw new Error('Usage: node scripts/check-kb.mjs [--site public | --private]');
-const vault = path.join(root, 'content', privateMode ? '_private' : '');
+const contentRoot = path.join(root, 'content');
+const vault = privateMode ? path.join(contentRoot, '_private') : contentRoot;
 const failures = [];
 const fail = (message) => failures.push(message);
 const walk = (dir) =>
@@ -30,10 +31,16 @@ const scalar = (yaml, key) => {
   const line = yaml.match(new RegExp(`^${key}:\\s*(.*?)\\s*$`, 'm'))?.[1] ?? '';
   return line.replace(/^(['"])(.*)\1$/, '$2');
 };
-const inVault = (file) => file === vault || file.startsWith(vault + path.sep);
-const isTemplate = (file) => path.relative(vault, file).split(path.sep)[0] === '_templates';
+const inVault = (file) => file === contentRoot || file.startsWith(contentRoot + path.sep);
+const isTemplate = (file) =>
+  path.relative(contentRoot, file).split(path.sep).includes('_templates');
 const isLocalState = (file) =>
-  ['.obsidian', '.trash', '_private'].includes(path.relative(vault, file).split(path.sep)[0]);
+  path
+    .relative(contentRoot, file)
+    .split(path.sep)
+    .some(
+      (part) => ['.obsidian', '.trash'].includes(part) || (!privateMode && part === '_private'),
+    );
 const isPrivateAsset = (file) =>
   privateMode && path.relative(vault, path.dirname(file)).split(path.sep).includes('assets');
 const ids = new Map();
