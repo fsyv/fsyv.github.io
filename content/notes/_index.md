@@ -14,7 +14,9 @@ description: "围绕完整问题、原理或论证持续修订的理解。"
 
 ## Start
 
-[何时应把一篇知识笔记拆成多篇？（演示）](when-to-split-a-note.md)是一篇尚待检验的 AI 候选方法，用于展示解释、来源、问题和修订记录如何共处。
+从[主题地图](../maps/_index.md)按前置依赖阅读，也可以直接进入[协同缓存与学习目标](cooperative-caching-and-learning.md)、[声誉怎样进入共识决策](reputation-and-consensus.md)。这些解释将机制、推理和适用条件放在同一处。
+
+[何时应把一篇知识笔记拆成多篇？](when-to-split-a-note.md)是笔记方法的演示，说明解释、来源、问题和修订记录如何共处。
 
 `seed`、`developing`、`evergreen` 表示完善程度；它们不表示事实的真伪，也不表示用户已经确认观点。
 

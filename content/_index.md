@@ -21,7 +21,14 @@ AI 协助阅读、检索、发现联系和整理结构；我负责提出问题�
 - [来源笔记](sources/_index.md)：回到资料及证据的位置，了解它能够支持什么。
 - [开放问题](questions/_index.md)：查看当前的疑问、缺口和下一步研究方向。
 
-初次访问可以从[知识实践地图（演示）](maps/knowledge-practice.md)开始。现有少量演示内容只用于验证组织和导航，不构成已经确认的研究成果。
+## Learning
+
+- [注意力、Transformer 与推理缓存](maps/transformer-and-inference.md)：从信息聚合走到自回归计算、KV 复用与 MoE。
+- [概率与网络模型](maps/probability-and-networks.md)：理解损失、请求偏斜与拓扑假设各自能说明什么。
+- [Web3、身份与共识](maps/web3-foundations.md)：沿信任边界理解系统机制，再阅读公开论文案例。
+- [分布式存储与推理服务](maps/storage-and-serving.md)：连接放置、访问、迁移和系统瓶颈。
+
+[知识实践地图](maps/knowledge-practice.md)说明这里如何组织笔记。正文中的来源事实、AI 候选解释与个人确认分别标识；公开可读不等于已经认可所有推论。
 
 ## Reading
 
