@@ -8,6 +8,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   # This workflow contains a single job called "update"
   update:
@@ -15,22 +18,38 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v7
         with: 
             submodules: true
+            ref: main
+
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.166.0'
+          extended: true
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
 
       - name: Pull & update submodules recursively
         run: git submodule update --remote --recursive
+
+      # Keep the existing updater, but reject incompatible theme upgrades.
+      - name: Validate theme before updating main
+        run: |
+          node scripts/check-kb.mjs
+          hugo --minify --panicOnWarning
+          node scripts/check-kb.mjs --site public
+          node scripts/test-links.mjs
 
       - name: Commit changes
         run: |
           git config --global user.name "fsyv"
           git config --global user.email "fsyv.me@gmail.com"
-          git add .
+          git add themes/blowfish
+          if git diff --cached --quiet; then exit 0; fi
           git commit -m "Update submodules at $(date "+DATE: %Y-%m-%d TIME: %H:%M:%S")"
 
       - name: Push branch
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+        run: git push origin HEAD:main
