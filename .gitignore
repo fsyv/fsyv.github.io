@@ -1,0 +1,27 @@
+/public/
+/public-drafts/
+/resources/
+/.hugo_build.lock
+/hugo_stats.json
+.DS_Store
+
+# Only portable Obsidian settings are shared. Local UI/plugin state is private.
+/content/.obsidian/*
+!/content/.obsidian/app.json
+!/content/.obsidian/templates.json
+!/content/.obsidian/core-plugins.json
+/content/.trash/
+
+# Local unpublished knowledge. Never stage or publish this subtree.
+/content/_private/
+
+# Never commit intermediate research, credentials, or local Codex sessions.
+/.local/
+/.codex/*
+!/.codex/config.toml
+!/.codex/agents/
+/.codex/agents/*
+!/.codex/agents/*.toml
+.env
+.env.*
+!.env.example

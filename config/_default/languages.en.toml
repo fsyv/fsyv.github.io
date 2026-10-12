@@ -1,25 +1,21 @@
-languageCode = "en"
-languageName = "English"
+locale = "en"
+label = "English"
 weight = 1
-# 网页的标签
-title = "Jinyu Chen's homepage"
+title = "Jinyu Chen · 知识库"
 
 [params]
   displayName = "EN"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  # 标签
   logo = "img/logo.png"
-  # secondaryLogo = "img/secondary-logo.png"
-  description = "Jinyu Chen's homepage"
-  # copyright = "Copy, _right?_ :thinking_face:"
+  description = "问题驱动的个人知识库：主题地图、常青笔记、资料来源与开放问题。"
 
-[author]
+[params.author]
   name = "Jinyu Chen"
   image = "img/avatar.png"
-  headline = "Hi, welcome to my homepage!"
-  bio = "A little bit about you"
+  headline = "从问题出发，形成自己的理解。"
+  bio = "问题驱动的个人知识库"
   links = [
     { github = "https://github.com/fsyv" },
     { email = "mailto:fsyv.me@gmail.com" },

@@ -1,0 +1,5 @@
+{{- /* Native MathML needs no shortcode, CDN, or browser-side JavaScript. */ -}}
+{{- if not .Page.Params.math -}}
+  {{- errorf "Set math: true for LaTeX in %s" .Page.File.Path -}}
+{{- end -}}
+{{- transform.ToMath .Inner (dict "output" "mathml" "displayMode" (eq .Type "block")) -}}

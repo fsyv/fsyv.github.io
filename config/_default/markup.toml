@@ -5,6 +5,13 @@
 [goldmark.renderer]
   unsafe = true
 
+# Preserve LaTeX for the small native MathML hook and Obsidian.
+[goldmark.extensions.passthrough]
+  enable = true
+[goldmark.extensions.passthrough.delimiters]
+  block = [['$$', '$$']]
+  inline = [['$', '$']]
+
 [highlight]
   noClasses = false
 
