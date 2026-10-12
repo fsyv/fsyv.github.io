@@ -1,0 +1,19 @@
+{{- /* Resolve source-file-relative .md paths for both Obsidian and Hugo. */ -}}
+{{- $url := urls.Parse .Destination -}}
+{{- $href := .Destination -}}
+{{- if and (not $url.IsAbs) (not $url.Host) (strings.HasSuffix (lower $url.Path) ".md") -}}
+  {{- $source := .Page.File.Path -}}
+  {{- $path := path.Clean (path.Join .Page.File.Dir $url.Path) -}}
+  {{- if or (strings.HasPrefix $url.Path "/") (strings.HasPrefix $path "../") -}}
+    {{- errorf "Knowledge link must be relative and inside content/: %s -> %s" $source .Destination -}}
+  {{- end -}}
+  {{- with .Page.Site.GetPage (printf "/%s" $path) -}}
+    {{- $href = .RelPermalink -}}
+    {{- with $url.RawQuery }}{{ $href = printf "%s?%s" $href . }}{{ end -}}
+    {{- with $url.Fragment }}{{ $href = printf "%s#%s" $href . }}{{ end -}}
+  {{- else -}}
+    {{- errorf "Unresolved knowledge link: %s -> %s" $source .Destination -}}
+  {{- end -}}
+{{- end -}}
+<a href="{{ $href | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if or $url.IsAbs $url.Host }} rel="external noopener noreferrer"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- /* Remove the final newline so inline punctuation stays inline. */ -}}
