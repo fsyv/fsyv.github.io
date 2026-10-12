@@ -174,7 +174,9 @@ try {
   );
   fs.writeFileSync(
     path.join(fixture, 'content/_private/notes/example.md'),
-    privatePage('[Evidence](assets/evidence.txt)'),
+    privatePage(
+      '[Evidence](assets/evidence.txt)\n\n[Public prerequisite](../../notes/renamed.md#links)',
+    ),
   );
   run(process.execPath, ['scripts/check-kb.mjs', '--private']);
   fs.unlinkSync(path.join(attachments, 'evidence.txt'));
@@ -193,7 +195,7 @@ try {
   )
     throw new Error('Forced staging private content accepted');
   console.log(
-    'Integration checks passed: relative/section/home/encoded links, query/fragment, rename repair, missing link/anchor, duplicate ID, four archetypes, draft template exclusion, MathML, private publication/link/staging isolation.',
+    'Integration checks passed: relative/section/home/encoded links, query/fragment, rename repair, missing link/anchor, duplicate ID, four archetypes, draft template exclusion, MathML, private-to-public prerequisites, private publication/link/staging isolation.',
   );
 } finally {
   fs.rmSync(fixture, { recursive: true, force: true });

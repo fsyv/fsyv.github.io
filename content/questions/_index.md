@@ -14,7 +14,9 @@ description: "记录疑问、证据缺口和下一步研究方向。"
 
 ## Start
 
-[如何检验笔记拆分是否改善理解？（演示）](evaluate-note-splitting.md)记录候选拆分方法尚未得到验证的边界。
+- [应用评价怎样支撑学习与共识保证？](evidence-to-guarantees.md)：从具体系统读回推论所需条件。
+- 其余基础和系统问题沿[主题地图](../maps/_index.md)进入，每个问题回链相关知识。
+- [如何检验笔记拆分是否改善理解？](evaluate-note-splitting.md)是知识实践的演示问题。
 
 ## Links
 

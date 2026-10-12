@@ -2,7 +2,7 @@
 
 同一份 Markdown 同时用于 Obsidian 本地阅读、Codex 协作维护和 Hugo 网站发布。知识内容只有 `content/` 一份，沿用 Hugo、Blowfish、GitHub Pages 和现有域名。
 
-AI 负责检索、提出候选理解和整理结构；用户负责验证推理，并决定哪些观点成为个人认知。当前演示只呈现知识管理方法的候选选择，没有虚构外部论文或研究结果。
+AI 负责检索、提出候选理解和整理结构；用户负责验证推理，并决定哪些观点成为个人认知。知识内容按问题组织，公开基础知识和论文解读与本地未发表研究有明确边界。
 
 ## 目录
 
@@ -12,7 +12,7 @@ AGENTS.md                       长期知识管理与协作规则
   config.toml                   项目级多 Agent 配置
   agents/                       researcher、domain_monitor、frontier_explorer、architect、reviewer
 content/                        唯一知识内容源，也是 Obsidian Vault
-  _private/                     本地私有旧稿与未发表研究，Git/Hugo 均排除
+  _private/                     未发表研究、私人工作材料与待核验记录，Git/Hugo 均排除
   _index.md                     知识库入口
   maps/                         主题地图与索引
   notes/                        完整问题、原理或论证的常青笔记
@@ -37,7 +37,7 @@ Maps 是学习路径，不只是目录。Notes 保留完整因果链或推理链
 
 1. 在 Obsidian 选择“打开文件夹作为仓库”，选择当前仓库的 **`content/`**，而不是仓库根目录。
 2. 在“核心插件”启用“模板”；模板文件夹已配置为 `_templates`。不需要社区插件。
-3. 打开 `_index.md`，进入主题地图、笔记、来源或问题。演示入口为 `maps/knowledge-practice.md`。
+3. 打开 `_index.md`，从 Transformer 与推理、概率与网络、Web3 或存储地图开始。本地研究从 `_private/_index.md` 进入；私有研究可直接链接同一 Vault 中的公开基础笔记。
 
 已配置标准 Markdown 链接、相对路径与重命名时自动更新链接。Obsidian 的个人工作区、缓存和插件状态不应提交；共享的 `app.json` 和 `templates.json` 可以提交。重命名后仍需检查 Git diff 与全部链接。
 
@@ -85,7 +85,9 @@ hugo new content questions/my-question.md --kind question
 
 旧稿导入使用 `legacy-unreviewed`，表示形成方式、引用与当前认可尚未复核。它不等于用户确认，也不能把旧稿内容误认为本轮 AI 新推论。
 
-旧 `note/` 已迁至本地 `content/_private/`；仍在同一个 Obsidian Vault 中打开 `_private/_index.md` 阅读。迁移原稿、Git 历史和工具状态完整备份于 `.local/migrations/`。私有区采用独立的本地 Git，未配置远端；公开仓库忽略整个目录，Hugo 即使构建 draft 也排除它，公开检查会拦截强制暂存的私有文件。需要备份私有知识时使用自己的私密备份位置，不能依赖公开 GitHub。
+旧 `note/` 的通用知识和已公开论文解读按完整问题合并到公开 `notes/`、`sources/` 与主题地图；个人未发表方案、实验计划、私人通信及尚未核验的材料留在 `_private/`。不是所有旧笔记都属于私有内容。混合稿按段落分开，公开页只使用可公开、可追溯的内容，不附私人路径或研究建议。
+
+原始备份与稳定 ID 的合并去向保存在 `.local/migrations/`，私有区的本地 Git 保留修改前的完整论证。私有区没有远端；公开仓库忽略整个目录，Hugo 即使构建 draft 也排除它，公开检查会拦截强制暂存的私有文件。需要备份私有知识时使用自己的私密备份位置，不能依赖公开 GitHub。已整理的知识只保留一个当前版本，原文历史不作为第二套日常知识库维护。
 
 使用带 `.md` 扩展名的相对文件链接。例如，从 `notes/example.md` 链接到资料：
 
@@ -153,10 +155,10 @@ node scripts/test-links.mjs
 
 本地预览可用 `hugo server`；需要预览尚未发布的草稿时使用 `hugo server -D`。完整草稿构建可用 `hugo --buildDrafts --destination public-drafts`，随后检查对应目录；模板目录仍应不产生页面。
 
-保留现有 GitHub Actions 到 GitHub Pages 的部署方式和 `mcfzz.com` 域名。推送到部署分支会触发现有发布流程，因此本次初始化不自动提交、推送或发布。
+保留现有 GitHub Actions 到 GitHub Pages 的部署方式和 `mcfzz.com` 域名。推送到部署分支会触发现有发布流程；本地整理按主题提交，远程推送和发布遵循用户授权，候选知识不自动合并。
 
 Pages 工作流使用固定 Hugo 0.166.0，PR 只验证而不部署；旧版 Pages 产物操作已升级。根 `CNAME` 保留，`static/CNAME` 确保构建产物包含域名配置，检查器核对两者一致。原有每月主题更新任务保留，并增加构建与兼容检查，失败时不提交主题更新；未来升级 Hugo/主题需同步验证版本范围。
 
 ## 工作日研究
 
-三通道选题、简报、反馈与 Draft PR 的使用方法见 [研究说明](research/README.md)，当前调度见 [定时任务](research/state/schedule.md)。公开知识候选通过独立工作树审核，用户决定是否合并；私有旧稿继续保存在本地。
+三通道选题、简报、反馈与 Draft PR 的使用方法见 [研究说明](research/README.md)，当前调度见 [定时任务](research/state/schedule.md)。公开知识候选通过独立工作树审核，用户决定是否合并；私有研究继续保存在本地。
