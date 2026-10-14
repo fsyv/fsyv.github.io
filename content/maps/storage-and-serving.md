@@ -20,7 +20,7 @@ endorsement: ai-candidate
 ## Reading
 
 1. [为什么相同副本数仍有不同风险](../notes/storage-replica-reliability.md)：先看共同故障和修复窗口，理解可行落点为何受结构约束。
-2. [为什么还要决定路由与迁移](../notes/storage-placement-and-migration.md)：在可行布局之间加入读写成本与到达过程，区分静态结果和动态执行。
+2. [为什么还要决定路由与迁移](../notes/storage-placement-and-migration.md)：在可行布局之间加入读写成本与到达过程，区分静态结果和动态执行；再把同一请求序列下的费用回本，与迁移中的一致性、可用性和 SLO 分开检查。
 3. [平均时延、尾概率与 SLO](../notes/storage-latency-and-slo.md)：最后明确优化的服务指标与测量边界，防止不同论文的“更快”被直接合并。
 
 ## Sources
@@ -32,7 +32,7 @@ endorsement: ai-candidate
 | 可靠性基础 | [副本放置、修复速度与可靠性](../sources/paper-replica-placement-reliability.md)：修复速度与组合风险；[分层故障域中的副本放置](../sources/paper-hierarchical-failure-domains.md)：树形共同故障；[Kinesis：结构与在线选择相结合的放置](../sources/paper-kinesis.md)：隔离结构与选择自由 | A01 第 1—3 节及第 4 节比较机制；其余摘要 |
 | 资源利用 | [SRS：同时考虑机架与存储利用率的放置](../sources/paper-storage-rack-sensitive-placement.md)：机架与节点容量一起参与启发式 | 作者 PDF 主要章节，未逐格核表 |
 | 放置目标 | [纠删码存储的平均时延与成本联合优化](../sources/paper-erasure-coded-latency-cost.md)：平均时延/成本；[纠删码存储中的尾时延优化](../sources/paper-erasure-coded-tail-latency.md)：尾概率；[容量与负载约束下的地理数据放置](../sources/paper-capacity-load-data-placement.md)：容量、负载与传输成本 | 摘要 |
-| 迁移与动态管理 | [CRANE：副本迁移过程的调度](../sources/paper-crane.md)：过渡过程；[冷热对象的复制、读路由与迁移](../sources/paper-hot-cold-object-migration.md)：冷热、路由和成本；[边缘云 SaaS 的多目标副本放置与迁移](../sources/paper-edge-cloud-multiobjective-replication.md)：多目标与热点；[边缘节点的动态去中心化副本策略](../sources/paper-decentralized-edge-replication.md)：去中心化创建/删除 | B12 模型部分；其余摘要 |
+| 迁移与动态管理 | [CRANE：副本迁移过程的调度](../sources/paper-crane.md)：过渡过程；[冷热对象的复制、读路由与迁移](../sources/paper-hot-cold-object-migration.md)：冷热、路由和成本；[边缘云 SaaS 的多目标副本放置与迁移](../sources/paper-edge-cloud-multiobjective-replication.md)：多目标与热点；[边缘节点的动态去中心化副本策略](../sources/paper-decentralized-edge-replication.md)：去中心化创建/删除 | CRANE §III–VI 指定部分；冷热对象模型、启发式与 §6.2 指定部分；其余摘要 |
 | 混合设备 | [Harmonia：混合存储中的放置与迁移协调](../sources/paper-harmonia.md)：设备上的放置/迁移协调 | v4 摘要，不能直接替代副本模型 |
 | KV 访问 | [KV 卸载中的互连瓶颈](../sources/paper-kv-offloading-bottlenecks.md)：CPU 卸载互连；[异步预取 KV：用计算覆盖访存等待](../sources/paper-asynchronous-kv-prefetching.md)：L2 预取；[Kelle：KV 缓存与 eDRAM 协同设计](../sources/paper-kelle.md)：eDRAM 维护 | 摘要，属不同硬件层次 |
 | 服务编排 | [Nuska：分离推理的阶段感知通信调度](../sources/paper-stage-aware-communication.md)：依赖阶段和 TTFT；[OServe：随工作负载改变模型部署](../sources/paper-oserve.md)：负载构成改变部署；[WWW.Serve：去中心化 LLM 服务互联](../sources/paper-www-serve.md)：自主参与和请求分发 | 当前版本摘要 |
