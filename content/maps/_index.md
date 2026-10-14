@@ -20,6 +20,7 @@ description: "按照问题、前置依赖和学习顺序组织知识。"
 | [概率与网络](probability-and-networks.md) | 损失、偏斜和拓扑各采用了什么假设？ |
 | [Web3 与信任机制](web3-foundations.md) | 身份、内容、评价与一致性怎样分别获得保证？ |
 | [存储与推理服务](storage-and-serving.md) | 数据放在哪里、从哪里读取、何时值得搬动？ |
+| [生态与动力学](ecology-and-dynamics.md) | 局部恢复、有限扰动与临界转变预警怎样区分？ |
 
 [知识实践地图](knowledge-practice.md)从“笔记应当多大”这一问题出发，说明笔记、资料与开放问题怎样协作。
 
