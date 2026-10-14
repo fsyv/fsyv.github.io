@@ -36,3 +36,9 @@ status: open
 ## Sources
 
 现有证据及局限见[KV 系统一手阅读](../sources/foundations-kv-systems.md)、[概率资料](../sources/foundations-probability.md)和[网络研究](../sources/foundations-networks.md)。本问题未声称这些来源已经回答上述新实验任务。
+
+## Progress
+
+2026-10-15，AI 候选进展：[SLO 解释](../notes/storage-latency-and-slo.md)已整合 [QBA](../sources/paper-quota-based-aging.md)的真实/预测类别、配额事件语义、聚合顺序与解析/模拟/部署边界。其 100 个归一轨迹窗口的 P99 中位数不能替代原尺度部署结果。
+
+继续检验时应固定实现与资源，按真实类别、预测类别和错误方向分层，同时报告 pooled 均值、总体分位数及逐窗口分布；保留未缩放轨迹与预测误差设定，再比较目标硬件的结果。本轮没有原始轨迹、源码审计或部署测量，问题保持 **open**，计划 2026-10-19 复评。

@@ -7,6 +7,7 @@ id: "648a48e5-4264-4b49-b08b-6d9c973daebf"
 kind: note
 maturity: developing
 endorsement: ai-candidate
+math: true
 ---
 
 **判断归属：AI 候选解释。** 算术例子是示意，不是论文实验。
@@ -34,3 +35,27 @@ endorsement: ai-candidate
 比较两种策略前，应固定请求构成、模型、并发与成功请求口径，并明确是否包含迁移、排队、冷启动和重试。百分位数还需说明采样窗口；不同目标之间的取舍应保留，不能只选择最好看的指标。
 
 [迁移决策](storage-placement-and-migration.md)改变过渡期间的资源竞争，[迁移评估问题](../questions/storage-migration-evaluation.md)保留如何测量这些影响的缺口。[地图](../maps/storage-and-serving.md)将基础模型与摘要级前沿工作分开安排。
+
+## Population-and-prediction
+
+调度器可能按预测长度把请求分成短、长类，而评价时可以按真实完成长度重新分组。这两个标签回答不同问题：预测标签决定当时采取的动作，真实标签用于检查哪群请求承担了等待。**AI 推论：**应分别报告真实长→预测短与真实短→预测长的错误，因为两种错误改变的优先级和等待对象不同。总体改善不能代替每类请求及误分类组的评价。
+
+[QBA 预印本](../sources/paper-quota-based-aging.md)给出一个具体案例。**来源事实：**其 §III-A6 的计数只在短请求 prefill 完整完成时推进，不计 chunk continuation；达到配额 $k$ 后保留 promotion debt，实际准入最老的合格 aged-long 请求才清除。准入仍受 token/KV 容量限制。这里的计数单位是完成事件，不是固定墙钟时间；本文未由此建立无条件的无饥饿或 SLO 保证。
+
+## Aggregation-and-evidence
+
+**来源事实：**QBA §IV-E 用 100 个不重叠 Azure 轨迹窗口驱动模拟，保留顺序与相对到达结构，但把到达时间归一到 $\lambda=32$、prompt/response 长度均乘 0.44。Table II 中 Mean Wait 对所有请求合并计算，而 P99 指标是“先取各窗口 P99，再取这 100 个值的中位数”，不是全请求合并后的 P99，也不能解释为每个窗口都满足的上界。
+
+在该表口径下，PSF 与 QBA 的真实长请求 P99 分别为 2.097 秒与 1.446 秒，但 FCFS 为 0.766 秒；QBA 的总体 P99 为 0.951 秒，FCFS 为 0.771 秒。QBA 相对 PSF 的长请求尾部改善，与其优于所有策略是不同命题。数值是作者的归一轨迹模拟结果，未复现、未实际部署。
+
+**AI 评价原则：**比较时应同时固定请求总体、真实/预测类别、错误方向、时间窗口和聚合顺序。非线性的分位数通常不能通过平均窗口分位数还原总体分位数。证明、模拟和部署也须分开：QBA §II-B2/III-B 的 M/G/n 是解释均值趋势的经验近似，尾部通过模拟器评价；二者都不能自行变成目标硬件上的服务承诺。
+
+[基础模型验证问题](../questions/foundations-validation.md)保留从该模拟到真实负载的缺口：原轨迹尺度、实现、容量和预测误差改变后，哪些收益仍成立？本轮没有运行相应实验，状态仍 open。
+
+## Links
+
+相似但不同：[生态恢复与预警](ecological-resilience-and-early-warning.md)也要求区分评价对象和外部驱动；其恢复率、吸引域与噪声关系仅提供结构类比，不能证明服务时限或存储故障概率。本文也不能用 SLO 改善推断生态韧性。
+
+## Evolution
+
+2026-10-15：原解释区分均值、尾概率和端到端服务目标。增读 [QBA §II–IV/Table II](../sources/paper-quota-based-aging.md)后，新增真实/预测类别、误分类方向、窗口分位数与 pooled 均值的口径，并区分解析近似、轨迹模拟与部署证据。修订是 AI 候选，未获用户确认；没有把论文局部取舍升级为全面性能或无饥饿保证。
