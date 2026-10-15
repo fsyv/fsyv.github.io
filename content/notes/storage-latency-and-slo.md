@@ -7,6 +7,7 @@ id: "648a48e5-4264-4b49-b08b-6d9c973daebf"
 kind: note
 maturity: developing
 endorsement: ai-candidate
+math: true
 ---
 
 **判断归属：AI 候选解释。** 算术例子是示意，不是论文实验。
@@ -29,8 +30,26 @@ endorsement: ai-candidate
 
 从而，链路吞吐、GPU 算子吞吐与首 token 延迟不能直接换算为同一项“系统加速”。[KV 优化成本分类](kv-cache-optimization.md)提供前置区分：容量、有效数据量、交互等待和执行效率改变不同成本项。
 
+## Joint-success
+
+**2026-10-16 新增 AI 候选解释。** 对近似复用的 RAG，请求既要及时，也要达到任务质量门槛。[CacheSmith §5 式 (1)](../sources/paper-cachesmith.md)把 Quality SLO Attainment（QSA）定义为逐请求同时满足两者的比例。用 $\ell_i$ 表示 TTFT、$z_i$ 表示任务质量，门槛分别为 $\tau_i,\gamma_i$，可重写为
+
+$$
+\mathrm{QSA}=\frac1n\sum_{i=1}^{n}\mathbf1[\ell_i\le\tau_i\ \land\ z_i\ge\gamma_i].
+$$
+
+教学反例：四个请求中，及时集合为 $\{1,2\}$。质量达标集合若也是 $\{1,2\}$，联合成功率为 50%；若为 $\{3,4\}$，联合成功率为 0。两个场景的及时率和质量达标率都为 50%。这是集合计数，不是论文实验；它说明只报两个边际指标无法恢复联合指标，也不能未经证据假设独立。
+
+原文 §5.1 用离线需求分布代理规划复用/重算，包括 500 个合成 PassageRetrieval 请求；这不是在线每次输出正确的保证。§6.1 的 exact match/F1 是具体任务口径，阈值与代理误差仍需核验。QSA 衡量质量门槛和 TTFT 的交集，也不自动包含完整生成时延、事实可靠性或其他服务目标。
+
+**机制前置：**[精确与近似 KV 复用](kv-cache-mechanism.md#approximate-reuse)解释为什么拼接分块状态可能改变答案；服务评价必须覆盖该变化。论文结果仅在其任务、负载、硬件与基线实现内成立，本文没有复现实验。
+
 ## Boundaries
 
 比较两种策略前，应固定请求构成、模型、并发与成功请求口径，并明确是否包含迁移、排队、冷启动和重试。百分位数还需说明采样窗口；不同目标之间的取舍应保留，不能只选择最好看的指标。
 
 [迁移决策](storage-placement-and-migration.md)改变过渡期间的资源竞争，[迁移评估问题](../questions/storage-migration-evaluation.md)保留如何测量这些影响的缺口。[地图](../maps/storage-and-serving.md)将基础模型与摘要级前沿工作分开安排。
+
+## Revision
+
+2026-10-16：原理解区分平均、尾部与依赖链，但未展开请求质量；根据 CacheSmith 的联合指标，新增逐请求交集及边际相同而联合不同的反例。此为 AI 候选，离线代理与真实输出之间的证据缺口仍开放，用户未确认。
