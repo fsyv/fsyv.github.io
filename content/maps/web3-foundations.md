@@ -16,7 +16,7 @@ Web3 可以从一个问题进入：用户声称“拥有”某项数据、资产
 1. [控制与信任](../notes/web3-trust-and-ownership.md)：先区分愿景、密码学控制与现实权利；语义网与区块链为什么相关又不同。
 2. [一次请求的完整路径](../notes/web3-request-lifecycle.md)：把界面、钱包、RPC、合约、存储和网络连起来，识别独立故障与替换条件。
 3. [身份信任链](../notes/web3-identity-and-authorization.md)：DID 控制、VC 声明、发行者可信度、授权和审计各回答什么。
-4. [共识假设](../notes/web3-consensus-assumptions.md)：理解抗女巫、提议与最终性的分工，以及 PBFT 法定人数交集为何必要。
+4. [共识假设](../notes/web3-consensus-assumptions.md)：理解抗女巫、提议与最终性的分工；沿证书绑定对象→prepared/commit→新 view 继承读 PBFT，避免把交集计数当成完整证明。
 5. [扩容与数据可用性](../notes/web3-scaling-security.md)：在理解共识后判断移出主链的执行保留了哪些安全条件。
 6. [内容寻址与持久化](../notes/web3-content-addressing.md)：CID 校验、数据保存与链外事实输入为何不能互相代替。
 7. [隐私保护的层次](../notes/web3-privacy-layers.md)：按输入、计算、输出和执行环境选择加密、证明、私密计算或硬件隔离。
@@ -35,7 +35,7 @@ Web3 可以从一个问题进入：用户声称“拥有”某项数据、资产
 
 - [声誉与共识](../notes/reputation-and-consensus.md)：在许可资格和具体故障假设下，考察声誉机制怎样改变参与者选择与激励；与共识安全分开论证。
 - [协同缓存架构与学习](../notes/cooperative-caching-and-learning.md)：把内容、索引、访问和协作策略放进一个公开研究场景，检查成本和信息条件。
-- [学习共识协议](../notes/learning-consensus-protocol.md)：追踪训练结果如何被验证和接受；学习收益、验证规则与拜占庭安全不是同一性质。
+- [学习共识协议](../notes/learning-consensus-protocol.md)：在共识基础之后检查共同候选输入、有效收票与赞成门槛、异构参数的联合更新身份；两个 AI 反例只检验局部推论，未裁定完整实现安全性。
 
 案例不能直接替代基础证明；基础机制也不能单独证明案例达到其性能目标。先看论文模型，再看证据是否覆盖实际使用条件。
 
@@ -43,8 +43,11 @@ Web3 可以从一个问题进入：用户声称“拥有”某项数据、资产
 
 身份与预言机都涉及“签名有效是否足以信任语义”的问题；内容寻址与扩容都要分开完整性和可用性；边缘缓存与多智能体学习都受局部信息、通信及维护成本约束。它们共享的是需要明确假设的推理方式，不表示采用相似术语就拥有相同安全保证。
 
+**激励建模的补充前置：**[信息与激励地图](information-and-incentives.md)从独立的经济交易问题出发，说明私人信息如何改变可实现方案；[完整交易例子](../notes/private-information-and-trade.md)与声誉评分仅为问题结构类比。真实报告的均衡、共识安全与规则可验证执行须分别建模，不以其中一项证明另一项。
+
 ## 开放问题
 
+- [应用评价怎样支撑学习与共识保证](../questions/evidence-to-guarantees.md)：共同输入与跨轮次证据已形成候选解释，底层约束、评分操纵及完整证明仍开放。
 - [缓存策略的端到端收益怎样复核](../questions/web3-caching-evaluation.md)：检验热点变化、协作开销和局部观测下的收益，而不只比较命中率。
 - [跨层系统评价需要哪些证据](../questions/web3-evaluation-evidence.md)：把性能、安全、控制权、能耗和恢复能力连接到具体可复核资料。
 

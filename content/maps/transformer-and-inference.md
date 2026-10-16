@@ -20,7 +20,8 @@ endorsement: ai-candidate
 1. [QKV、因果掩码与多头](../notes/attention-qkv.md)：先把一次表示更新的输入、输出和连接范围算清。
 2. [GPT 式生成的完整计算链](../notes/transformer-generation.md)：把嵌入、注意力、MLP、残差/LN、输出分布和采样串起来，区分训练与自由生成。
 3. [KV 为何可复用](../notes/kv-cache-mechanism.md)：由因果性推出状态不变，再分别计算单步、全过程和存储成本。
-4. [缓存优化减少的不同成本](../notes/kv-cache-optimization.md)：在机制明确后比较分页、共享、压缩、卸载与访问优化，避免互换性能指标。
+4. [缓存优化减少的不同成本](../notes/kv-cache-optimization.md)：在机制明确后比较分页、共享、压缩、卸载与访问优化；放置受控微基准说明有效带宽还要绑定访问历史与计时边界。
+5. [逐请求质量与时延联合成功](../notes/storage-latency-and-slo.md#joint-success)：在理解精确与近似复用之后，判断节省计算是否同时达到任务质量和 TTFT 目标；两个边际通过率不能替代交集。
 
 ## Branches
 
@@ -30,6 +31,8 @@ endorsement: ai-candidate
 ## Evidence
 
 [Transformer/视频/采样资料](../sources/foundations-transformer.md)、[KV 系统资料](../sources/foundations-kv-systems.md)和[Switch 资料](../sources/foundations-moe.md)均列出实际读取范围。没有来源或实验条件的性能倍数不构成比较依据。
+
+[Grace-Blackwell 微基准](../sources/paper-grace-blackwell-unified-memory.md)和[CacheSmith](../sources/paper-cachesmith.md)是 2026-10 的预印本指定部分阅读；前者不验证 LLM KV 服务，后者的离线代理不保证每次输出正确，两者未在本库复现。
 
 ## Open
 
