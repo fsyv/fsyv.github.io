@@ -32,7 +32,7 @@ math: true
 
 ## Joint-success
 
-**2026-10-16 新增 AI 候选解释。** 对近似复用的 RAG，请求既要及时，也要达到任务质量门槛。[CacheSmith §5 式 (1)](../sources/paper-cachesmith.md)把 Quality SLO Attainment（QSA）定义为逐请求同时满足两者的比例。用 $\ell_i$ 表示 TTFT、$z_i$ 表示任务质量，门槛分别为 $\tau_i,\gamma_i$，可重写为
+**2026-10-16 新增 AI 候选解释。** 对近似复用的 RAG，请求既要及时，也要达到任务质量门槛。[CacheSmith §5 式 (1)](../sources/paper-cachesmith.md)把 quality-gated SLO attainment（QSA）定义为逐请求同时满足两者的比例。用 $\ell_i$ 表示 TTFT、$z_i$ 表示任务质量，门槛分别为 $\tau_i,\gamma_i$，可重写为
 
 $$
 \mathrm{QSA}=\frac1n\sum_{i=1}^{n}\mathbf1[\ell_i\le\tau_i\ \land\ z_i\ge\gamma_i].

@@ -19,7 +19,7 @@ Xinyue Ma、Damin Lee、Aashaka Shah、Myeongjae Jeon，*CacheSmith: Accurate RA
 ## Evidence
 
 - §2.1–2.2 区分精确的相同前缀复用与独立分块 KV 拼接；后者缺少跨块上下文，不能默认等同完整 prefill。
-- §5 式 (1) 的 Quality SLO Attainment 是每个请求同时过 TTFT 与任务质量门槛的比例。它不是把两个边际达标率相乘或分别报告。
+- §5 式 (1) 的 quality-gated SLO attainment 是每个请求同时过 TTFT 与任务质量门槛的比例。它不是把两个边际达标率相乘或分别报告。
 - §5.1 用离线需求分布代理规划复用/重算，包括 500 个合成 PassageRetrieval 请求；代理不构成每次在线输出正确性的保证。
 - §6.1 采用任务相应的 exact match/F1；QCI 基线共用作者未调优的自实现内核。因此基线实现与阈值口径限制性能比较的外推。
 
