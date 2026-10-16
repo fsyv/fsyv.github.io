@@ -54,6 +54,7 @@ if(a[0]==='pr'&&a[1]==='list'){
   if(fs.existsSync(p+'/race')){cp.execFileSync('git',['commit','--allow-empty','-m','concurrent change'],{cwd:fs.readFileSync(p+'/race','utf8')});fs.unlinkSync(p+'/race');}
   console.log(JSON.stringify(prs().filter(x=>!x.headRefName||x.headRefName===get('--head'))));
 }else if(a[0]==='pr'&&a[1]==='view')console.log(fs.readFileSync(p+'/comments.json','utf8'));
+else if(a[0]==='repo'&&a[1]==='view')console.log('https://example.invalid/knowledge-repo');
 else if(a[0]==='api'&&a[1].includes('/git/ref/heads/main'))console.log(cp.execFileSync('git',['--git-dir',p+'/remote.git','rev-parse','main'],{encoding:'utf8'}).trim());
 else if(a[0]==='api'&&a[1].includes('/git/matching-refs/'))console.log('[]');
 else if(a[0]==='api'&&a.some(x=>x.endsWith('/reviews')))console.log(fs.readFileSync(p+'/reviews.json','utf8'));
@@ -107,8 +108,9 @@ function commit(f, s, message) {
 }
 function candidate(f, s, date) {
   write(s.worktree, `content/note-${date}.md`, `Candidate ${date}`);
+  write(s.worktree, `content/note with space-${date}.md`, 'Encoded filename link target');
   write(s.worktree, `research/digests/${date}.md`, `Daily result ${date}: long digest text`);
-  write(s.worktree, 'research/review.md', `# 待审清单\n\n${date}+A1 候选理解。见 [晨报](digests/${date}.md)。\n`);
+  write(s.worktree, 'research/review.md', `# 待审清单\n\n${date}+A1 候选理解。见 [晨报](digests/${date}.md)、[笔记](../content/note-${date}.md#links)、[编码路径](../content/note%20with%20space-${date}.md#evidence)和[外部资料](https://example.invalid/source.md#section)。\n`);
   const ledger = path.join(s.worktree, 'research/state/ledger.md');
   write(s.worktree, 'research/state/ledger.md',
     (fs.existsSync(ledger) ? fs.readFileSync(ledger, 'utf8') : '') + `${date}+A1\n`);
@@ -172,10 +174,18 @@ try {
     fs.writeFileSync(path.join(f.dir, 'race'), first.worktree);
     f.fail(['publish', date, '--execute'], /HEAD changed/);
     assert.equal(f.git('ls-remote', 'origin', `refs/heads/${first.branch}`), '');
+    const pinned = f.run('git', ['rev-parse', 'HEAD'], first.worktree),
+      sourceReview = fs.readFileSync(path.join(first.worktree, 'research/review.md'), 'utf8');
     f.ok(['publish', date, '--execute']);
-    assert.equal(fs.readFileSync(path.join(f.dir, 'gh.body'), 'utf8'),
-      fs.readFileSync(path.join(first.worktree, 'research/review.md'), 'utf8'));
-    assert(!fs.readFileSync(path.join(f.dir, 'gh.body'), 'utf8').includes('long digest text'));
+    const published = fs.readFileSync(path.join(f.dir, 'gh.body'), 'utf8'),
+      blob = `https://example.invalid/knowledge-repo/blob/${pinned}`;
+    assert(published.includes(`[晨报](${blob}/research/digests/${date}.md)`));
+    assert(published.includes(`[笔记](${blob}/content/note-${date}.md#links)`));
+    assert(published.includes(`[编码路径](${blob}/content/note%20with%20space-${date}.md#evidence)`));
+    assert(published.includes('[外部资料](https://example.invalid/source.md#section)'));
+    assert(!published.includes('](../content/') && !published.includes('](digests/'));
+    assert(!published.includes('long digest text'));
+    assert.equal(fs.readFileSync(path.join(first.worktree, 'research/review.md'), 'utf8'), sourceReview);
     assert.match(f.ok(['prepare', next], first.worktree), /Reusing/);
     assert.deepEqual(f.state(), first);
     assert.match(fs.readFileSync(path.join(first.worktree, 'research/state/ledger.md'), 'utf8'), /2026-10-12\+A1/);

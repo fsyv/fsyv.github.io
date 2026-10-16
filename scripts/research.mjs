@@ -377,9 +377,16 @@ try {
       const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'research-pr-body-')),
         body = path.join(temp, 'review.md');
       try {
+        const repoUrl = run('gh', ['repo', 'view', '--json', 'url', '--jq', '.url'], s.worktree),
+          review = run('git', ['show', `${checked.head}:research/review.md`], s.worktree),
+          publicBody = review.replace(/\]\(([^)\s]+)\)/g, (link, target) => {
+            if (/^(?:[a-z][a-z\d+.-]*:|\/|#)/i.test(target) || !/\.md(?:[?#]|$)/.test(target))
+              return link;
+            return `](${new URL(target, `${repoUrl}/blob/${checked.head}/research/review.md`).href})`;
+          });
         fs.writeFileSync(
           body,
-          run('git', ['show', `${checked.head}:research/review.md`], s.worktree) + '\n',
+          publicBody + '\n',
           { mode: 0o600 },
         );
         clean(s.worktree);
