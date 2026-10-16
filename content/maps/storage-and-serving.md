@@ -23,6 +23,8 @@ endorsement: ai-candidate
 2. [为什么还要决定路由与迁移](../notes/storage-placement-and-migration.md)：在可行布局之间加入读写成本与到达过程，区分静态结果和动态执行；再把同一请求序列下的费用回本，与迁移中的一致性、可用性和 SLO 分开检查。
 3. [平均时延、尾概率与 SLO](../notes/storage-latency-and-slo.md)：最后明确优化对象、真实/预测类别和窗口聚合顺序，再区分解析近似、模拟与部署，防止不同论文的“更快”被直接合并。
 
+LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-reuse)→[物理放置与计时](../notes/kv-cache-optimization.md#placement-and-timing)→[质量/时延联合成功](../notes/storage-latency-and-slo.md#joint-success)阅读：先检查复用改变了什么，再检查访问成本，最后判断请求是否成功。
+
 ## Sources
 
 阅读范围是本次记录，不能由“经典”或发表场所替代。完整作者与版本见各来源页。
@@ -35,6 +37,7 @@ endorsement: ai-candidate
 | 迁移与动态管理 | [CRANE：副本迁移过程的调度](../sources/paper-crane.md)：过渡过程；[冷热对象的复制、读路由与迁移](../sources/paper-hot-cold-object-migration.md)：冷热、路由和成本；[边缘云 SaaS 的多目标副本放置与迁移](../sources/paper-edge-cloud-multiobjective-replication.md)：多目标与热点；[边缘节点的动态去中心化副本策略](../sources/paper-decentralized-edge-replication.md)：去中心化创建/删除 | CRANE §III–VI 指定部分；冷热对象模型、启发式与 §6.2 指定部分；其余摘要 |
 | 混合设备 | [Harmonia：混合存储中的放置与迁移协调](../sources/paper-harmonia.md)：设备上的放置/迁移协调 | v4 摘要，不能直接替代副本模型 |
 | KV 访问 | [KV 卸载中的互连瓶颈](../sources/paper-kv-offloading-bottlenecks.md)：CPU 卸载互连；[异步预取 KV：用计算覆盖访存等待](../sources/paper-asynchronous-kv-prefetching.md)：L2 预取；[Kelle：KV 缓存与 eDRAM 协同设计](../sources/paper-kelle.md)：eDRAM 维护 | 摘要，属不同硬件层次 |
+| 放置与质量约束 | [Grace-Blackwell 微基准](../sources/paper-grace-blackwell-unified-memory.md)：物理放置、访问历史与计时边界；[CacheSmith](../sources/paper-cachesmith.md)：近似复用与质量/TTFT 联合成功 | v1 指定部分正文，未复现；微基准的 KV 应用仅为候选推论 |
 | 服务编排 | [Nuska：分离推理的阶段感知通信调度](../sources/paper-stage-aware-communication.md)：依赖阶段和 TTFT；[OServe：随工作负载改变模型部署](../sources/paper-oserve.md)：负载构成改变部署；[WWW.Serve：去中心化 LLM 服务互联](../sources/paper-www-serve.md)：自主参与和请求分发 | 当前版本摘要 |
 | 预测调度与尾部评价 | [QBA：预测引导调度中的配额老化](../sources/paper-quota-based-aging.md)：短请求完成事件、长请求晋升与预测错误；为 SLO 基础提供具体统计口径案例 | v1 §II/III/IV指定部分及Table II；归一轨迹模拟未复现，不是部署或无条件无饥饿保证 |
 | 调度目标扩展 | [GCOS：结合模型与数据复用的绿色调度](../sources/paper-gcos.md)：缓存复用、成本与碳排放；[ARO：遥测驱动的异构集群编排](../sources/paper-aro.md)：遥测与异构资源 | S03 摘要；S04 网页部分且存在证据缺口 |

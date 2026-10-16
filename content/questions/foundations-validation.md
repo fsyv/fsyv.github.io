@@ -8,6 +8,7 @@ kind: question
 maturity: developing
 endorsement: ai-candidate
 status: open
+math: true
 ---
 
 **归属：AI 提出的开放问题。** 状态为 open；本次完成了基础解释与局部一手阅读，未进行真实工作负载实验。
@@ -19,7 +20,7 @@ status: open
 ## Known
 
 - [KV 机制](../notes/kv-cache-mechanism.md)给出因果前提、单步与累计计算、存储公式；[成本分类](../notes/kv-cache-optimization.md)区分计算、实际字节、分配浪费与链路等待。
-- [Zipf](../notes/probability-zipf.md)给出固定独立请求下的静态命中率；这没有确定时间局部性。
+- [Zipf](../notes/probability-zipf.md)给出固定概率下的静态命中率，以及限定 LRU 模型的重用距离判定与同频率反例；这没有完成真实负载验证。
 - [网络模型](../notes/network-random-and-scale-free.md)说明度分布拟合需要可接受性和候选比较，不能只看拟合指数。
 
 ## Gaps
@@ -34,6 +35,10 @@ status: open
 ## Directions
 
 对第 1 项可先固定模型/query/mask/位置规则及后续计算，记录状态扰动、高精度参考输出误差、输出尺度和敏感方向；再分别研究量化、删除与整段生成，不能由局部 logits 误差替代质量保证。2026-10-19 回访。
+
+2026-10-16 局部进展（AI 候选）：[11 次请求反例及验证规程](../notes/probability-zipf.md#same-counts-different-hits)已表明同一经验 Zipf 频率可在容量 2 的 LRU 中产生 $8/11$ 与 $3/11$ 命中；尚未选择或测量真实轨迹。保留计数的随机排列不是 IID，后续应分别比较排列对照与真正 IID 重采样，记录预热、准入及对象单位。本问题保持 open。
+
+B 通道增加两项测量约束：[物理放置与访问历史](../notes/kv-cache-optimization.md#placement-and-timing)应分别测冷访问、预取、重用及总搬移成本；[质量与时延联合成功](../notes/storage-latency-and-slo.md#joint-success)应逐请求统计，不能用两个边际通过率代替。当前只有微基准/RAG 论文的指定部分阅读，没有本库同一实现上的复现或真实 KV 放置实验。
 
 按单个问题选择最小可复现样本，记录模型/数据/硬件/软件、预算和指标；先给出预期数量级及可能反例，再解释观察。完成后将结果整合到对应机制笔记，在这里回链，再按实际范围判断是否 resolved，不以一次实验关闭全部问题。
 

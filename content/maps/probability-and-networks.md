@@ -22,7 +22,7 @@ endorsement: ai-candidate
 ## Route
 
 1. [交叉熵、最大似然与 KL](../notes/probability-cross-entropy.md)：回答“如何评价预测分布”，保留固定目标分布的条件。
-2. [Zipf 排名请求模型](../notes/probability-zipf.md)：回答“哪些对象更常被请求”，用有限集合公式、采样和静态缓存推导说明其能力与遗漏。
+2. [Zipf 排名请求模型](../notes/probability-zipf.md)：先解释边际热度与静态缓存，再读时序分支的重用距离、LRU 命中判定和同频率反例；沿“边际→顺序→策略结果”理解模型遗漏。
 3. [ER 与无标度网络](../notes/network-random-and-scale-free.md)：回答“边如何形成、度分布如何检验”，区分生成机制、分布形状与实证证据。
 
 三条分支可独立阅读；顺序帮助先熟悉概率定义，再处理应用对象，并不意味着网络幂律依赖请求符合 Zipf。
