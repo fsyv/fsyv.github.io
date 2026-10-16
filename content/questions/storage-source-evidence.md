@@ -37,6 +37,8 @@ status: open
 
 ## Other-gaps
 
+- 2026-10-14 已增读 [CRANE](../sources/paper-crane.md) 与 [冷热对象迁移](../sources/paper-hot-cold-object-migration.md) 指定正文，完成机制/费用层面的候选整合；两者的可用性单位、启发式计费口径、切换协议与迁移期逐请求 SLO 仍有缺口。局部进展不关闭本问题。
+
 - [复制策略综述](../sources/paper-replication-placement-survey.md)仅读摘要，需检查比较标准后才能讨论作者的算法路线优劣判断。
 - [KV 卸载](../sources/paper-kv-offloading-bottlenecks.md)摘要页提交日期与编号月份不一致；需核对作者 PDF 和登记记录。阈值推导仍未读。
 - [Nuska](../sources/paper-stage-aware-communication.md)摘要页简述作者人数与明确列举不一致；应以当前 PDF 作者表进一步核对。
