@@ -2,6 +2,40 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-10-19
+
+11 份去重候选：A3 / B6 / C2；5 次指定部分正文深读：A1 / B2 / C2，形成 A1/B1/B2/C1 四项发现。A 的两个旧来源仅限定补查，没有新增可读正文；另核 B6 既有版本及 3 工具入口，不计为新候选或深读。详细阶段、工具限制与独立审核/构建结果由[当天回执](runs/2026-10-19.md)记录；[晨报](../digests/2026-10-19.md)保留影响理解的限制。未称通读、复现或穷尽监测。
+
+| canonical / 版本 / 原始入口 | 首次发表/提交 | 首读 / 最近读或尝试 | 实际范围及决定 |
+| --- | --- | --- | --- |
+| doi:10.1145/2723372.2723726；[Squall 作者 PDF](https://db.cs.cmu.edu/papers/2015/p299-elmore.pdf) | Crossref online/print 2015-05-27；会议05-31—06-04 | 2026-10-19 / 2026-10-19 | A；p299身份、pp301–309 §2.3–7.6，重点§3–6/7.1–7.3/7.5–7.6；未读300/310–313、未视觉/代码/复现。A1今日发现旧资料；2025 deposited非修订。研究高/启发高/可靠中；[来源](../../content/sources/paper-squall.md) |
+| doi:10.1016/j.jpdc.2018.12.003；Mansouri/Buyya 冷热对象工作 | online 2018-12-21 / print 2019-04 | 2026-10-12 / 2026-10-19限定检索 | A；本轮未新增正文，未获可读实现或作者计费澄清；保留10-14指定阅读，不重复推介，不计深读 |
+| doi:10.1109/cloudsummit54781.2022.00009；Fatemipour/Shi/St-Hilaire 多源迁移 | 2022 | 题录2026-10-12 / 2026-10-19尝试 | A；多源题录补查仍无全文；论文内容未读，不新增机制或数值，不计深读 |
+| arxiv:2610.21500 v1；Muhammad Ibrahim，[When the KV Cache Is Slower Than the GPU](https://arxiv.org/abs/2610.21500) | 2026-10-15T08:37:22Z | 2026-10-19 / 2026-10-19 | B；HTML §2–4/5.1–5.4/6.1–6.6/7–8、PDF提取辅助；未全文/源码日志/复现/视觉。B1窗口补遗漏，研究高/启发高/可靠中；[来源](../../content/sources/paper-remote-kv-load-or-recompute.md) |
+| arxiv:2610.21035 v1；Ridwanul Hasan Tanvir/George Kesidis，[Caching Policies based on Object Sizes](https://arxiv.org/abs/2610.21035) | 2026-10-15T00:11:22Z | 2026-10-19 / 2026-10-19 | B；HTML §1/2.1–2.4/3/4.1–4.2/5.1/5.3/6主文/7、PDF提取辅助；未完整附录/代码/轨迹。B2窗口补遗漏，研究中/启发高/可靠中；[来源](../../content/sources/paper-object-size-caching.md) |
+| arxiv:2610.21387 v1；Chenxi Wang等，[Top-Down Microarchitecture Analysis Without Causal Modelling Is Dangerous!](https://arxiv.org/abs/2610.21387) | 2026-10-15T07:03:50Z | 2026-10-19 / 2026-10-19 | B；仅官方题录/摘要/history。因果干预证据未核，暂缓；研究中/启发高/可靠低 |
+| arxiv:2610.21157 v1；Choi/Lee/Kim，[A Panoramic Network Overview of Shortcut Impact on Power Grids](https://arxiv.org/abs/2610.21157) | 2026-10-15T03:17:18Z | 2026-10-19 / 2026-10-19 | B；仅官方题录/摘要/history；动力学、扰动及模拟未核，暂缓；研究中/启发高/可靠低 |
+| arxiv:2610.20892 v1；Parker/Ripsman/Springer/Ghobadi，[Learning Warm Starts for the Simplex Method from Measured Solver Cost](https://arxiv.org/abs/2610.20892) | 2026-10-14T20:19:58Z | 2026-10-19 / 2026-10-19 | B；仅官方题录/摘要/history；与LP解释相关，但训练划分/测量未核，暂缓；研究中/启发高/可靠低 |
+| arxiv:2610.22172 v1；doi:10.1109/2575-8411.2026.00033；Mingjin Zhang/Jiannong Cao/Tao Wu/Xiangchun Chen/Ne Wang，[Efficient KV Cache Migration for Geo-Distributed LLM Inference in Collaborative Edge Computing](https://arxiv.org/abs/2610.22172) | arXiv 2026-10-15T16:31:19Z；[ICDCS官方日程](https://icdcs2026.icdcs.org/program/main-technical-sessions/)06-22报告；IEEE题录记08-04入Xplore | 2026-10-19 / 2026-10-19 | B；官方题录/摘要/history及会议日程，IEEE文档11619197直接418，首次online未核。同研究别名，近期发现旧研究，不称10月新成果；正文迁移机制未核，暂缓；研究中/启发中/可靠低 |
+| arxiv:cond-mat/9610209 v1；doi:10.1103/physrevlett.78.2690；[Jarzynski](https://arxiv.org/abs/cond-mat/9610209) | arXiv 1996-10-30T00:13:42Z / PRL 1997 | 2026-10-19 / 2026-10-19 | C；HTML式1–12/采样，PDF pp2–7补p9估计段，其余浏览；11页未通读，NH式13–17未独立复推。C1旧资料；HTML2026-08-24非新版本 |
+| arxiv:1205.4176 v1；doi:10.1088/0034-4885/75/12/126001；[Seifert](https://arxiv.org/abs/1205.4176) | arXiv 2012-05-18T15:18:33Z / RPP 2012 | 2026-10-19 / 2026-10-19 | C；PDF §2.1p11/2.3.1p13/2.3.3p14/3.1.1p19/3.2.1–3pp20–21，补9.3.3p63；105页仅部分，未读统一证明/实验/误差引用。C1同一发现的第二原始来源；限定模型研究中/启发高/可靠高，未视觉；[来源](../../content/sources/nonequilibrium-work-sources.md) |
+
+B 窗口为 2026-10-12T07:30:00+08:00—2026-10-19T07:30:00+08:00，补上次终点 10-16T07:36:46+08 后的遗漏，核查至今日 07:35:33+08。选择性检查 cs.DC/cs.PF/math.OC/physics.soc-ph recent 首屏和 cs.DC/math.OC new，最新可见公告为16日，并做官方出版检索；计划的选择性监测完成，不代表穷尽分页、领域与版本。两项入选首提均早于上次终点，是补遗漏；未确认终点后新成果不能写成没有成果。
+
+### 既有版本与工具入口复查（不计新候选）
+
+| canonical / 入口 | 历史首读 / 最近核查 | 本次范围与决定 |
+| --- | --- | --- |
+| arxiv:2610.20354、2610.18925、2610.17795、2610.12665、2610.20422 | 见历史 / 2026-10-19 | 官方题录/摘要/history，均仍v1；没有正文增读，不重复推荐 |
+| arxiv:2610.15755；[Native Dual Pools](https://arxiv.org/abs/2610.15755) | 2026-10-15 / 2026-10-19 | 仍10-14T05:02:56Z的v2；无新增版本，未比正文，不解除既有正确性缺口 |
+| hugo:v0.168.0；[官方release](https://github.com/gohugoio/hugo/releases/tag/v0.168.0) | 2026-10-14 / 2026-10-19 | 仍10-13T17:24:15Z，不重复推荐、不升级 |
+| obsidian:desktop:1.14；[官方索引](https://obsidian.md/changelog/) | 见历史 / 2026-10-19 | 最新可见公开公告仍10-05；urllib403但web可读，不将Catalyst日期混作public日期 |
+| commonmark:0.31.2；[规范](https://spec.commonmark.org/) | 2026-10-12 / 2026-10-19 | 仍2024-01-28版；入口复查，不重复深读 |
+
+### 新批次与历史归属
+
+本轮从核对的 origin/main `9fc976dfc16a714b99595c17ae631d3e688cdaaf` 开始 `research/batch-2026-10-19`。此前15/16日七项已由 [PR #25](https://github.com/fsyv/fsyv.github.io/pull/25) 合入该基线，故不再列入当前待审清单；合并不自动把 AI 候选改成用户逐项确认。下方历史段落保留其当日状态及失败范围，不能把旧回执沿用到今日提交。
+
 ## 2026-10-16
 
 10 份去重候选：A2（Mattson 新来源、Breslau 旧来源增量）/B6 新候选/C2 旧资料；5 次指定部分正文深读：A2/B2/C1，最终 A1/B1/B2/C1 四项。另复查 B5 既有预印本版本和 3 个工具入口，不重复算候选。没有精确搜索命中计数，不称通读或复现。监测整体 partial；[简报](../digests/2026-10-16.md)记录判断，[当日回执](runs/2026-10-16.md)记录后续精确审核、构建与发布结果。
