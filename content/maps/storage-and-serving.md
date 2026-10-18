@@ -20,7 +20,7 @@ endorsement: ai-candidate
 ## Reading
 
 1. [为什么相同副本数仍有不同风险](../notes/storage-replica-reliability.md)：先看共同故障和修复窗口，理解可行落点为何受结构约束。
-2. [为什么还要决定路由与迁移](../notes/storage-placement-and-migration.md)：在可行布局之间加入读写成本与到达过程，区分静态结果和动态执行；再把同一请求序列下的费用回本，与迁移中的一致性、可用性和 SLO 分开检查。
+2. [为什么还要决定路由与迁移](../notes/storage-placement-and-migration.md)：在可行布局之间加入读写成本与到达过程，再读[在线重配置](../notes/storage-placement-and-migration.md#live-reconfiguration)中确认、路由与恢复的执行链；区分字节复制完成、全局完成和逐请求服务，再比较相同外生请求下的费用回本。
 3. [平均时延、尾概率与 SLO](../notes/storage-latency-and-slo.md)：最后明确优化对象、真实/预测类别和窗口聚合顺序，再区分解析近似、模拟与部署，防止不同论文的“更快”被直接合并。
 
 LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-reuse)→[物理放置与计时](../notes/kv-cache-optimization.md#placement-and-timing)→[质量/时延联合成功](../notes/storage-latency-and-slo.md#joint-success)阅读：先检查复用改变了什么，再检查访问成本，最后判断请求是否成功。
@@ -35,6 +35,7 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 | 资源利用 | [SRS：同时考虑机架与存储利用率的放置](../sources/paper-storage-rack-sensitive-placement.md)：机架与节点容量一起参与启发式 | 作者 PDF 主要章节，未逐格核表 |
 | 放置目标 | [纠删码存储的平均时延与成本联合优化](../sources/paper-erasure-coded-latency-cost.md)：平均时延/成本；[纠删码存储中的尾时延优化](../sources/paper-erasure-coded-tail-latency.md)：尾概率；[容量与负载约束下的地理数据放置](../sources/paper-capacity-load-data-placement.md)：容量、负载与传输成本 | 摘要 |
 | 迁移与动态管理 | [CRANE：副本迁移过程的调度](../sources/paper-crane.md)：过渡过程；[冷热对象的复制、读路由与迁移](../sources/paper-hot-cold-object-migration.md)：冷热、路由和成本；[边缘云 SaaS 的多目标副本放置与迁移](../sources/paper-edge-cloud-multiobjective-replication.md)：多目标与热点；[边缘节点的动态去中心化副本策略](../sources/paper-decentralized-edge-replication.md)：去中心化创建/删除 | CRANE §III–VI 指定部分；冷热对象模型、启发式与 §6.2 指定部分；其余摘要 |
+| 在线迁移协议 | [Squall](../sources/paper-squall.md)：路由复查、按需拉取、副本确认、恢复与节流的相互约束 | SIGMOD 2015 pp.301–309 §2.3–7.6 指定部分；同机架闭环负载，未审代码或复现，不能替代跨中心 SLO |
 | 混合设备 | [Harmonia：混合存储中的放置与迁移协调](../sources/paper-harmonia.md)：设备上的放置/迁移协调 | v4 摘要，不能直接替代副本模型 |
 | KV 访问 | [KV 卸载中的互连瓶颈](../sources/paper-kv-offloading-bottlenecks.md)：CPU 卸载互连；[异步预取 KV：用计算覆盖访存等待](../sources/paper-asynchronous-kv-prefetching.md)：L2 预取；[Kelle：KV 缓存与 eDRAM 协同设计](../sources/paper-kelle.md)：eDRAM 维护 | 摘要，属不同硬件层次 |
 | 放置与质量约束 | [Grace-Blackwell 微基准](../sources/paper-grace-blackwell-unified-memory.md)：物理放置、访问历史与计时边界；[CacheSmith](../sources/paper-cachesmith.md)：近似复用与质量/TTFT 联合成功 | v1 指定部分正文，未复现；微基准的 KV 应用仅为候选推论 |
