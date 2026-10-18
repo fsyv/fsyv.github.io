@@ -12,7 +12,7 @@ read_status: partial
 
 ## Identity
 
-- 作者：Muhammad Ibrahim。标题：When the KV Cache Is Slower Than the GPU。
+- 作者：Muhammad Ibrahim。标题：When the KV Cache Is Slower Than the GPU: Scaling Remote KV Tiers for Context-Parallel Prefill。
 - 版本：[arXiv:2610.21500v1](https://arxiv.org/abs/2610.21500)，首次提交 2026-10-15T08:37:22Z。未确认正式发表，不将预印本写成录用论文。
 - 实际读取：[v1 HTML](https://arxiv.org/html/2610.21500v1)，PDF 文本提取辅助。
 
@@ -23,7 +23,7 @@ read_status: partial
 ## Evidence
 
 - §4：用前缀长度除以引擎 prefill 速率，与固定开销加有效字节传输耗时比较。固定开销包含调度、lookup 往返、少量未缓存尾 token forward 与元数据交换；它不是完整 TTFT。给出的冷 miss replay 速率统计为中位数，不能写成均值。
-- §5.1–5.4：选择性加载的约 17k token 门槛基于单长度点拟合，未跨长度测准。
+- §4 固定开销、§7 及 §8 的单长度桶限制：约 17k token 门槛基于单长度点拟合，未跨长度测准。
 - §6.3：最终配置的中位数仍慢于同请求重算；较大的 p99 改善对应同步加载发生拥塞的基线，比较对象不能替换。
 - §8：单次运行、单引擎、单长度桶和能容纳的容量子集限制外推；端到端配置同时变化，不能隔离为单独缓存收益。
 
