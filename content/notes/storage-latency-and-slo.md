@@ -30,6 +30,8 @@ math: true
 
 从而，链路吞吐、GPU 算子吞吐与首 token 延迟不能直接换算为同一项“系统加速”。[KV 优化成本分类](kv-cache-optimization.md)提供前置区分：容量、有效数据量、交互等待和执行效率改变不同成本项。
 
+**具体边界：**[远程 KV 加载与重算](kv-cache-optimization.md#remote-load-or-recompute)比较同请求两条执行路径，保留带宽、固定开销及尾延迟对照条件；[对象大小与命中目标](probability-zipf.md#object-size-and-objective)则说明请求命中和字节命中本身也会排序不同。二者支持先明确指标再评价服务，不以命中率直接替代端到端耗时。
+
 ## Joint-success
 
 **2026-10-16 新增 AI 候选解释。** 对近似复用的 RAG，请求既要及时，也要达到任务质量门槛。[CacheSmith §5 式 (1)](../sources/paper-cachesmith.md)把 quality-gated SLO attainment（QSA）定义为逐请求同时满足两者的比例。用 $\ell_i$ 表示 TTFT、$z_i$ 表示任务质量，门槛分别为 $\tau_i,\gamma_i$，可重写为
