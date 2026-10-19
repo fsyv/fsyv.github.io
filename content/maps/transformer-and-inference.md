@@ -21,12 +21,15 @@ endorsement: ai-candidate
 2. [GPT 式生成的完整计算链](../notes/transformer-generation.md)：把嵌入、注意力、MLP、残差/LN、输出分布和采样串起来，区分训练与自由生成。
 3. [KV 为何可复用](../notes/kv-cache-mechanism.md)：由因果性推出状态不变，再分别计算单步、全过程和存储成本。
 4. [缓存优化减少的不同成本](../notes/kv-cache-optimization.md)：在机制明确后比较分页、共享、压缩、卸载与访问优化；放置受控微基准说明计时边界，再用[远程加载与重算](../notes/kv-cache-optimization.md#remote-load-or-recompute)检查有效带宽和固定开销是否使命中值得兑现。
-5. [逐请求质量与时延联合成功](../notes/storage-latency-and-slo.md#joint-success)：在理解精确与近似复用之后，判断节省计算是否同时达到任务质量和 TTFT 目标；两个边际通过率不能替代交集。
+5. [跨调用驻留与可访问性](../notes/kv-cache-optimization.md#residency-and-accessibility)：再区分闲置时限、量化表示、路由身份及重建调用率，避免将 pooled 容量回放视为真实每副本/时延/质量结论。
+6. [逐请求质量与时延联合成功](../notes/storage-latency-and-slo.md#joint-success)：在理解精确与近似复用之后，判断节省计算是否同时达到任务质量和 TTFT 目标；两个边际通过率不能替代交集。
 
 ## Branches
 
 - **另一种连接结构：**[视频时空注意力](../notes/attention-spatiotemporal.md)以 token 数和连接范围解释联合/分解计算，非因果场景不自动满足 KV 复用前提。
 - **另一种容量扩展：**[稀疏 MoE](../notes/moe-routing.md)改变参与计算的专家参数；它与注意力/KV 是不同成本项，不能互当替代方案。
+
+- **执行中的另一项容量：**[张量存活与峰值内存](../notes/tensor-liveness-and-peak-memory.md)解释为何相同总分配仍有不同峰值，以及 allocator 怎样破坏逻辑模型；不是 KV 服务已验证。
 
 ## Evidence
 

@@ -76,3 +76,5 @@ $$
 ## Links
 
 [优化与数值分析地图](../maps/optimization-and-numerics.md)先区分精确模型保证与有限精度计算。[LP 右端证书](lp-rhs-sensitivity-certificates.md)保证固定基在某区域内仍可行最优，不能据此断言数值求解稳定；两者是互补检查，而非同一结论的不同名称。
+
+方法联系：[张量存活与峰值内存](tensor-liveness-and-peak-memory.md)也区分数学模型与执行实现；其分配事件契约和 allocator 实测是额外系统证据，不是数值条件数或后向稳定性的等价命题。

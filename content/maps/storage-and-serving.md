@@ -25,6 +25,8 @@ endorsement: ai-candidate
 
 LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-reuse)→[物理放置与计时](../notes/kv-cache-optimization.md#placement-and-timing)→[质量/时延联合成功](../notes/storage-latency-and-slo.md#joint-success)阅读：先检查复用改变了什么，再检查访问成本，最后判断请求是否成功。
 
+[跨调用 KV 驻留](../notes/kv-cache-optimization.md#residency-and-accessibility)扩展容量问题：回收时限、对象表示和路由可访问性分别改变哪项成本？生产遥测的替身估计与 pooled 回放不能直接回答真实副本预算和请求耗时。
+
 ## Sources
 
 阅读范围是本次记录，不能由“经典”或发表场所替代。完整作者与版本见各来源页。
