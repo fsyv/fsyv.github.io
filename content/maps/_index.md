@@ -23,6 +23,7 @@ description: "按照问题、前置依赖和学习顺序组织知识。"
 | [优化与数值分析](optimization-and-numerics.md) | 参数变化后的模型保证与实际计算误差怎样分别核验？ |
 | [生态与动力学](ecology-and-dynamics.md) | 局部恢复、有限扰动与临界转变预警怎样区分？ |
 | [信息与激励](information-and-incentives.md) | 私人报告如何限制诚实、自愿与高收益方案的同时实现？ |
+| [分子遗传与实验识别](molecular-genetics-and-experimental-inference.md) | 哪些分布和追加处理能区分 DNA 复制机制，哪些结构结论仍未识别？ |
 | [统计物理](statistical-physics.md) | 非平衡功怎样给出自由能，有限样本为何仍会漏掉关键事件？ |
 
 [知识实践地图](knowledge-practice.md)从“笔记应当多大”这一问题出发，说明笔记、资料与开放问题怎样协作。

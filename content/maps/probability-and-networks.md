@@ -34,6 +34,8 @@ endorsement: ai-candidate
 - **区别：**排名概率的 Zipf 指数和度频率的幂律指数描述不同变量，不能看到双对数直线便互用参数。
 - **有条件的精确联系：**[统计物理](statistical-physics.md)从非平衡功进入指数平均；[有限状态瞬时切换](../notes/nonequilibrium-work-and-free-energy.md#sudden-switch-kl)在正则初态、同一有限状态空间和全部有限能量等条件下给出 KL 与平均耗散功的精确关系。一般有限时协议及训练损失不能直接沿用该物理解释。
 
+- **实验识别的结构类比：**[分子遗传地图](molecular-genetics-and-experimental-inference.md)从 DNA 示踪自身问题出发，用同平均/不同分布说明比较可观察预测的重要性；生物密度实验与网络构图并无数学等价。
+
 ## Sources-and-open
 
 [概率资料阅读范围](../sources/foundations-probability.md)区分讲义定义和仅读的实证摘要；[网络资料](../sources/foundations-networks.md)区分理论生成模型与统计检验。真实流量的时间局部性及现实拓扑是否符合模型，保留在[边界检验问题](../questions/foundations-validation.md)，不以空标题代替已有解释。
