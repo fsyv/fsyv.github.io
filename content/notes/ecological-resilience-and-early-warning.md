@@ -73,6 +73,8 @@ Scheffer 等 pp.57–58 的 Outlook 讨论突发外力、噪声变化、短序�
 
 ## Links
 
+- 结构类比：[交通延误传播](transport-delay-propagation-and-thresholds.md)也区分持续外力与内在传播/吸收；它采用非负截断的离散积压，不能把雨驱增长界当作生态分岔或预警阈值，也不证明修复系统的同类映射。
+
 - 支持：[生态韧性与预警来源](../sources/ecological-resilience-foundations.md)明确两篇旧资料的定义、页码和未读范围。
 - 阅读路径：[生态与动力学地图](../maps/ecology-and-dynamics.md)先解释生态学自身问题，再讨论预警和跨主题联系。
 - 结构类比：[服务目标与尾部评价](storage-latency-and-slo.md)也要分开评价对象、外部驱动和证据层次；生态恢复时间不证明 SLO，SLO 改善也不证明生态韧性。通过[存储地图](../maps/storage-and-serving.md)可比较修复速度与共同故障结构，但修复尚未证明对应生态系统的局部特征值。
