@@ -51,3 +51,5 @@ B 通道增加两项测量约束：[物理放置与访问历史](../notes/kv-cac
 2026-10-15，AI 候选进展：[SLO 解释](../notes/storage-latency-and-slo.md)已整合 [QBA](../sources/paper-quota-based-aging.md)的真实/预测类别、配额事件语义、聚合顺序与解析/模拟/部署边界。其 100 个归一轨迹窗口的 P99 中位数不能替代原尺度部署结果。
 
 继续检验时应固定实现与资源，按真实类别、预测类别和错误方向分层，同时报告 pooled 均值、总体分位数及逐窗口分布；保留未缩放轨迹与预测误差设定，再比较目标硬件的结果。本轮没有原始轨迹、源码审计或部署测量，问题保持 **open**，计划 2026-10-19 复评。
+
+2026-10-20，新增 AI 候选证据边界：[驻留回放](../notes/kv-cache-optimization.md#residency-and-accessibility)分别记录 session 身份、终生峰值/当前大小、每副本容量和路由可访问性；原始生产轨迹和生成器实现未取得，恢复/反量化/传输与输出质量未验证。[张量存活解释](../notes/tensor-liveness-and-peak-memory.md)要求固定 kernel、形状和参数，核对输出一致性、逻辑峰与真实 allocator 的 allocated/reserved/arena；其 CPU 证据不等于 GPU 或 KV 已验证。后续先选择明确公开负载与同一实现，分别测这些成本；本问题继续 **open**，2026-10-22 复评。

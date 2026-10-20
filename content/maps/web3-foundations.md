@@ -21,7 +21,7 @@ Web3 可以从一个问题进入：用户声称“拥有”某项数据、资产
 6. [内容寻址与持久化](../notes/web3-content-addressing.md)：CID 校验、数据保存与链外事实输入为何不能互相代替。
 7. [隐私保护的层次](../notes/web3-privacy-layers.md)：按输入、计算、输出和执行环境选择加密、证明、私密计算或硬件隔离。
 8. [边缘资源与协调成本](../notes/web3-edge-computing.md)：位置接近为何不保证端到端更快，资源布局与控制布局怎样分开。
-9. [协同缓存与局部决策](../notes/web3-cooperative-caching.md)：从目标和信息耦合进入集中训练、分散执行，避免把单调性误读为任意任务的最优保证。
+9. 先读[累计回报与策略改进条件](../notes/greedy-policy-improvement.md)，区分真实价值、估计值及误差门槛，再读[协同缓存与局部决策](../notes/web3-cooperative-caching.md)：从目标和信息耦合进入集中训练、分散执行，避免把单调性误读为任意任务的最优保证。
 10. [资产、金融与治理](../notes/web3-assets-and-governance.md)：NFT、DeFi、DAO 各能落实哪些规则，又依赖哪些链外或治理条件。
 11. [系统评估](../notes/web3-system-evaluation.md)：统一负载、成功标准、故障模型和控制实体，区分实测、模型推理与愿景。
 

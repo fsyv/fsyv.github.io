@@ -2,6 +2,35 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-10-20
+
+9 份去重候选 A2/B6/C1，5 次深入阅读 A2/B2/C1，形成 A1/B1/B2/C1 四项。A/B 为指定部分正文，C 为本文完整 12 张原扫描（不含上篇和参考文献追读）；不将题录筛选、版本复查或失败 PDF 当作深读。[晨报](../digests/2026-10-20.md)保留判断所需证据，[当日回执](runs/2026-10-20.md)由主控记录运行/审核/构建实际状态。
+
+| canonical / 版本 / 原始入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围与决定 |
+| --- | --- | --- | --- |
+| book:sutton-barto:reinforcement-learning:2e；[作者 PDF](http://incompleteideas.net/book/RLbook2020.pdf) | 2018 二版，版权页 2018/2020；生成元数据 2022 非修订证据 | P13 2026-10-13 / 2026-10-20 | A；548 页文件的身份/版权、§3.1印刷47–49/文件69–71、§4.2印刷76–80/文件98–102，p80仅收尾背景；视觉p78。旧资料重核，非全书；[来源](../../content/sources/sutton-barto-policy-improvement.md)。研究高/启发高/理论可靠高 |
+| jmlr:21:178；[Rashid等期刊入口](https://jmlr.org/papers/v21/20-081.html) | 会议前身2018；正式页记Submitted 1/20、Revised/Published 8/20 | 2026-10-12，P13补读10-13 / 2026-10-20 | A；首页版本、§3.1–3.4p10/§4p11式4–5/Theorem1，新增§4.1pp15–16/Tables1–2/AppendixAp38（附录Theorem2）；视觉15/38。未读随后B/全篇/SMAC复现；[来源](../../content/sources/web3-qmix-2020.md)。研究高/启发高/理论可靠高 |
+| arxiv:2610.22863 v1；[Arya等KV Residency](https://arxiv.org/abs/2610.22863) | 2026-10-16T03:09:13Z | 2026-10-20 / 2026-10-20 | B；30页PDF §2.2–2.3印刷5–7、§4.1–4.2起始p12/4.4pp13–14、§5开头–5.7pp15–20，§6起始/生成器限制辅助；未全文/视觉/轨迹/代码/复现。idle cap定位§5.1/图10pp15–16，metadata为§5.3末p18，首触floor§5.5。B1补遗漏；[来源](../../content/sources/paper-agentic-kv-residency.md)，研究高/启发高/可靠中 |
+| arxiv:2610.23328 v1；[Fomin等Peak-Memory Schedules](https://arxiv.org/abs/2610.23328) | 2026-10-16T11:31:09Z | 2026-10-20 / 2026-10-20 | B；HTML§2–4、5.1–5.3含Table1、5.5–5.6、8、AppendixA.1–A.4/C.1–C.2；其余引言表局部。Architect另核§2–5.2关键表述；未完整D–G/源码/视觉/复现。B2补遗漏；[来源](../../content/sources/paper-peak-memory-schedules.md)，研究中/启发高/可靠中 |
+| arxiv:2610.23086 v1；Xiao Liu/Yujia Fu/Yue Yu/Dan Huang，[PairSight: Characterizing and Predicting Operator-Level Interference in GPU Sharing for DNN Inference](https://arxiv.org/abs/2610.23086) | 2026-10-16T07:56:36Z | 2026-10-20 / 2026-10-20 | B；仅官方题录/摘要/history；硬件、划分、误差口径未核，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.23199 v1；Marco Tonin/Michele Tizzoni/Bruno Lepri/Luca Maria Aiello，[Validating LLM-generated political networks with survey-reported partisan exposure](https://arxiv.org/abs/2610.23199) | 2026-10-16T09:38:11Z | 2026-10-20 / 2026-10-20 | B；仅题录/摘要/history；构图/抽样/调查未核，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.23301 v1；Taha El Bakkali El Kadi/Eduard Gorbunov，[Acceleration Survives Heavy Tails and Generalized Smoothness](https://arxiv.org/abs/2610.23301) | 2026-10-16T11:06:17Z | 2026-10-20 / 2026-10-20 | B；仅题录/摘要/history，证明和参数条件未读，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.22508 v1；Duc A. Tran/Dung Truong/Duy Le，[TCDA: Tunable Coded Distributed Arrays for Data Availability Sampling](https://arxiv.org/abs/2610.22508) | 2026-10-15T18:03:29Z | 2026-10-20 / 2026-10-20 | B；仅题录/摘要/history，对手/good nodes/网络条件未核，暂缓。研究中/启发高/可靠低 |
+| doi:10.1073/pnas.44.7.671；[Meselson–Stahl PMC扫描](https://pmc.ncbi.nlm.nih.gov/articles/PMC528642/) | PNAS44(7)，1958-07；PMC记15日/Caltech记1日，不裁定；communicated05-14 | 2026-10-20 / 2026-10-20 | C；全部12扫描的p671下半部起、672–681正文/图1–9、682总结/脚注11–14，未纳入671上篇；未追引用/积分/复现。C1旧资料、首次分子遗传；[来源](../../content/sources/meselson-stahl-1958.md)。研究中/启发高/限定可靠高 |
+
+### 窗口、失败与版本复查
+
+B 窗口为 2026-10-13T07:30:00+08:00—2026-10-20T07:30:00+08:00，核查至 07:34:55+08；选择性检查 cs.DC/cs.PF/math.OC/physics.soc-ph recent 首屏、cs.DC/math.OC new，最新可见19日。计划的选择性监测完成，不代表穷尽分页、期刊会议、领域或版本。六新候选首提均为15/16日，早于昨日监测终点，都是补遗漏；正式发表检索未取得更早记录，不据此断言不存在。
+
+- A：作者教材入口web 502/timeout，直接内存读取成功；JMLR web截图失败、内存渲染成功；Stanford同名PDF版权2014/2015旧草稿仅核身份后排除，没有冒充正式二版。历史P13未审核的身份保留，今日新读与旧状态分别记录。
+- C：Caltech两个PDF入口重定向目标不可达、PMC PDF浏览器验证，共三个入口尝试失败；后经PMC图片入口取得全部12页原扫描并逐页视觉读取。失败PDF没有被说成已读，不另计候选。
+- B既有 arxiv:2610.21500/21035/20354/18925/17795 仍v1，2610.15755仍10-14的v2：只核官方版本入口，没有正文增读或正确性缺口解除。
+- Hugo latest仍v0.168.0，Obsidian公开公告仍10-05、Catalyst10-01，CommonMark仍0.31.2（2024-01-28）：官方入口复查，不算新来源或深读，不升级本库。
+
+### 新批次与身份保留
+
+昨日四项由 [PR #26](https://github.com/fsyv/fsyv.github.io/pull/26) 合入 origin/main `d1a8f84`，今日开始唯一 `research/batch-2026-10-20`，重置当前待审清单。合并不等于逐条用户确认；下方所有历史状态保留其日期/归属。A重建P13同一候选的note id `22876dbb-4560-4fb9-9f17-91b4f573a3c3`、source id `233e20fc-3e22-4a58-878a-fd1fabce913b`，依据今日重新核验解释，并非cherry-pick、认可旧稿或冒称首次发现。
+
 ## 2026-10-19
 
 11 份去重候选：A3 / B6 / C2；5 次指定部分正文深读：A1 / B2 / C2，形成 A1/B1/B2/C1 四项发现。A 的两个旧来源仅限定补查，没有新增可读正文；另核 B6 既有版本及 3 工具入口，不计为新候选或深读。详细阶段、工具限制与独立审核/构建结果由[当天回执](runs/2026-10-19.md)记录；[晨报](../digests/2026-10-19.md)保留影响理解的限制。未称通读、复现或穷尽监测。

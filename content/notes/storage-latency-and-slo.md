@@ -32,6 +32,8 @@ math: true
 
 **具体边界：**[远程 KV 加载与重算](kv-cache-optimization.md#remote-load-or-recompute)比较同请求两条执行路径，保留带宽、固定开销及尾延迟对照条件；[对象大小与命中目标](probability-zipf.md#object-size-and-objective)则说明请求命中和字节命中本身也会排序不同。二者支持先明确指标再评价服务，不以命中率直接替代端到端耗时。
 
+[跨调用驻留回放](kv-cache-optimization.md#residency-and-accessibility)再提供一个指标边界：重建调用率分母是调用次数，不是重建 token、恢复耗时或 TTFT；在恢复/反量化/传输和输出质量均未测时，更低重建率不能代替本页逐请求服务评价。
+
 ## Joint-success
 
 **2026-10-16 新增 AI 候选解释。** 对近似复用的 RAG，请求既要及时，也要达到任务质量门槛。[CacheSmith §5 式 (1)](../sources/paper-cachesmith.md)把 quality-gated SLO attainment（QSA）定义为逐请求同时满足两者的比例。用 $\ell_i$ 表示 TTFT、$z_i$ 表示任务质量，门槛分别为 $\tau_i,\gamma_i$，可重写为

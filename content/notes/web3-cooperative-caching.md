@@ -50,6 +50,23 @@ $$
 
 最后，学习结果有用与参与者不作恶是两条证明链。即使模型达到较高奖励，恶意输入、奖励伪造和通信故障仍要靠明确的验证和共识机制处理。
 
+## Three-obligations
+
+**2026-10-20 新增 AI 候选。** [QMIX 新读正文与附录](../sources/web3-qmix-2020.md#2026-10-20-revisit)区分三步：局部 utility 排序、联合模型最大化、真实累计回报改善。局部 $q_i$ 单独不是 expected return；不能把每个输出直接当作[单智能体策略改进](greedy-policy-improvement.md)要求的真实 $Q^\pi$ 。
+
+固定上下文和笛卡尔积动作空间，若 $\hat Q_{tot}=F_s(q_1,\ldots,q_n)$ 对每个输入非递减，则从任意联合动作出发，逐项替换为局部最大值都不会降低 $F_s$ 。所以局部贪心组合属于联合 argmax；若混合有平坦方向，可能另有全局并列最大动作，不能反向声称所有最大动作都必须局部最大。
+
+这种结构也限制表示能力。原文 Table 1b：行是 Agent 1，列是 Agent 2，动作均为 A/B。
+
+| 真实收益 | Agent 2 A | Agent 2 B |
+| --- | --- | --- |
+| Agent 1 A | 2 | 1 |
+| Agent 1 B | 1 | 8 |
+
+对方选 A 时 Agent 1 需 A>B，对方选 B 时却需 B>A；同一局部 utility 排序无法满足两者，并列也不能表示不同收益。非递减混合因此不能精确表示全表。然而 p.16/Table 2b 的单调近似仍可把其他三格表示成约 1.33、BB 保持 8，选到最优 BB。表示不精确与策略一定错误也必须分开。
+
+应用缓存时，需要依次核对局部信息是否区分决策所需状态、单调结构能否保留关键排序、联合估计对应何种真实价值及有何误差证据，再测完整请求成本。[原问题](../questions/greedy-value-improvement.md)继续 researching；模型内动作一致性不证明状态充分、训练收敛或部署收益。
+
 ## Links
 
 - 前置：[内容访问路径](web3-content-addressing.md)与[系统评估](web3-system-evaluation.md)。
@@ -57,3 +74,7 @@ $$
 - 安全互补：[学习共识协议](learning-consensus-protocol.md)与[共识基本条件](web3-consensus-assumptions.md)。
 - 未解决：[缓存策略收益应怎样复核](../questions/web3-caching-evaluation.md)。
 - 前置问题：[对估计 Q 取最大，何时改善真实回报](../questions/greedy-value-improvement.md)；将价值估计、策略改进与多智能体分解分别论证。
+
+## Evolution
+
+2026-10-20：原理解已限定 QMIX 模型内一致性；新增原文 pp.15–16 与附录证据，将局部 utility 和真实回报分开，补不可无损表示但仍可选最优的表格边界。候选解释未获用户确认，未验证缓存。

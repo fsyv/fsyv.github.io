@@ -1,16 +1,16 @@
-# 知识研究待审 · 2026-10-19 起
+# 知识研究待审 · 2026-10-20 起
 
-本批次有四项 AI 候选，均尚未获用户逐项确认。此前 15/16 日七项已由 [PR #25](https://github.com/fsyv/fsyv.github.io/pull/25) 合入，本批次不重复待审；历史[15 日](digests/2026-10-15.md)、[16 日](digests/2026-10-16.md)简报保留，合并不自动把候选变为用户确认。
+本批次有四项 AI 候选，尚未获用户逐项确认。昨日四项已由 [PR #26](https://github.com/fsyv/fsyv.github.io/pull/26) 合入本轮基线，不再重复待审；[昨日晨报](digests/2026-10-19.md)和历史来源归属保留，合并不自动升级 endorsement。10 月 13 日理论候选未审核的状态也保留，今日重新读取原文后重建同一知识身份，不把旧分支当作已接受知识。
 
-[2026-10-19 晨报](digests/2026-10-19.md)在正文展开问题、来源、公式和代表性数据；下表只列需要用户决定的具体增量。
+[2026-10-20 晨报](digests/2026-10-20.md)完整展开背景、机制、可复算例子和边界；本页只列本批次需要用户决定的增量。
 
-| 日期 / 发现 | 具体提议 | 依据及接受范围 | 用户决定 |
+| 日期 / 发现 | 具体候选修改 | 依据与接受范围 | 决定 |
 | --- | --- | --- | --- |
-| 2026-10-19/A1 | 在[迁移解释](../content/notes/storage-placement-and-migration.md#live-reconfiguration)中，分别观察字节到达、归属变化、副本确认和全局退出；将协议完成与逐请求服务评价分开 | [Squall §3–7 指定正文](../content/sources/paper-squall.md)给出路由复查、按需拉取、确认与恢复链；同机架闭环实验仍有局部阻塞。接受这一评价框架，不等于认可跨中心 SLO、任意恰好一次或旧算法计费解释 | 待审 |
-| 2026-10-19/B1 | 在[KV 成本解释](../content/notes/kv-cache-optimization.md#remote-load-or-recompute)中，区分“正确命中”与“值得加载”，保留固定参数下带宽与前缀长度的联合门槛 | [远程 KV 预印本](../content/sources/paper-remote-kv-load-or-recompute.md)提供加载/重算模型，门槛展开为 AI 推导；约 17k 仅单点拟合。接受模型及比较口径，不把门槛当部署规则，也不将相对拥塞加载的收益说成相对重算加速 | 待审 |
-| 2026-10-19/B2 | 在[字节容量与命中目标](../content/notes/probability-zipf.md#object-size-and-objective)中补两个目标的公式及三对象反例，说明请求命中更高仍可能字节命中更低 | [对象大小论文](../content/sources/paper-object-size-caching.md)支持指标区分；容量 2、大小 2/1/1、概率 0.4/0.3/0.3 的算例是 AI 静态推导。接受此边界，不据此确认动态策略最优或真实时延收益 | 待审 |
-| 2026-10-19/C1 | 接受[统计物理入门地图](../content/maps/statistical-physics.md)及[非平衡功解释](../content/notes/nonequilibrium-work-and-free-energy.md)的组织：区分精确等式、有限样本估计与严格瞬时切换 KL 特例 | [Jarzynski / Seifert 指定部分](../content/sources/nonequilibrium-work-sources.md)支持物理命题；两态例、Jensen 与 KL 展开为 AI 推导。限定正则制备、相应动力学和所列耦合/瞬时切换条件，不包含训练或存储成本的物理映射 | 待审 |
+| 2026-10-20/A1 | [策略改进解释](../content/notes/greedy-policy-improvement.md)及[QMIX 三项证据义务](../content/notes/web3-cooperative-caching.md#three-obligations)：区分模型排序、联合模型最大化、真实回报改善，补误差覆盖的保守门槛 | [教材指定重读](../content/sources/sutton-barto-policy-improvement.md)与[QMIX 新增部分](../content/sources/web3-qmix-2020.md)；矩阵展开、误差界/门槛和例子为 AI 推导。仅接受有限平稳 MDP 和有效统一误差证书下的充分条件，不含缓存状态充分、误差证书已取得、训练收敛或部署收益 | 待审 |
+| 2026-10-20/B1 | 扩展 [KV 驻留与可访问性](../content/notes/kv-cache-optimization.md#residency-and-accessibility)，分开驻留时限、表示和路由身份 | [Agentic KV 指定正文](../content/sources/paper-agentic-kv-residency.md)；两组实验的范围/计费/分母分开，首触下界为算术推导。接受评价框架不等于接受一小时或 int4 生产规则；恢复/质量/每副本容量仍未验证 | 待审 |
+| 2026-10-20/B2 | 新增[张量存活与峰值内存](../content/notes/tensor-liveness-and-peak-memory.md)，扩优化/推理地图和基础验证问题 | [固定 wrapper 调度论文](../content/sources/paper-peak-memory-schedules.md)及 AI 两分支例；仅模型契约内谈最优和精确实现，区分逻辑字节/allocated/reserved/arena；不保证物理显存、时延或 KV 收益 | 待审 |
+| 2026-10-20/C1 | 新增[分子遗传地图](../content/maps/molecular-genetics-and-experimental-inference.md)及 [DNA 复制与密度分布解释](../content/notes/dna-replication-and-density-distributions.md) | [1958 原扫描](../content/sources/meselson-stahl-1958.md)支持实验；三理想机制同平均/不同分布为 AI 推导。接受半保留分配与结构识别边界，不把子单位直接认作单链已由单篇证明，不含后续未读文献 | 待审 |
 
-可按“日期/发现 + 接受、暂缓或拒绝 + 具体小节与理由”记录决定，也可只接受一项中的部分解释。A1 的代码级恢复保证、B1 的跨长度与负载验证、B2 的真实轨迹收益、C1 的低功尾部与误差诊断均继续开放；不因接受入门解释而视为已验证。
+可按“日期/发现 + 接受、暂缓或拒绝 + 小节/理由”作决定，也可只接受一部分。A 的系统状态与误差证书、B 的真实恢复/分配器与服务测量、C 的后续结构证据均继续开放；接受基础解释不关闭应用或证据问题。
 
-独立审核、同提交构建与公开检查的实际 SHA 和结果见[当天运行回执](state/runs/2026-10-19.md)。新候选或表达有实质变化后重新审核；自动检查与合并均不能代替用户对具体判断的确认。
+独立审核、同提交构建与公开检查的实际 SHA 和结果见[当天运行回执](state/runs/2026-10-20.md)，由主控完成后据实记录；新候选或基线变化后须重新审核。
