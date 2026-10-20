@@ -2,6 +2,35 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-10-21
+
+8 份去重候选 A1/B6/C1，4 次指定正文深读 A1/B2/C1，形成 A1/B1/B2/C1 四项。A/B 为指定部分，C 为本文六张原扫描全读（不含 p.168 上篇，不追引用）。A 的 README 全读及 80,000 行样本解析/计算另列产物操作，不额外计论文深读；跨角色原文复核、版本入口和失败重试不重复计数。[晨报](../digests/2026-10-21.md)保留判断所需论证，[回执](runs/2026-10-21.md)由主控记录实际阶段和独立检查。
+
+| canonical / 版本 / 原始入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围与决定 |
+| --- | --- | --- | --- |
+| usenix:osdi20:yang；Juncheng Yang/Yao Yue/K. V. Rashmi，[Twitter 缓存集群研究](https://www.usenix.org/conference/osdi20/presentation/yang) | OSDI 2020-11-04—06 | 2026-10-21 / 2026-10-21 | A；§3.1–3.2印刷193–194、§4.4–4.5印刷195–197含脚注3、§6.1–6.2印刷200，另浏览§6.3开头。官方README固定c59112085b927c50acbe2d51175ebb09a9a52461全读，cluster026固定24347f630eca15f157a5f0e5925170c7a58815a6全解析；同研究不另计候选。有限GET/LRU实际计算与主控独立复算，非全文/原论文复现或生产回放。[来源/哈希/代码](../../content/sources/paper-twitter-cache-workloads.md)；研究中/启发中/有限序列可靠高，代表性未验证 |
+| arxiv:2610.25033 v1；Zhufan Gu/Qizhe Tang/Yuxin Wang/Xun Zhou/Hui Feng，[PlaneZip: Lossless Bit-Plane Compression of Training Activations Offloaded over PCIe](https://arxiv.org/abs/2610.25033) | 2026-10-18T05:44:24Z | 2026-10-21 / 2026-10-21 | B1；HTML§II-A–III-D、IV、V-A正文/V-B–F、TablesI/II/IV，TableIII仅前部，图仅图注；未全文/视觉/源码/复现。[来源](../../content/sources/paper-planezip.md)；同事件模拟收益/CPU压缩比，不是GPU引擎原型；所读正文未见开销正式分母公式，不换算吞吐。研究中/启发高/可靠中 |
+| doi:10.1073/pnas.2532180123；别名 arxiv:2610.26428 v1；Mauro Faccin/Tomas Scagliarini/Manlio De Domenico，[Systemic collapse emergence from climate-induced perturbations in transportation networks](https://www.pnas.org/doi/10.1073/pnas.2532180123) | PNAS/Crossref online 2026-10-16、issue10-20；arXiv 10-19T13:54:12Z | 2026-10-21 / 2026-10-21 | B2；预印HTML§2.1–2.5、3、4.1–4.3，后增A.3–A.6文字/图注；未A.1/A.2/视觉/源码/复现，PNAS仅身份/日期。主控另核关键主文/方法；最终读取范围含真实后增附录，不沿用早消息“未读SI”。[来源](../../content/sources/paper-climate-transport-collapse.md)；保留近似阈值，另列AI条件界。研究中/启发高/可靠中 |
+| arxiv:2610.26171 v1；Xijia Wang/TianZhang He/Mohammad Goudarzi，[CEMA-Router: Infrastructure-Aware Batch Routing for LLM Inference in Cloud-Edge Systems](https://arxiv.org/abs/2610.26171) | 2026-10-19T11:03:04Z | 2026-10-21 / 2026-10-21 | B；仅官方题录/摘要/history，目标、质量和基线未核，暂缓，不建永久理解。研究中/启发中/可靠低 |
+| arxiv:2610.26743 v1；Vinit Ranjan/Daniel Deza/Anushka Acharya/Jisun Park/Bartolomeo Stellato，[FOMTools: Development and AI-Assisted Code Generation for First-Order Methods](https://arxiv.org/abs/2610.26743) | 2026-10-19T17:08:17Z | 2026-10-21 / 2026-10-21 | B；仅官方题录/摘要/history，验证集合、残差和生成代码边界未核，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.25519 v1；Mobina Kashaniyan/Ali Jannesari，[ATEST: Adaptive Resource-Aware Test-Time Scaling for LLM Inference](https://arxiv.org/abs/2610.25519) | 2026-10-18T20:23:11Z | 2026-10-21 / 2026-10-21 | B；仅官方题录/摘要/history，预算、拒答分母、干扰与尾部未核，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.26295 v1；Paul Franke-Bergmann/Maya Kuhlmann/Alexander Heß/Marc Leinweber/Rüdiger Kapitza/Hannes Hartenstein/Franz J. Hauck/Christian Berger，[Pangolin: Efficient DAG-based BFT State-Machine Replication with TEE-Accelerated Commitment](https://arxiv.org/abs/2610.26295) | 2026-10-19T12:43:35Z；KITopen1000198163记10-20为同预印登记 | 2026-10-21 / 2026-10-21 | B；官方题录/摘要/history及KIT登记身份，TEE、活性与比较基线未核，暂缓。研究中/启发高/可靠低 |
+| doi:10.1073/pnas.15.3.168；Edwin Hubble，[1929速度—距离原文](https://pmc.ncbi.nlm.nih.gov/articles/PMC522427/) | 期次1929-03-15；PNAS另列04-25，communicated01-17不代出版日 | 2026-10-21 / 2026-10-21 | C；本文六扫描p168下半标题起至173，含Tables1/2、方程/结果、Figure1、四条题录；另全读NASA转录、PNAS三图核对，同研究不重复计数。未追引文/重建拟合。[来源](../../content/sources/hubble-velocity-distance-1929.md)；近期发现旧资料，首次天文，研究中/启发高/限定可靠高 |
+
+### 窗口、版本与访问边界
+
+B 窗口为 2026-10-14T07:30:00+08:00—2026-10-21T07:30:00+08:00，实际核查至07:34:46，补上次终点10-20T07:34:55后遗漏。选择性检查 cs.DC/cs.PF/math.OC/physics.soc-ph recent 默认首屏、DC/OC new及局部替换，最新可见公告20日；不称穷尽分页、版本、期刊或会议。六候选都早于昨日核查终点，为本周补遗漏；限定检索没有取得更早发表记录，不证明不存在。
+
+- A：官方样本目录 web 打开失败，后经官方 API 和固定 raw 成功；样本元数据/语义缺口没有因此解除。论文全文未读，不按论文完整采集性质推断短样本。原始匿名 key 与行不存仓库。
+- B：Crossref web 失败后只读 API 恢复，Obsidian urllib403 后 web 恢复，bs4不可用改标准库内存解析；无影响限定结论的未恢复读取失败。未入选四项只有题录/摘要，不能补写机制。
+- C：PMC web 验证、ADS摘要405/PDF不可达，PNAS 后续部分入口 cookie/PDF失败；经公开 HTML 取得六张官方扫描逐页读取，NASA新路径转录辅助。失败入口不计深读，未把转录缺失的表图称为已读。
+- 既有 arxiv:2610.22863/23328/21500/21035 仍v1，2610.15755仍10-14的v2，仅版本入口复查，未新增正文或解除旧缺口。
+- Hugo latest v0.168.0、Obsidian公开公告10-05/Catalyst10-01、CommonMark0.31.2 均无本轮新推荐；只核入口，不升级工具，不计新来源或深读。
+
+### 批次与归属
+
+[PR #28](https://github.com/fsyv/fsyv.github.io/pull/28) 已合入核对的 origin/main `af525f779464752dfa4d08a8e895dc54cd93ef81`，今日新建唯一 `research/batch-2026-10-21`，当前 review 只列今日。历史来源、coverage 和晨报保留，合并不等于用户逐项确认，不升级 endorsement。真实评论、运行与最终审核由主控回执记录；没有从沉默或模拟意见推断偏好。
+
 ## 2026-10-20
 
 9 份去重候选 A2/B6/C1，5 次深入阅读 A2/B2/C1，形成 A1/B1/B2/C1 四项。A/B 为指定部分正文，C 为本文完整 12 张原扫描（不含上篇和参考文献追读）；不将题录筛选、版本复查或失败 PDF 当作深读。[晨报](../digests/2026-10-20.md)保留判断所需证据，[当日回执](runs/2026-10-20.md)由主控记录运行/审核/构建实际状态。
