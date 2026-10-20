@@ -30,6 +30,7 @@ endorsement: ai-candidate
 - **另一种容量扩展：**[稀疏 MoE](../notes/moe-routing.md)改变参与计算的专家参数；它与注意力/KV 是不同成本项，不能互当替代方案。
 
 - **执行中的另一项容量：**[张量存活与峰值内存](../notes/tensor-liveness-and-peak-memory.md)解释为何相同总分配仍有不同峰值，以及 allocator 怎样破坏逻辑模型；不是 KV 服务已验证。
+- **训练生命周期的边界对照：**[激活压缩与换出规划](../notes/tensor-liveness-and-peak-memory.md#compression-and-offload)研究 forward/backward 之间的保存与重算；表示、传输和排程必须联合评价，不从压缩比推出训练加速或推理 KV 收益。
 
 ## Evidence
 

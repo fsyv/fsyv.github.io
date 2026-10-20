@@ -53,6 +53,27 @@ AI 可复算例：两独立分支 $A\to C$ 、 $B\to D$ ，A/B 各产生 8 单�
 
 GPU 暴露契约边界：RTX 2080 Ti/CUDA 12.6 的 50 个训练配置中，固定 wrapper 重排仍有 8 个物理峰上升，最多 1.5%。缓存 allocator 的舍入、块拆分和历史使分配依赖周围内存。因此分别报告逻辑请求字节、allocated、reserved 和静态 arena；ReDimNet B3/B6 的重算逻辑收益还可被 arena 碎片抵消，MAC 增量不能称为时延增量。
 
+## Compression-and-offload
+
+**2026-10-21 新增 AI 候选解释。** 上述固定事件模型只重排已有计算；若允许把训练激活换到主存，表示变化还会改变事件成本。[Gu 等的 PlaneZip（2026，v1）](../sources/paper-planezip.md)在 forward 末次使用与 backward 首次使用之间选择 keep/swap/drop：保留、换出再载回、或丢弃后重算。它按 128 B 块选择无损编码和 raw，4 KB chunk 另有长度头，压缩比计入 tag/header/padding。
+
+压缩既减少换出字节，也受引擎限速。原文 §III-C 式 (2) 的单向有效成本为
+
+$$
+x_t=\min\left(\frac{m_t}{\gamma},
+\max\left(\frac{m_t}{c_t\gamma},\frac{m_t}{B_{\rm CE}}\right)\right),
+$$
+
+其中 $m_t$ 为原始字节，$c_t$ 为预测的原始/压缩字节比，$\gamma$ 为链路每方向 B/s，$B_{\rm CE}$ 为以原始 B/s 计的引擎吞吐。内层取较慢瓶颈，外层允许旁路压缩。**AI 教学复算：**十进制 $m=120$ MB、$\gamma=12$ GB/s、$c=2$、$B_{\rm CE}=64$ GB/s 时，raw 为 10 ms、压缩链路为 5 ms、引擎为 1.875 ms，式子得到 5 ms。这里只是一条单向成本，尚无 setup、往返、排队和计算重叠，不能称训练快两倍。
+
+可交换窗口与各操作 deadline 相互约束，传输变短后必须重新决定准入、顺序和双队列排程；固定旧计划只压缩并不能实现完整收益。论文 Table II 的平台 B 是 A100 40 GB/BF16 mixed，假设 PCIe 4 每方向 24 GB/s、引擎每方向 64 GB/s。§V-C 以无内存约束训练为参照，报告峰值激活 50% 预算下，同一事件模拟器、同一规划器的无压缩 BW 基线 mean rematerialization overhead 从 13.0% 降至 PlaneZip 的 9.0%，下降 4 个百分点；按报告值相对下降约 30.8%。所读正文未给出该指标正式分母公式，不自行定义整步时间开销，更不能换算成吞吐提高 31%；预算排除参数、梯度与 optimizer 状态。
+
+五模型的压缩比几何均值为 BF16 1.71×、FP32 1.39×；比率由 CPU 小 batch 三轮取得，BF16 由 FP32 转换，形状 trace 使用 meta，没有 GPU 压缩引擎原型。模拟还忽略 fusion/copy 干扰；FlashAttention 不保存完整 attention 矩阵，也会缩小 GPT2 的此类收益。因此本节支持“传输表示改变规划问题”，尚不证明真实训练加速或推理 KV 收益。应固定模型、预算和同一实现，测量编码、双向传输、排队、重算、整步时间及输出，而不以压缩比替代结论。
+
+## Revision
+
+2026-10-21：原解释固定分配事件并比较顺序；新读 PlaneZip 后，将训练激活的表示、换出与重算明确为另一组可变条件，需要重建事件成本和规划。新增为 AI 候选，不改原固定事件模型的证书范围；硬件引擎与整步收益尚未复现，用户未确认。
+
 ## Links
 
 - [优化与数值分析地图](../maps/optimization-and-numerics.md)新增调度分支：模型最优与实现符合模型是两层证据。
