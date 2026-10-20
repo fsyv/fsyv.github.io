@@ -371,24 +371,35 @@ try {
     if (found.length > 1) throw Error('Multiple matching open PRs; inspect manually.');
     const title = `[Research Review] ${s.started}起 知识研究待审`;
     console.log(
-      `git push origin ${checked.head}:refs/heads/${s.branch}\ngh pr ${found.length ? 'edit ' + found[0].number : 'create --draft --head ' + s.branch + ' --base main'} --title ${quote(title)} --body-file <pinned-commit-review>`,
+      `git push origin ${checked.head}:refs/heads/${s.branch}\ngh pr ${found.length ? 'edit ' + found[0].number : 'create --draft --head ' + s.branch + ' --base main'} --title ${quote(title)} --body-file <pinned-commit-research>`,
     );
     if (args.includes('--execute')) {
       const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'research-pr-body-')),
-        body = path.join(temp, 'review.md');
+        body = path.join(temp, 'research.md');
       try {
         const repoUrl = run('gh', ['repo', 'view', '--json', 'url', '--jq', '.url'], s.worktree),
-          review = run('git', ['show', `${checked.head}:research/review.md`], s.worktree),
-          publicBody = review.replace(/\]\(([^)\s]+)\)/g, (link, target) => {
-            if (/^(?:[a-z][a-z\d+.-]*:|\/|#)/i.test(target) || !/\.md(?:[?#]|$)/.test(target))
-              return link;
-            return `](${new URL(target, `${repoUrl}/blob/${checked.head}/research/review.md`).href})`;
-          });
-        fs.writeFileSync(
-          body,
-          publicBody + '\n',
-          { mode: 0o600 },
-        );
+          render = (source) => run('git', ['show', `${checked.head}:${source}`], s.worktree)
+            .replace(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, '')
+            .trim()
+            .replace(/\]\(([^)\s]+)\)/g, (link, target) => {
+              if (/^(?:[a-z][a-z\d+.-]*:|\/|#)/i.test(target) || !/\.md(?:[?#]|$)/.test(target))
+                return link;
+              return `](${new URL(target, `${repoUrl}/blob/${checked.head}/${source}`).href})`;
+            }),
+          digests = run('git', ['ls-tree', '-r', '--name-only', checked.head, '--', 'research/digests'], s.worktree)
+            .split('\n')
+            .filter((file) => /^research\/digests\/\d{4}-\d{2}-\d{2}\.md$/.test(file) &&
+              path.basename(file, '.md') >= s.started)
+            .sort()
+            .reverse(),
+          publicBody = [
+            render(digests[0]),
+            '---',
+            render('research/review.md'),
+            ...digests.slice(1).map((source) =>
+              `<details>\n<summary>${path.basename(source, '.md')} 晨报</summary>\n\n${render(source)}\n\n</details>`),
+          ].join('\n\n');
+        fs.writeFileSync(body, publicBody + '\n', { mode: 0o600 });
         clean(s.worktree);
         if (run('git', ['rev-parse', 'HEAD'], s.worktree) !== checked.head)
           throw Error('HEAD changed after review gate; refusing to push.');

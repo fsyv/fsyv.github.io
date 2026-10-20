@@ -40,6 +40,7 @@ function fixture() {
     'scripts/check-kb.mjs': '// fixture',
     'scripts/research.mjs': helper,
     'research/README.md': 'fixture',
+    'research/digests/2026-10-11.md': '# Previous batch\n\nHistorical batch must stay out of this PR.',
     '.gitignore': '.env\nprivate/\ncontent/.obsidian/workspace.json\ncontent/_private/\n.local/\n',
   })) write(repo, name, text);
   git('add', '.');
@@ -109,7 +110,7 @@ function commit(f, s, message) {
 function candidate(f, s, date) {
   write(s.worktree, `content/note-${date}.md`, `Candidate ${date}`);
   write(s.worktree, `content/note with space-${date}.md`, 'Encoded filename link target');
-  write(s.worktree, `research/digests/${date}.md`, `Daily result ${date}: long digest text`);
+  write(s.worktree, `research/digests/${date}.md`, `---\ndate: ${date}\nmode: formal\n---\n\n# 每日知识研究简报 · ${date}\n\nDaily result ${date}: long digest text\n\nMechanism ${date}: the evidence supports this reasoning.\n\nBoundary ${date}: the conclusion depends on the stated conditions.\n\n见[日报笔记](../../content/note-${date}.md#links)、[日报编码路径](../../content/note%20with%20space-${date}.md#evidence)和[日报外部资料](https://example.invalid/source.md#section)。\n`);
   write(s.worktree, 'research/review.md', `# 待审清单\n\n${date}+A1 候选理解。见 [晨报](digests/${date}.md)、[笔记](../content/note-${date}.md#links)、[编码路径](../content/note%20with%20space-${date}.md#evidence)和[外部资料](https://example.invalid/source.md#section)。\n`);
   const ledger = path.join(s.worktree, 'research/state/ledger.md');
   write(s.worktree, 'research/state/ledger.md',
@@ -175,7 +176,8 @@ try {
     f.fail(['publish', date, '--execute'], /HEAD changed/);
     assert.equal(f.git('ls-remote', 'origin', `refs/heads/${first.branch}`), '');
     const pinned = f.run('git', ['rev-parse', 'HEAD'], first.worktree),
-      sourceReview = fs.readFileSync(path.join(first.worktree, 'research/review.md'), 'utf8');
+      sourceReview = fs.readFileSync(path.join(first.worktree, 'research/review.md'), 'utf8'),
+      sourceDigest = fs.readFileSync(path.join(first.worktree, `research/digests/${date}.md`), 'utf8');
     f.ok(['publish', date, '--execute']);
     const published = fs.readFileSync(path.join(f.dir, 'gh.body'), 'utf8'),
       blob = `https://example.invalid/knowledge-repo/blob/${pinned}`;
@@ -183,18 +185,49 @@ try {
     assert(published.includes(`[笔记](${blob}/content/note-${date}.md#links)`));
     assert(published.includes(`[编码路径](${blob}/content/note%20with%20space-${date}.md#evidence)`));
     assert(published.includes('[外部资料](https://example.invalid/source.md#section)'));
-    assert(!published.includes('](../content/') && !published.includes('](digests/'));
-    assert(!published.includes('long digest text'));
+    assert(published.includes(`[日报笔记](${blob}/content/note-${date}.md#links)`));
+    assert(published.includes(`[日报编码路径](${blob}/content/note%20with%20space-${date}.md#evidence)`));
+    assert(published.includes('[日报外部资料](https://example.invalid/source.md#section)'));
+    assert(!published.includes('](../content/') && !published.includes('](../../content/') && !published.includes('](digests/'));
+    assert(published.includes(`Daily result ${date}: long digest text`));
+    assert(published.includes(`Mechanism ${date}: the evidence supports this reasoning.`));
+    assert(published.includes(`Boundary ${date}: the conclusion depends on the stated conditions.`));
+    assert(published.indexOf(`# 每日知识研究简报 · ${date}`) < published.indexOf('# 待审清单'));
+    assert(!published.includes('mode: formal'));
+    assert(!published.includes('Historical batch must stay out'));
+    assert(!published.includes('<details>'));
     assert.equal(fs.readFileSync(path.join(first.worktree, 'research/review.md'), 'utf8'), sourceReview);
+    assert.equal(fs.readFileSync(path.join(first.worktree, `research/digests/${date}.md`), 'utf8'), sourceDigest);
     assert.match(f.ok(['prepare', next], first.worktree), /Reusing/);
     assert.deepEqual(f.state(), first);
     assert.match(fs.readFileSync(path.join(first.worktree, 'research/state/ledger.md'), 'utf8'), /2026-10-12\+A1/);
     candidate(f, first, next);
     f.fail(['check-publish', date], /after review/);
     attest(f, first, next);
+    const sourceFiles = ['research/review.md', `research/digests/${date}.md`, `research/digests/${next}.md`],
+      beforePublish = sourceFiles.map((file) => fs.readFileSync(path.join(first.worktree, file), 'utf8')),
+      nextHead = f.run('git', ['rev-parse', 'HEAD'], first.worktree);
     assert.match(f.ok(['publish', next, '--execute']), /edit 1/);
+    const combined = fs.readFileSync(path.join(f.dir, 'gh.body'), 'utf8'),
+      latestAt = combined.indexOf(`# 每日知识研究简报 · ${next}`),
+      reviewAt = combined.indexOf('# 待审清单'),
+      detailsAt = combined.indexOf('<details>'),
+      earlierAt = combined.indexOf(`# 每日知识研究简报 · ${date}`);
+    assert(latestAt >= 0 && latestAt < reviewAt && reviewAt < detailsAt && detailsAt < earlierAt);
+    assert(combined.includes(`<summary>${date} 晨报</summary>`));
+    assert(!combined.includes(`<summary>${next} 晨报</summary>`));
+    for (const day of [next, date]) {
+      assert(combined.includes(`Daily result ${day}: long digest text`));
+      assert(combined.includes(`Mechanism ${day}: the evidence supports this reasoning.`));
+      assert(combined.includes(`Boundary ${day}: the conclusion depends on the stated conditions.`));
+      assert(combined.includes(`https://example.invalid/knowledge-repo/blob/${nextHead}/content/note-${day}.md#links`));
+    }
+    assert(!combined.includes('mode: formal') && !combined.includes('Historical batch must stay out'));
+    assert.deepEqual(sourceFiles.map((file) => fs.readFileSync(path.join(first.worktree, file), 'utf8')), beforePublish);
+    assert.match(f.ok(['publish', next, '--execute']), /edit 1/);
+    assert.equal(fs.readFileSync(path.join(f.dir, 'gh.body'), 'utf8'), combined);
     assert.equal(f.calls().filter((a) => a[0] === 'pr' && a[1] === 'create' && a.includes('--draft')).length, 1);
-    assert.equal(f.calls().filter((a) => a[0] === 'pr' && a[1] === 'edit').length, 1);
+    assert.equal(f.calls().filter((a) => a[0] === 'pr' && a[1] === 'edit').length, 2);
     assert.equal(f.git('ls-remote', 'origin', `refs/heads/${first.branch}`).split(/\s/)[0],
       f.run('git', ['rev-parse', 'HEAD'], first.worktree));
     assert.equal(fs.readFileSync(path.join(first.worktree, 'research/state/ledger.md'), 'utf8'),
