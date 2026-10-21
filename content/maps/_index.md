@@ -22,6 +22,7 @@ description: "按照问题、前置依赖和学习顺序组织知识。"
 | [存储与推理服务](storage-and-serving.md) | 数据放在哪里、从哪里读取、何时值得搬动？ |
 | [优化与数值分析](optimization-and-numerics.md) | 参数变化后的模型保证与实际计算误差怎样分别核验？ |
 | [天文学与观测推断](astronomy-and-observational-inference.md) | 距离标尺、方向修正与独立检验怎样分开？ |
+| [地球物理与反演证据](geophysics-and-inverse-evidence.md) | 磁场异常怎样约束地壳运动，独立年代为何不可省？ |
 | [生态与动力学](ecology-and-dynamics.md) | 局部恢复、有限扰动与临界转变预警怎样区分？ |
 | [信息与激励](information-and-incentives.md) | 私人报告如何限制诚实、自愿与高收益方案的同时实现？ |
 | [分子遗传与实验识别](molecular-genetics-and-experimental-inference.md) | 哪些分布和追加处理能区分 DNA 复制机制，哪些结构结论仍未识别？ |

@@ -60,3 +60,5 @@ $$
 - 依据：[Hubble 原文与阅读范围](../sources/hubble-velocity-distance-1929.md)保留六页扫描的事实位置及当时结论边界。
 - 阅读路径：[天文学与观测推断](../maps/astronomy-and-observational-inference.md)先分观测与标定，再读联合修正及独立检验。
 - 互补：[条件数、稳定性与残差](numerical-conditioning-and-stability.md)研究固定问题的输入敏感性和算法误差；本页展示另一个证据缺口，即共同标尺与参数的可抵消性。小残差不能独立识别尺度，与小残差不能保证解准确属于不同机制，未声称数学等价或算出天文条件数。
+
+- 结构类比：[海洋磁异常的年龄—速率尺度](oceanic-magnetic-anomalies-and-spreading.md#age-position-and-rate)也可由相乘参数抵消而保持相同空间预测，需要独立年代约束。这里相同的是简化尺度自由度；磁反演和天文标定的物理量、几何与误差模型不同，不能互相验证。
