@@ -22,7 +22,7 @@ endorsement: ai-candidate
 ## Route
 
 1. [交叉熵、最大似然与 KL](../notes/probability-cross-entropy.md)：回答“如何评价预测分布”，保留固定目标分布的条件。
-2. [Zipf 排名请求模型](../notes/probability-zipf.md)：先解释边际热度与静态缓存，再读[对象大小与两个命中目标](../notes/probability-zipf.md#object-size-and-objective)、重用距离及教学反例，最后看[公开样本的受控投影](../notes/probability-zipf.md#public-sample-projection)；沿“概率→容量单位/目标→顺序→有限数据对照→操作与过期语义”理解模型遗漏。
+2. [Zipf 排名请求模型](../notes/probability-zipf.md)：先解释边际热度与静态缓存，再读[对象大小与两个命中目标](../notes/probability-zipf.md#object-size-and-objective)、重用距离及教学反例，最后看[公开样本的受控投影](../notes/probability-zipf.md#public-sample-projection)；再读[采样/实例/导出版本分层](../notes/probability-zipf.md#sample-scope-followup)；沿“概率→容量单位/目标→顺序→有限数据对照→范围与版本→操作与过期语义”理解模型遗漏，先核导出关系再做生产回放。
 3. [ER 与无标度网络](../notes/network-random-and-scale-free.md)：回答“边如何形成、度分布如何检验”，区分生成机制、分布形状与实证证据。
 4. [交通延误传播与条件阈值](../notes/transport-delay-propagation-and-thresholds.md)：在结构之后加入时变运行权重、雨量驱动、吸收和非负约束；需额外掌握矩阵乘法与离散递推，区分数据外测试、数值情景及有条件的增长充分界。
 

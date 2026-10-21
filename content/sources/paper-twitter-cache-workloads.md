@@ -92,3 +92,20 @@ print('timestamp inversions', [
 计算支持[Zipf 的时间顺序边界](../notes/probability-zipf.md#public-sample-projection)：同一有限样本计数不足以确定这个 LRU 模型的命中。固定计数排列不是 IID；一个种子不能估计所有排列的期望、方差或置信区间，也没有比较不同策略。过滤写入、取消过期、统一大小及 miss 即插均改变生产模型；没有字节容量、分配碎片、后端成本、完成率或时延证据，也没有从 value size 为 0 推断生产 hit/miss。
 
 [基础验证问题](../questions/foundations-validation.md)仍开放：须先查样本选择、遗漏、实例范围和时间顺序说明，才能决定能否建立保留操作和寿命语义的回放。有限离散序列计算可复核，并不弥补这些代表性和语义缺口。[概率地图](../maps/probability-and-networks.md)将本例安排在教学反例之后。
+
+
+## Metadata-followup
+
+**2026-10-22 增读旧资料。** 重读原论文 §2.1–2.2（印刷 p.192）、§3.1–3.2（pp.193–194），完整复读上述固定 README；通过官方 GitHub API 完整读取 [issue #3](https://github.com/twitter/cache-trace/issues/3) 正文与 4 条评论、[issue #8](https://github.com/twitter/cache-trace/issues/8) 正文与 3 条评论。未通读原论文、审计采集/导出代码或取得完整轨迹。两条讨论是 2021/2023 年的作者说明，本日发现不等于本日新发表。
+
+论文描述生产 cluster 有 20 至上千个实例，除故障外各实例 key 不重叠；原研究把 klog 请求采样配置由默认 1/100 改为 100%，每 cluster 选两个实例采集一周，共 153 clusters/306 instances，主要分析其中 54 个大 cluster。这里的 100% 是选中实例的请求采样配置，不能升级为已经审计日志绝无遗漏，也不表示 cluster 全部实例均被覆盖。
+
+官方账号 `1a1a11a` 的 [GitHub profile](https://github.com/1a1a11a) 名称为 Juncheng Yang。其 [2021-03-29 第一条说明](https://github.com/twitter/cache-trace/issues/3#issuecomment-809402555)（created 14:02:52Z，updated 14:23:05Z）称公开 trace 每 cluster 取一个 node/container，收集时无请求抽样、对象在 node 间分片。其[样本回复](https://github.com/twitter/cache-trace/issues/3#issuecomment-809420086)（created 14:22:14Z，updated 14:24:06Z）在提问明确指向 `samples/2020Mar` 后称 samples 取前 100 万请求，结束时间因请求率不同而变化。这些是作者对发布范围与意图的说明；论文两个实例与公开一个实例应分别陈述，两者具体选择/映射未取得。
+
+一般说明还不能替代逐文件清单。本日重新解析固定 cluster026，仍为 80,000 行、11,115,448 字节，GET/SET 计数与时间戳逆序均与昨日相同，没有重做 LRU 实验。官方 Git tree 核得初提交 `cf828b5e83fdd65e6db7613ecb4c929df6ed7523`（2020-10-13T03:56:14Z）的 `samples/2020Mar/cluster26`、重命名前版本及固定/当前 `cluster026` 均指向相同 blob `f7e6f458c79ed4aedcb80aba713d18f10148e28d`，size 11,115,448。因而不能把“前 100 万”写成这个文件已核实的实际行数，也不能由 80,000 行反推出采样率、遗漏率、完整前缀或后来裁剪。当前缺逐文件 manifest、导出脚本和对应完整区间。
+
+排序另有已知修复历史。作者在 [2023-02-20 回复](https://github.com/twitter/cache-trace/issues/8#issuecomment-1437643683)（22:49:44Z）建议使用 `.sort` 文件；[2023-02-21 回复](https://github.com/twitter/cache-trace/issues/8#issuecomment-1437918603)（06:21:01Z）说明旧文件原本也按 timestamp 排序，但发现 sorting bug 后重新排序，并保留旧文件。该说明支持区分导出排序版本，不足以确定 cluster026 那一处逆序的成因，更不保证秒内物理全序。
+
+固定 README 的最后修改仍为 `c59112085b927c50acbe2d51175ebb09a9a52461`（2020-11-05T03:08:32Z）；当前 master `1c503676d6972d4394a360e09162149a6c00f516` 最后提交为 2020-11-10T16:03:04Z。README 未记上述讨论细则。SNIA 完整 trace 入口本轮不可访问，未下载约 2.8 TB 数据；第三方修复 PR 代码未读。来源作者评论不是用户反馈。
+
+本日增量支持 [Zipf 笔记的范围分层](../notes/probability-zipf.md#sample-scope-followup)：请求采样配置、实例覆盖、时间窗口和导出版本分别核验；[基础验证问题](../questions/foundations-validation.md)仍 open，未完成生产语义回放。

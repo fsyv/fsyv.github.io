@@ -55,3 +55,6 @@ B 通道增加两项测量约束：[物理放置与访问历史](../notes/kv-cac
 2026-10-20，新增 AI 候选证据边界：[驻留回放](../notes/kv-cache-optimization.md#residency-and-accessibility)分别记录 session 身份、终生峰值/当前大小、每副本容量和路由可访问性；原始生产轨迹和生成器实现未取得，恢复/反量化/传输与输出质量未验证。[张量存活解释](../notes/tensor-liveness-and-peak-memory.md)要求固定 kernel、形状和参数，核对输出一致性、逻辑峰与真实 allocator 的 allocated/reserved/arena；其 CPU 证据不等于 GPU 或 KV 已验证。后续先选择明确公开负载与同一实现，分别测这些成本；本问题继续 **open**，2026-10-22 复评。
 
 2026-10-21，新增 AI 候选进展：[公开样本 GET 投影](../notes/probability-zipf.md#public-sample-projection)已完成有限序列计算：61,874 次 GET 保持完全相同计数，文件序与一个固定随机排列在三个对象容量下仍有不同 LRU 命中。代码、固定哈希及条件见[来源](../sources/paper-twitter-cache-workloads.md)。这补足了“公开样本受控对照”，没有完成完整生产语义回放；过滤写入、TTL 和大小会改变问题，公布文件也非严格时间序。样本选择、请求遗漏与实例范围尚未知，本问题继续 **open**。2026-10-22 只回访这些元数据和时间顺序证据；若无新增证据，记录障碍，不重复同一个种子或摘要检索。
+
+
+2026-10-22，AI 候选进展：[样本范围增读](../notes/probability-zipf.md#sample-scope-followup)区分三层：原研究每 cluster 两个选中实例、请求采样配置 100%；公开 trace 按作者说明每 cluster 一个实例、无请求抽样；短 sample 的一般百万前缀说明与 cluster026 实际 80,000 行尚未闭合。100% 采样配置不等于已审计无日志遗漏，更不等于全 cluster 覆盖。作者另确认有 sorting bug 的重排版本，但未确定本样本逆序成因或秒内顺序。仍缺逐文件 manifest、导出脚本、sample→full 对应区间、`.sort` 版本及操作结果/寿命语义；不重做同 seed LRU，不把作者讨论当用户反馈。问题继续 **open**，2026-10-29 仅在取得这些新证据时推进。
