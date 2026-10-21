@@ -25,7 +25,7 @@ Andrew Bond、Syed Izhan Khilji，*Budgeted Admission from Timestamped Capacity 
 
 ## Calibration-and-prefix-guard
 
-§IV-A 式 10–11/Theorem 3：以 $n$ 个独立 Bernoulli 翻转增量得到 $K$，构造单侧 Clopper–Pearson 上端 $p^+$（将上端截为不超过 1/2），再用 $q^+$ 选保守策略。在模型正确、评估增量独立等条件下，对拟合策略有 $P_K[\rho(K)\le\varepsilon]\ge1-\delta$。这是关于校准数据的覆盖，不是每段运行违规比例或整个扫参集合的同时覆盖。
+§IV-A 式 10–11/Theorem 3：以 $n$ 个独立 Bernoulli 翻转增量得到 $K$，构造单侧 Clopper–Pearson 上端 $p^+$（将上端截为不超过 1/2），再用 $q^+$ 选保守策略。在模型正确、评估增量独立等条件下，对拟合策略有 $P_K[\rho(K)\le\varepsilon]\ge1-\delta$。其中 $0<\delta<1$ 为允许的校准失败概率上限，$1-\delta$ 为所要求的置信水平。这是关于校准数据的覆盖，不是每段运行违规比例或整个扫参集合的同时覆盖。
 
 §IV-B 式 12–14/Theorems 4–5/Algorithm 1：已准入决策分为已收到真实标签的 $R_t$ 和未解决的 $U_t$，坏标签 $C_s=1-X_s$；以 $W_t=\sum_{s\in R_t}C_s+|U_t|$、$L_t=\lfloor\varepsilon t\rfloor$ 维护账本。仅 base proposal 为 1 且 $W_t+1\le L_t$ 才准入。未解决全部占用坏预算，好标签释放、坏标签保留，缺失不释放。真实标签条件下，对任意二值状态、提案及乱序延迟反馈，实际坏数逐前缀满足 $H_t\le\lfloor\varepsilon t\rfloor$。最大许可是相同当前历史、任意二值补全类的 pointwise 结论，不是最优长期吞吐；保护器可牺牲基础策略的 frontier 收益。
 
