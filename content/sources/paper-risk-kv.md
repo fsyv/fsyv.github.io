@@ -24,13 +24,13 @@ Wang Yuekai，*RISK-KV: Quality-Aware Selective KV Cache Reconstruction for Dist
 
 ## Evidence
 
-WikiText2 历史 512 token、随后 512 token teacher forcing；每模型三 seed 各八个 paired test requests，拟合/验证选择/独立测试分开。Table I 三模型 Qwen0.5B/1.5B/TinyLlama 可省略 raw 历史 KV 2/4/2 MiB，即 33.3%/28.6%/18.2%；不是 GPU 净常驻节省。
+评估模型依次为Qwen2.5-0.5B-Instruct、Qwen2.5-1.5B-Instruct和TinyLlama-1.1B-Chat-v1.0。WikiText2 历史 512 token、随后 512 token teacher forcing；每模型三 seed 各八个 paired test requests，拟合/验证选择/独立测试分开。Table I 三模型 Qwen0.5B/1.5B/TinyLlama 可省略 raw 历史 KV 2/4/2 MiB，即 33.3%/28.6%/18.2%；不是 GPU 净常驻节省。
 
 Table II TinyLlama、epsilon=0.002、24 独立评估请求，违约定义为该请求观测 paired NLL 差超过 epsilon：MeanGate 10/24、均省1.667 MiB；Upper90 2/24、0.667；StableSplit 0/24、0.333，后者约三分之二评估请求回退 exact。0/24 不等于真实风险零，均值门禁不自动保证每个请求。
 
 式15 的净节省为共享请求数乘每请求实际驱逐字节，再减共享 predictor 与额外辅助驻留，必须在同存储层计费。Table III 为每组均值，Qwen0.5B FoldedFP32 每组约 2.002 MiB；其 G2–G5 配置的预测器约为单请求省略 2 MiB 的四倍，不能把 raw 33.3%当净省略。不能用表中平均乘组数冒充精确 bank 测量。
 
-局部计时使用 RTX3060 Laptop GPU、batch1、历史512加同一已知 current token，每模型八 validation 请求，五次预热/每请求30次。Replay 从 CPU token IDs 重放513位置；RISK 从 CPU 传保留 exact 历史 KV，使用已在GPU的 FoldedFP32 predictor、重建/装入完整KV，再处理同current token。两者模型/预测器已加载预热，比较 CPU→GPU/恢复/下一步 logits；均值 Replay/RISK 为60.66/40.09、125.41/48.99、114.07/34.50 ms，即1.51/2.56/3.31倍。不是完整KV直接加载基线或无线迁移，后续decode已经物化完整KV。
+局部计时使用 RTX3060 Laptop GPU、batch1、历史512加同一已知 current token，每模型八 validation 请求，五次预热/每请求30次。Replay 从 CPU token IDs 重放513位置；RISK 从 CPU 传保留 exact 历史 KV，使用已在GPU的 FoldedFP32 predictor、重建/装入完整KV，再处理同current token。两者模型/预测器已加载预热，比较 CPU→GPU/恢复/下一步 logits；按上述模型顺序，均值 Replay/RISK 为60.66/40.09、125.41/48.99、114.07/34.50 ms，即1.51/2.56/3.31倍。不是完整KV直接加载基线或无线迁移，后续decode已经物化完整KV。
 
 ## Support-and-limits
 

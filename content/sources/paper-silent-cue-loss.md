@@ -18,11 +18,11 @@ Yikai Zhao、Saurabh Pandey、Pradeep Kumar Misra，*What the Author Wrote, What
 
 ## Evidence
 
-任务寻找红字或非白高亮要求，gold由OOXML run属性构建；84文档含332marked、4192unmarked，配对运行经所有arm成功与sizecap筛成76或79文档，不是全部普遍率语料都参与问答。默认ClaudeOpus4.6/temp0，连续四个opening content words matcher，严格词面匹配不是LLM judge；有一条gold天然不可匹配。
+任务寻找红字或非白高亮要求，gold由OOXML run属性构建；公开政策语料筛成的84份真实Word文档含332marked、4192unmarked，配对运行经所有arm成功与sizecap筛成76或79文档，不是全部普遍率语料都参与问答。默认ClaudeOpus4.6/temp0，连续四个opening content words matcher，严格词面匹配不是LLM judge；有一条gold天然不可匹配。
 
 Table1首次1368调用的micro F1为typed0.690、untyped0.605、docx2python0.586、docling0.150、plain0.075；typed/untyped保留相同文字/rawcue，只删semanticRole。修复后预注册1422调用为typed/untyped micro0.667/0.597，而paired macro增量0.085、bootstrap区间[0.035,0.145]、Holm p=0.049；文档为统计单位。角色收益跨六模型只三个显著，不能改成通用作用。
 
-Table2外部59文档326items的加权断言分0.959/0.810/0.720，不是F1；其中143个表格item本文和docx2python同0.986。补回页眉脚注metadata等使本文parser自身从0.853到0.959，不把总差归颜色。Table3的68文档完整pipeline仍有内容保留损失，不能称无损转换。
+Table2外部59文档326items的加权断言分0.959/0.810/0.720（依次为本文/docx2python/docling），不是F1；其中143个表格item本文和docx2python同0.986。补回页眉脚注metadata等使本文parser自身从0.853到0.959，不把总差归颜色。Table3的68文档完整pipeline仍会丢失gold要求文字；其retention计量是这些要求文字在最终package中的留存比例，不是全文字符保留率，不能称无损转换。
 
 ## Limits-and-support
 

@@ -130,7 +130,7 @@ MRR 将 int4 记为 fp16 的四分之一大小，并计入同一 HBM；加入量
 
 **2026-10-23 新增 AI 候选解释。** [RISK-KV 指定正文](../sources/paper-risk-kv.md)研究暂停请求恢复时，保留目标层组两侧精确KV anchors，省略中间组的历史KV，恢复时再用共享预测器重建。它先将anchor K逆RoPE，与同位置V共同预测目标层的normalized attention projection input，经过冻结模型的原投影得到K/V，K再施回原位置RoPE。在线不读取已删目标KV；仿射预测与原投影可折叠，但折叠等价仅针对相同预测计算，不代表预测就是精确KV。
 
-质量选择对每个请求比较相同target token上的paired NLL差 $d_r(S)=\ell_r(S)-\ell_r(\varnothing)$，其中 $S$ 为被重建的层组，空集是exact基线，$\ell_r$ 为请求 $r$ 的平均负对数似然。以平均差的bootstrap单侧90%上端不超过预算 $\epsilon$ 作经验门禁；先按单组风险/省字节排序，再重测联合前缀，不能直接加总单组损失，亦无全局最优保证。WikiText2采用512历史加512后续teacher-forcing，拟合、验证选择和独立测试分开；每模型三seed各八个paired测试请求。
+质量选择对每个请求比较相同target token上的paired NLL差 $d_r(S)=\ell_r(S)-\ell_r(\varnothing)$，其中 $S$ 为被重建的层组，空集是exact基线，$\ell_r$ 为请求 $r$ 的平均负对数似然。以平均差的bootstrap单侧90%上端不超过预算 $\epsilon$ 作经验门禁；先按单组风险/省字节排序，再重测联合前缀，不能直接加总单组损失，亦无全局最优保证。评估模型依次为Qwen2.5-0.5B-Instruct、Qwen2.5-1.5B-Instruct和TinyLlama-1.1B-Chat-v1.0，WikiText2采用512历史加512后续teacher-forcing，拟合、验证选择和独立测试分开；每模型三seed各八个paired测试请求。
 
 均值门禁不等于逐请求达标。TinyLlama、$\epsilon=0.002$ 的24独立评估请求中，MeanGate/Upper90/StableSplit分别有10/2/0个请求的观测paired NLL差超预算，平均省略1.667/0.667/0.333MiB；StableSplit约三分之二评估请求回退exact。0/24不是总体风险为零的证明，teacher-forced质量也不等于自由生成正确性。
 
@@ -140,7 +140,7 @@ $\Delta M=N M_{\mathrm{saved}}-M_{\mathrm{pred}}-M_{\mathrm{aux}},$
 
 其中 $N$ 为共享同模型/同topology预测器的请求数，$M_{\mathrm{saved}}$ 为每请求实际驱逐的历史KV字节，$M_{\mathrm{pred}}$ 为共享预测器，$M_{\mathrm{aux}}$ 为额外辅助驻留，须在同存储层计费。该配置四组FoldedFP32预测器约为单请求省略量的四倍，TableIII每组均值约2.002MiB，不能当精确bank总量。**AI简化算例：**假设共享预测器8MiB、每请求省2MiB、辅助为0，则净省 $(2N-8)$ MiB：一请求反增6MiB、四请求打平、至少五请求才净省。这不是作者精确bank测量。
 
-局部时延在RTX3060 Laptop GPU、batch1、512历史加同一个已知current token，比较从CPU token IDs重放513位置，与从CPU传保留KV、使用已驻GPU预测器重建完整KV再算同一next-token logits。五次预热、每模型八validation请求/每请求30次，Replay/RISK均值60.66/40.09、125.41/48.99、114.07/34.50ms。该1.51/2.56/3.31倍只对这个恢复基线成立，不是与完整KV直接加载、真实无线或所有服务方案比较。之后decode已物化完整cache，不能声称长期GPU净节省。
+局部时延在RTX3060 Laptop GPU、batch1、512历史加同一个已知current token，比较从CPU token IDs重放513位置，与从CPU传保留KV、使用已驻GPU预测器重建完整KV再算同一next-token logits。五次预热、每模型八validation请求/每请求30次，按上述模型顺序，Replay/RISK均值60.66/40.09、125.41/48.99、114.07/34.50ms。该1.51/2.56/3.31倍只对这个恢复基线成立，不是与完整KV直接加载、真实无线或所有服务方案比较。之后decode已物化完整cache，不能声称长期GPU净节省。
 
 这在[近似复用边界](kv-cache-mechanism.md#approximate-reuse)之外，具体补上共享预测器摊销、均值风险/逐请求质量及恢复计时义务。尚未核代码、长上下文大模型或真实无线；与[逐请求联合成功](storage-latency-and-slo.md#joint-success)的联系是评价条件，不能由平均NLL或局部恢复时间直接推出联合SLO。
 
