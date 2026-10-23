@@ -36,3 +36,5 @@ status: open
 - 方法：[系统评估](../notes/web3-system-evaluation.md)。
 - 成本来源：[边缘计算](../notes/web3-edge-computing.md)、[内容寻址与保存](../notes/web3-content-addressing.md)。
 - 组织入口：[Web3 基础地图](../maps/web3-foundations.md)。
+
+2026-10-23复评（AI候选）：仍缺同实现、同轨迹并扣除通信/更新/训练成本的端到端对照，不重复基础模型资料。新[KV重建](../notes/kv-cache-optimization.md#selective-reconstruction)只补特定推理对象的质量与恢复边界，不能替代本问题的协同缓存实验；保持open，2026-10-30复评上述可公开对照对象。

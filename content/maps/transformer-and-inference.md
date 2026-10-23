@@ -32,6 +32,8 @@ endorsement: ai-candidate
 - **执行中的另一项容量：**[张量存活与峰值内存](../notes/tensor-liveness-and-peak-memory.md)解释为何相同总分配仍有不同峰值，以及 allocator 怎样破坏逻辑模型；不是 KV 服务已验证。
 - **训练生命周期的边界对照：**[激活压缩与换出规划](../notes/tensor-liveness-and-peak-memory.md#compression-and-offload)研究 forward/backward 之间的保存与重算；表示、传输和排程必须联合评价，不从压缩比推出训练加速或推理 KV 收益。
 
+**恢复分支：**在精确复用与跨调用驻留之后，读[选择性KV重建](../notes/kv-cache-optimization.md#selective-reconstruction)，分开raw历史省略、共享预测器净成本、均值风险和局部恢复计时；不把512token小模型恢复结果写成生产无线迁移或长期decode净省。
+
 ## Evidence
 
 [Transformer/视频/采样资料](../sources/foundations-transformer.md)、[KV 系统资料](../sources/foundations-kv-systems.md)和[Switch 资料](../sources/foundations-moe.md)均列出实际读取范围。没有来源或实验条件的性能倍数不构成比较依据。

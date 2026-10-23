@@ -58,6 +58,8 @@ GPU 内预取、跨 PCIe 卸载和跨中心搬运都涉及数据移动，属于�
 
 [生态与动力学地图](ecology-and-dynamics.md)区分局部恢复、状态边界与扰动过程。它与修复速度、共同故障结构及服务评价有结构类比；真实存储存在离散重配置和人工控制，尚未建立动力系统映射或经验联系，不能用生态预警统计量直接推断故障风险。
 
+**可恢复表示的边界：**[选择性历史KV重建](../notes/kv-cache-optimization.md#selective-reconstruction)把恢复质量、共享predictor驻留和恢复时间加入字节成本；它是特定推理对象的条件解释，不替代协同缓存或存储迁移的端到端验证。
+
 ## Questions
 
 [来源证据补全](../questions/storage-source-evidence.md)决定哪些机制还不能进入解释；[迁移收益如何计入过渡代价](../questions/storage-migration-evaluation.md)决定怎样比较动态策略。当前范围支持基本分析路径，不支持把不同论文拼成统一最优算法。
