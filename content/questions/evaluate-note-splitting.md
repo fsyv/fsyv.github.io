@@ -43,3 +43,5 @@ description: "为候选笔记拆分方法记录尚未填补的证据缺口。"
 ## Links
 
 [返回开放问题](./_index.md) · [回到主题地图](../maps/knowledge-practice.md)
+
+2026-10-23复评（AI候选）：仍缺目标读者、公开样本和推理遗漏对照，未开展拆分前后人类研究，状态open。[文档线索保留](../notes/document-cues-and-semantic-preservation.md)只提供输入测量前提，[Stroop对照](../notes/stroop-interference-and-experimental-controls.md)仅启发同时记录用时/错误与控制顺序熟悉；二者不证明拆分有效。2026-10-30先核公开样本和目标读者可得性，再决定具体比较范围。
