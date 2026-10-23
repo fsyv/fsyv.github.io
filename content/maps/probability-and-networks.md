@@ -37,6 +37,10 @@ endorsement: ai-candidate
 
 - **实验识别的结构类比：**[分子遗传地图](molecular-genetics-and-experimental-inference.md)从 DNA 示踪自身问题出发，用同平均/不同分布说明比较可观察预测的重要性；生物密度实验与网络构图并无数学等价。
 
+## Validation-branch
+
+[反复评分与留出集复用](../notes/adaptive-validation-and-holdout-reuse.md)是独立统计分支：先读固定族诚实挑优反例，再用独立样本/有界分数推统一界，最后辨认自适应访问的新条件。它补评价选择规则，不由Zipf或网络幂律推出，也不假定真实缓存请求独立。
+
 ## Sources-and-open
 
 [概率资料阅读范围](../sources/foundations-probability.md)区分讲义定义和仅读的实证摘要；[网络资料](../sources/foundations-networks.md)区分理论生成模型与统计检验。真实流量的时间局部性及现实拓扑是否符合模型，保留在[边界检验问题](../questions/foundations-validation.md)，不以空标题代替已有解释。
