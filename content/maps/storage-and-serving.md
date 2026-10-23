@@ -23,6 +23,8 @@ endorsement: ai-candidate
 2. [为什么还要决定路由与迁移](../notes/storage-placement-and-migration.md)：在可行布局之间加入读写成本与到达过程，再读[在线重配置](../notes/storage-placement-and-migration.md#live-reconfiguration)中确认、路由与恢复的执行链；区分字节复制完成、全局完成和逐请求服务，再比较相同外生请求下的费用回本。
 3. [平均时延、尾概率与 SLO](../notes/storage-latency-and-slo.md)：最后明确优化对象、真实/预测类别和窗口聚合顺序，再区分解析近似、模拟与部署，防止不同论文的“更快”被直接合并。
 
+4. [陈旧记录下的概率准入与前缀保护](../notes/timestamped-admission-and-prefix-budgets.md)：在指标定义之后，分别理解外生状态的概率分配、校准数据覆盖和未解决标签占额；这些保证不自动适用于动作改变容量的真实集群。
+
 LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-reuse)→[物理放置与计时](../notes/kv-cache-optimization.md#placement-and-timing)→[质量/时延联合成功](../notes/storage-latency-and-slo.md#joint-success)阅读：先检查复用改变了什么，再检查访问成本，最后判断请求是否成功。
 
 [跨调用 KV 驻留](../notes/kv-cache-optimization.md#residency-and-accessibility)扩展容量问题：回收时限、对象表示和路由可访问性分别改变哪项成本？生产遥测的替身估计与 pooled 回放不能直接回答真实副本预算和请求耗时。
@@ -43,6 +45,7 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 | 放置与质量约束 | [Grace-Blackwell 微基准](../sources/paper-grace-blackwell-unified-memory.md)：物理放置、访问历史与计时边界；[CacheSmith](../sources/paper-cachesmith.md)：近似复用与质量/TTFT 联合成功 | v1 指定部分正文，未复现；微基准的 KV 应用仅为候选推论 |
 | 服务编排 | [Nuska：分离推理的阶段感知通信调度](../sources/paper-stage-aware-communication.md)：依赖阶段和 TTFT；[OServe：随工作负载改变模型部署](../sources/paper-oserve.md)：负载构成改变部署；[WWW.Serve：去中心化 LLM 服务互联](../sources/paper-www-serve.md)：自主参与和请求分发 | 当前版本摘要 |
 | 预测调度与尾部评价 | [QBA：预测引导调度中的配额老化](../sources/paper-quota-based-aging.md)：短请求完成事件、长请求晋升与预测错误；为 SLO 基础提供具体统计口径案例 | v1 §II/III/IV指定部分及Table II；归一轨迹模拟未复现，不是部署或无条件无饥饿保证 |
+| 准入与保证层次 | [带时间戳容量记录的预算准入](../sources/paper-timestamped-admission.md)：概率风险、精确校准与逐前缀账本 | v1 指定正文/证明/Table I；guard 实验零正动作，未验证实际有效准入或内生容量 |
 | 调度目标扩展 | [GCOS：结合模型与数据复用的绿色调度](../sources/paper-gcos.md)：缓存复用、成本与碳排放；[ARO：遥测驱动的异构集群编排](../sources/paper-aro.md)：遥测与异构资源 | S03 摘要；S04 网页部分且存在证据缺口 |
 | 方法分类 | [数据复制与放置策略综述](../sources/paper-replication-placement-survey.md)：动态、元启发式、多准则与学习路线 | 仅摘要，不能据此排名 |
 | 待补原文 | [十篇已核题录的文献](../questions/storage-source-evidence.md#metadata-only)：广域片段、多源迁移、预测、RLRP、云边端、早期放置、RPCE、RTT、OASIS、Laser | 题录；不承担机制和数值结论 |
@@ -54,6 +57,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 GPU 内预取、跨 PCIe 卸载和跨中心搬运都涉及数据移动，属于潜在结构相似；它们的可重叠计算、失败语义与可用带宽不同，须分别核验。
 
 [生态与动力学地图](ecology-and-dynamics.md)区分局部恢复、状态边界与扰动过程。它与修复速度、共同故障结构及服务评价有结构类比；真实存储存在离散重配置和人工控制，尚未建立动力系统映射或经验联系，不能用生态预警统计量直接推断故障风险。
+
+**可恢复表示的边界：**[选择性历史KV重建](../notes/kv-cache-optimization.md#selective-reconstruction)把恢复质量、共享predictor驻留和恢复时间加入字节成本；它是特定推理对象的条件解释，不替代协同缓存或存储迁移的端到端验证。
 
 ## Questions
 

@@ -78,3 +78,5 @@ $$
 [优化与数值分析地图](../maps/optimization-and-numerics.md)先区分精确模型保证与有限精度计算。[LP 右端证书](lp-rhs-sensitivity-certificates.md)保证固定基在某区域内仍可行最优，不能据此断言数值求解稳定；两者是互补检查，而非同一结论的不同名称。
 
 方法联系：[张量存活与峰值内存](tensor-liveness-and-peak-memory.md)也区分数学模型与执行实现；其分配事件契约和 allocator 实测是额外系统证据，不是数值条件数或后向稳定性的等价命题。
+
+互补的观测边界：[天文距离标尺与比例参数](velocity-distance-and-calibration.md#shared-scale)可共同变换而保持预测残差，这使小残差不能单独识别绝对尺度；本页的小残差/大误差例研究固定问题的敏感性。两者机制不同，未计算天文条件数，也不由标尺不确定断言算法不稳定。

@@ -26,10 +26,13 @@ endorsement: ai-candidate
 
 ## Branches
 
-- **另一种连接结构：**[视频时空注意力](../notes/attention-spatiotemporal.md)以 token 数和连接范围解释联合/分解计算，非因果场景不自动满足 KV 复用前提。
+- **另一种连接结构：**[视频时空注意力](../notes/attention-spatiotemporal.md)先以 token 数和连接范围解释联合/分解，再读[固定稀疏图的物理执行](../notes/attention-spatiotemporal.md#physical-execution)中页压实、tile 和掩码；减少连接与减少填充分别评价，非因果场景不自动满足 KV 复用前提。
 - **另一种容量扩展：**[稀疏 MoE](../notes/moe-routing.md)改变参与计算的专家参数；它与注意力/KV 是不同成本项，不能互当替代方案。
 
 - **执行中的另一项容量：**[张量存活与峰值内存](../notes/tensor-liveness-and-peak-memory.md)解释为何相同总分配仍有不同峰值，以及 allocator 怎样破坏逻辑模型；不是 KV 服务已验证。
+- **训练生命周期的边界对照：**[激活压缩与换出规划](../notes/tensor-liveness-and-peak-memory.md#compression-and-offload)研究 forward/backward 之间的保存与重算；表示、传输和排程必须联合评价，不从压缩比推出训练加速或推理 KV 收益。
+
+**恢复分支：**在精确复用与跨调用驻留之后，读[选择性KV重建](../notes/kv-cache-optimization.md#selective-reconstruction)，分开raw历史省略、共享预测器净成本、均值风险和局部恢复计时；不把512token小模型恢复结果写成生产无线迁移或长期decode净省。
 
 ## Evidence
 

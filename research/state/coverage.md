@@ -1,6 +1,6 @@
 # 选题轮换与问题回访
 
-历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-10-20.md)记录发现，审核、构建和PR的精确结果由[当日回执](runs/2026-10-20.md)记录。模拟反馈与沉默均不推导偏好。
+历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-10-23.md)记录发现，审核、构建和PR的精确结果由[当日回执](runs/2026-10-23.md)记录。模拟反馈与沉默均不推导偏好。
 
 ## 截至2026-10-16的历史覆盖
 
@@ -84,3 +84,85 @@ C最近三次为生态学、经济机制设计、统计物理，未重复；最�
 | [迁移评估](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 未到26日；计费澄清/多源全文、跨DC与跨层能耗控制实体仍缺，不重复同一摘要检索 | 2026-10-26 |
 
 C最近三次为经济机制设计、统计物理、分子遗传，无重复；最近四次含未覆盖领域。21天回访保留：信息论11-02、因果11-03、数值11-04、生态11-05、机制设计11-06、统计物理11-09，新增分子遗传11-10。没有根据沉默或单次反馈调整长期主题权重，真实评论出处与运行结果以主控记录为准。
+
+## 2026-10-21 复评与新批次
+
+昨日四项由 PR #28 合入，今日以核对的 origin/main af525f779464752dfa4d08a8e895dc54cd93ef81 开始唯一 research/batch-2026-10-21；当前 review 只列今日，历史来源与判断归属保留。实际8候选A1/B6/C1、4指定正文深读A1/B2/C1、4发现；A的README/样本计算和跨角色复核另列，不重复计候选。40/35/25为投入参考，没有精确采集实际时长。
+
+| 通道 | 实际增量与边界 | 下一步 |
+| --- | --- | --- |
+| A | 提前推进明日到期基础验证问题；公开固定cluster026的61,874 GET在相同计数下，文件序与单排列于三容量得到不同LRU命中，研究员/主控复算一致；非严格时间序，未保留SET/TTL/大小 | 已完成有限样本投影，未完成生产语义回放，open；10-22仅查样本选择、遗漏、实例范围和时序说明，无新证据不重复同seed |
+| B | 窗口10-14T07:30+08—10-21T07:30+08，核至07:34:46，选择性recent首屏/DC与OC new等最新20日；六候选均补上次终点前遗漏。两入选为训练表示与重规划、交通驱动/传播/吸收和条件增长界 | 未穷尽。PlaneZip无GPU引擎原型/整步复现；交通真实数据未到无界阶段，阈值为近似，AI条件界不跨系统搬用；四摘要候选暂缓 |
+| C | **天文学首次覆盖**：Hubble1929本文六扫描全读，NASA转录/PNAS表图辅助；共同标尺—系数抵消是AI代数，24个体/9组同批、共同Virgo运动与Table2反算距离分别处理 | 缺独立距离校准、跨方向/跨星系团观测及含距离误差/组内相关的估计；地图问题open，11-11复评 |
+
+### 当前回访安排
+
+上方历史日期反映当时状态；下表为当前安排，不追溯改写历史“尚未实验”的记录。
+
+| 问题 / 入口 | 今日进展或未选原因及具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [基础验证](../../content/questions/foundations-validation.md) / b56b26de-8ff6-41c2-acd3-f0eaf728d02e | A已有公开GET投影；真实来源不自动保证操作/寿命/时序可回放。原论文完整采集性质不能转给短样本，当前元数据缺口明确；其他KV和端到端分支未因此解决 | 2026-10-22，仅样本范围/选择/遗漏和时序证据 |
+| [评价与保证](../../content/questions/evidence-to-guarantees.md)、[笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md) | 未到23日；评分效用/代码、公开读者与样本对照、协同通信/更新成本仍缺。不以新Pangolin摘要替代已定协议证据，也不把单缓存GET实验当协同验证 | 2026-10-23 |
+| [迁移评估](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 未到26日；计费实现澄清、多源全文、跨DC/跨层与能耗控制实体仍缺，本轮优先可计算缓存证据 | 2026-10-26 |
+| [贪心价值](../../content/questions/greedy-value-improvement.md) | 昨日刚补理论/误差证书边界，应用状态/统一误差和真实收益仍缺；不重复基础定理 | 2026-10-27 |
+| [压缩与重规划](../../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload) | 模拟定义和单向算例已明确，仍无GPU压缩引擎与同实现整步验证；不要据压缩比预测吞吐 | 2026-10-28，先核硬件/代码证据可得性 |
+| [交通阈值](../../content/notes/transport-delay-propagation-and-thresholds.md#boundaries-and-open) | 近似阈值与完整α/截断更新已区分；未比较异质雨场、时变T和非零初态，也未复现 | 2026-10-28，先明确可公开数值对照范围 |
+
+C最近三次为统计物理、分子遗传、天文学，无重复；最近四次包含新领域。21天安排保留信息论11-02、因果11-03、数值11-04、生态11-05、机制设计11-06、统计物理11-09、分子遗传11-10，新增天文学11-11。独立探索未因反馈减为零，也未依据本轮主题自行调整永久权重。
+
+主控分别核对旧研究PR #22/#23/#25/#26/#28的普通评论/review/行级评论，未发现新增 fsyv 明确反馈；沉默不等于接受或拒绝。具体工具/角色与独立审核、同SHA构建、发布结果以[当日回执](runs/2026-10-21.md)为准，本账本不预填成功。
+
+
+## 2026-10-22 复评与活动批次续写
+
+继续唯一 research/batch-2026-10-21，basis af525f779464752dfa4d08a8e895dc54cd93ef81；PR #29 open draft，昨日四项继续待审，本日另四项，不创建日分支也不将未合并候选当正式知识。实际8去重候选A1/B6/C1（A旧研究实质回访）、4正文深读A1/B2/C1、4发现；README/官方讨论同研究、样本重解析/Git核查、工具/版本及跨角色原文复核不重复计数。40/35/25是参考，未精确实测角色投入比例。
+
+| 通道 | 实际增量与边界 | 下一步 |
+| --- | --- | --- |
+| A | 到期回访基础验证问题：增读论文p192及官方2021/2023讨论，分请求采样配置/论文两个实例/公开一个实例/短sample/排序版本；百万一般说明与固定80,000行仍未闭合，不重复同seed LRU | 问题open；缺逐文件manifest、sample→full映射、导出脚本、.sort版本/同秒和操作语义，10-29仅取得新证据后再推进 |
+| B | 窗口10-15T07:30+08—10-22T07:30+08，补昨日终点后遗漏，核至07:40:43；选择性recent首屏/DC与OC new，最新可见21日，6候选全部早于昨日终点。2项为固定图页压实执行、概率/校准/前缀保证 | 非穷尽；KPage GPU型号/元数据摊销/代码缺证；Budget guard32决定全零正动作，不证明有效准入/真实内生容量；4摘要候选暂缓 |
+| C | **地球物理首次覆盖**：Vine/Matthews1963三页本文全视觉读；形成/记录/外移机制、磁异常正负≠极性、AI年龄—位置与单/全速例，保留非详细拟合和同向强弱替代 | 未读后续独立倒转年代及跨脊定量匹配，不声称唯一识别或完整板块理论；2026-11-12复评，先找独立年代—剖面原始证据 |
+
+### 当前回访安排
+
+历史日期反映当时已知；以下更新下次安排，不覆盖旧缺口或当时“未读取/未实验”记录。
+
+| 问题 / 入口 | 今日进展、未选原因与具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [基础验证](../../content/questions/foundations-validation.md) / b56b26de-8ff6-41c2-acd3-f0eaf728d02e | 到期回访取得作者范围/排序说明，仍无逐文件导出关系和完整操作语义；没有新同实现KV/端到端实验，不以配置100%推无遗漏或全cluster | 2026-10-29，限定新元数据/导出证据 |
+| [评价与保证](../../content/questions/evidence-to-guarantees.md)、[笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md) | 明日到期；本日优先真实样本元数据。评分效用/协议代码、公开读者与样本对照、协同通信/更新成本仍缺；预算准入不是评分操纵解答 | 2026-10-23 |
+| [迁移评估](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 未到26日；计费实现、多源全文、跨DC/跨层及能耗控制实体仍缺；本轮未重搜同摘要 | 2026-10-26 |
+| [贪心价值](../../content/questions/greedy-value-improvement.md) | 未到27日；状态/统一误差/真实收益仍缺，不重复理论基础 | 2026-10-27 |
+| [压缩与重规划](../../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload)、[交通阈值](../../content/notes/transport-delay-propagation-and-thresholds.md#boundaries-and-open) | 昨日候选仍未获用户确认；旧GPU硬件/整步复现及异质雨场/时变T/非零初态缺口未被新执行/DeGroot摘要补齐 | 2026-10-28 |
+| [固定图物理执行](../../content/notes/attention-spatiotemporal.md#physical-execution) | 页数算例与内核口径明确；实验GPU、动态元数据、公开代码及端到端视频证据未取得 | 2026-10-29，先核证据可得性 |
+| [概率准入与前缀保护](../../content/notes/timestamped-admission-and-prefix-budgets.md) | 数学分层明确；guard正动作、延迟释放、真实标签及内生多单元容量尚无验证 | 2026-10-29，先核代码与有效路径 |
+
+C最近三次为分子遗传、天文学、地球物理，无重复；最近四次含新领域，独立探索未减为零。21天安排保留信息论11-02、因果11-03、数值11-04、生态11-05、机制设计11-06、统计物理11-09、分子遗传11-10、天文11-11，新增地球物理11-12。无新增真实评论不代表用户不喜欢旧领域，也不调整永久权重。精确评论、角色与同提交审核/构建/发布由[今日回执](runs/2026-10-22.md)记录。
+
+
+## 2026-10-23 复评与活动批次续写
+
+复用唯一research/batch-2026-10-21，basis af525f779464752dfa4d08a8e895dc54cd93ef81，PR29未合并；10-21/22八项继续候选，本日四项累加共十二项，不把未合并理解当正式知识。实际8canonical候选A1/B6/C1、4指定深读A1/B2/C1、4发现；旧源重取、版本/工具和跨角色核查另列。40/35/25是投入参考，没有精确采集角色时长或推理用量，不称实测达成。
+
+| 通道 | 实际增量及边界 | 下一步 |
+| --- | --- | --- |
+| A | 到期复评评价/笔记拆分/协同缓存三问题，重点读Dwork2015，增加诚实固定族挑优反例、统一界与自适应访问区别；未审应用代码或数据暴露时序，另两问题无新实证 | 三问题保持open，10-30回访具体数据、公开读者样本、同实现成本对照；不重复同一理论资料 |
+| B | 窗口10-16T07:30+08—10-23T07:30+08，核至07:40:24；四recent首屏可见22日。六新候选均补昨日终点前遗漏，形成KV恢复成本/质量与文档任务信息两项 | 不穷尽。RISK未真实无线/长上下文；格式gold任务不等于人类学习。其余四摘要暂缓，工具Catalyst变化只记版本 |
+| C | **实验心理学首次覆盖**：Stroop1935指定转录及关键表图，区分任务、错误罚时、100/50项计量与非同期练习差分；作者解释未唯一识别机制 | 11-13先找区分语义/反应选择/策略的原始对照；不临床、不映射Transformer、不证明拆分效果 |
+
+### 当前回访安排
+
+上方历史日期保留当时状态；以下只更新当前下一次安排，不抹去旧缺口。
+
+| 问题 / 入口 | 今日进展、未选原因与具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [评价与保证](../../content/questions/evidence-to-guarantees.md) / a5c9c122-ac45-42dd-b6e9-81657d62caac | 第三项推进为统计反例/条件；rPoA重取失败未新读、TDC仅版本核查，仍缺实际数据取得/轮换/暴露/重复访问与候选生成时序、代码和评分效用模型，open | 2026-10-30，先核具体时序证据 |
+| [笔记拆分](../../content/questions/evaluate-note-splitting.md) / 3db2de50-733a-4b18-9543-6711badb6597 | 连续回访仍无明确目标读者、公开样本与推理遗漏对照；B文档gold任务/C心理设计关系不构成人类理解证据，不重复方法资料，open | 2026-10-30，先核样本/目标读者可得性 |
+| [协同缓存](../../content/questions/web3-caching-evaluation.md) / 82ea0c0a-8b0e-458d-be1e-b8f53093570a | 仍缺同实现同轨迹扣通信/更新/训练成本对照，RISK特定推理对象不补齐协同收益；不重复缓存基础文献，open | 2026-10-30，限定可公开对照对象 |
+| [迁移评估](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 未到26日；计费实现/多源全文、跨DC/跨层能耗与控制实体仍缺，本日不重搜旧摘要 | 2026-10-26 |
+| [贪心价值](../../content/questions/greedy-value-improvement.md) | 未到27日；应用状态/统一误差与真实收益未被统计挑优反例解决 | 2026-10-27 |
+| [压缩与重规划](../../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload)、[交通阈值](../../content/notes/transport-delay-propagation-and-thresholds.md#boundaries-and-open) | 未到28日，GPU硬件/整步复现、异质雨场/时变T/非零初态仍缺 | 2026-10-28 |
+| [基础验证](../../content/questions/foundations-validation.md)、[固定图物理执行](../../content/notes/attention-spatiotemporal.md#physical-execution)、[预算准入](../../content/notes/timestamped-admission-and-prefix-budgets.md) | 未到29日；sample导出映射、动态metadata/端到端、正动作guard/真实标签等旧缺口保留，新KV恢复不能代替 | 2026-10-29 |
+| [KV选择性重建](../../content/notes/kv-cache-optimization.md#selective-reconstruction)、[文档任务信息](../../content/notes/document-cues-and-semantic-preservation.md) | predictor净摊销/长上下文/同基线恢复、人工gold/公开代码与本库公开样本未核；限定解释已形成候选 | 2026-10-30，先核代码与证据可得性 |
+
+C最近三次为天文学、地球物理、实验心理学，未重复；最近四次包含未覆盖领域，C机会未减为零。21天回访保留信息论11-02、因果11-03、数值11-04、生态11-05、机制设计11-06、统计物理11-09、分子遗传11-10、天文11-11、地球物理11-12，新增实验心理11-13。没有用沉默、暂缓单条发现或一次反馈修改长期主题权重；真实评论、角色与最终审核/构建/发布均以[今日回执](runs/2026-10-23.md)为准。
