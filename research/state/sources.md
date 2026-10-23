@@ -2,6 +2,32 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-10-23
+
+8份去重canonical候选A1/B6/C1、4次指定正文深读A1/B2/C1、4发现A1/B1/B2/C1。A为旧文新读，B六份新canonical为窗口补遗漏，C旧原文首次进入实验心理学；rPoA既有正文重取尝试、TDC版本入口、其他工具/版本及跨角色核查另列，不重复计数。没有伪造精确检索命中数、全文或复现。[晨报](../digests/2026-10-23.md)保留推理与边界，[回执](runs/2026-10-23.md)记录实际角色/失败/审核构建与发布。
+
+| canonical / 版本 / 入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围与决定 |
+| --- | --- | --- | --- |
+| arxiv:1506.02629；Dwork/Feldman/Hardt/Pitassi/Reingold/Roth，[Generalization in Adaptive Data Analysis and Holdout Reuse](https://arxiv.org/abs/1506.02629) | v1 2015-06-08T19:34:29Z；v2 09-25T19:04:32Z；NIPS2015卷28 | 2026-10-23 / 2026-10-23 | A1；会议九页文件§1/1.1–1.2pp1–5、§2定义/定理pp5–6、§3算法/定理/实验文字pp7–8；未长版完整证明/视觉图/代码/复现。同研究别名不重复。[来源](../../content/sources/dwork-adaptive-data-analysis-2015.md)；研究高/启发高/有限代数高、系统外推未验，整体可靠中 |
+| arxiv:2610.29544 v1；Wang Yuekai，[RISK-KV](https://arxiv.org/abs/2610.29544) | 2026-10-21T10:30:46Z | 2026-10-23 / 2026-10-23 | B1；HTML§III-A–C式1–12/Algorithm1、§IV-A/B式13–20、§V-A/B TablesI–III全表及主要文字、VI；图只图注，未PDF/代码/复现。raw历史省略/净predictor成本/质量与恢复基线分开。[来源](../../content/sources/paper-risk-kv.md)；研究中/启发高/可靠中 |
+| arxiv:2610.30026 v1；Yikai Zhao/Saurabh Pandey/Pradeep Kumar Misra，[What the Author Wrote, What the Agent Reads: Silent Cue Loss in Enterprise Document Ingestion](https://arxiv.org/abs/2610.30026) | 2026-10-21T16:51:25Z | 2026-10-23 / 2026-10-23 | B2；主文§3.1–3.2/4.1–4.8/5方法评价及Tables1–3；附录S1/S3/S4.1–4.3/S7/S9–S11/S16相关段、Table4/6指定部分；未全文/PDF/视觉/代码/原文档/复现。任务gold、micro/macro和表示边界保留。[来源](../../content/sources/paper-silent-cue-loss.md)；研究中/启发高/可靠中 |
+| arxiv:2610.29548 v1；Andrew Calcan/Alberto De Marchi/Scott B. Lindstrom，[Algorithm duality from resolvent Moreau identities](https://arxiv.org/abs/2610.29548) | 2026-10-21T10:35:33Z | 2026-10-23 / 2026-10-23 | B；仅abs题录/摘要/history，nonmonotone resolvent证明/收敛/benchmark未核，暂缓；研究中/启发高/可靠低 |
+| arxiv:2610.29787 v1；Yunze Wei等12作者，[D-Pingmesh: Dynamic Probing and Fault Localization for Reconfigurable Datacenter Networks](https://arxiv.org/abs/2610.29787) | arXiv2026-10-21T14:14:28Z | 2026-10-23 / 2026-10-23 | B；仅abs题录/摘要/history，探测控制面/混合路径/EM与负载未核，暂缓。abs related DOI10.1145/3828523.3857045只是同研究别名线索，正式发表日未核，不称首次发表的新研究；研究中/启发高/可靠低 |
+| arxiv:2610.29820 v1；Isaac Zhu/Alan Cao/Hugh Yin/Rocky Wang/Orion Wang/Hscos Zhang/Jack Li/Jason Zhao，[UlaCache: Unified Logical Addressing for Sparse LLM Serving](https://arxiv.org/abs/2610.29820) | 2026-10-21T14:46:11Z | 2026-10-23 / 2026-10-23 | B；仅abs题录/摘要/history，跨GPU/CPU逻辑地址、LRU、baseline/quality未核，暂缓；研究高/启发高/可靠低 |
+| arxiv:2610.29873 v1；Junhyeok Park/Jungeun Yoon/Kyungmin Kim/Hunsoon Lee/Shinyoung Ahn/Kangho Kim，[HAWK: Heterogeneity-Aware KV Cache Transfer for Efficient GPU-NPU Phase-Disaggregated LLM Inference](https://arxiv.org/abs/2610.29873) | 2026-10-21T15:25:35Z | 2026-10-23 / 2026-10-23 | B；仅abs题录/摘要/history，异构RDMA/layout硬件、SLO、成本功耗分母未核，暂缓；研究中/启发高/可靠低 |
+| doi:10.1037/h0054651；J.R.Stroop，[1935转录](https://psychclassics.yorku.ca/Stroop/) | 1935-12；J.Exp.Psych18(6):643–662 | 2026-10-23 / 2026-10-23 | C1；转录pp646–660问题/Experiment1–3/Summary与AppendixA，亲核TableI/III/V/VI与plan图片，未完整其余表/曲线/引用/后续复现。PDF仅前题录OCR、后指定页超时；不称全文或PDF通读。[来源](../../content/sources/stroop-interference-1935.md)；研究中/启发高/整体可靠中，历史任务对照可核、唯一机制未识别 |
+
+### 窗口、版本、工具与失败边界
+
+B窗口2026-10-16T07:30+08—10-23T07:30+08，补上次10-22T07:40:43+08后遗漏，实核至2026-10-23T07:40:24.103229+08。选择性查cs.DC/cs.CL/math.OC/cs.NI recent默认首屏，最新可见公告22日；未穷尽分页、领域、版本及期刊会议。六份首提均为10-21 UTC、早于昨日终点，属于窗口补遗漏。精确题名限定检索未取得其他正式全文，不证明没有正式出版。
+
+- A：rPoA既有正文重取web超时，无新读内容，不计新canonical/深读；TDC仅核仍v1，未新增正文。NIPS2015会议文与arXiv长版是同研究，未将Science同作者短文题录当深读。限定统计论证完成，系统数据/实现审计仍缺；不以此关闭评价问题。
+- B：两篇深读无影响限定结论的未恢复访问失败。KPage2610.28096与Budget2610.28392仍v1，只abs/history复查，不新增正文或解除旧缺口。Hugo官方news仍0.168.0/10-13，CommonMark仍0.31.2/2024-01-28，不升级本库。
+- 工具新状态：[Obsidian Desktop1.15.0](https://obsidian.md/changelog/2026-10-22-desktop-v1.15.0/)与[Mobile1.15.0](https://obsidian.md/changelog/2026-10-22-mobile-v1.15.0/)官方页均列10-22 Catalyst/Early access；搜索索引旧10-05，采用官方实读校正。不是公开稳定发布，不另算论文候选/第五发现，也不建议升级。
+- C：DOI页面open失败但官方题录搜索可见；York转录和表图可读。PDF后续指定页超时，关键表图由内存图片读取恢复；未把OCR前部或失败截图当全文/像素证据，不保存原文或中间扫描入库。
+
+继续唯一research/batch-2026-10-21/PR29，前三日累计十二候选仍待审，合并前不作正式知识或用户认可。0新增真实评论不推导偏好；公开区与私有区严格隔离，同SHA审核构建由主控回执记实。
+
 ## 2026-10-22
 
 8 份去重候选 A1/B6/C1，4 次正文深读 A1/B2/C1，形成 A1/B1/B2/C1 四项。A 为既有研究实质增读（论文方法与两条完整官方讨论合为同一研究），B 为 6 份新 canonical、其中 2 份指定部分深读，C 为 1 份旧原文首次进入本库、本文三页全文视觉读。README、Git 对象/身份/样本重解析、版本和工具入口、跨角色核查另列，不重复计论文；未重做昨日 LRU。[晨报](../digests/2026-10-22.md)交代关键推理，[回执](runs/2026-10-22.md)由主控记录实际审核/构建及发布。
