@@ -22,7 +22,8 @@ endorsement: ai-candidate
 1. [问题敏感和算法不稳定怎样区分](../notes/numerical-conditioning-and-stability.md)：先固定问题、输入域、范数与允许扰动，通过三个反例建立条件数、前向/后向误差与残差的区别。
 2. [右端同时变化时原基何时仍最优](../notes/lp-rhs-sensitivity-certificates.md)：再研究精确 LP 中固定矩阵/目标/基的证书，理解单项范围为何不能任意组合，以及充分区域之外为何仍可能可行。
 3. [总分配与存活峰值](../notes/tensor-liveness-and-peak-memory.md)：固定计算图后比较执行顺序，再检查模型内最优证书与实际 wrapper/allocator 的一致性；需额外掌握有向无环图、依赖与存活期。接着读[训练激活压缩与换出](../notes/tensor-liveness-and-peak-memory.md#compression-and-offload)，理解表示改变时为何必须重新建模准入、传输与重算。
-4. 回到应用时分别列出“模型假设/可行性证书”和“实际误差/测量证据”，检查两层都有哪些缺口。这些分支尚未建立具体系统中的联合保证。
+4. [剪枝与修复的复合目标](../notes/depth-pruning-and-repair.md)：改变允许变换后重新定义目标、搜索空间和实现开销；精确枚举仅消除该空间的搜索遗漏，不保证独立任务质量。前置为[Transformer完整生成链](../notes/transformer-generation.md)中的层结构，以及校准/测试的区别。
+5. 回到应用时分别列出“模型假设/可行性证书”和“实际误差/测量证据”，检查两层都有哪些缺口。这些分支尚未建立具体系统中的联合保证。
 
 ## Connections
 

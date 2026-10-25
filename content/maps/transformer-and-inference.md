@@ -34,6 +34,10 @@ endorsement: ai-candidate
 
 **恢复分支：**在精确复用与跨调用驻留之后，读[选择性KV重建](../notes/kv-cache-optimization.md#selective-reconstruction)，分开raw历史省略、共享预测器净成本、均值风险和局部恢复计时；不把512token小模型恢复结果写成生产无线迁移或长期decode净省。
 
+**直存执行分支：**在加载与重算之后，读[控制、数据与完成顺序](../notes/kv-cache-optimization.md#direct-storage-and-ordering)；同stream的callback等待、CPU完成成本及raw接口契约均会改变有效加载路径，不能由直达GPU推端到端普适收益。
+
+**模型结构分支：**理解完整生成链之后，读[删除层与修复的复合目标](../notes/depth-pruning-and-repair.md)，再比较有限枚举、独立PPL、任务能力和部署成本。修复改变候选排序，不能先固定未修复最优或将PPL当全部能力。
+
 ## Evidence
 
 [Transformer/视频/采样资料](../sources/foundations-transformer.md)、[KV 系统资料](../sources/foundations-kv-systems.md)和[Switch 资料](../sources/foundations-moe.md)均列出实际读取范围。没有来源或实验条件的性能倍数不构成比较依据。

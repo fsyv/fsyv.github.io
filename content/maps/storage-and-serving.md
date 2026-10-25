@@ -29,6 +29,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 
 [跨调用 KV 驻留](../notes/kv-cache-optimization.md#residency-and-accessibility)扩展容量问题：回收时限、对象表示和路由可访问性分别改变哪项成本？生产遥测的替身估计与 pooled 回放不能直接回答真实副本预算和请求耗时。
 
+[早转归属与恢复依赖](../notes/storage-placement-and-migration.md#early-ownership-and-recovery)在Squall之后比较另一种迁移协议：先交归属会把新写和旧数据分置两侧日志，须单列恢复依赖；作者未完成的恢复扩展不能当实现保证。LLM分支再读[直存控制与完成顺序](../notes/kv-cache-optimization.md#direct-storage-and-ordering)，区分payload直达GPU、CPU控制及同流依赖，比较性能前先核raw块设备与文件语义。
+
 ## Sources
 
 阅读范围是本次记录，不能由“经典”或发表场所替代。完整作者与版本见各来源页。
@@ -40,6 +42,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 | 放置目标 | [纠删码存储的平均时延与成本联合优化](../sources/paper-erasure-coded-latency-cost.md)：平均时延/成本；[纠删码存储中的尾时延优化](../sources/paper-erasure-coded-tail-latency.md)：尾概率；[容量与负载约束下的地理数据放置](../sources/paper-capacity-load-data-placement.md)：容量、负载与传输成本 | 摘要 |
 | 迁移与动态管理 | [CRANE：副本迁移过程的调度](../sources/paper-crane.md)：过渡过程；[冷热对象的复制、读路由与迁移](../sources/paper-hot-cold-object-migration.md)：冷热、路由和成本；[边缘云 SaaS 的多目标副本放置与迁移](../sources/paper-edge-cloud-multiobjective-replication.md)：多目标与热点；[边缘节点的动态去中心化副本策略](../sources/paper-decentralized-edge-replication.md)：去中心化创建/删除 | CRANE §III–VI 指定部分；冷热对象模型、启发式与 §6.2 指定部分；其余摘要 |
 | 在线迁移协议 | [Squall](../sources/paper-squall.md)：路由复查、按需拉取、副本确认、恢复与节流的相互约束 | SIGMOD 2015 pp.301–309 §2.3–7.6 指定部分；同机架闭环负载，未审代码或复现，不能替代跨中心 SLO |
+| 早转归属的迁移 | [Rocksteady](../sources/paper-rocksteady.md)：按需读、新写日志与恢复依赖；字节率和请求完成可反向 | 2017指定§3–4/两页视觉；多日志恢复扩展当时ongoing，未审代码或复现 |
+| GPU直存执行 | [uGDS](../sources/paper-ugds.md)：CPU用户态控制、SSD→GPU DMA与完成依赖 | v1指定正文；raw块设备不保普通POSIX语义，性能限特定命中路径 |
 | 混合设备 | [Harmonia：混合存储中的放置与迁移协调](../sources/paper-harmonia.md)：设备上的放置/迁移协调 | v4 摘要，不能直接替代副本模型 |
 | KV 访问 | [KV 卸载中的互连瓶颈](../sources/paper-kv-offloading-bottlenecks.md)：CPU 卸载互连；[异步预取 KV：用计算覆盖访存等待](../sources/paper-asynchronous-kv-prefetching.md)：L2 预取；[Kelle：KV 缓存与 eDRAM 协同设计](../sources/paper-kelle.md)：eDRAM 维护 | 摘要，属不同硬件层次 |
 | 放置与质量约束 | [Grace-Blackwell 微基准](../sources/paper-grace-blackwell-unified-memory.md)：物理放置、访问历史与计时边界；[CacheSmith](../sources/paper-cachesmith.md)：近似复用与质量/TTFT 联合成功 | v1 指定部分正文，未复现；微基准的 KV 应用仅为候选推论 |
