@@ -2,6 +2,33 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-10-26
+
+10份canonical回访/候选A3/B6/C1、4次指定部分正文深读A1/B2/C1、4发现A1/B1/B2/C1。A含两份旧研究的证据补查失败和一份旧文新读，B六份新canonical均为窗口补遗漏，C旧原文首次进入流体力学。同一论文各入口、版本/工具复查、跨角色复核和算术不重复计数。没有声称全文全读、系统复现或穷尽检索。[晨报](../digests/2026-10-26.md)保留机制/证据和判断边界，[回执](runs/2026-10-26.md)记录精确失败、角色及审核构建/发布。
+
+| canonical / 版本 / 入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围与决定 |
+| --- | --- | --- | --- |
+| doi:10.1145/3132747.3132784；Chinmay Kulkarni/Aniraj Kesavan/Tian Zhang/Robert Ricci/Ryan Stutsman，[Rocksteady: Fast Migration for Low-latency In-memory Storage](https://www.flux.utah.edu/download?uid=257) | SOSP2017；Crossref2017-10-14/PDF会议标注10-28，字段不同非新版本 | 2026-10-26 / 2026-10-26 | A1；16页文件第6–11页指定§3/3.1.1–3.1.3/3.3–3.4/4.1–4.2，辅助3.2/4.3开头；视觉第9/11页含Figures9/10，未全文/代码/原日志/复现。早转归属/新写日志依赖，恢复扩展ongoing；[来源](../../content/sources/paper-rocksteady.md)。研究高/启发高/可靠中 |
+| doi:10.1109/cloudsummit54781.2022.00009；Bita Fatemipour/Wei Shi/Marc St-Hilaire，[多源迁移](https://doi.org/10.1109/cloudsummit54781.2022.00009) | 2022 Cloud Summit10-20—21，17–22页 | 题录2026-10-12 / 2026-10-26尝试 | A；作者清单仍仅无实际href的pdf字样，另一作者页403，未取得摘要/正文，原unread不变，不推测COMS机制。新阅读可靠性不适用；旧缺口仍具研究价值 |
+| doi:10.1016/j.jpdc.2018.12.003；Mansouri/Buyya冷热对象工作 | online2018-12-21/print2019-04 | 2026-10-12 / 2026-10-26限定检索 | A；题名/Algorithm2/代码补查没有取得实现或作者计费澄清，搜索命中另一2017TCC工作未当同研究；没有新增正文深读，保留10-14真实范围 |
+| arxiv:2610.30868 v1；Jing Wei/Guanyi Chen/Qi Chen/Chuyu Zhang/Zheng Zhou/Chutian Wang/Jian Zhang，[uGDS: A User-Space Development Kit for High-Performance GPU Direct Storage](https://arxiv.org/abs/2610.30868v1) | 2026-10-22T07:45:58Z | 2026-10-26 / 2026-10-26 | B1；HTML§2.1–2.3/2.5–2.6/3.1–3.4、§4设置及4.3–4.6，4.2指定段；图仅图注/正文数字，未PDF/代码/复现。raw块接口、callback等待/同流顺序和特定SSD-only命中性能；[来源](../../content/sources/paper-ugds.md)。研究高/启发高/可靠中 |
+| arxiv:2610.30552 v1；Jianchang Su/Dawei Xiang/Yifan Zhang/Wei Zhang，[Repair Changes Which Layers to Remove: Exact Optima for Depth Pruning of Language Models](https://arxiv.org/abs/2610.30552v1) | 2026-10-22T00:18:10Z | 2026-10-26 / 2026-10-26 | B2；HTML§3–7/Tables1–4、AppendixE重点Tables11–12/Selection time/Calibration size/Repair fitting、G/Table14；未A全证明/B全算法/C/D/F全表/代码CSV/PDF/复现，未独立复推Fisher。有限复合目标/PPL与能力/Gemma折叠边界；[来源](../../content/sources/paper-repair-aware-depth-pruning.md)。研究高/启发高/可靠中 |
+| arxiv:2610.31479 v1；Kyrylo Yemets/Andrii Yaroshevych/Victor Muryn/Ostap Khomenko/Pavlo Kryven/Maksym Kmet/Maksym Shamrai/Mariya Hirna，[Evaluating the Applicability of LLM Inference Optimizations on Apple Silicon](https://arxiv.org/abs/2610.31479) | 2026-10-22T16:04:40Z | 2026-10-26 / 2026-10-26 | B；仅题录/摘要/history，匹配负载/实现和质量未核，暂缓，不建机制知识。研究高/启发高/可靠低 |
+| arxiv:2610.31165 v1；Roberto Passaro/Ariel Flint/Romualdo Pastor-Satorras/Andrea Baronchelli/Luca Maria Aiello，[Network topology shapes consensus and vulnerability in LLM populations](https://arxiv.org/abs/2610.31165) | 2026-10-22T12:22:40Z | 2026-10-26 / 2026-10-26 | B；仅题录/摘要/history，policy抽取、仿真/拓扑/对手定义未核，不外推真实多Agent安全，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.31526 v1；Lorenzo Sabug Jr./Eric Kerrigan，[Direct Inference on Admissible Sets (Diona)](https://arxiv.org/abs/2610.31526) | 2026-10-22T16:35:47Z | 2026-10-26 / 2026-10-26 | B；仅题录/摘要/history，覆盖证明、噪声/光滑性及首次预测/摊销成本未核，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.31646 v1；Stephen Chung/Wenyu Du，[Low-Bit N-Gram Embeddings for Language Models](https://arxiv.org/abs/2610.31646) | 2026-10-22T17:56:13Z | 2026-10-26 / 2026-10-26 | B；仅题录/摘要/history，table footprint与整模型驻留/速度、训练质量未核，不与KV量化混同，暂缓。研究中/启发中/可靠低 |
+| doi:10.1098/rstl.1883.0029；Osborne Reynolds，[An Experimental Investigation of the Circumstances which determine whether the Motion of Water shall be Direct or Sinuous, and of the Law of Resistance in Parallel Channels](https://archive.org/download/philtrans06508925/06508925.pdf) | 1883；原页Received and Read03-15，实验1880年，具体出版日未裁定 | 2026-10-26 / 2026-10-26 | C1；印刷935–936/938–948/951–963/973–975，视觉938/942/Figs3–5/943/954TableI/956/959；未其余正文及三个末尾图版、全表重析、现代后续或复现。相似参数/扰动/操作判据；[来源](../../content/sources/reynolds-pipe-flow-1883.md)。研究中/启发高/可靠中 |
+
+### 窗口、版本与访问范围
+
+B窗口2026-10-19T07:30:00+08:00—10-26T07:30:00+08:00，补上次10-23T07:40:24+08后遗漏，实核至10-26T07:36:04+08。选择性cs.DC/cs.CL/math.OC/physics.soc-ph recent首屏最新可见公告23日；未穷尽分页、期刊会议和版本替换。六份首提均22日UTC、早于上次终点，全部补遗漏。两选定研究的正式发表限定检索未获可核记录，IEEE入口robots阻拦，不据此声称没有发表。
+
+- A：Flux旧下载入口返回HTML/Invalid unique id，根download成功；ACM403，Crossref web不可读后代理内存API成功。多源/计费旧缺口未恢复，不算正文阅读；没有用不同论文假解原算法。
+- B：一次正文提取缺bs4后以Python标准库内存读取恢复，不安装依赖。RISK-KV2610.29544和SilentCueLoss2610.30026仍仅v1，仅版本核查。Hugo latest API仍v0.168.0/2026-10-13T17:24:15Z，Obsidian索引仍10-22 Desktop/Mobile1.15.0 Catalyst，CommonMark仍0.31.2/2024-01-28，不重推或升级。
+- C：UCL HTTPS及Royal Society DOI/直PDF403、HTTP变体超时、Archive stream不可访问；Archive metadata与download原扫描经现有代理成功，51页只读指定范围，不把Archive元数据01-01或其他题录12-31裁定为出版日。各入口同一canonical，不另增第二资料。
+
+四项均为AI候选，当前批次此前十二项保留，共十六项待审；没有新增真实评论，沉默不形成偏好。实际角色、模型/工具限制及同SHA审核构建/发布由主控当日回执记录，不预填成功。
+
 ## 2026-10-23
 
 8份去重canonical候选A1/B6/C1、4次指定正文深读A1/B2/C1、4发现A1/B1/B2/C1。A为旧文新读，B六份新canonical为窗口补遗漏，C旧原文首次进入实验心理学；rPoA既有正文重取尝试、TDC版本入口、其他工具/版本及跨角色核查另列，不重复计数。没有伪造精确检索命中数、全文或复现。[晨报](../digests/2026-10-23.md)保留推理与边界，[回执](runs/2026-10-23.md)记录实际角色/失败/审核构建与发布。

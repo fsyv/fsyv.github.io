@@ -2,7 +2,7 @@
 
 本批次于 2026-10-21 从核对过的 origin/main `af525f779464752dfa4d08a8e895dc54cd93ef81` 开始唯一 `research/batch-2026-10-21`。2026-10-20 四项已由 [PR #28](https://github.com/fsyv/fsyv.github.io/pull/28) 合入，不再重复待审；[10-20 晨报](digests/2026-10-20.md)、历史来源与判断归属保留，合并不自动升级 endorsement。
 
-本批次现累计2026-10-21、10-22、10-23各四项，共十二项AI候选，尚未获用户逐项确认。[最新晨报](digests/2026-10-23.md)、[10-22晨报](digests/2026-10-22.md)与[10-21晨报](digests/2026-10-21.md)分别完整展开问题、机制、数据及边界；本页只维护累计决定，正文不复制到第二处。当前 PR #29 仍 open draft，主控未取得新增真实评论，沉默不构成接受或拒绝。
+本批次现累计2026-10-21、10-22、10-23与10-26各四项，共十六项AI候选，尚未获用户逐项确认。[最新晨报](digests/2026-10-26.md)、[10-23晨报](digests/2026-10-23.md)、[10-22晨报](digests/2026-10-22.md)与[10-21晨报](digests/2026-10-21.md)分别完整展开问题、机制、数据及边界；本页只维护累计决定，正文不复制到第二处。当前PR29仍open draft，主控未取得新增真实评论，沉默不构成接受或拒绝。
 
 | 日期 / 发现 | 具体提议与依据 | 知识位置及接受范围 | 决定 |
 | --- | --- | --- | --- |
@@ -18,9 +18,14 @@
 | 2026-10-23/B1 | [RISK-KV指定方法/表](../content/sources/paper-risk-kv.md)区分历史raw省略、共享predictor净成本、均值门禁/逐请求违约和局部恢复计时；摊销算例为AI假设 | 扩[既有KV成本](../content/notes/kv-cache-optimization.md#selective-reconstruction)及相关机制/SLO/地图；接受评价条件，暂缓长期GPU净省、无线迁移、生成正确性和生产收益 | 待审 |
 | 2026-10-23/B2 | [文档摄取指定正文](../content/sources/paper-silent-cue-loss.md)的rawcue/role对照与任务定义，AI两文件反例说明文字相同仍可丢失所需区别；micro/macro分开 | 新[文档表示解释](../content/notes/document-cues-and-semantic-preservation.md)，扩知识实践及拆分问题；接受任务相关信息保留，不由标记任务推人类学习、笔记拆分有效或本库格式改造 | 待审 |
 | 2026-10-23/C1 | [Stroop1935指定原文/表图](../content/sources/stroop-interference-1935.md)区分任务/错误罚时/计量与非同期练习差分；作者习惯解释不等于唯一机制 | 新[心理学解释](../content/notes/stroop-interference-and-experimental-controls.md)及[地图](../content/maps/experimental-psychology-and-inference.md)，关联DNA识别与知识实践；不外推临床、现代零效应或Transformer机制 | 待审 |
+| 2026-10-26/A1 | [Rocksteady指定正文](../content/sources/paper-rocksteady.md)补早转归属、PriorityPull与源恢复依赖目标日志尾部；AI单侧恢复反例及迁移率/请求完成反向对照 | 扩[迁移解释](../content/notes/storage-placement-and-migration.md#early-ownership-and-recovery)、两存储问题及地图；接受分层设计与评价，暂缓当时ongoing恢复扩展的实现保证、跨DC服务与旧计费/多源澄清 | 待审 |
+| 2026-10-26/B1 | [uGDS指定正文](../content/sources/paper-ugds.md)区分CPU控制、SSD→GPU数据与完成顺序，单流callback等待与raw接口契约限定有效路径收益 | 扩[KV访问解释](../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)及存储/推理图；接受测量与语义条件，暂缓POSIX透明替换、混合负载/长期稳定和通用生产收益，不把logicalKV吞吐当SLO-goodput | 待审 |
+| 2026-10-26/B2 | [修复感知剪枝指定正文](../content/sources/paper-repair-aware-depth-pruning.md)及AI复合目标/组合复算，有限评分最优不保独立能力，Gemma不可fold与wall成本保留 | 新[完整解释](../content/notes/depth-pruning-and-repair.md)，扩优化/推理图及方法链接；接受目标/有限最优/任务评价区分，暂缓通用greedy保证、所有模型同大小速度和部署收益 | 待审 |
+| 2026-10-26/C1 | [Reynolds1883指定原文/表图](../content/sources/reynolds-pipe-flow-1883.md)区分半径尺度、染料与下游阻力判据，现代Re/时间尺度和两条TableI乘积为AI推导 | 新[完整管流解释](../content/notes/reynolds-similarity-and-transition.md)与[流体地图](../content/maps/fluid-mechanics-and-dynamic-similarity.md)，生态仅结构类比；接受条件解释与复算，暂缓普适阈值、现代稳定性及生态状态映射 | 待审 |
 
 ## 每日简报源文件
 
+- [2026-10-26](digests/2026-10-26.md)
 - [2026-10-23](digests/2026-10-23.md)
 - [2026-10-22](digests/2026-10-22.md)
 - [2026-10-21](digests/2026-10-21.md)
@@ -33,4 +38,6 @@
 
 10-23新增范围为统计选择、KV恢复、文档任务信息与心理实验对照，既有八项及其缺口继续保留。接受基础解释不关闭应用数据时序、生产恢复、读者学习或心理机制识别。
 
-独立Reviewer与主控同提交检查的本轮实际状态见[10-23回执](state/runs/2026-10-23.md)；[10-22回执](state/runs/2026-10-22.md)及[10-21 回执](state/runs/2026-10-21.md)只覆盖其历史 SHA。这里不预填成功，新候选或基线变化后须重新审核。
+10-26新增范围为迁移归属/恢复、直存执行契约、剪枝修复目标与管流实验判据，已有十二项及缺口保留。接受基础解释不关闭恢复实现、生产服务、独立能力或现代稳定性问题。
+
+独立Reviewer与主控同提交检查的本轮实际状态见[10-26回执](state/runs/2026-10-26.md)；[10-23回执](state/runs/2026-10-23.md)、[10-22回执](state/runs/2026-10-22.md)及[10-21 回执](state/runs/2026-10-21.md)只覆盖其历史 SHA。这里不预填成功，新候选或基线变化后须重新审核。
