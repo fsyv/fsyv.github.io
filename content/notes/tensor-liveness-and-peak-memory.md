@@ -80,3 +80,5 @@ $$
 - [KV 驻留与可访问性](kv-cache-optimization.md#residency-and-accessibility)也需明确释放时刻、表示和计费；跨调用可重建会话对象不同于单次图的 root，量化/重算各有质量和时间代价。
 - [条件数与稳定性](numerical-conditioning-and-stability.md)同样分开数学问题和执行，但条件数与内存契约没有数学等价关系。
 - [基础验证问题](../questions/foundations-validation.md)继续要求同 kernel/形状、输出一致性、allocator 实测和完整请求耗时。本解释没有验证 KV 部署或关闭问题。
+
+- 方法联系：[剪枝后的修复](depth-pruning-and-repair.md)改变所比较的复合模型及可能新增的矩阵成本，如同改变表示/执行事件后须重建优化问题；删除层集合的评分与峰值内存证书没有数学等价关系。
