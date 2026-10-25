@@ -144,6 +144,18 @@ $\Delta M=N M_{\mathrm{saved}}-M_{\mathrm{pred}}-M_{\mathrm{aux}},$
 
 这在[近似复用边界](kv-cache-mechanism.md#approximate-reuse)之外，具体补上共享预测器摊销、均值风险/逐请求质量及恢复计时义务。尚未核代码、长上下文大模型或真实无线；与[逐请求联合成功](storage-latency-and-slo.md#joint-success)的联系是评价条件，不能由平均NLL或局部恢复时间直接推出联合SLO。
 
+## Direct-storage-and-ordering
+
+**2026-10-26 新增AI候选解释。** [uGDS指定正文](../sources/paper-ugds.md)在远程加载成本之外说明：即使payload由SSD直接经PCIe P2P DMA进入GPU，CPU提交命令、doorbell、完成队列和依赖同步仍能决定有效耗时。uGDS把这些控制放到CPU用户态，预注册移出pinning/地址转换；数据绕过主机staging不等于控制成本消失。
+
+异步入口快速排入host callback，但callback须等上游stream工作完成，再执行I/O并阻塞到DMA完成，才能放行下游kernel。同stream仍严格顺序；独立stream或无相互依赖的批请求才可重叠或乱序完成。跨NVMe、GPU、RDMA的生产者—消费者关系仍由应用events/完成令牌保证，不能因接口叫async就假设任意依赖都已隐藏。
+
+§4.6同16MiB读，单线程同步uGDS/GDS为5.54/5.78GiB/s，单异步stream为5.49/2.36GiB/s。同步接近而异步差异较大，支持检查有效执行路径；不表示物理链路上限提高，也没有独立隔离应用中所有因素。应用平台为A100-SXM4-40GB、Samsung990PRO、PCIeGen4×4/cross-root-port P2P；Qwen3-0.6B、vLLM0.20.1+cu129、LMCache0.5.1.dev35、PyTorch2.11.0+cu129、CUDA12.9，关闭vLLM内存automatic prefix caching、强制SSD-only cache hit。32,768token单请求中位TTFT为1915→715ms，AI复算减少约62.66%；只支持该命中路径，不覆盖miss、混合负载、长期稳定性或质量。
+
+完成方式也有成本取舍。Figure14在一线程/一QP/1MiB时，以发起线程CPU time/wall time计利用率，polling100%变为中断4.15%，时延232.6→245.3μs；中断涉及kernel MSI-X/eventfd/ppoll，不是整机CPU或能耗测量。硬件超时隔离handle并保留潜在DMA资源、等待外部reset是作者设计，未在本库故障注入验证。
+
+接口契约必须与性能一起比较：uGDS解绑目标SSD的kernel NVMe driver，按raw block/aligned offset访问，放弃通常POSIX目录、锁和OS page-cache coherency。cuFile-style入口不证明对普通文件应用语义透明。作者goodput图注为logical KV tokens/s，未见SLO阈值/成功分母，因此不能直接代入[联合服务成功](storage-latency-and-slo.md#joint-success)的goodput。下一步应先核同语义路径、buffer生命周期与完成依赖，再测完整请求；当前不建议据此直接替换生产存储。
+
 ## Revision
 
 2026-10-12：将重复的论文名列表重组为成本分类；移除缺少实验条件与可靠出处的性能倍数，区分分页、前缀复用、压缩及卸载。分类与成本模型均为 AI 候选。
@@ -155,3 +167,5 @@ $\Delta M=N M_{\mathrm{saved}}-M_{\mathrm{pred}}-M_{\mathrm{aux}},$
 2026-10-20：原解释区分字节、放置与加载成本；新生产遥测/回放引入跨调用驻留时限和路由可访问性。依据指定阅读分开终生峰值/当前大小、重建调用/时间/质量，新增首触下界算术；候选新理解是容量需同时定义对象身份、生命期、表示与可访问性，尚未获用户确认或部署验证。
 
 2026-10-23：旧解释已区分压缩、驻留与加载，新RISK-KV证据补上可重建状态及共享预测器成本。候选修订将raw省略、同层净驻留、均值质量门禁与局部恢复计时分开；未获用户确认，未复现或部署。
+
+2026-10-26：旧解释将执行条件汇入有效带宽；uGDS新证据将CPU控制、SSD→GPU数据和完成顺序拆开，并揭示raw块设备与普通文件语义的差异。候选理解是直达数据路径、异步入口与语义等价须分别核验；未获用户确认、未复现或部署。
