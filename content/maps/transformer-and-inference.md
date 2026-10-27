@@ -36,6 +36,8 @@ endorsement: ai-candidate
 
 **直存执行分支：**在加载与重算之后，读[控制、数据与完成顺序](../notes/kv-cache-optimization.md#direct-storage-and-ordering)；同stream的callback等待、CPU完成成本及raw接口契约均会改变有效加载路径，不能由直达GPU推端到端普适收益。
 
+**预测预取分支：**在访问成本之后，读[下一检索集合、陈旧回退与尾等待](../notes/kv-cache-optimization.md#predictive-prefetch-and-staleness)。世界模型的 pose 外推与 LLM 下一访问并无通用等价；先核检索语义，再比较容量、平均/尾等待与长期质量。
+
 **模型结构分支：**理解完整生成链之后，读[删除层与修复的复合目标](../notes/depth-pruning-and-repair.md)，再比较有限枚举、独立PPL、任务能力和部署成本。修复改变候选排序，不能先固定未修复最优或将PPL当全部能力。
 
 ## Evidence

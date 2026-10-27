@@ -2,7 +2,7 @@
 
 本批次于 2026-10-21 从核对过的 origin/main `af525f779464752dfa4d08a8e895dc54cd93ef81` 开始唯一 `research/batch-2026-10-21`。2026-10-20 四项已由 [PR #28](https://github.com/fsyv/fsyv.github.io/pull/28) 合入，不再重复待审；[10-20 晨报](digests/2026-10-20.md)、历史来源与判断归属保留，合并不自动升级 endorsement。
 
-本批次现累计2026-10-21、10-22、10-23与10-26各四项，共十六项AI候选，尚未获用户逐项确认。[最新晨报](digests/2026-10-26.md)、[10-23晨报](digests/2026-10-23.md)、[10-22晨报](digests/2026-10-22.md)与[10-21晨报](digests/2026-10-21.md)分别完整展开问题、机制、数据及边界；本页只维护累计决定，正文不复制到第二处。当前PR29仍open draft，主控未取得新增真实评论，沉默不构成接受或拒绝。
+本批次现累计2026-10-21、10-22、10-23、10-26各四项与10-28五项，共二十一项AI候选，尚未获用户逐项确认。[最新晨报](digests/2026-10-28.md)、[10-26晨报](digests/2026-10-26.md)、[10-23晨报](digests/2026-10-23.md)、[10-22晨报](digests/2026-10-22.md)与[10-21晨报](digests/2026-10-21.md)分别完整展开问题、机制、数据及边界；本页只维护累计决定，正文不复制到第二处。当前PR29仍open draft，主控未取得新增真实评论，沉默不构成接受或拒绝。
 
 | 日期 / 发现 | 具体提议与依据 | 知识位置及接受范围 | 决定 |
 | --- | --- | --- | --- |
@@ -22,9 +22,15 @@
 | 2026-10-26/B1 | [uGDS指定正文](../content/sources/paper-ugds.md)区分CPU控制、SSD→GPU数据与完成顺序，单流callback等待与raw接口契约限定有效路径收益 | 扩[KV访问解释](../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)及存储/推理图；接受测量与语义条件，暂缓POSIX透明替换、混合负载/长期稳定和通用生产收益，不把logicalKV吞吐当SLO-goodput | 待审 |
 | 2026-10-26/B2 | [修复感知剪枝指定正文](../content/sources/paper-repair-aware-depth-pruning.md)及AI复合目标/组合复算，有限评分最优不保独立能力，Gemma不可fold与wall成本保留 | 新[完整解释](../content/notes/depth-pruning-and-repair.md)，扩优化/推理图及方法链接；接受目标/有限最优/任务评价区分，暂缓通用greedy保证、所有模型同大小速度和部署收益 | 待审 |
 | 2026-10-26/C1 | [Reynolds1883指定原文/表图](../content/sources/reynolds-pipe-flow-1883.md)区分半径尺度、染料与下游阻力判据，现代Re/时间尺度和两条TableI乘积为AI推导 | 新[完整管流解释](../content/notes/reynolds-similarity-and-transition.md)与[流体地图](../content/maps/fluid-mechanics-and-dynamic-similarity.md)，生态仅结构类比；接受条件解释与复算，暂缓普适阈值、现代稳定性及生态状态映射 | 待审 |
+| 2026-10-28/A1 | [TDC公开定义](../content/sources/published-tdc-cache-2025.md#reward-followup)、[Ng等指定定理](../content/sources/ng-harada-russell-reward-shaping-1999.md)及AI有限和/两槽反例，区分持续差分等价、终端项与处罚缩放 | 扩[缓存学习](../content/notes/cooperative-caching-and-learning.md#reward-and-horizon)、策略改进链接/原问题及Web3图；接受限定代数与目标分层，暂缓实际state/done/bootstrap、误差证书、算法缺陷或部署收益判断 | 待审 |
+| 2026-10-28/A2 | [交通旧源回访](../content/sources/paper-climate-transport-collapse.md#implementation-followup)与AI精确截断收支、固定/时变交换反例；负总净输入与每步连通仍不足保证有界 | 扩[交通解释](../content/notes/transport-delay-propagation-and-thresholds.md#clipped-balance)及概率图；接受模型内推导与有理数核算，不当真实铁路复现、普遍稳定判据或作者固定矩阵场景失效证明 | 待审 |
+| 2026-10-28/B1 | [WorldPager指定正文](../content/sources/paper-worldpager.md)的pose预测/stale fallback、KV等待分母、尾部反例与长间隔质量；带宽算例为AI | 扩[KV解释](../content/notes/kv-cache-optimization.md#predictive-prefetch-and-staleness)及推理图；接受容量/检索语义/等待/质量分层，暂缓普适零等待、实时生成、LLM部署与官方基线排名 | 待审 |
+| 2026-10-28/B2 | [Claim Smoothing指定正文](../content/sources/paper-claim-smoothing.md)分开支持引用与整组证据范围，四臂比较及73claim测量边界；原文alpha不一致保留 | 新[结论范围解释](../content/notes/claim-scope-and-evidence-synthesis.md)，扩输入表示与知识实践图；接受同方面支持/限制/反证审计，暂缓模型裁判自动确认、客观风险比和人类理解效果 | 待审 |
+| 2026-10-28/C1 | [Rutherford/Soddy1902指定原文/图](../content/sources/rutherford-soddy-radioactivity-1902.md)分开分离、持续生成、混合测量与残余假设；一阶有效模型/4天表为AI | 新[放射活性解释](../content/notes/radioactive-equilibrium-and-separation.md)与[地图](../content/maps/radiochemistry-and-transformation.md)，DNA仅结构类比；接受受限机制与测量边界，暂缓现代核素身份、精确半衰、残余机制和定年应用 | 待审 |
 
 ## 每日简报源文件
 
+- [2026-10-28](digests/2026-10-28.md)
 - [2026-10-26](digests/2026-10-26.md)
 - [2026-10-23](digests/2026-10-23.md)
 - [2026-10-22](digests/2026-10-22.md)
@@ -40,4 +46,6 @@
 
 10-26新增范围为迁移归属/恢复、直存执行契约、剪枝修复目标与管流实验判据，已有十二项及缺口保留。接受基础解释不关闭恢复实现、生产服务、独立能力或现代稳定性问题。
 
-独立Reviewer与主控同提交检查的本轮实际状态见[10-26回执](state/runs/2026-10-26.md)；[10-23回执](state/runs/2026-10-23.md)、[10-22回执](state/runs/2026-10-22.md)及[10-21 回执](state/runs/2026-10-21.md)只覆盖其历史 SHA。这里不预填成功，新候选或基线变化后须重新审核。
+10-28新增范围为训练奖励/时间边界、截断积压收支、预测检索与结论范围、历史放射化学机制；已有十六项及缺口保留。接受限定解释不关闭真实状态/终端实现、铁路复现、生产预取、人类理解或现代核素识别问题。
+
+独立Reviewer与主控同提交检查的本轮实际状态见[10-28回执](state/runs/2026-10-28.md)；[10-26回执](state/runs/2026-10-26.md)、[10-23回执](state/runs/2026-10-23.md)、[10-22回执](state/runs/2026-10-22.md)及[10-21 回执](state/runs/2026-10-21.md)只覆盖其历史 SHA。这里不预填成功，新候选或基线变化后须重新审核。

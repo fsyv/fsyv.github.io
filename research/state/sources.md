@@ -2,6 +2,43 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-10-28
+
+三通道及主控共12份研究候选/回访：研究员A3、主控交通1、B6、C2；6次指定正文深读：研究员A2、交通1、B2、C1；形成A1/A2/B1/B2/C1五项。另有A/B各一份无关误取、实际只读题录/摘要，因此不同canonical实际触达14，超过12入口上限2；没有额外深读或推荐，不隐去偏差，也不声称全部预算要求满足。别名、旧版本/工具入口、跨角色关键原文核查另计，不重复当新研究。[晨报](../digests/2026-10-28.md)与[回执](runs/2026-10-28.md)分别保留可独立理解的发现及实际运行状态。
+
+| canonical / 版本 / 入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围与决定 |
+| --- | --- | --- | --- |
+| arxiv:2512.09961 v1；Chen/ Shi/ Wang/ Wang/ Zhang，[TDC-Cache](https://arxiv.org/abs/2512.09961) | 2025-12-10T02:52:41Z | 2026-10-12 / 2026-10-28 | A1旧应用实质回访；HTML IV-B式2–4/IV-C12–14/V-A15/V-B1–3式16–20、25–26及邻段/VIII-B首段，未全文/代码/复现。差分、处罚、bootstrap与状态历史分层；[来源](../../content/sources/published-tdc-cache-2025.md#reward-followup)。研究高/启发高/限定引文与代数可靠高、部署未验 |
+| icml:1999:ng-harada-russell:reward-shaping；[作者PDF](https://people.eecs.berkeley.edu/~russell/papers/icml99-shaping.pdf) | ICML1999 | 2026-10-28 / 2026-10-28 | A1旧文新读；十页文件pp2–5，§2.1–2.2定义/§3 Theorem1式2及充分性证明/Corollary2/两remarks，未必要性附录或实验；文字gamma漏失以内存pypdf复核，未视觉。[来源](../../content/sources/ng-harada-russell-reward-shaping-1999.md)；研究高/启发高/限定定理可靠高 |
+| arxiv:2610.25033 v1；[PlaneZip](https://arxiv.org/abs/2610.25033) | 2026-10-18T05:44:24Z | 2026-10-21 / 2026-10-28 | A可得性回访，只有题录/history、HTML§VII结尾next steps与链接，未新读编码/模拟；prototype仍未来表述、限定检索未定位作者实现，不说不存在，不形成新发现。[范围](../../content/sources/paper-planezip.md#availability-followup)；研究中/启发中/可靠中 |
+| doi:10.1073/pnas.2532180123；arxiv:2610.26428 v1；Faccin/Scagliarini/De Domenico，[交通原文](https://arxiv.org/html/2610.26428v1) | PNAS online2026-10-16/issue10-20，arxiv10-19T13:54:12Z为别名 | 2026-10-21 / 2026-10-28 | A2；重读§2.1/2.4/4.1/4.3，未全读/视觉/执行代码/铁路复现；另官方repo README可得性。精确截断收支与两站点固定/时变例为AI，100步有理数核算不当真实实验。[来源](../../content/sources/paper-climate-transport-collapse.md#implementation-followup)；研究高/启发高/模型代数可靠高、系统外推未验 |
+| arxiv:2610.35529 v1；Bingnan Liu/Ruini Xue，[WorldPager](https://arxiv.org/abs/2610.35529v1) | 2026-10-26T14:44:33Z | 2026-10-28 / 2026-10-28 | B1；HTML II-A–E/III-A–E/IV-A–F/VII，未全V/附录/PDF/像素图/代码/复现。pose预测/stale fallback、等待分母、尾部反例与longgap质量；[来源](../../content/sources/paper-worldpager.md)。研究高/启发高/可靠中 |
+| arxiv:2610.35793 v1；Tiasa Singha Roy/Manya Wadhwa/Greg Durrett，[Claim Smoothing](https://arxiv.org/abs/2610.35793v1) | 2026-10-26T17:29:48Z | 2026-10-28 / 2026-10-28 | B2；HTML§1–6，Table1仅ResearcherBench/CS2，A.1–A.3/Tables8–10/E.5/Table16/F开头/Table17部分；未完整prompts/C/D/G/PDF图像/代码数据/复现。另主控核C/Table13，保留alpha文字与表不一致。[来源](../../content/sources/paper-claim-smoothing.md)；研究高/启发高/可靠中 |
+| arxiv:2610.35591 v1；Dimitris Gkoulis，[Making the Telemetry Pipeline Measurable: An Edge IoT Testbed and Dataset for End-to-End Latency, Provenance, and Energy-Aware Benchmarking](https://arxiv.org/abs/2610.35591) | 2026-10-26T15:19:07Z | 2026-10-28 / 2026-10-28 | B仅题录/摘要/history，dataset集成不能当受控归因，未正文、暂缓。研究中/启发高/当前阅读可靠低 |
+| arxiv:2610.35413 v1；Niklas Baumgarten，[How Numerical Errors Scale with Hardware](https://arxiv.org/abs/2610.35413) | 2026-10-26T13:25:03Z | 2026-10-28 / 2026-10-28 | B仅题录/摘要/history，复杂度/并行与能耗同预算前提未核，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.35230 v1；Xiaoyang Zhang/Yuejun Yan/Qingang Zhang/Yonggang Wen，[Context Is Not Free: Carbon-Aware LLM Routing for Multi-Turn LLM Web Services across Geo-Distributed Data Centers](https://arxiv.org/abs/2610.35230) | 2026-10-26T11:20:26Z | 2026-10-28 / 2026-10-28 | B仅题录/摘要/history，碳系数、重算/质量/时延与trace未核，不传播摘要改善数，暂缓。研究高/启发高/可靠低 |
+| arxiv:2610.33927 v1；Aidan Meador-Woodruff/Gourab Ghoshal，[Interplay Between Network Heterogeneity and Activation Thresholds in Global Cascades](https://arxiv.org/abs/2610.33927) | 2026-10-24T21:41:38Z | 2026-10-28 / 2026-10-28 | B仅题录/摘要/history，Watts infinitesimal seed/degree-threshold heterogeneity证明未读，不能搬到交通有限扰动，暂缓。研究中/启发高/可靠低 |
+| doi:10.1080/14786440209462856；Rutherford/Soddy，[The Cause and Nature of Radioactivity, Part I](https://webserver.lemoyne.edu/giunta/ruthsod.html) | print1902-09；online2009-04-15为数字上线 | 2026-10-28 / 2026-10-28 | C1；转录据1962重印，I–VI/IX–X，VII/XI–XIII相关边界，Figures2–5视觉；非原刊全册扫描/现代核物理/复现。恒平台/连续分离/早期混合与有效模型分开；[来源](../../content/sources/rutherford-soddy-radioactivity-1902.md)。研究中/启发高/可靠中 |
+| doi:10.1126/science.110.2869.678；J.R.Arnold/W.F.Libby，[Age determinations by radiocarbon content; checks with samples of known age](https://pubmed.ncbi.nlm.nih.gov/15407879/) | Science110(2869):678–680，1949-12-23 | 2026-10-28 / 2026-10-28 | C初筛只有PubMed题录，明确No abstract available；未摘要/全文，未深读不建机制，暂缓，可靠性只限题录。Nobel背景403未读，不增加第三研究 |
+
+### 无关误取与入口预算偏差
+
+| canonical / 身份 | 实际读取范围与处理 |
+| --- | --- |
+| arxiv:2502.14021；Jia-Qi Gong/Ji-Chong Yang，*Digit quantum simulation of a fermion field in an expanding universe*；[误取入口](https://arxiv.org/abs/2502.14021) | A误开后读题录/摘要/history/期刊字段；v1 2025-02-19T18:23:47Z、v2 2025-11-20T18:57:48Z。未正文/PDF/代码，立即排除，不作为任何发现依据；计额外canonical触达1，不掩盖为未读 |
+| arxiv:2610.29534 v1；Sakhaei Gharagezlou/Askari Donbeh/Monemi/Latva-aho/Rasti，*Safe World Model for Joint Trajectory and Beamforming Design of Mobile Base Stations*；[误取入口](https://arxiv.org/abs/2610.29534) | B核旧RISK时误键（正确29544），读题录/摘要/history，首提2026-10-21T10:23:56Z。未正文，不推荐，额外触达1；随后正确RISK只版本复查 |
+
+### 窗口、版本、工具与访问范围
+
+B窗口2026-10-21T07:30:00+08:00—10-28T07:30:00+08:00，补上次10-26T07:36:04+08后遗漏。选择性cs.DC/cs.CL/math.OC/physics.soc-ph recent默认首屏最新公告27日，未穷尽分页、期刊会议和替换版本。B六份中五份为上次终点后新预印本，33927为补遗漏；题录未见journal字段不证明没有正式发表。
+
+- 更正10-26账本/回执的“uGDS仍仅v1”版本核查：官方题录实际已有v2，提交2026-10-23T01:57:07Z；10-26固定v1指定阅读仍属实。今日只核history，未比较v2正文，不升级旧结论或将旧更新称今日新发。Repair30552/UlaCache29820/RISK29544/SilentCue30026仍只核v1，无新正文不重推；旧run保留历史状态。
+- Hugo首次web缓存仍0.168，随后[固定release](https://github.com/gohugoio/hugo/releases/tag/v0.169.0)及实时REST一致v0.169.0、published_at2026-10-27T16:24:46Z；仅读release关键段，未源码，项目保持0.166。Obsidian索引仍10-22 Catalyst1.15.0，另补此前遗漏的[public Desktop1.14.5](https://obsidian.md/changelog/2026-10-22-desktop-v1.14.5/)（10-22、Electron43.7.5→43.8.3）；CommonMark仍0.31.2/2024-01-28。工具不当论文发现，不自动升级。
+- A作者PDF入口超时后Berkeley恢复；系统Python缺pypdf后bundled内存读取恢复，不安装依赖或保存论文。TDC/PlaneZip精确题名网页及两次GitHub repository查询未定位作者实现，只是限定可得性，不证明不存在。
+- C DOI web与GIF读取失败后学术转录/内存图恢复；现代定年题录没有摘要，背景PDF403，没有把失败入口冒称深读。所有图/原文中间材料都未写公开仓库。
+
+五项候选加此前十六项累计二十一项，未合并不构成正式接受。真实评论与同SHA审核/构建/发布由主控[回执](runs/2026-10-28.md)记实；本账本不预填成功。
+
 ## 2026-10-26
 
 10份canonical回访/候选A3/B6/C1、4次指定部分正文深读A1/B2/C1、4发现A1/B1/B2/C1。A含两份旧研究的证据补查失败和一份旧文新读，B六份新canonical均为窗口补遗漏，C旧原文首次进入流体力学。同一论文各入口、版本/工具复查、跨角色复核和算术不重复计数。没有声称全文全读、系统复现或穷尽检索。[晨报](../digests/2026-10-26.md)保留机制/证据和判断边界，[回执](runs/2026-10-26.md)记录精确失败、角色及审核构建/发布。

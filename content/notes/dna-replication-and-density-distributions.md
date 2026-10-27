@@ -66,3 +66,5 @@ pp.680–681/图 9 对一代半重 DNA 在 CsCl 中 100°C 加热 30 分钟，�
 - 与[网络模型证据](network-random-and-scale-free.md#evidence)仅有结构类比：单一统计特征相容不足以唯一识别生成机制，需要比较候选的不同可观测预测。生物实验的物质守恒/培养/密度条件不对应网络构图和度分布检验；没有数学等价、经验关联或性能映射。
 
 与[Stroop任务与对照](stroop-interference-and-experimental-controls.md)只有实验识别的结构类比：一组观察与某机制相容，不表示排除了全部替代机制；生物密度与心理任务、计分条件各自独立，不作数学等价或机制映射。
+
+- 实验设计的结构类比：[放射活性与分离响应](radioactive-equilibrium-and-separation.md)同样用追加处理区分一个统计量无法区分的机制；化学分离/持续周转与 DNA 示踪复制不因此数学等价。

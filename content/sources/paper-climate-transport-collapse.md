@@ -33,3 +33,9 @@ Mauro Faccin、Tomas Scagliarini、Manlio De Domenico，*Systemic collapse emerg
 ## Support-and-limits
 
 [交通延误的结构—驱动—传播—吸收解释](../notes/transport-delay-propagation-and-thresholds.md)保留具体机制和外测口径，扩展[网络结构笔记](../notes/network-random-and-scale-free.md)已有的“度分布不决定动力学”边界。与生态恢复只有结构类比，交通延误不等于生态状态或存储修复；不跨系统搬阈值。真实极端状态、雨场异质性和时变运行图仍需额外证据。
+
+## Implementation-followup
+
+2026-10-28，主控重新读取 v1 HTML §2.1、2.4、4.1、4.3 与 arXiv history，仍仅 v1；没有全篇重读、视觉核图、审计执行函数或复现。新增知识是[截断总量恒等式及两站点反例](../notes/transport-delay-propagation-and-thresholds.md#clipped-balance)，均为 AI 推导，不能归为作者实验或新的发表。
+
+原文 §4.3 后的代码声明链接到 [CoMuNeLab/adaptsys_train-delays](https://github.com/CoMuNeLab/adaptsys_train-delays)。主控通过 GitHub connector 实读 default `main` 的 [README](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/main/README.md)，blob SHA `e79699b462b8c973039c28791b1fb1236d33e5f6`。README 仍使用 *Transport network response to external stressor fields* 题名，列出 `diffsys/main.py`、`models.py`、`code_steady_state.py` 和部分意大利数据，并说明额外气候数据从 Copernicus 获取。这里只核入口与范围，没有安装、执行或读取实现函数，不能说“没有代码”，也不能由 README 推出完整可复现。下一步是核已有实现的截断、矩阵归一、参数和数据取得条件。

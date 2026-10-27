@@ -41,6 +41,8 @@ gold由格式定义，独立视觉验证kappa=0.72也不是作者意图标注；
 
 ## Links-and-next
 
+- 后续依赖：[结论范围与整组证据](claim-scope-and-evidence-synthesis.md)在输入保留之后，核综合是否保留限制与冲突；文字或标记保真不自动使总结校准。
+
 - [知识实践地图](../maps/knowledge-practice.md)先加入输入表示核验，再讨论编辑组织与读者理解；本页没有要求更换本库Markdown系统。
 - 对 [笔记拆分方法](when-to-split-a-note.md)及 [效果检验问题](../questions/evaluate-note-splitting.md)的关系是前置测量边界：先排除输入信息损失，再比较读者能否重建论证。解析任务得分不能关闭人类理解问题。
 - 与 [Stroop任务解释](stroop-interference-and-experimental-controls.md)只有设计关系：应先声明正确反应和计分，才知道某个差异测到什么；人类干扰与文档Agent没有数学等价或机制同一性。

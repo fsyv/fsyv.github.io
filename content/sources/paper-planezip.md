@@ -45,3 +45,7 @@ $m_t$ 为原始字节， $c_t$ 为预测的原始/压缩字节比， $\gamma$ �
 压缩比分布来自 CPU 小 batch 三轮；BF16 由 FP32 转换，形状 trace 使用 meta。没有 GPU 压缩引擎原型，模拟忽略 kernel fusion/copy 干扰。§V-F 指出 FlashAttention 不保存完整 attention 矩阵，GPT2 的收益会更小。不能由压缩比直接推训练加速，也不能推广为推理 KV 收益。
 
 支持[张量生命周期中的压缩与重规划](../notes/tensor-liveness-and-peak-memory.md#compression-and-offload)：表示变化会同时改变空间和事件成本。该页的 120 MB 教学例是 AI 按式 (2) 复算，不是作者测量。[基础验证问题](../questions/foundations-validation.md)仍缺同实现压缩引擎、端到端时间与输出核验。
+
+## Availability-followup
+
+2026-10-28 仅复核题录/history（仍 v1，2026-10-18T05:44:24Z）、HTML §VII 结尾 next steps 及正文链接可得性；未重新深读编码或模拟。GPU copy engine/software prototype 仍在未来工作表述，限定题名网页和 GitHub repository 搜索未定位作者实现，不据零命中断言代码不存在。保留 10-21 指定阅读及无真实引擎复现的边界；2026-11-04 仅有新原型、源码或实现证据再深读。

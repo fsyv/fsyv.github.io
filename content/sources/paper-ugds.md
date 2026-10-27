@@ -36,3 +36,7 @@ Figure14用发起线程CPU time/wall time定义利用率：一线程/一QP/1MiB�
 ## Support
 
 扩展[KV访问成本](../notes/kv-cache-optimization.md#direct-storage-and-ordering)中有效带宽的执行条件；不替代[逐请求服务目标](../notes/storage-latency-and-slo.md)的完整评价。
+
+## Version-followup
+
+2026-10-28，题录/history核到v2于2026-10-23T01:57:07Z提交，纠正10-26研究账本/回执曾称“仅v1”的版本核查。10-26实际读取固定v1的范围仍保留；本轮没有比较或读取v2正文，不把v1机制与数字升级为v2证据，也不将旧更新称为今日新发表。历史run不追溯改写。

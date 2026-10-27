@@ -29,6 +29,7 @@ description: "按照问题、前置依赖和学习顺序组织知识。"
 | [实验心理学与机制识别](experimental-psychology-and-inference.md) | 任务、计分与练习对照怎样限制心理机制解释？ |
 | [流体力学与相似性](fluid-mechanics-and-dynamic-similarity.md) | 无量纲参数怎样组织实验，扰动和观察判据怎样限制转变阈值？ |
 | [统计物理](statistical-physics.md) | 非平衡功怎样给出自由能，有限样本为何仍会漏掉关键事件？ |
+| [放射化学与持续转变](radiochemistry-and-transformation.md) | 恒定活性如何由生成与衰减平衡产生，分离和时间响应能识别什么？ |
 
 [知识实践地图](knowledge-practice.md)从“笔记应当多大”这一问题出发，说明笔记、资料与开放问题怎样协作。
 

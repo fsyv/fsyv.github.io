@@ -156,6 +156,32 @@ $\Delta M=N M_{\mathrm{saved}}-M_{\mathrm{pred}}-M_{\mathrm{aux}},$
 
 接口契约必须与性能一起比较：uGDS解绑目标SSD的kernel NVMe driver，按raw block/aligned offset访问，放弃通常POSIX目录、锁和OS page-cache coherency。cuFile-style入口不证明对普通文件应用语义透明。作者goodput图注为logical KV tokens/s，未见SLO阈值/成功分母，因此不能直接代入[联合服务成功](storage-latency-and-slo.md#joint-success)的goodput。下一步应先核同语义路径、buffer生命周期与完成依赖，再测完整请求；当前不建议据此直接替换生产存储。
 
+## Predictive-prefetch-and-staleness
+
+**2026-10-28 新增 AI 候选解释。** 预取还需知道下一次读哪些状态。[Liu、Xue 的 WorldPager v1 指定正文](../sources/paper-worldpager.md)在长时世界模型中，按匀速外推下一相机 pose，在当前 denoise 期间预取下一 chunk 的历史检索块。控制输入不表示未来动作已经给定；预测错或块未就绪时，系统可复用前一 chunk 的 stale retrieval set。因此其等待减少包含“允许检索内容晚一 chunk”的语义取舍，不能等同于精确原检索集合零等待。反量化仍在 compute stream，不能一并称为已隐藏。
+
+令 $r_{\rm new}$ 为下一 chunk 新读字节，$T_c$ 为可重叠的计算秒数，$B_c$ 为每 chunk 写出字节，$\mathrm{BW}_R$、$\mathrm{BW}_W$ 为有效读、写 B/s。来源的平均模型为
+
+$$
+t_{\rm stall}\approx\max(0,r_{\rm new}/\mathrm{BW}_R-T_c),\qquad
+\mathrm{BW}_W\ge B_c/T_c.
+$$
+
+**AI 单位复算：**取 a_yaw 报告的平均 $r_{\rm new}=121.5$ MB、$T_c=1.25$ s、$B_c=129.4$ MB，十进制读带宽 0.25GB/s 得到读取 0.486s、理想窗口余量 0.764s；持续写需至少 0.10352GB/s。均值留有余量不保证每次都赶上，预测错误、突发复访和读写争用仍可产生尾等待。
+
+RTX 4090 24GB、单 NVMe（顺序读 5.82GB/s）、32GiB cgroup 且无 swap 下，MG2 1.8B 每 chunk 12 帧、四次 denoise，检索三个旧 chunk。仅远端 int4、当前/sink/window bf16，每 chunk 存储由 bf16 486.6MB 减为含 scales 的 129.4MB。两条 synthetic dense-revisit 轨迹各 36 chunks、去一 warmup 后五 rollouts，各 165 稳态 chunks；时间没有置信区间。强制检索块来自 NVMe 的同一 a_yaw 对照为：
+
+| 策略 | 中位 chunk 时间 | 中位 retrieved-KV stall |
+| --- | --- | --- |
+| WorldPager 预取 | 1255.8ms | 0ms |
+| 按需，保留 LRU staging reuse | 1309.5ms | 60.2ms |
+
+后者 chunk 时间约长 4.3%，但这只是指定轨迹/实现；stall 排除反量化、写回，超过 0.5ms 才记为 stalled。软件 token-bucket 限速 0.25GB/s 时，另一 b1_ws 轨迹 median stall 0.03ms、p99 399ms；0.1/0.05GB/s 时，预取 p99 2621/6490ms 还高于按需的 2424/4844ms。均值模型和标题中的 zero 都不提供普遍尾等待保证。
+
+长时容量和记忆质量也分开。3000 chunks 相当于播放 37.5 分钟，但耗时 63.2 分钟、约 9.5fps；该轨迹从未回到已 spilled 的 chunk，不能独自证明长会话读回。另有 2000-chunk 三场景往返读盘测试。600-chunk 往返、五 seeds、每 tier 39 events 中，间隔超过 300 chunks 的 int4 对 bf16 的 MUSIQ 差为 −1.28，95% 事件级 bootstrap 区间 [−2.25,−0.36]（每事件先跨保留 seeds 平均）；短程无可测损失不覆盖长间隔。超过 341 chunks 的 RoPE 表限制另靠重新旋转处理，不能混归因为存储容量。
+
+这在加载成本之外增加“预测能否及时获得、是否改变检索语义”的证据义务。当前未读代码或复现；基线为作者重实现，ReWorld-style 还改了 fallback/bank 条件。应继续做同检索语义的突发复访、真实慢盘、尾等待及长间隔质量对照，暂不推广为 LLM KV 服务或实时生成保证。
+
 ## Revision
 
 2026-10-12：将重复的论文名列表重组为成本分类；移除缺少实验条件与可靠出处的性能倍数，区分分页、前缀复用、压缩及卸载。分类与成本模型均为 AI 候选。
@@ -169,3 +195,5 @@ $\Delta M=N M_{\mathrm{saved}}-M_{\mathrm{pred}}-M_{\mathrm{aux}},$
 2026-10-23：旧解释已区分压缩、驻留与加载，新RISK-KV证据补上可重建状态及共享预测器成本。候选修订将raw省略、同层净驻留、均值质量门禁与局部恢复计时分开；未获用户确认，未复现或部署。
 
 2026-10-26：旧解释将执行条件汇入有效带宽；uGDS新证据将CPU控制、SSD→GPU数据和完成顺序拆开，并揭示raw块设备与普通文件语义的差异。候选理解是直达数据路径、异步入口与语义等价须分别核验；未获用户确认、未复现或部署。
+
+2026-10-28：旧预取解释关注重叠与字节，新 WorldPager 证据引入下一检索集合的预测条件和 stale fallback。候选修订区分容量、等待范围、检索语义与长间隔质量；平均可覆盖不保证尾部，未获用户确认、未复现或部署。
