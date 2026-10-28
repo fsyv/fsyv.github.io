@@ -82,7 +82,7 @@ $$
 
 来源事实：Fine Plan在安全子层边界暂停；Hold仅停止新提交，已经提交到GPU的工作仍须排空。当新鲜度预算紧急时，即便风险较高也可能转Admit。因此“作出暂停决定”“停止提交”“硬件实际让出资源”应分别计时，不能把策略描述为无条件保护前景。
 
-论文Orin Nano Super平台、四路1080p/30Hz前景、后台Qwen2.5-1.5B、246输入及最多16输出token的同负载对照：
+论文在Orin Nano Super平台，以四路1080p/30Hz为前景负载，后台运行Qwen2.5-1.5B（246输入、最多16输出token）。前景单帧deadline为33.33ms；Unmanaged为未启用EdgePace调度的基础llama.cpp，对照结果如下：
 
 | 配置 | 前景deadline miss | 后台吞吐（token/s） |
 | --- | --- | --- |
