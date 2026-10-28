@@ -50,4 +50,6 @@ Table6 对 ResearcherBench 的 61 问题，分别重新生成 web、web 加 cali
 - 与[反复评分和留出集复用](adaptive-validation-and-holdout-reuse.md)互补：该页研究选择规则和统计泛化，本页研究结论的语义范围与整组证据。审计措辞不能代替独立验证、统一误差或应用时序证据。
 - 对本库的候选建议是比较同方面的支持、限制与冲突，逐项保留适用域；是否接受由用户决定，不把模型裁判标分当确认。
 
+[Snow供水比较](water-supply-comparison-and-denominators.md)提供具体范围审计案例：来源真实仍须区分全部供水区/局部交错、死亡/房屋与个人风险、逐例调查/比例推算。它是本页方法的应用实例，不是claim评分器或因果效应的独立验证。
+
 下一步核公开代码、人工 rubric 与来源内部数值差异；2026-11-04 复评。当前不将此关闭[笔记拆分的读者效果问题](../questions/evaluate-note-splitting.md)。

@@ -34,7 +34,7 @@ Web3 可以从一个问题进入：用户声称“拥有”某项数据、资产
 ## 公开论文案例与保证边界
 
 - [声誉与共识](../notes/reputation-and-consensus.md)：在许可资格和具体故障假设下，考察声誉机制怎样改变参与者选择与激励；与共识安全分开论证。
-- [协同缓存架构与学习](../notes/cooperative-caching-and-learning.md)：把内容、索引、访问和协作策略放进一个公开研究场景，检查成本和信息条件；再读[差分奖励、持续任务与终端边界](../notes/cooperative-caching-and-learning.md#reward-and-horizon)，先对应训练回报、处罚权重和时延目标，再讨论估计价值的改进保证。
+- [协同缓存架构与学习](../notes/cooperative-caching-and-learning.md)：把内容、索引、访问和协作策略放进一个公开研究场景，检查成本和信息条件；再读[差分奖励、持续任务与终端边界](../notes/cooperative-caching-and-learning.md#reward-and-horizon)，先对应训练回报、处罚权重和时延目标，再讨论估计价值的改进保证；[统一终端与bootstrap解释](../notes/cooperative-caching-and-learning.md#terminal-bootstrap-followup)继续区分真正终止、采集截断与重置，实际实现入口仍未取得。
 - [学习共识协议](../notes/learning-consensus-protocol.md)：在共识基础之后检查共同候选输入、有效收票与赞成门槛、异构参数的联合更新身份；两个 AI 反例只检验局部推论，未裁定完整实现安全性。
 
 案例不能直接替代基础证明；基础机制也不能单独证明案例达到其性能目标。先看论文模型，再看证据是否覆盖实际使用条件。

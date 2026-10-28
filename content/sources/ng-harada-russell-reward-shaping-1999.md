@@ -32,3 +32,9 @@ $$
 ## Support-and-limits
 
 支持[差分命中奖励与时间边界](../notes/cooperative-caching-and-learning.md#reward-and-horizon)的分析入口。该页普通差分的有限和恒等式、TDC 对应、两时槽算例与罚项缩放均为 AI 推导，不是本论文分析 TDC，也没有验证真实缓存状态充分性、统一误差或部署收益。
+
+## Terminal-followup
+
+2026-10-29增读/重核作者PDF文件pp.3–5：§2.1 regularity、§3 Theorem1式2与充分性证明、Corollary2/Remark1。仍未读完整必要性附录或实验。PDF截图两次失败，以pypdf内存提取交叉确认gamma，未完成视觉核验。
+
+[统一终端解释](../notes/cooperative-caching-and-learning.md#terminal-bootstrap-followup)将TDC奖励写成相应基奖励加势函数，并加入任意截断bootstrap；这是本库AI推导，不是原文针对TDC、随机终止或重置代码的分析。原文Bellman充分性证明、持续有界势的尾项解释、有限任务设计选择三者分开，不能用普遍策略不变结论替实际终端实现背书。

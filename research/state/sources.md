@@ -2,6 +2,23 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-10-29
+
+6份canonical候选/回访（A2/B3/C1），4次指定正文深读（A2/B1/C1），3项发现A1/B1/C1；无额外误取正文。旧源别名、工具入口与跨角色复核不重复计数。A理论推进已整合，但用户要求的实际实现审计因未定位作者代码入口仍未完成，今日研究partial；选择性监测不等于穷尽。[晨报](../digests/2026-10-29.md)与[回执](runs/2026-10-29.md)分开保存解释和运行状态。
+
+| canonical / 版本 / 入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围与决定 |
+| --- | --- | --- | --- |
+| arxiv:2512.09961 v1；[TDC](https://arxiv.org/abs/2512.09961v1) | 2025-12-10T02:52:41Z | 2026-10-12 / 2026-10-29 | A1旧应用回访；HTML V-B1–3式25–26/VIII-B及版本/实现入口检索，未读执行代码或复现。统一终端/处罚分析为AI；搜索未定位作者入口不证明不存在。[来源](../../content/sources/published-tdc-cache-2025.md#implementation-search)。研究高/启发高/整体可靠中，实际实现审计未完成 |
+| icml:1999:ng-harada-russell:reward-shaping；[作者PDF](https://people.eecs.berkeley.edu/~russell/papers/icml99-shaping.pdf) | ICML1999 | 2026-10-28 / 2026-10-29 | A1实质回访；文件pp3–5 §2.1 regularity/§3Thm1式2与充分性/Corollary2 Remark1；未完整附录或实验。截图失败，pypdf交叉gamma，非视觉；有限统一式归AI。[来源](../../content/sources/ng-harada-russell-reward-shaping-1999.md#terminal-followup)。限定推导可靠高，非应用证据 |
+| arxiv:2610.37307 v1；Mei/Pei/Wang/Wu/Canini/Xiao，[EdgePace](https://arxiv.org/abs/2610.37307v1) | 2026-10-27T14:26:16Z | 2026-10-29 / 2026-10-29 | B1；HTML§2.1–2.4/3.1–3.3 Algorithm1/4.1–4.4 Tables1–3及AppendixA/C指定表，未PDF图像/代码/复现。新鲜度/排空/吞吐取舍，非硬实时。[来源](../../content/sources/paper-edgepace.md)。研究高/启发高/可靠中 |
+| arxiv:2610.33923 v1；Jiahui Ni/Vishrant Tripathi，[Queuing for Inference: Dynamic Memory Footprints and Costly Preemption](https://arxiv.org/abs/2610.33923v1) | 2026-10-24T21:29:03Z | 2026-10-29 / 2026-10-29 | B仅题录/摘要/history；动态内存/抢占线索，定理/阈值/基准未核，不形成机制知识，暂缓。研究高/启发高/当前阅读可靠低 |
+| arxiv:2610.36636 v1；Saarth Deshpande/Neeraja J.Yadwadkar/Venkat Arun，[Agar: What-If Analysis for Microservice Applications](https://arxiv.org/abs/2610.36636v1) | 2026-10-27T04:50:20Z | 2026-10-29 / 2026-10-29 | B仅题录/摘要/history；组件界组合反事实SLO线索，未核覆盖/外推，摘要性能数字不传播，暂缓。研究中/启发高/可靠低 |
+| book:snow:cholera:1855:2e；[原扫描](https://kbroman.org/BMI881_fall2020/assets/snow_cholera.pdf)、[UCLA转录](https://epi-snow.ph.ucla.edu/Stream3_GrandExperiment_a.html) | 扉页1855；序1854-12-11不是出版年 | 2026-10-29 / 2026-10-29 | C1旧资料；印刷p68/74–83/TableVII–IX pp84–86及p86局限，浏览87–89；视觉83/86、转录对应交叉。未全书/附录清单/1856/复现。[来源](../../content/sources/snow-cholera-water-supply-1855.md)。研究中/启发高/可靠中；第三行不符保留，供水归类部分推算 |
+
+B窗口2026-10-22T07:30+08—10-29T07:30+08，补上次正式终点后遗漏。四recent首屏cs.DC/cs.PF/math.OC/cs.LG至10-28，未穷尽分页、期刊会议或全部版本替换；三候选首次提交均早于上次正式终点，均属窗口内补遗漏。最后显式时钟07:38:53+08；首个检索精确起时未采集。
+
+仅版本/工具复核：WorldPager仍v1；Hugo官方latest API与HTTP均v0.169.0、10-27T16:24:46Z，不升级本库0.166；Obsidian public1.14.5/Catalyst1.15.0仍10-22，CommonMark仍0.31.2/2024-01-28。Obsidian urllib403由web恢复；Python无bs4，用标准HTMLParser读同源，不新增依赖或深读。C旧snowbook3入口失败、新转录/原扫描恢复；截图/fitz限制与内存视觉恢复见来源。A误混检索命中未打开正文、不承担结论；详细失败均由run记实。
+
 ## 2026-10-28
 
 三通道及主控共12份研究候选/回访：研究员A3、主控交通1、B6、C2；6次指定正文深读：研究员A2、交通1、B2、C1；形成A1/A2/B1/B2/C1五项。另有A/B各一份无关误取、实际只读题录/摘要，因此不同canonical实际触达14，超过12入口上限2；没有额外深读或推荐，不隐去偏差，也不声称全部预算要求满足。别名、旧版本/工具入口、跨角色关键原文核查另计，不重复当新研究。[晨报](../digests/2026-10-28.md)与[回执](runs/2026-10-28.md)分别保留可独立理解的发现及实际运行状态。

@@ -49,6 +49,7 @@ Stroop 将 red、blue、green、brown、purple 排成表，各词都以其他颜
 - [实验心理学地图](../maps/experimental-psychology-and-inference.md)按任务→对照→计分→练习→机制证据阅读。
 - 与 [DNA 密度实验](dna-replication-and-density-distributions.md)只有识别结构上的类比：观测与某机制相容，不等于排除了全部替代解释。刺激任务和物质示踪没有数学等价。
 - 对 [笔记拆分效果](../questions/evaluate-note-splitting.md)仅提出待验证的设计关系：同时记录完成时间与推理遗漏，并控制顺序和熟悉；本实验没有证明任何笔记拆分方法有效。
+- 与[Snow供水比较](water-supply-comparison-and-denominators.md)是设计结构类比：比较总体、计量单位与嵌套观察期必须保留；心理任务对照不提供历史供水效应的识别条件或效应量。
 
 ## Open
 

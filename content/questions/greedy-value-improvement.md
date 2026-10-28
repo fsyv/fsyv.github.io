@@ -30,7 +30,7 @@ math: true
 
 ## 后续方向
 
-原定 2026-10-27 的应用回访于 10-28 执行，取得公开状态/奖励与 bootstrap 定义并补有限/持续任务分析。下一次 2026-11-04，优先核 environment/state、done/truncation/terminal bootstrap 与实际罚项证据；理论解释已经整合，不重复基本定理代替实现证据。
+原定 2026-10-27 的应用回访于 10-28 执行，取得公开状态/奖励与 bootstrap 定义并补有限/持续任务分析。2026-10-29已按用户请求优先补统一终端与处罚推导，但未定位作者代码入口。2026-10-30仅检查明确URL/新版本；无新入口则2026-11-04回访environment/state、done/truncation/terminal bootstrap及罚项实现，不重复基础定理代替证据。
 
 关联应用：[协同缓存收益复核](web3-caching-evaluation.md)。组织入口：[Web3 与协作决策地图](../maps/web3-foundations.md)。
 
@@ -41,3 +41,5 @@ math: true
 状态保持 **researching**。接受候选证明不等于接受缓存状态设计、网络误差证书、训练收敛或部署收益；上述证据缺口解决后再按实际范围判断是否关闭。
 
 2026-10-28，依据[TDC 指定增读](../sources/published-tdc-cache-2025.md#reward-followup)与[势函数变换定理](../sources/ng-harada-russell-reward-shaping-1999.md)，在[缓存学习解释](../notes/cooperative-caching-and-learning.md#reward-and-horizon)整合普通差分的折扣和恒等式、有限终端反例及处罚缩放。明确原目标是最优性 bootstrap，未证明估计等于真实价值；状态历史、episode 实现、统一误差和部署仍缺，保持 **researching**，用户未确认。
+
+2026-10-29，响应[用户继续深入2026-10-28/A1](https://github.com/fsyv/fsyv.github.io/pull/29#issuecomment-6458746818)，已把[持续/有限终端/采集截断的统一推导、处罚最小反例和重置边界](../notes/cooperative-caching-and-learning.md#terminal-bootstrap-followup)整合回既有解释。数学推进不等于用户接受。限定公开检索未定位作者实现，终止/重置/终端价值的实际审计仍未完成，不能从论文公式断言缺陷。状态继续 **researching**；10-30只检查是否出现明确实现URL/新版本，无新入口则11-04按实现证据回访，不重复基础推导。

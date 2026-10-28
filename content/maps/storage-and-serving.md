@@ -31,6 +31,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 
 [早转归属与恢复依赖](../notes/storage-placement-and-migration.md#early-ownership-and-recovery)在Squall之后比较另一种迁移协议：先交归属会把新写和旧数据分置两侧日志，须单列恢复依赖；作者未完成的恢复扩展不能当实现保证。LLM分支再读[直存控制与完成顺序](../notes/kv-cache-optimization.md#direct-storage-and-ordering)，区分payload直达GPU、CPU控制及同流依赖，比较性能前先核raw块设备与文件语义。
 
+[结果新鲜度与实际控制路径](../notes/storage-latency-and-slo.md#freshness-and-actuation)接续SLO分支：先分清观测年龄和前景deadline，再比较Hold后的排空/恢复与后台吞吐；微秒决策不等于资源已让出，实测profile不等于最坏时限证明。
+
 ## Sources
 
 阅读范围是本次记录，不能由“经典”或发表场所替代。完整作者与版本见各来源页。

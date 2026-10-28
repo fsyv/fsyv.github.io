@@ -42,3 +42,11 @@ Jinyu Chen, Long Shi, Taotao Wang, Jiaheng Wang, Wei Zhang. *TDC-Cache: A Trustw
 来源事实：局部观测包含缓存 $Y_m^t$ 、当前 request sequence $G_m^t$ 与容量 $C_m$ ，联合状态由各观测组成；也使用 action-observation history $\tau$ 。全局奖励求和局部 $r_m^t=\omega(h_m^t-h_m^{t-1})+\lambda\xi_m^t$ ，$h_0=0$ ，$h$ 是命中数，$\omega\ge1$ 、$0\le\lambda\le1$ 。$\xi=\mu\xi_1+\rho\xi_2$ 对重复与容量处罚，$\mu,\rho\le0$ 。式26用 $r+\gamma\max Q_{\rm target}$ bootstrap；§VIII-B 取 $\gamma=0.99$ ，探索率从 0.9 降至 0.05 的日程为 10,000 时槽，不能把该日程自行解释成 episode 终点。
 
 [新增 AI 解释](../notes/cooperative-caching-and-learning.md#reward-and-horizon)分开折扣持续任务、有限终端项、罚项权重及命中数/率/时延目标。论文未在本轮读到 done、truncation、terminal bootstrap 和环境状态的完整实现规范；观测未列上一时槽命中数，不能据此断言含历史的实际网络必然非 Markov。限定题名网页/GitHub repository 搜索未定位作者实现，不证明不存在代码。
+
+## Implementation-search
+
+2026-10-29，题录/history仍v1；实读/重核v1 HTML V-B1–3的式25–26及VIII-B训练设置，未通读全文或复现。所读HTML检索episode、terminated、reset、terminal均无命中，github只见arXiv反馈页脚；这只是文字与链接检查，不是实现行为证据。
+
+限定GitHub repository查询TDC-Cache、TDC Cache Web3 caching、DRL-DC PoCL均无匹配作者实现；文件查询TDC-Cache/2512.09961仅定位本库或题录列表，网页题名加code/github/implementation也未定位可归属作者的代码入口。搜索覆盖有限，不证明实现不存在。没有读取或运行作者代码，终止条件、重置、终端掩码、末观测与bootstrap的实际审计仍未完成。
+
+原式26的无显式终端掩码写法，不足以判实现漏处理；VIII-B的10,000时槽仍是探索日程，不能当episode长度。新增[AI统一恒等式和最小例](../notes/cooperative-caching-and-learning.md#terminal-bootstrap-followup)解释哪些设计差别会影响排序，保持应用结论待审。用户的[继续深入请求](https://github.com/fsyv/fsyv.github.io/pull/29#issuecomment-6458746818)不是对本文或候选推导的认可。
