@@ -20,7 +20,7 @@ Teng Mei、Chengxuan Pei、Weijun Wang、Jie Wu、Marco Canini、Yunming Xiao，
 
 - §2–3：共享内存平台的前景任务和后台推理会竞争资源。Fine Plan在安全子层边界暂停；Hold停止新提交，不撤销已在GPU排队的工作，后者仍须排空。输出freshness从源观测开始计到交付；它与前景deadline分别约束不同对象。新鲜度预算紧急时，高风险下仍可转Admit，不能把策略写成无条件保护前景。
 - §4/Tables1–3：论文Orin Nano Super平台上四路1080p/30Hz前景负载，后台Qwen2.5-1.5B、246输入token及最多16输出token；Unmanaged的前景deadline miss为18.33%、后台吞吐8.175 token/s，EdgePace分别为7.667%、5.848 token/s。该吞吐按生成token数除以请求到达至完成的时间，包含调度等待，不是纯decode算子速率。
-- §4.2 Table3与Appendix A Table6：Nano总体P99排空4.176ms，Admit到下一子图提交的P99为2.689ms（不含随后GPU排队）；局部决策平均1.856μs。Appendix A Table6的Admit到提交All行含542样本。分位数、均值、决策与生效路径不同，不能用最后一个数替代前两个延迟。
+- §4.2 Table3与Appendix A Table6：Nano总体P99排空4.176ms，Admit到下一子图提交的P99为2.689ms（不含随后GPU排队）；局部决策平均1.856μs（不含PMU采集）。Appendix A Table6的Admit到提交All行含542样本。分位数、均值、决策与生效路径不同，不能用最后一个数替代前两个延迟。
 
 ## Support-and-limits
 
