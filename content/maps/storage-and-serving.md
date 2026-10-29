@@ -33,6 +33,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 
 [结果新鲜度与实际控制路径](../notes/storage-latency-and-slo.md#freshness-and-actuation)接续SLO分支：先分清观测年龄和前景deadline，再比较Hold后的排空/恢复与后台吞吐；微秒决策不等于资源已让出，实测profile不等于最坏时限证明。
 
+[模式诊断到端到端验证](../notes/storage-latency-and-slo.md#patterns-and-end-to-end)继续评价分支：先区分日志模式与根因，再核建议的语义和等价工作下配对总耗时；分类F1、建议减少或局部写步加速都不能跨过这些证据义务。
+
 ## Sources
 
 阅读范围是本次记录，不能由“经典”或发表场所替代。完整作者与版本见各来源页。

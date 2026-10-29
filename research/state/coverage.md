@@ -1,6 +1,6 @@
 # 选题轮换与问题回访
 
-历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-10-29.md)记录发现，审核、构建和PR的精确结果由[当日回执](runs/2026-10-29.md)记录。模拟反馈与沉默均不推导偏好。
+历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-10-30.md)记录发现，审核、构建和PR的精确结果由[当日回执](runs/2026-10-30.md)记录。模拟反馈与沉默均不推导偏好。
 
 ## 截至2026-10-16的历史覆盖
 
@@ -248,3 +248,33 @@ C最近三次为实验心理学、流体力学、放射化学，无重复；最�
 | [新鲜度与控制生效](../../content/notes/storage-latency-and-slo.md#freshness-and-actuation) | 指定平台取舍已候选整合，未取得代码/数值窗口/同负载复核或最坏执行证明 | 2026-11-05 |
 
 C最近三次为流体力学、放射化学、历史流行病学，没有重复；最近四次均含新领域，C机会未减为零。21天安排保留信息论11-02、因果11-03、数值11-04、生态11-05、机制11-06、统计物理11-09、遗传11-10、天文11-11、地球11-12、心理11-13、流体11-16、放射11-18，新增历史流行病11-19。真实反馈出处和实际角色/审核/构建/发布由[今日回执](runs/2026-10-29.md)记录，未预填成功。
+
+
+## 2026-10-30 用户问题解释与制度分析
+
+继续唯一research/batch-2026-10-21，basis仍af525f779464752dfa4d08a8e895dc54cd93ef81；旧24项与今日3项累计27项候选，未合并与继续深入不等于接受。fsyv评论6485979453（10-29T02:12:23Z）询问10-29/A1推导对象/目标/证明对象，今日优先响应；10-28继续深入反馈仍有效，不从一次兴趣改长期权重。11canonical（A3/B7/C1）、6指定正文深读（A3/B2/C1）、3发现，投入40/35/25未精确实测。
+
+| 通道 | 实际进展及边界 | 下一步 |
+| --- | --- | --- |
+| A | 原评分时序任务已读TDC/rPoA后，转向用户对统一式的询问；重核Ng，解释目标一致性先于学习成功、持续处罚比价、真终端与采集截断，旧证明不重建 | 用户解释请求已回应；评分时序原计划未完成、实际实现审计仍缺明确作者代码，整体partial；11-06/11-04按下表回访 |
+| B | 窗口10-23T07:30—30T07:30+08、最后07:41:36.965969，选择性首屏/new至28日；IOSage新增模式/建议/等价工作端到端证据链及负例/日间漂移 | 未穷尽。RISK净bank/长上下文、SilentCue作者原实现、EdgePace同负载仍缺；同名零LLM模拟仓库不当原复现，另两摘要暂缓 |
+| C | **制度分析首次覆盖**：Ostrom2010修订讲座指定页，分资源属性/产权、固定行动/交流/规则选择；36仅更高联合收益，90%仅扣罚金后约最优水平 | 未核原实验参数、分组/顺序与全部成本，不推DAO/去中心化普遍优势或共识安全；扩既有信息与激励地图，不另造平行解释 |
+
+### 当前回访安排
+
+历史日期及当时缺口保留；以下记录未执行部分，不以本地复读冒充外部核查。
+
+| 问题 / 入口 | 本轮处理、遗漏原因与具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [贪心价值](../../content/questions/greedy-value-improvement.md) / 5abc4104-b7c4-55b2-ab6b-ea699f3cb4a0 | 优先回应统一式目的，补目标比较/处罚比价；未取得作者终止/重置/terminal价值代码，researching。解释完成不关闭应用审计 | 2026-11-04，明确代码/新版本再推进，不重复空搜 |
+| [评价与保证](../../content/questions/evidence-to-guarantees.md) / a5c9c122-ac45-42dd-b6e9-81657d62caac | 到期，已读TDC VI-A/B和rPoA §3.1–3.3后因新反馈转向，评分数据取得/轮换/暴露/重复访问与候选生成时序审查未完成；不报新评分发现 | 2026-11-06，补具体时序/代码证据 |
+| [笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md) | 到期；因用户明确解释请求和深读预算未开展公开读者样本/同实现端到端对照，不能声称已外查无新证据。无目标读者/样本及通信/更新/训练成本对照，仍open | 2026-11-06，先限定可公开样本/实现对象 |
+| [选择性KV重建](../../content/notes/kv-cache-optimization.md#selective-reconstruction)、[文档信息](../../content/notes/document-cues-and-semantic-preservation.md) | 到期，已核RISK指定成本段/旧版本和SilentCue S30/外链；未取得净bank/长上下文、人工gold/作者实现。同名合成模拟排除，不借其数字复现原论文 | 2026-11-06，仅新代码/可核数据再推进 |
+| [新鲜度/控制](../../content/notes/storage-latency-and-slo.md#freshness-and-actuation) | 只核EdgePace版本/外链，仍v1，未读代码或同负载数值窗口；不重复旧发现 | 2026-11-05 |
+| [基础验证](../../content/questions/foundations-validation.md)、[固定图执行](../../content/notes/attention-spatiotemporal.md#physical-execution)、[预算准入](../../content/notes/timestamped-admission-and-prefix-budgets.md) | 昨日延期仍保留；本轮未外搜sample导出映射、动态metadata/端到端、guard正动作/真实标签，不能称再核无新证据 | 2026-11-05 |
+| [迁移评价](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md)、[直存](../../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)、[剪枝](../../content/notes/depth-pruning-and-repair.md) | 尚未到期；恢复故障路径、多源全文/计费、跨层能耗、uGDS版本/同语义、剪枝代码缺口不由IOSage代替 | 2026-11-02 |
+| [压缩重规划](../../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload)、[交通](../../content/notes/transport-delay-propagation-and-thresholds.md#clipped-balance)、[预测预取](../../content/notes/kv-cache-optimization.md#predictive-prefetch-and-staleness)、[结论范围](../../content/notes/claim-scope-and-evidence-synthesis.md) | 未到期；硬件/整步、执行数据、同语义尾部、rubric差异均无本轮新增证据 | 2026-11-04 |
+| [日志建议验证](../../content/notes/storage-latency-and-slo.md#patterns-and-end-to-end) | 新候选已整合；代码/原测量待发布，需核配对原数据、日间漂移和完整建议语义，不据分类分数自动执行 | 2026-11-06 |
+| [公共池资源与规则](../../content/notes/common-pool-resources-and-institutional-rules.md) | 新候选已整合；综述不是本轮独立原实验核验，缺完整收益参数、分组/顺序与制裁成本范围 | 2026-11-20，先读原实验设计 |
+
+C最近三次为放射化学、历史流行病学、制度分析，未重复；最近四次包括首次覆盖领域，机会未降为零。21天安排保留信息论11-02、因果11-03、数值11-04、生态11-05、机制设计11-06、统计物理11-09、遗传11-10、天文11-11、地球11-12、心理11-13、流体11-16、放射11-18、历史流行病11-19，新增制度分析11-20。真实反馈与角色、独立审核、同SHA构建和发布由[今日回执](runs/2026-10-30.md)记实，未预填成功。

@@ -38,3 +38,5 @@ $$
 2026-10-29增读/重核作者PDF文件pp.3–5：§2.1 regularity、§3 Theorem1式2与充分性证明、Corollary2/Remark1。仍未读完整必要性附录或实验。PDF截图两次失败，以pypdf内存提取交叉确认gamma，未完成视觉核验。
 
 [统一终端解释](../notes/cooperative-caching-and-learning.md#terminal-bootstrap-followup)将TDC奖励写成相应基奖励加势函数，并加入任意截断bootstrap；这是本库AI推导，不是原文针对TDC、随机终止或重置代码的分析。原文Bellman充分性证明、持续有界势的尾项解释、有限任务设计选择三者分开，不能用普遍策略不变结论替实际终端实现背书。
+
+2026-10-30 Researcher重核同一作者PDF文件pp.3–5的regularity、Theorem1式2、充分性证明、Corollary2/Remark1；仍未完整必要性附录或实验。截图没有返回可读像素，bundled pypdf文本交叉核gamma，不称视觉核验。新增[推导目的说明](../notes/cooperative-caching-and-learning.md#objective-and-proof)解释同一累计目标下策略排序和网络是否找到最优的区别，没有把TDC应用推论归给Ng原文。

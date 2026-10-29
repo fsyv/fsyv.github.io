@@ -27,3 +27,7 @@ Table2外部59文档326items的加权断言分0.959/0.810/0.720（依次为本�
 ## Limits-and-support
 
 [完整解释](../notes/document-cues-and-semantic-preservation.md)将任务所需信息、rawcue和role解释分开；两文件高亮反例是AI推理，不是论文实验。格式构造gold与视觉kappa0.72未等同作者意图，特选任务不能外推人类学习、全部文档理解或笔记拆分效果。approx2倍plain token成本、只处理有文本层PDF、无OCR；未审代码。原文对普遍率总量正文6462/摘要6460有小口径不一致，本库不据此报告普遍率；单个TF-IDF AUC不支持所有format-blind方法天花板。
+
+## Availability-followup
+
+2026-10-30 Domain Monitor只核v1及HTML S30实现/外链，未追加原实验正文深读。另实读[同名公开仓库](https://github.com/habib-analyst/silent-cue-loss)的元数据与README（2026-10-23创建）；该仓库以合成DOCX、确定匹配和零LLM模拟为对象，未核为原论文76真实文档的作者实现。未运行其代码或使用其数值作为复现，独立canonical在研究账本另计。限定检索未定位可归属原作者的实现，不等于原实现不存在。

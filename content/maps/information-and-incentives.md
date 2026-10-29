@@ -15,7 +15,7 @@ endorsement: ai-candidate
 
 ## Questions
 
-报告如何改变分配与支付？应在哪个信息阶段比较诚实和偏离？预算、参与和效率约束之间有哪些取舍？当前只深读一个离散双边交易例子，不用一例替代整个学科。
+报告如何改变分配与支付？应在哪个信息阶段比较诚实和偏离？预算、参与和效率约束之间有哪些取舍？当前展开私人报告的离散双边交易与公共池资源制度两支；前者问给定规则下是否愿意诚实，后者还问交流与规则选择怎样改变互动，不用任一例子替代整个学科。
 
 ## Prerequisites
 
@@ -27,6 +27,8 @@ endorsement: ai-candidate
 2. 沿同一解释的[中点规则反例](../notes/private-information-and-trade.md#why-midpoint-fails)→[随机诚实规则](../notes/private-information-and-trade.md#a-truthful-randomized-rule)，逐类型比较诚实和偏离。
 3. 最后读[均衡边界](../notes/private-information-and-trade.md#equilibrium-boundary)与[非对称上界](../notes/private-information-and-trade.md#asymmetric-upper-bound)，区分弱贝叶斯均衡、逐次自愿、效率损失及一般定理的未读范围。
 
+4. [公共池资源与制度规则](../notes/common-pool-resources-and-institutional-rules.md)：转入共同资源分支，先分资源属性/产权制度，再比较固定行动、交流、外加/自定制裁及净成本。它是另一种问题，不沿用双边交易的均衡结论。
+
 [Myerson 讲义来源](../sources/myerson-mechanism-design-2007.md)记录实际章节与公式视觉核验；没有将不可访问的委员会背景报告当证据。
 
 ## Connections
@@ -35,8 +37,12 @@ endorsement: ai-candidate
 - **边界区别：**[Web3 与信任](web3-foundations.md)中的可验证执行回答规则是否被执行，机制设计另外问行动者是否愿意诚实；两者互补而不互相证明。
 - **团队目标与私人目标的区别：**[协同缓存](../notes/cooperative-caching-and-learning.md)的共同目标优化未自动包含各自隐瞒信息的动机。
 
+- **信息条件的不同作用：**[公共池资源](../notes/common-pool-resources-and-institutional-rules.md#changing-the-game)中的讨论与规则选择可能改变协调条件；交易例中的提前公开类型则可能破坏原诚实均衡。两者支持明确模型条件，不支持“信息越多必然越好”或相反的一般结论。
+
 ## Open
 
 公开报告后均衡如何变化？若允许外部补贴或改变参与时点，哪个约束先放宽？这些先在经济模型内提出，再考虑应用。[评价证据与保证](../questions/evidence-to-guarantees.md)保留声誉模型迁移所缺的效用、信息时序和偏离分析；尚未解决。
+
+公共池分支先核原实验分组、收益参数与顺序，区分交流、制裁和自定规则的选择效应；修订讲座不是本轮已核全部实验。
 
 [返回地图入口](_index.md)。

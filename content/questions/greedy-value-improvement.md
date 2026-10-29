@@ -43,3 +43,5 @@ math: true
 2026-10-28，依据[TDC 指定增读](../sources/published-tdc-cache-2025.md#reward-followup)与[势函数变换定理](../sources/ng-harada-russell-reward-shaping-1999.md)，在[缓存学习解释](../notes/cooperative-caching-and-learning.md#reward-and-horizon)整合普通差分的折扣和恒等式、有限终端反例及处罚缩放。明确原目标是最优性 bootstrap，未证明估计等于真实价值；状态历史、episode 实现、统一误差和部署仍缺，保持 **researching**，用户未确认。
 
 2026-10-29，响应[用户继续深入2026-10-28/A1](https://github.com/fsyv/fsyv.github.io/pull/29#issuecomment-6458746818)，已把[持续/有限终端/采集截断的统一推导、处罚最小反例和重置边界](../notes/cooperative-caching-and-learning.md#terminal-bootstrap-followup)整合回既有解释。数学推进不等于用户接受。限定公开检索未定位作者实现，终止/重置/终端价值的实际审计仍未完成，不能从论文公式断言缺陷。状态继续 **researching**；10-30只检查是否出现明确实现URL/新版本，无新入口则11-04按实现证据回访，不重复基础推导。
+
+2026-10-30，响应[用户询问统一式目标与证明对象](https://github.com/fsyv/fsyv.github.io/pull/29#issuecomment-6485979453)，在[目标一致性解释](../notes/cooperative-caching-and-learning.md#objective-and-proof)明确先检查任意两策略在两个累计目标下是否同排序，再谈网络学得准不准；写明持续等价目标的处罚比价。旧统一推导保留，实际终止/重置/价值审计仍未完成；这是候选解释深化，不是用户接受或部署验证，保持researching。

@@ -35,4 +35,5 @@ DAO 可以通过提案、投票和合约执行组织共同资源。规则写进�
 
 - 前置：[拥有与信任](web3-trust-and-ownership.md)。
 - 支持边界：[内容标识与保存](web3-content-addressing.md)、[身份声明与权限](web3-identity-and-authorization.md)。
+- 结构联系：[公共池资源与规则选择](common-pool-resources-and-institutional-rules.md)提醒分别检查资源、产权、规则参与和监测/制裁净成本；其特定实验不能证明代币治理或去中心化普遍有效。
 - 推广：[系统评价](web3-system-evaluation.md)将治理和技术指标分开。

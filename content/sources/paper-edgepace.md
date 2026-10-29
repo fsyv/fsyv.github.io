@@ -27,3 +27,5 @@ Teng Mei、Chengxuan Pei、Weijun Wang、Jie Wu、Marco Canini、Yunming Xiao，
 支持[服务目标解释的新增分支](../notes/storage-latency-and-slo.md#freshness-and-actuation)：观测年龄、前景违约与后台吞吐分开测量，控制动作还需计入实际排空和恢复。
 
 profile中的最大观测时长并不是最坏执行时间证明；本轮未验证未见负载的上界、数值新鲜度窗口、代码或同负载复现。机器人展示中LLM输出没有改变控制动作，因此不能由该案例推出闭环控制质量提高。上述数字是指定负载及Unmanaged对照下的作者实测，不是所有平台或硬实时保证。研究价值高、启发价值高、可靠性中。
+
+2026-10-30 Domain Monitor仅核题录仍v1与原文外链，未新增正文深读、实现审计或同负载复现；限定链接/题名/仓库检索未定位可归属作者代码，不据此断言不存在。此前数值窗口和控制路径缺口保留。

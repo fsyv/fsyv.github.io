@@ -105,4 +105,5 @@ $$
 - **组织入口：**[信息与激励地图](../maps/information-and-incentives.md)先沿经济问题、报告规则、偏离比较、参与和预算约束阅读。
 - **问题结构类比：**[声誉进入共识](reputation-and-consensus.md)中的评分可验证仍需另问误报是否有利；要定义参与者效用、报告对象、信息时序、检测和惩罚。金钱不能直接替换成声誉，本交易模型没有裁定 rPoA 激励相容或安全。
 - **模型边界区别：**[协同缓存与学习](cooperative-caching-and-learning.md)的团队目标优化没有覆盖私人目标与报告激励；现有笔记未给私人类型和支付，尚无两模型的等价性。
+- **分析方法联系：**[公共池资源与规则选择](common-pool-resources-and-institutional-rules.md)也需固定信息、行动与制度，但重复互动中的交流不等同本页报告前公开私人类型。不能迁移均衡数值或推断信息一般有利/有害。
 - **开放检验：**[应用评价与保证](../questions/evidence-to-guarantees.md)保留如何形式化评分效用及逐类型偏离的问题；[Web3 地图](../maps/web3-foundations.md)仅把激励建模作为补充前置，协议安全仍需自己的证明。

@@ -50,3 +50,7 @@ Jinyu Chen, Long Shi, Taotao Wang, Jiaheng Wang, Wei Zhang. *TDC-Cache: A Trustw
 限定GitHub repository查询TDC-Cache、TDC Cache Web3 caching、DRL-DC PoCL均无匹配作者实现；文件查询TDC-Cache/2512.09961仅定位本库或题录列表，网页题名加code/github/implementation也未定位可归属作者的代码入口。搜索覆盖有限，不证明实现不存在。没有读取或运行作者代码，终止条件、重置、终端掩码、末观测与bootstrap的实际审计仍未完成。
 
 原式26的无显式终端掩码写法，不足以判实现漏处理；VIII-B的10,000时槽仍是探索日程，不能当episode长度。新增[AI统一恒等式和最小例](../notes/cooperative-caching-and-learning.md#terminal-bootstrap-followup)解释哪些设计差别会影响排序，保持应用结论待审。用户的[继续深入请求](https://github.com/fsyv/fsyv.github.io/pull/29#issuecomment-6458746818)不是对本文或候选推导的认可。
+
+## Objective-followup
+
+2026-10-30 Researcher重核v1 HTML V-B奖励式16–26邻接及VI-A/B，仍未读取或执行代码。今日[目标与证明对象解释](../notes/cooperative-caching-and-learning.md#objective-and-proof)响应用户的问题，将目标一致性与学习成功分开；从公开奖励反解的基目标、处罚比价及路径恒等式是AI代数，不是已核作者业务意图，也未填补终止/重置/bootstrap实现缺口。

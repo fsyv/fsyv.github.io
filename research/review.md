@@ -1,47 +1,43 @@
 # 知识研究待审 · 2026-10-21 起
 
-本批次于 2026-10-21 从核对过的 origin/main `af525f779464752dfa4d08a8e895dc54cd93ef81` 开始唯一 `research/batch-2026-10-21`。2026-10-20 四项已由 [PR #28](https://github.com/fsyv/fsyv.github.io/pull/28) 合入，不再重复待审；[10-20 晨报](digests/2026-10-20.md)、历史来源与判断归属保留，合并不自动升级 endorsement。
+`research/batch-2026-10-21` 累计27项AI候选；基线 `af525f779464752dfa4d08a8e895dc54cd93ef81`。10-20四项已由[PR28](https://github.com/fsyv/fsyv.github.io/pull/28)合入，不重复待审，合并不升级endorsement。
 
-本批次累计24项AI候选：10-21、22、23、26各四项，10-28五项，10-29三项。[最新晨报](digests/2026-10-29.md)直接展开推导、证据和边界；往期全文保留在同一PR。fsyv于10-28评论要求2026-10-28/A1[继续深入](https://github.com/fsyv/fsyv.github.io/pull/29#issuecomment-6458746818)，评论ID6458746818、时间2026-10-28T02:09:18Z；仅表示研究请求，相关结论仍待审。
+fsyv的[10-28评论6458746818](https://github.com/fsyv/fsyv.github.io/pull/29#issuecomment-6458746818)（2026-10-28T02:09:18Z）要求10-28/A1继续深入；[10-29评论6485979453](https://github.com/fsyv/fsyv.github.io/pull/29#issuecomment-6485979453)（2026-10-29T02:12:23Z）要求解释10-29/A1推导对象、目标与证明对象。两者都是研究请求，结论仍待审。
 
 | 日期 / 发现 | 具体提议与依据 | 知识位置及接受范围 | 决定 |
 | --- | --- | --- | --- |
-| 2026-10-21/A1 | [公开固定缓存样本](../content/sources/paper-twitter-cache-workloads.md)中，保留计数的文件序/单次排列有不同 LRU 命中，新增可复算数据对照及非严格时间序/操作寿命边界 | 扩[Zipf](../content/notes/probability-zipf.md#public-sample-projection)、基础验证问题与概率图；仅接受声明模型内的有限 GET 计算，不接受生产命中、样本代表性、策略优越或完整回放已完成 | 待审 |
-| 2026-10-21/B1 | [PlaneZip 指定正文](../content/sources/paper-planezip.md)显示压缩表示改变传输成本和可行窗口，须重做准入/排序/重算；120 MB 算例为 AI 复算 | 扩[张量存活解释](../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload)和优化/推理路径；接受建模方法，不把 13%→9% 模拟残余开销写成吞吐提高 31%，不含硬件原型或推理 KV 收益 | 待审 |
-| 2026-10-21/B2 | [铁路雨驱模型](../content/sources/paper-climate-transport-collapse.md)把结构、注入、传播和吸收分开；原阈值为近似，另给保留列随机/α/截断条件的 AI 增长充分界和反例 | 新[完整解释](../content/notes/transport-delay-propagation-and-thresholds.md)，扩网络/生态语义链接与概率图；接受限定模型与证据口径，不认定现实已崩溃，不搬阈值到生态或存储 | 待审 |
-| 2026-10-21/C1 | [Hubble 1929 六页原文](../content/sources/hubble-velocity-distance-1929.md)提供异质距离、太阳修正和共同运动事实；共同尺度与系数抵消为 AI 代数推导，Table 2 反算距离不独立验证 | 新[天文解释](../content/notes/velocity-distance-and-calibration.md)与[地图](../content/maps/astronomy-and-observational-inference.md)，双向关联数值分析；不补现代 H₀、归功史或未读独立标定结论 | 待审 |
-| 2026-10-22/A1 | [论文方法及作者 2021/2023 官方说明](../content/sources/paper-twitter-cache-workloads.md#metadata-followup)补请求采样配置、论文/公开实例范围与排序修复；百万样本一般说明与固定文件 80,000 行未闭合 | 扩[Zipf 候选修订](../content/notes/probability-zipf.md#sample-scope-followup)、基础验证问题及概率图；接受范围/版本分层，暂缓具体百万前缀、遗漏率、生产代表性与完整语义回放，问题 open | 待审 |
-| 2026-10-22/B1 | [KPage 指定正文](../content/sources/paper-kpage.md)保留稀疏图，以页压实/Q tile/页对 mask 减少物理填充；384→96→128 行为 AI 布局算例 | 扩[时空注意力执行解释](../content/notes/attention-spatiotemporal.md#physical-execution)及推理图；接受固定图与执行层区分，性能限于 BSA 耗时÷KPage 耗时的 kernel 对照，不接受未知 GPU、元数据摊销、整模型或 KV 分页收益 | 待审 |
-| 2026-10-22/B2 | [预算准入指定正文及证明](../content/sources/paper-timestamped-admission.md)区分外生二值状态的概率分配、校准覆盖和未知标签占额的逐前缀保护；32 guarded 决定全无正动作 | 新[完整解释](../content/notes/timestamped-admission-and-prefix-budgets.md)，扩 SLO 与存储图；接受三层保证及分母条件，暂缓正动作 guard、真实标签和内生多单元容量部署保证，不将两定理收益拼接 | 待审 |
-| 2026-10-22/C1 | [Vine/Matthews 1963 三页原文](../content/sources/vine-matthews-oceanic-magnetic-anomalies-1963.md)提出地壳记录地磁历史并外移的机制，明确非详细拟合及强弱磁化替代；一阶投影/年龄—位置/单位例为 AI 推导 | 新[完整地球物理解释](../content/notes/oceanic-magnetic-anomalies-and-spreading.md)与[地图](../content/maps/geophysics-and-inverse-evidence.md)，双向关联天文标尺的结构类比；不将异常正负直接当极性，不宣称独立年代或完整板块理论已由此验证 | 待审 |
-| 2026-10-23/A1 | [Dwork等2015指定正文](../content/sources/dwork-adaptive-data-analysis-2015.md)与AI独立坐标反例/固定族统一界，分开诚实挑优、自适应生成、签名执行和泛化 | 新[统计解释](../content/notes/adaptive-validation-and-holdout-reuse.md)，扩学习共识/评价问题及概率/Web3图；接受限定推理，不认定应用协议泄漏、操纵或实现漏洞，不假iid缓存流量 | 待审 |
-| 2026-10-23/B1 | [RISK-KV指定方法/表](../content/sources/paper-risk-kv.md)区分历史raw省略、共享predictor净成本、均值门禁/逐请求违约和局部恢复计时；摊销算例为AI假设 | 扩[既有KV成本](../content/notes/kv-cache-optimization.md#selective-reconstruction)及相关机制/SLO/地图；接受评价条件，暂缓长期GPU净省、无线迁移、生成正确性和生产收益 | 待审 |
-| 2026-10-23/B2 | [文档摄取指定正文](../content/sources/paper-silent-cue-loss.md)的rawcue/role对照与任务定义，AI两文件反例说明文字相同仍可丢失所需区别；micro/macro分开 | 新[文档表示解释](../content/notes/document-cues-and-semantic-preservation.md)，扩知识实践及拆分问题；接受任务相关信息保留，不由标记任务推人类学习、笔记拆分有效或本库格式改造 | 待审 |
-| 2026-10-23/C1 | [Stroop1935指定原文/表图](../content/sources/stroop-interference-1935.md)区分任务/错误罚时/计量与非同期练习差分；作者习惯解释不等于唯一机制 | 新[心理学解释](../content/notes/stroop-interference-and-experimental-controls.md)及[地图](../content/maps/experimental-psychology-and-inference.md)，关联DNA识别与知识实践；不外推临床、现代零效应或Transformer机制 | 待审 |
-| 2026-10-26/A1 | [Rocksteady指定正文](../content/sources/paper-rocksteady.md)补早转归属、PriorityPull与源恢复依赖目标日志尾部；AI单侧恢复反例及迁移率/请求完成反向对照 | 扩[迁移解释](../content/notes/storage-placement-and-migration.md#early-ownership-and-recovery)、两存储问题及地图；接受分层设计与评价，暂缓当时ongoing恢复扩展的实现保证、跨DC服务与旧计费/多源澄清 | 待审 |
-| 2026-10-26/B1 | [uGDS指定正文](../content/sources/paper-ugds.md)区分CPU控制、SSD→GPU数据与完成顺序，单流callback等待与raw接口契约限定有效路径收益 | 扩[KV访问解释](../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)及存储/推理图；接受测量与语义条件，暂缓POSIX透明替换、混合负载/长期稳定和通用生产收益，不把logicalKV吞吐当SLO-goodput | 待审 |
-| 2026-10-26/B2 | [修复感知剪枝指定正文](../content/sources/paper-repair-aware-depth-pruning.md)及AI复合目标/组合复算，有限评分最优不保独立能力，Gemma不可fold与wall成本保留 | 新[完整解释](../content/notes/depth-pruning-and-repair.md)，扩优化/推理图及方法链接；接受目标/有限最优/任务评价区分，暂缓通用greedy保证、所有模型同大小速度和部署收益 | 待审 |
-| 2026-10-26/C1 | [Reynolds1883指定原文/表图](../content/sources/reynolds-pipe-flow-1883.md)区分半径尺度、染料与下游阻力判据，现代Re/时间尺度和两条TableI乘积为AI推导 | 新[完整管流解释](../content/notes/reynolds-similarity-and-transition.md)与[流体地图](../content/maps/fluid-mechanics-and-dynamic-similarity.md)，生态仅结构类比；接受条件解释与复算，暂缓普适阈值、现代稳定性及生态状态映射 | 待审 |
-| 2026-10-28/A1 | [TDC公开定义](../content/sources/published-tdc-cache-2025.md#reward-followup)、[Ng等指定定理](../content/sources/ng-harada-russell-reward-shaping-1999.md)及AI有限和/两槽反例，区分持续差分等价、终端项与处罚缩放 | 扩[缓存学习](../content/notes/cooperative-caching-and-learning.md#reward-and-horizon)、策略改进链接/原问题及Web3图；接受限定代数与目标分层，暂缓实际state/done/bootstrap、误差证书、算法缺陷或部署收益判断 | 继续深入；结论待审 |
-| 2026-10-28/A2 | [交通旧源回访](../content/sources/paper-climate-transport-collapse.md#implementation-followup)与AI精确截断收支、固定/时变交换反例；负总净输入与每步连通仍不足保证有界 | 扩[交通解释](../content/notes/transport-delay-propagation-and-thresholds.md#clipped-balance)及概率图；接受模型内推导与有理数核算，不当真实铁路复现、普遍稳定判据或作者固定矩阵场景失效证明 | 待审 |
-| 2026-10-28/B1 | [WorldPager指定正文](../content/sources/paper-worldpager.md)的pose预测/stale fallback、KV等待分母、尾部反例与长间隔质量；带宽算例为AI | 扩[KV解释](../content/notes/kv-cache-optimization.md#predictive-prefetch-and-staleness)及推理图；接受容量/检索语义/等待/质量分层，暂缓普适零等待、实时生成、LLM部署与官方基线排名 | 待审 |
-| 2026-10-28/B2 | [Claim Smoothing指定正文](../content/sources/paper-claim-smoothing.md)分开支持引用与整组证据范围，四臂比较及73claim测量边界；原文alpha不一致保留 | 新[结论范围解释](../content/notes/claim-scope-and-evidence-synthesis.md)，扩输入表示与知识实践图；接受同方面支持/限制/反证审计，暂缓模型裁判自动确认、客观风险比和人类理解效果 | 待审 |
-| 2026-10-28/C1 | [Rutherford/Soddy1902指定原文/图](../content/sources/rutherford-soddy-radioactivity-1902.md)分开分离、持续生成、混合测量与残余假设；一阶有效模型/4天表为AI | 新[放射活性解释](../content/notes/radioactive-equilibrium-and-separation.md)与[地图](../content/maps/radiochemistry-and-transformation.md)，DNA仅结构类比；接受受限机制与测量边界，暂缓现代核素身份、精确半衰、残余机制和定年应用 | 待审 |
-| 2026-10-29/A1 | 响应10-28/A1继续深入；[TDC入口核查](../content/sources/published-tdc-cache-2025.md#implementation-search)、[Ng指定原文](../content/sources/ng-harada-russell-reward-shaping-1999.md#terminal-followup)与AI统一恒等式/最小反例，分开真终端、截断、重置和处罚缩放 | 扩[原缓存学习解释](../content/notes/cooperative-caching-and-learning.md#terminal-bootstrap-followup)、原问题与Web3路径；仅提议限定推导，实际实现审计因未定位作者代码入口未完成，不认定算法缺陷 | 待审 |
-| 2026-10-29/B1 | [EdgePace指定正文](../content/sources/paper-edgepace.md)区分观测年龄、前景deadline、后台吞吐及Hold后实际排空；保留同负载取舍 | 扩[SLO解释](../content/notes/storage-latency-and-slo.md#freshness-and-actuation)与存储路径；接受评价对象分层，不接受profile作WCET或机器人闭环质量改善 | 待审 |
-| 2026-10-29/C1 | [Snow1855指定原文](../content/sources/snow-cholera-water-supply-1855.md)与AI率比重算；分开局部交错/全供水区、死亡/房屋与部分供水归类推算 | 新[完整解释](../content/notes/water-supply-comparison-and-denominators.md)和[历史流行病学地图](../content/maps/epidemiology-and-natural-experiments.md)；接受限定历史比较，不接受个人风险、随机实验或未核第三行修订 | 待审 |
+| 2026-10-21/A1 | 固定缓存样本保留计数而改变顺序，LRU命中不同；新增有限GET复算和时序/寿命边界 | [Zipf](../content/notes/probability-zipf.md#public-sample-projection)、基础问题/概率图；不推生产命中、代表性、策略优越或完整回放 | 待审 |
+| 2026-10-21/B1 | PlaneZip压缩表示改变传输成本与可行窗口，须重做准入/排序/重算；120MB例为AI | [张量存活](../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload)、优化/推理图；接受建模，不将13%→9%模拟开销写成吞吐增31%，无硬件原型/KV收益 | 待审 |
+| 2026-10-21/B2 | 铁路雨驱模型分结构/注入/传播/吸收；近似阈值与AI列随机/α/截断增长界分开 | [交通解释](../content/notes/transport-delay-propagation-and-thresholds.md)、网络/生态链接及概率图；限模型，不认定现实崩溃或移植生态/存储阈值 | 待审 |
+| 2026-10-21/C1 | Hubble1929的异质距离/太阳修正/共同运动；尺度抵消为AI，Table2反算距离非独立验证 | [天文解释](../content/notes/velocity-distance-and-calibration.md)、天文图/数值链接；不补现代H₀、归功史或未读独立标定 | 待审 |
+| 2026-10-22/A1 | 原论文及作者2021/2023说明分采样、实例范围与排序版本；百万一般说明与80,000行未闭合 | [Zipf修订](../content/notes/probability-zipf.md#sample-scope-followup)、基础问题/概率图；接受范围分层，暂缓百万前缀、遗漏率、生产代表性及完整回放，open | 待审 |
+| 2026-10-22/B1 | KPage保留稀疏图，以页压实/Q tile/mask减填充；384→96→128行为AI | [注意力执行](../content/notes/attention-spatiotemporal.md#physical-execution)、推理图；接受图/执行区分，性能限BSA/KPage kernel耗时比，暂缓未知GPU、元数据摊销、整模型/KV收益 | 待审 |
+| 2026-10-22/B2 | 预算准入分外生二值概率、校准覆盖及未知标签占额的前缀保护；32 guarded决定无正动作 | [预算解释](../content/notes/timestamped-admission-and-prefix-budgets.md)、SLO/存储图；接受三层与分母条件，不拼定理收益；暂缓正动作、真实标签/内生多单元部署保证 | 待审 |
+| 2026-10-22/C1 | Vine/Matthews1963记录—外移机制，非详细拟合且有强弱替代；投影/年龄位置/单位例为AI | [地球物理](../content/notes/oceanic-magnetic-anomalies-and-spreading.md)、地图及天文标尺类比；异常正负不等极性，不称已核独立年代或完整板块理论 | 待审 |
+| 2026-10-23/A1 | Dwork2015与AI坐标反例/固定族统一界，分诚实挑优、自适应生成、签名执行和泛化 | [统计解释](../content/notes/adaptive-validation-and-holdout-reuse.md)、共识/评价问题及概率/Web3图；不认定应用泄漏/操纵/漏洞，不假iid缓存流量 | 待审 |
+| 2026-10-23/B1 | RISK-KV分raw省略、共享predictor净成本、均值门禁/逐请求违约及局部恢复；摊销例为AI | [KV成本](../content/notes/kv-cache-optimization.md#selective-reconstruction)、机制/SLO/地图；接受评价条件，暂缓长期GPU净省、无线迁移、生成正确及生产收益 | 待审 |
+| 2026-10-23/B2 | Silent Cue Loss的rawcue/role及任务定义，AI两文件例说明同文字仍可丢区别；micro/macro分开 | [文档表示](../content/notes/document-cues-and-semantic-preservation.md)、知识实践/拆分问题；接受任务相关保留，不推人类学习、拆分效果或本库格式改造 | 待审 |
+| 2026-10-23/C1 | Stroop1935分任务、错误罚时/口径及非同期练习差分；习惯解释非唯一机制 | [心理学解释](../content/notes/stroop-interference-and-experimental-controls.md)、地图/DNA/知识实践联系；不推临床、现代零效应或Transformer机制 | 待审 |
+| 2026-10-26/A1 | Rocksteady早转归属/PriorityPull/源恢复依赖目标日志；AI单侧恢复反例和迁移率/请求完成反向对照 | [迁移解释](../content/notes/storage-placement-and-migration.md#early-ownership-and-recovery)、两存储问题/地图；接受分层设计评价，暂缓当时ongoing恢复保证、跨DC及旧计费/多源澄清 | 待审 |
+| 2026-10-26/B1 | uGDS分CPU控制、SSD→GPU数据及完成顺序；callback等待与raw契约限定收益 | [KV访问](../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)、存储/推理图；接受语义/测量条件，暂缓POSIX透明替换、混合负载/长期稳定及生产收益；logicalKV非SLO-goodput | 待审 |
+| 2026-10-26/B2 | 修复感知剪枝与AI复合目标/组合复算：有限评分最优不保独立能力，保留Gemma不可fold/wall成本 | [剪枝解释](../content/notes/depth-pruning-and-repair.md)、优化/推理图；接受目标/有限最优/任务区分，暂缓通用greedy、所有模型同大小速度或部署收益 | 待审 |
+| 2026-10-26/C1 | Reynolds1883分半径尺度、染料/下游阻力判据；现代Re/时间尺度与TableI两行复算为AI | [管流解释](../content/notes/reynolds-similarity-and-transition.md)、流体图；接受条件解释/复算，生态仅类比，暂缓普适阈值、现代稳定性及状态映射 | 待审 |
+| 2026-10-28/A1 | TDC定义/Ng定理与AI有限和/两槽反例，分持续差分等价、终端与处罚缩放 | [缓存学习](../content/notes/cooperative-caching-and-learning.md#reward-and-horizon)、策略改进/原问题/Web3图；限代数/目标分层，暂缓state/done/bootstrap、误差证书、算法缺陷/部署判断 | 继续深入；结论待审 |
+| 2026-10-28/A2 | 交通旧源与AI截断收支/固定时变反例：负总净输入和每步连通仍不足保有界 | [交通修订](../content/notes/transport-delay-propagation-and-thresholds.md#clipped-balance)、概率图；限模型/有理数核算，非铁路复现、普遍稳定判据或作者固定矩阵失效证明 | 待审 |
+| 2026-10-28/B1 | WorldPager的pose预测/stale fallback、等待分母、尾部反例/长间隔质量；带宽例为AI | [KV解释](../content/notes/kv-cache-optimization.md#predictive-prefetch-and-staleness)、推理图；接受容量/检索语义/等待/质量分层，暂缓零等待、实时生成、LLM部署及官方基线排名 | 待审 |
+| 2026-10-28/B2 | Claim Smoothing分引用支持/整组范围，四臂比较及73claim边界；保留alpha文字/表不一致 | [结论范围](../content/notes/claim-scope-and-evidence-synthesis.md)、输入表示/知识实践图；接受同方面支持/限制/反证审计，暂缓裁判自动确认、客观风险比及人类理解效果 | 待审 |
+| 2026-10-28/C1 | Rutherford/Soddy1902分分离/持续生成/混合测量/残余假设；一阶模型/4天表为AI | [放射活性](../content/notes/radioactive-equilibrium-and-separation.md)、地图/DNA类比；接受受限机制/测量，暂缓现代核素、精确半衰、残余机制及定年 | 待审 |
+| 2026-10-29/A1 | 继续10-28/A1；TDC入口/Ng原文与AI统一式/最小例，分真终端、截断、重置、处罚 | [缓存修订](../content/notes/cooperative-caching-and-learning.md#terminal-bootstrap-followup)、原问题/Web3路径；仅提议限定推导，未定位作者代码，实际审计未完成，不认定算法缺陷 | 待审 |
+| 2026-10-29/B1 | EdgePace分观测年龄、前景deadline、后台吞吐和Hold后实际排空，保留同负载取舍 | [SLO解释](../content/notes/storage-latency-and-slo.md#freshness-and-actuation)、存储路径；接受评价分层，不把profile当WCET或推机器人闭环质量改善 | 待审 |
+| 2026-10-29/C1 | Snow1855与AI率比：分局部交错/全供水区、死亡/房屋、部分供水归类推算 | [供水比较](../content/notes/water-supply-comparison-and-denominators.md)、历史流行病图；限历史比较，不推个人风险、随机实验或未核第三行修订 | 待审 |
+| 2026-10-30/A1 | 响应10-29询问：TDC/Ng与AI恒等式说明在比较累计目标下的策略排序，持续处罚比价与终端余账分开 | [目标与证明](../content/notes/cooperative-caching-and-learning.md#objective-and-proof)、原贪心问题；接受限定目标等价，不推网络最优/状态充分/部署收益；实际代码审计未完成 | 已回应解释；结论待审 |
+| 2026-10-30/B1 | IOSage分模式识别、建议语义和配对端到端收益；保留隔离切分、局部加速无总收益、另日漂移及手动实施 | [SLO修订](../content/notes/storage-latency-and-slo.md#patterns-and-end-to-end)、存储图；接受证据分层，暂缓自动执行安全或跨环境收益，未审代码/原测量 | 待审 |
+| 2026-10-30/C1 | Ostrom2010修订讲座分资源可减损性/排除难度与制度，交流/自定制裁只按原综述口径解释 | [公共池解释](../content/notes/common-pool-resources-and-institutional-rules.md)、信息激励路径；接受属性/制度与成本区分，不将36认定最优或90%当普遍改善，未核原实验，不推DAO/共识保证 | 待审 |
 
 ## 每日简报源文件
 
-- [2026-10-29](digests/2026-10-29.md)
-- [2026-10-28](digests/2026-10-28.md)
-- [2026-10-26](digests/2026-10-26.md)
-- [2026-10-23](digests/2026-10-23.md)
-- [2026-10-22](digests/2026-10-22.md)
-- [2026-10-21](digests/2026-10-21.md)
+[10-30](digests/2026-10-30.md) · [10-29](digests/2026-10-29.md) · [10-28](digests/2026-10-28.md) · [10-26](digests/2026-10-26.md) · [10-23](digests/2026-10-23.md) · [10-22](digests/2026-10-22.md) · [10-21](digests/2026-10-21.md)
 
 ## 审核范围
 
-可按“日期/发现 + 接受、暂缓或拒绝 + 小节/理由”决定，也可仅接受一部分；继续探索与接受内容分别记录。各行保留对应来源、知识修改与尚缺证据。旧候选不因新增研究或沉默被接受；限定理论不关闭样本/生产、状态/终端、恢复/控制、独立能力或机制识别问题，也不自动调整长期权重。
-
-本轮特别保留A1实际实现审计未完成、B1实测调度非硬实时保证、C1房屋分母及部分归类推算三项边界。[今日回执](state/runs/2026-10-29.md)记录独立审核和同SHA构建的实际状态；[10-28](state/runs/2026-10-28.md)、[10-26](state/runs/2026-10-26.md)、[10-23](state/runs/2026-10-23.md)、[10-22](state/runs/2026-10-22.md)与[10-21](state/runs/2026-10-21.md)仅覆盖各自历史SHA，不能替代新内容审核。
+可按日期/发现部分接受、暂缓或拒绝。继续研究、沉默或合并都不代替逐项确认。研究partial及未完成审计保留，实际审核/构建见[10-30回执](state/runs/2026-10-30.md)。

@@ -35,3 +35,7 @@ Table II TinyLlama、epsilon=0.002、24 独立评估请求，违约定义为该�
 ## Support-and-limits
 
 扩展 [KV 成本解释](../notes/kv-cache-optimization.md#selective-reconstruction)，不另建同义成本笔记。未真实无线、长上下文大模型或多负载复现；100 Mbps 下2MiB=167.8ms只字节/速率计算。teacher-forced PPL 不等于生成正确率，PPL与paired NLL聚合也不同，不能互相反算。
+
+## Availability-followup
+
+2026-10-30 Domain Monitor重核仍v1，增读/重核HTML §IV式13–16及TableIII，按保守口径另计一次指定正文深读。未取得精确predictor bank实测、长上下文净摊销或作者实现入口；限定原文链接/题名网页/精确仓库搜索未定位入口，不等于代码不存在，也不关闭原净收益缺口。不重复推荐旧省略比例。

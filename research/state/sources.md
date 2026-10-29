@@ -2,6 +2,28 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-10-30
+
+11份canonical候选/回访（A3/B7/C1），6次指定正文深读（A3/B2/C1），3项A1/B1/C1；A是响应明确反馈的解释深化，不称新发表。原评分时序计划因用户询问转向而未完成，缓存实现审计仍缺作者代码，研究partial；选择性监测范围与任务状态分别记录。[晨报](../digests/2026-10-30.md)保留可独立理解的解释，[回执](runs/2026-10-30.md)保留运行细节。工具/别名/跨角色原文复核及Architect对三份B题录复核不重复计canonical或深读。
+
+| canonical / 版本 / 入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围及决定 |
+| --- | --- | --- | --- |
+| arxiv:2512.09961 v1；Chen等，[TDC-Cache](https://arxiv.org/abs/2512.09961v1) | 2025-12-10T02:52:41Z | 2026-10-12 / 2026-10-30 | A；HTML V-B奖励式16–26邻接/VI-A/B，未代码。响应用户目标/证明对象询问，b与处罚比价为AI反解，不是已核作者意图；[原来源增读](../../content/sources/published-tdc-cache-2025.md#objective-followup)。研究中/启发高/代数高、应用中 |
+| doi:10.32604/cmes.2023.046826；Chen/Shi/Huang/Wang/He，[rPoA](https://www.techscience.com/CMES/v139n2/55355/html) | 正式2024-01-29，不按DOI年份推首次 | 2026-10-12 / 2026-10-30 | A；§3.1–3.3指定正文，转反馈前已读；评分数据时序审查未完成，无新发现，不当应用漏洞。研究中/启发中/所读范围可靠中 |
+| icml:1999:ng-harada-russell:reward-shaping；[作者PDF](https://people.eecs.berkeley.edu/~russell/papers/icml99-shaping.pdf) | ICML1999 | 2026-10-28 / 2026-10-30 | A；pp3–5 regularity/Thm1式2/充分性/Cor2Remark1；未完整必要性或实验。截图无像素，bundled pypdf核gamma；限定目标等价为AI，实际实现未审。研究中/启发高/限定代数高 |
+| arxiv:2610.36370 v1；Banisharif/Mahmud/Tarraf/Byna/Jannesari，[IOSage: Detecting HPC I/O Bottleneck Patterns to Guide LLM Recommendations](https://arxiv.org/abs/2610.36370v1) | 2026-10-26T22:35:54Z | 2026-10-30 / 2026-10-30 | B1；HTML §II-A–C/III-A–F/IV-A–F指定段/Tables I–IV及§VI–VII，引言辅助、图仅图注；无PDF视觉/代码/原日志/复现。模式/建议/端到端义务与负例，非自动执行安全；[来源](../../content/sources/paper-iosage.md)。研究高/启发高/可靠中 |
+| arxiv:2610.36339 v1；Stephan/Puscasu/Xu/Ding/Guan，[INC-MoE: Overlapping In-Network Collectives and Expert Computation for Expert-Parallel Mixture-of-Experts Inference](https://arxiv.org/abs/2610.36339v1) | 2026-10-26T22:08:01Z | 2026-10-30 / 2026-10-30 | B；仅题录/摘要/history，正文/仿真与同语义未核，摘要数字不传播，暂缓。研究高/启发高/当前阅读可靠低 |
+| arxiv:2610.36434 v1；Yaojian Chen等16作者，[JustGoal: With Only a Goal, the AI Baseline Is Above the Expert Kernels](https://arxiv.org/abs/2610.36434v1) | 2026-10-27T00:30:00Z | 2026-10-30 / 2026-10-30 | B；仅题录/摘要/history，等预算/等范围及正确性未核，不按标题接受优越性，暂缓。研究高/启发高/当前可靠低 |
+| arxiv:2610.29544 v1；[RISK-KV](https://arxiv.org/abs/2610.29544v1) | 2026-10-21T10:30:46Z | 2026-10-23 / 2026-10-30 | B旧源回访；§IV式13–16/TableIII按保守口径计第二次B深读；未取得predictor bank/长上下文实测，未定位作者代码不说不存在，不重复旧发现。研究中/启发中/可靠中 |
+| arxiv:2610.30026 v1；[Silent Cue Loss](https://arxiv.org/abs/2610.30026v1) | 2026-10-21T16:51:25Z | 2026-10-23 / 2026-10-30 | B旧源；只S30实现/外链和版本，无新原实验深读，作者实现未定位；同名仓库另计，不能替原实验。研究中/启发中/可靠中 |
+| arxiv:2610.37307 v1；[EdgePace](https://arxiv.org/abs/2610.37307v1) | 2026-10-27T14:26:16Z | 2026-10-29 / 2026-10-30 | B旧源；仅版本/外链，仍v1，无新增正文/同负载代码核验，不重推。研究中/启发中/可靠中 |
+| github:habib-analyst/silent-cue-loss；[仓库](https://github.com/habib-analyst/silent-cue-loss) | 元数据创建2026-10-23 | 2026-10-30 / 2026-10-30 | B独立canonical；元数据/README，合成DOCX/确定匹配/零LLM模拟，不是已核原论文76真实文档作者实现。不执行/不借数字当复现；排除发现，身份限定可靠中 |
+| doi:10.1257/aer.100.3.641；Ostrom，[2010修订讲座副本](https://web.pdx.edu/~nwallace/EHP/OstromPolyGov.pdf) | AER2010-06；修订自2009-12-08讲座，非两项研究 | 2026-10-30 / 2026-10-30 | C1；印刷641/643–647/650–655/663–665指定段，54文件页前32为正文、后为cited-by；仅文本无视觉/全篇/原实验。36只称更高联合收益；90%是扣罚金后达最优水平，不推全部成本。官方2009入口403未读；[来源](../../content/sources/ostrom-polycentric-governance-2010.md)。研究中/启发高/可靠中 |
+
+B窗口2026-10-23T07:30+08—30T07:30+08，补10-29T07:38:53后遗漏，最后显式时钟07:41:36.965969+08。cs.DC/cs.LG/math.OC/physics.soc-ph recent默认首屏及cs.DC new最新可见10-28；未穷尽分页、期刊会议或全部版本，也未确认上次终点后首发。三新预印本均补窗口遗漏。三旧论文原文/题名网页/精确仓库检索未定位作者代码，未定位不证明不存在。
+
+工具入口另计：Hugo latest仍0.169.0（10-27T16:24:46Z），Obsidian公开1.14.5/Catalyst1.15.0（10-22），CommonMark0.31.2（2024-01-28），不升级本库。TDC及Ng的正文复核不算新发表；C官方讲座403、截图无像素及A提取工具限制由run保留，未把访问失败当无证据或全文已读。
+
 ## 2026-10-29
 
 6份canonical候选/回访（A2/B3/C1），4次指定正文深读（A2/B1/C1），3项发现A1/B1/C1；无额外误取正文。旧源别名、工具入口与跨角色复核不重复计数。A理论推进已整合，但用户要求的实际实现审计因未定位作者代码入口仍未完成，今日研究partial；选择性监测不等于穷尽。[晨报](../digests/2026-10-29.md)与[回执](runs/2026-10-29.md)分开保存解释和运行状态。

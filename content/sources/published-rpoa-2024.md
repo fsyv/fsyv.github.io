@@ -23,3 +23,7 @@ Jinyu Chen, Long Shi, Qisheng Huang, Taotao Wang, Daojing He. *On Designs of Dec
 - §5：吞吐量、声誉变化与委员会变化的实验设置及观察。
 
 这些位置支撑[声誉如何进入共识决策](../notes/reputation-and-consensus.md)。有限实验中的性能接近不等于所有负载下无开销；链上可核验也不自动保证链下评价真实。后两点是本笔记的阅读判断。
+
+## Timing-followup
+
+2026-10-30 Researcher为评分时序回访实际重读出版商HTML §3.1–3.3，随后按用户明确问题转向差分奖励统一式的目标说明。此次未完成评分数据取得、轮换、暴露、重复访问与候选生成时序的审查，没有新增评分发现或应用漏洞判断；旧阅读范围与结论归属保留。
