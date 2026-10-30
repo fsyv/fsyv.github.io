@@ -24,6 +24,8 @@ status: open
 
 2026-10-19 增读 [Squall §3–7 指定部分](../sources/paper-squall.md)，已将路由复查、按需拉取、副本确认、全分区退出和恢复约束整合至[在线重配置解释](../notes/storage-placement-and-migration.md#live-reconfiguration)。这推进了具体协议与完成口径；没有验证其代码、任意执行的恰好一次语义或跨数据中心服务保证。
 
+2026-10-26增读[Rocksteady指定§3–4](../sources/paper-rocksteady.md)，已把早转归属、PriorityPull与跨日志依赖整合至[已有迁移解释](../notes/storage-placement-and-migration.md#early-ownership-and-recovery)。关闭按需拉取提高字节率却阻碍请求完成，补上过渡服务的具体对照；多日志恢复当时仍ongoing，未补齐任意故障下的实现保证。
+
 ## Gaps
 
 仍需核验写入版本追赶、切换原子性、一致性、失败与重试如何计入；CRANE 可用性单位与冷热 Algorithm 2 计费口径也待澄清。还缺少负载持续时间和预测误差对收益的敏感性证据。链路数据与[端到端 SLO](../notes/storage-latency-and-slo.md)之间的映射也需实际测量。
@@ -31,6 +33,8 @@ status: open
 ## Next
 
 2026-10-19 已回访，下次 2026-10-26。本轮取得 Squall 协议正文，但对冷热 Algorithm 2 的限定检索仍未取得可读实现或作者澄清，不重复推介同一未解计费命题。后续先在公开模型中固定故障、写传播和请求时限；用相同外生请求序列比较策略，并区分闭环负载，记录超时、失败、重试及未完成请求。分别报告迁移前、中、后的成本与违约，加入短暂热点和反转对照。这是待执行验证方向。
+
+2026-10-26回访后仍open，下次2026-11-02先核可读代码中的版本/删除竞争、日志依赖持久化、切换和故障注入；旧计费未取得实现或作者澄清，不重复同一基础模型。跨数据中心逐请求SLO、负载反转和完整费用仍需匹配实验，不能由局部迁移率关闭问题。
 
 ## Resolution
 

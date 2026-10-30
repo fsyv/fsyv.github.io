@@ -22,10 +22,11 @@ endorsement: ai-candidate
 ## Route
 
 1. [交叉熵、最大似然与 KL](../notes/probability-cross-entropy.md)：回答“如何评价预测分布”，保留固定目标分布的条件。
-2. [Zipf 排名请求模型](../notes/probability-zipf.md)：先解释边际热度与静态缓存，再读[对象大小与两个命中目标](../notes/probability-zipf.md#object-size-and-objective)及重用距离分支；沿“概率→容量单位/目标→顺序→策略结果”理解模型遗漏。
+2. [Zipf 排名请求模型](../notes/probability-zipf.md)：先解释边际热度与静态缓存，再读[对象大小与两个命中目标](../notes/probability-zipf.md#object-size-and-objective)、重用距离及教学反例，最后看[公开样本的受控投影](../notes/probability-zipf.md#public-sample-projection)；再读[采样/实例/导出版本分层](../notes/probability-zipf.md#sample-scope-followup)；沿“概率→容量单位/目标→顺序→有限数据对照→范围与版本→操作与过期语义”理解模型遗漏，先核导出关系再做生产回放。
 3. [ER 与无标度网络](../notes/network-random-and-scale-free.md)：回答“边如何形成、度分布如何检验”，区分生成机制、分布形状与实证证据。
+4. [交通延误传播与条件阈值](../notes/transport-delay-propagation-and-thresholds.md)：在结构之后加入时变运行权重、雨量驱动、吸收和非负约束；需额外掌握矩阵乘法与离散递推，区分数据外测试、数值情景及有条件的增长充分界，再读[精确截断收支与交换反例](../notes/transport-delay-propagation-and-thresholds.md#clipped-balance)，理解局部富余吸收为何不能直接抵消其他站点积压。
 
-三条分支可独立阅读；顺序帮助先熟悉概率定义，再处理应用对象，并不意味着网络幂律依赖请求符合 Zipf。
+前三条分支可独立阅读；顺序帮助先熟悉概率定义，再处理应用对象，并不意味着网络幂律依赖请求符合 Zipf。动态实例接续结构分支，其阈值也不由度分布直接推出。
 
 ## Relations
 
@@ -36,6 +37,12 @@ endorsement: ai-candidate
 
 - **实验识别的结构类比：**[分子遗传地图](molecular-genetics-and-experimental-inference.md)从 DNA 示踪自身问题出发，用同平均/不同分布说明比较可观察预测的重要性；生物密度实验与网络构图并无数学等价。
 
+## Validation-branch
+
+[反复评分与留出集复用](../notes/adaptive-validation-and-holdout-reuse.md)是独立统计分支：先读固定族诚实挑优反例，再用独立样本/有界分数推统一界，最后辨认自适应访问的新条件。它补评价选择规则，不由Zipf或网络幂律推出，也不假定真实缓存请求独立。
+
 ## Sources-and-open
 
 [概率资料阅读范围](../sources/foundations-probability.md)区分讲义定义和仅读的实证摘要；[网络资料](../sources/foundations-networks.md)区分理论生成模型与统计检验。真实流量的时间局部性及现实拓扑是否符合模型，保留在[边界检验问题](../questions/foundations-validation.md)，不以空标题代替已有解释。
+
+交通分支已在 2026-10-28 增加两站点固定/时变交换的推导与精确递推，负总净输入及每步连通都不足以单独保证有界；尚未给出一般充分条件。开放问题继续是实际非均匀雨场、运行图与非零初态下的近似误差。[公开实现入口](../sources/paper-climate-transport-collapse.md#implementation-followup)已核 README，执行函数、气候数据条件与真实无界阶段未核；2026-11-04 复评。

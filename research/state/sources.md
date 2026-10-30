@@ -2,6 +2,191 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-10-30
+
+11份canonical候选/回访（A3/B7/C1），6次指定正文深读（A3/B2/C1），3项A1/B1/C1；A是响应明确反馈的解释深化，不称新发表。原评分时序计划因用户询问转向而未完成，缓存实现审计仍缺作者代码，研究partial；选择性监测范围与任务状态分别记录。[晨报](../digests/2026-10-30.md)保留可独立理解的解释，[回执](runs/2026-10-30.md)保留运行细节。工具/别名/跨角色原文复核及Architect对三份B题录复核不重复计canonical或深读。
+
+| canonical / 版本 / 入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围及决定 |
+| --- | --- | --- | --- |
+| arxiv:2512.09961 v1；Chen等，[TDC-Cache](https://arxiv.org/abs/2512.09961v1) | 2025-12-10T02:52:41Z | 2026-10-12 / 2026-10-30 | A；HTML V-B奖励式16–26邻接/VI-A/B，未代码。响应用户目标/证明对象询问，b与处罚比价为AI反解，不是已核作者意图；[原来源增读](../../content/sources/published-tdc-cache-2025.md#objective-followup)。研究中/启发高/代数高、应用中 |
+| doi:10.32604/cmes.2023.046826；Chen/Shi/Huang/Wang/He，[rPoA](https://www.techscience.com/CMES/v139n2/55355/html) | 正式2024-01-29，不按DOI年份推首次 | 2026-10-12 / 2026-10-30 | A；§3.1–3.3指定正文，转反馈前已读；评分数据时序审查未完成，无新发现，不当应用漏洞。研究中/启发中/所读范围可靠中 |
+| icml:1999:ng-harada-russell:reward-shaping；[作者PDF](https://people.eecs.berkeley.edu/~russell/papers/icml99-shaping.pdf) | ICML1999 | 2026-10-28 / 2026-10-30 | A；pp3–5 regularity/Thm1式2/充分性/Cor2Remark1；未完整必要性或实验。截图无像素，bundled pypdf核gamma；限定目标等价为AI，实际实现未审。研究中/启发高/限定代数高 |
+| arxiv:2610.36370 v1；Banisharif/Mahmud/Tarraf/Byna/Jannesari，[IOSage: Detecting HPC I/O Bottleneck Patterns to Guide LLM Recommendations](https://arxiv.org/abs/2610.36370v1) | 2026-10-26T22:35:54Z | 2026-10-30 / 2026-10-30 | B1；HTML §II-A–C/III-A–F/IV-A–F指定段/Tables I–IV及§VI–VII，引言辅助、图仅图注；无PDF视觉/代码/原日志/复现。模式/建议/端到端义务与负例，非自动执行安全；[来源](../../content/sources/paper-iosage.md)。研究高/启发高/可靠中 |
+| arxiv:2610.36339 v1；Stephan/Puscasu/Xu/Ding/Guan，[INC-MoE: Overlapping In-Network Collectives and Expert Computation for Expert-Parallel Mixture-of-Experts Inference](https://arxiv.org/abs/2610.36339v1) | 2026-10-26T22:08:01Z | 2026-10-30 / 2026-10-30 | B；仅题录/摘要/history，正文/仿真与同语义未核，摘要数字不传播，暂缓。研究高/启发高/当前阅读可靠低 |
+| arxiv:2610.36434 v1；Yaojian Chen等16作者，[JustGoal: With Only a Goal, the AI Baseline Is Above the Expert Kernels](https://arxiv.org/abs/2610.36434v1) | 2026-10-27T00:30:00Z | 2026-10-30 / 2026-10-30 | B；仅题录/摘要/history，等预算/等范围及正确性未核，不按标题接受优越性，暂缓。研究高/启发高/当前可靠低 |
+| arxiv:2610.29544 v1；[RISK-KV](https://arxiv.org/abs/2610.29544v1) | 2026-10-21T10:30:46Z | 2026-10-23 / 2026-10-30 | B旧源回访；§IV式13–16/TableIII按保守口径计第二次B深读；未取得predictor bank/长上下文实测，未定位作者代码不说不存在，不重复旧发现。研究中/启发中/可靠中 |
+| arxiv:2610.30026 v1；[Silent Cue Loss](https://arxiv.org/abs/2610.30026v1) | 2026-10-21T16:51:25Z | 2026-10-23 / 2026-10-30 | B旧源；只S30实现/外链和版本，无新原实验深读，作者实现未定位；同名仓库另计，不能替原实验。研究中/启发中/可靠中 |
+| arxiv:2610.37307 v1；[EdgePace](https://arxiv.org/abs/2610.37307v1) | 2026-10-27T14:26:16Z | 2026-10-29 / 2026-10-30 | B旧源；仅版本/外链，仍v1，无新增正文/同负载代码核验，不重推。研究中/启发中/可靠中 |
+| github:habib-analyst/silent-cue-loss；[仓库](https://github.com/habib-analyst/silent-cue-loss) | 元数据创建2026-10-23 | 2026-10-30 / 2026-10-30 | B独立canonical；元数据/README，合成DOCX/确定匹配/零LLM模拟，不是已核原论文76真实文档作者实现。不执行/不借数字当复现；排除发现，身份限定可靠中 |
+| doi:10.1257/aer.100.3.641；Ostrom，[2010修订讲座副本](https://web.pdx.edu/~nwallace/EHP/OstromPolyGov.pdf) | AER2010-06；修订自2009-12-08讲座，非两项研究 | 2026-10-30 / 2026-10-30 | C1；印刷641/643–647/650–655/663–665指定段，54文件页前32为正文、后为cited-by；仅文本无视觉/全篇/原实验。36只称更高联合收益；90%是扣罚金后达最优水平，不推全部成本。官方2009入口403未读；[来源](../../content/sources/ostrom-polycentric-governance-2010.md)。研究中/启发高/可靠中 |
+
+B窗口2026-10-23T07:30+08—30T07:30+08，补10-29T07:38:53后遗漏，最后显式时钟07:41:36.965969+08。cs.DC/cs.LG/math.OC/physics.soc-ph recent默认首屏及cs.DC new最新可见10-28；未穷尽分页、期刊会议或全部版本，也未确认上次终点后首发。三新预印本均补窗口遗漏。三旧论文原文/题名网页/精确仓库检索未定位作者代码，未定位不证明不存在。
+
+工具入口另计：Hugo latest仍0.169.0（10-27T16:24:46Z），Obsidian公开1.14.5/Catalyst1.15.0（10-22），CommonMark0.31.2（2024-01-28），不升级本库。TDC及Ng的正文复核不算新发表；C官方讲座403、截图无像素及A提取工具限制由run保留，未把访问失败当无证据或全文已读。
+
+## 2026-10-29
+
+6份canonical候选/回访（A2/B3/C1），4次指定正文深读（A2/B1/C1），3项发现A1/B1/C1；无额外误取正文。旧源别名、工具入口与跨角色复核不重复计数。A理论推进已整合，但用户要求的实际实现审计因未定位作者代码入口仍未完成，今日研究partial；选择性监测不等于穷尽。[晨报](../digests/2026-10-29.md)与[回执](runs/2026-10-29.md)分开保存解释和运行状态。
+
+| canonical / 版本 / 入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围与决定 |
+| --- | --- | --- | --- |
+| arxiv:2512.09961 v1；[TDC](https://arxiv.org/abs/2512.09961v1) | 2025-12-10T02:52:41Z | 2026-10-12 / 2026-10-29 | A1旧应用回访；HTML V-B1–3式25–26/VIII-B及版本/实现入口检索，未读执行代码或复现。统一终端/处罚分析为AI；搜索未定位作者入口不证明不存在。[来源](../../content/sources/published-tdc-cache-2025.md#implementation-search)。研究高/启发高/整体可靠中，实际实现审计未完成 |
+| icml:1999:ng-harada-russell:reward-shaping；[作者PDF](https://people.eecs.berkeley.edu/~russell/papers/icml99-shaping.pdf) | ICML1999 | 2026-10-28 / 2026-10-29 | A1实质回访；文件pp3–5 §2.1 regularity/§3Thm1式2与充分性/Corollary2 Remark1；未完整附录或实验。截图失败，pypdf交叉gamma，非视觉；有限统一式归AI。[来源](../../content/sources/ng-harada-russell-reward-shaping-1999.md#terminal-followup)。限定推导可靠高，非应用证据 |
+| arxiv:2610.37307 v1；Mei/Pei/Wang/Wu/Canini/Xiao，[EdgePace](https://arxiv.org/abs/2610.37307v1) | 2026-10-27T14:26:16Z | 2026-10-29 / 2026-10-29 | B1；HTML§2.1–2.4/3.1–3.3 Algorithm1/4.1–4.4 Tables1–3及AppendixA/C指定表，未PDF图像/代码/复现。新鲜度/排空/吞吐取舍，非硬实时。[来源](../../content/sources/paper-edgepace.md)。研究高/启发高/可靠中 |
+| arxiv:2610.33923 v1；Jiahui Ni/Vishrant Tripathi，[Queuing for Inference: Dynamic Memory Footprints and Costly Preemption](https://arxiv.org/abs/2610.33923v1) | 2026-10-24T21:29:03Z | 2026-10-29 / 2026-10-29 | B仅题录/摘要/history；动态内存/抢占线索，定理/阈值/基准未核，不形成机制知识，暂缓。研究高/启发高/当前阅读可靠低 |
+| arxiv:2610.36636 v1；Saarth Deshpande/Neeraja J.Yadwadkar/Venkat Arun，[Agar: What-If Analysis for Microservice Applications](https://arxiv.org/abs/2610.36636v1) | 2026-10-27T04:50:20Z | 2026-10-29 / 2026-10-29 | B仅题录/摘要/history；组件界组合反事实SLO线索，未核覆盖/外推，摘要性能数字不传播，暂缓。研究中/启发高/可靠低 |
+| book:snow:cholera:1855:2e；[原扫描](https://kbroman.org/BMI881_fall2020/assets/snow_cholera.pdf)、[UCLA转录](https://epi-snow.ph.ucla.edu/Stream3_GrandExperiment_a.html) | 扉页1855；序1854-12-11不是出版年 | 2026-10-29 / 2026-10-29 | C1旧资料；印刷p68/74–83/TableVII–IX pp84–86及p86局限，浏览87–89；视觉83/86、转录对应交叉。未全书/附录清单/1856/复现。[来源](../../content/sources/snow-cholera-water-supply-1855.md)。研究中/启发高/可靠中；第三行不符保留，供水归类部分推算 |
+
+B窗口2026-10-22T07:30+08—10-29T07:30+08，补上次正式终点后遗漏。四recent首屏cs.DC/cs.PF/math.OC/cs.LG至10-28，未穷尽分页、期刊会议或全部版本替换；三候选首次提交均早于上次正式终点，均属窗口内补遗漏。最后显式时钟07:38:53+08；首个检索精确起时未采集。
+
+仅版本/工具复核：WorldPager仍v1；Hugo官方latest API与HTTP均v0.169.0、10-27T16:24:46Z，不升级本库0.166；Obsidian public1.14.5/Catalyst1.15.0仍10-22，CommonMark仍0.31.2/2024-01-28。Obsidian urllib403由web恢复；Python无bs4，用标准HTMLParser读同源，不新增依赖或深读。C旧snowbook3入口失败、新转录/原扫描恢复；截图/fitz限制与内存视觉恢复见来源。A误混检索命中未打开正文、不承担结论；详细失败均由run记实。
+
+## 2026-10-28
+
+三通道及主控共12份研究候选/回访：研究员A3、主控交通1、B6、C2；6次指定正文深读：研究员A2、交通1、B2、C1；形成A1/A2/B1/B2/C1五项。另有A/B各一份无关误取、实际只读题录/摘要，因此不同canonical实际触达14，超过12入口上限2；没有额外深读或推荐，不隐去偏差，也不声称全部预算要求满足。别名、旧版本/工具入口、跨角色关键原文核查另计，不重复当新研究。[晨报](../digests/2026-10-28.md)与[回执](runs/2026-10-28.md)分别保留可独立理解的发现及实际运行状态。
+
+| canonical / 版本 / 入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围与决定 |
+| --- | --- | --- | --- |
+| arxiv:2512.09961 v1；Chen/ Shi/ Wang/ Wang/ Zhang，[TDC-Cache](https://arxiv.org/abs/2512.09961) | 2025-12-10T02:52:41Z | 2026-10-12 / 2026-10-28 | A1旧应用实质回访；HTML IV-B式2–4/IV-C12–14/V-A15/V-B1–3式16–20、25–26及邻段/VIII-B首段，未全文/代码/复现。差分、处罚、bootstrap与状态历史分层；[来源](../../content/sources/published-tdc-cache-2025.md#reward-followup)。研究高/启发高/限定引文与代数可靠高、部署未验 |
+| icml:1999:ng-harada-russell:reward-shaping；[作者PDF](https://people.eecs.berkeley.edu/~russell/papers/icml99-shaping.pdf) | ICML1999 | 2026-10-28 / 2026-10-28 | A1旧文新读；十页文件pp2–5，§2.1–2.2定义/§3 Theorem1式2及充分性证明/Corollary2/两remarks，未必要性附录或实验；文字gamma漏失以内存pypdf复核，未视觉。[来源](../../content/sources/ng-harada-russell-reward-shaping-1999.md)；研究高/启发高/限定定理可靠高 |
+| arxiv:2610.25033 v1；[PlaneZip](https://arxiv.org/abs/2610.25033) | 2026-10-18T05:44:24Z | 2026-10-21 / 2026-10-28 | A可得性回访，只有题录/history、HTML§VII结尾next steps与链接，未新读编码/模拟；prototype仍未来表述、限定检索未定位作者实现，不说不存在，不形成新发现。[范围](../../content/sources/paper-planezip.md#availability-followup)；研究中/启发中/可靠中 |
+| doi:10.1073/pnas.2532180123；arxiv:2610.26428 v1；Faccin/Scagliarini/De Domenico，[交通原文](https://arxiv.org/html/2610.26428v1) | PNAS online2026-10-16/issue10-20，arxiv10-19T13:54:12Z为别名 | 2026-10-21 / 2026-10-28 | A2；重读§2.1/2.4/4.1/4.3，未全读/视觉/执行代码/铁路复现；另官方repo README可得性。精确截断收支与两站点固定/时变例为AI，100步有理数核算不当真实实验。[来源](../../content/sources/paper-climate-transport-collapse.md#implementation-followup)；研究高/启发高/模型代数可靠高、系统外推未验 |
+| arxiv:2610.35529 v1；Bingnan Liu/Ruini Xue，[WorldPager](https://arxiv.org/abs/2610.35529v1) | 2026-10-26T14:44:33Z | 2026-10-28 / 2026-10-28 | B1；HTML II-A–E/III-A–E/IV-A–F/VII，未全V/附录/PDF/像素图/代码/复现。pose预测/stale fallback、等待分母、尾部反例与longgap质量；[来源](../../content/sources/paper-worldpager.md)。研究高/启发高/可靠中 |
+| arxiv:2610.35793 v1；Tiasa Singha Roy/Manya Wadhwa/Greg Durrett，[Claim Smoothing](https://arxiv.org/abs/2610.35793v1) | 2026-10-26T17:29:48Z | 2026-10-28 / 2026-10-28 | B2；HTML§1–6，Table1仅ResearcherBench/CS2，A.1–A.3/Tables8–10/E.5/Table16/F开头/Table17部分；未完整prompts/C/D/G/PDF图像/代码数据/复现。另主控核C/Table13，保留alpha文字与表不一致。[来源](../../content/sources/paper-claim-smoothing.md)；研究高/启发高/可靠中 |
+| arxiv:2610.35591 v1；Dimitris Gkoulis，[Making the Telemetry Pipeline Measurable: An Edge IoT Testbed and Dataset for End-to-End Latency, Provenance, and Energy-Aware Benchmarking](https://arxiv.org/abs/2610.35591) | 2026-10-26T15:19:07Z | 2026-10-28 / 2026-10-28 | B仅题录/摘要/history，dataset集成不能当受控归因，未正文、暂缓。研究中/启发高/当前阅读可靠低 |
+| arxiv:2610.35413 v1；Niklas Baumgarten，[How Numerical Errors Scale with Hardware](https://arxiv.org/abs/2610.35413) | 2026-10-26T13:25:03Z | 2026-10-28 / 2026-10-28 | B仅题录/摘要/history，复杂度/并行与能耗同预算前提未核，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.35230 v1；Xiaoyang Zhang/Yuejun Yan/Qingang Zhang/Yonggang Wen，[Context Is Not Free: Carbon-Aware LLM Routing for Multi-Turn LLM Web Services across Geo-Distributed Data Centers](https://arxiv.org/abs/2610.35230) | 2026-10-26T11:20:26Z | 2026-10-28 / 2026-10-28 | B仅题录/摘要/history，碳系数、重算/质量/时延与trace未核，不传播摘要改善数，暂缓。研究高/启发高/可靠低 |
+| arxiv:2610.33927 v1；Aidan Meador-Woodruff/Gourab Ghoshal，[Interplay Between Network Heterogeneity and Activation Thresholds in Global Cascades](https://arxiv.org/abs/2610.33927) | 2026-10-24T21:41:38Z | 2026-10-28 / 2026-10-28 | B仅题录/摘要/history，Watts infinitesimal seed/degree-threshold heterogeneity证明未读，不能搬到交通有限扰动，暂缓。研究中/启发高/可靠低 |
+| doi:10.1080/14786440209462856；Rutherford/Soddy，[The Cause and Nature of Radioactivity, Part I](https://webserver.lemoyne.edu/giunta/ruthsod.html) | print1902-09；online2009-04-15为数字上线 | 2026-10-28 / 2026-10-28 | C1；转录据1962重印，I–VI/IX–X，VII/XI–XIII相关边界，Figures2–5视觉；非原刊全册扫描/现代核物理/复现。恒平台/连续分离/早期混合与有效模型分开；[来源](../../content/sources/rutherford-soddy-radioactivity-1902.md)。研究中/启发高/可靠中 |
+| doi:10.1126/science.110.2869.678；J.R.Arnold/W.F.Libby，[Age determinations by radiocarbon content; checks with samples of known age](https://pubmed.ncbi.nlm.nih.gov/15407879/) | Science110(2869):678–680，1949-12-23 | 2026-10-28 / 2026-10-28 | C初筛只有PubMed题录，明确No abstract available；未摘要/全文，未深读不建机制，暂缓，可靠性只限题录。Nobel背景403未读，不增加第三研究 |
+
+### 无关误取与入口预算偏差
+
+| canonical / 身份 | 实际读取范围与处理 |
+| --- | --- |
+| arxiv:2502.14021；Jia-Qi Gong/Ji-Chong Yang，*Digit quantum simulation of a fermion field in an expanding universe*；[误取入口](https://arxiv.org/abs/2502.14021) | A误开后读题录/摘要/history/期刊字段；v1 2025-02-19T18:23:47Z、v2 2025-11-20T18:57:48Z。未正文/PDF/代码，立即排除，不作为任何发现依据；计额外canonical触达1，不掩盖为未读 |
+| arxiv:2610.29534 v1；Sakhaei Gharagezlou/Askari Donbeh/Monemi/Latva-aho/Rasti，*Safe World Model for Joint Trajectory and Beamforming Design of Mobile Base Stations*；[误取入口](https://arxiv.org/abs/2610.29534) | B核旧RISK时误键（正确29544），读题录/摘要/history，首提2026-10-21T10:23:56Z。未正文，不推荐，额外触达1；随后正确RISK只版本复查 |
+
+### 窗口、版本、工具与访问范围
+
+B窗口2026-10-21T07:30:00+08:00—10-28T07:30:00+08:00，补上次10-26T07:36:04+08后遗漏。选择性cs.DC/cs.CL/math.OC/physics.soc-ph recent默认首屏最新公告27日，未穷尽分页、期刊会议和替换版本。B六份中五份为上次终点后新预印本，33927为补遗漏；题录未见journal字段不证明没有正式发表。
+
+- 更正10-26账本/回执的“uGDS仍仅v1”版本核查：官方题录实际已有v2，提交2026-10-23T01:57:07Z；10-26固定v1指定阅读仍属实。今日只核history，未比较v2正文，不升级旧结论或将旧更新称今日新发。Repair30552/UlaCache29820/RISK29544/SilentCue30026仍只核v1，无新正文不重推；旧run保留历史状态。
+- Hugo首次web缓存仍0.168，随后[固定release](https://github.com/gohugoio/hugo/releases/tag/v0.169.0)及实时REST一致v0.169.0、published_at2026-10-27T16:24:46Z；仅读release关键段，未源码，项目保持0.166。Obsidian索引仍10-22 Catalyst1.15.0，另补此前遗漏的[public Desktop1.14.5](https://obsidian.md/changelog/2026-10-22-desktop-v1.14.5/)（10-22、Electron43.7.5→43.8.3）；CommonMark仍0.31.2/2024-01-28。工具不当论文发现，不自动升级。
+- A作者PDF入口超时后Berkeley恢复；系统Python缺pypdf后bundled内存读取恢复，不安装依赖或保存论文。TDC/PlaneZip精确题名网页及两次GitHub repository查询未定位作者实现，只是限定可得性，不证明不存在。
+- C DOI web与GIF读取失败后学术转录/内存图恢复；现代定年题录没有摘要，背景PDF403，没有把失败入口冒称深读。所有图/原文中间材料都未写公开仓库。
+
+五项候选加此前十六项累计二十一项，未合并不构成正式接受。真实评论与同SHA审核/构建/发布由主控[回执](runs/2026-10-28.md)记实；本账本不预填成功。
+
+## 2026-10-26
+
+10份canonical回访/候选A3/B6/C1、4次指定部分正文深读A1/B2/C1、4发现A1/B1/B2/C1。A含两份旧研究的证据补查失败和一份旧文新读，B六份新canonical均为窗口补遗漏，C旧原文首次进入流体力学。同一论文各入口、版本/工具复查、跨角色复核和算术不重复计数。没有声称全文全读、系统复现或穷尽检索。[晨报](../digests/2026-10-26.md)保留机制/证据和判断边界，[回执](runs/2026-10-26.md)记录精确失败、角色及审核构建/发布。
+
+| canonical / 版本 / 入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围与决定 |
+| --- | --- | --- | --- |
+| doi:10.1145/3132747.3132784；Chinmay Kulkarni/Aniraj Kesavan/Tian Zhang/Robert Ricci/Ryan Stutsman，[Rocksteady: Fast Migration for Low-latency In-memory Storage](https://www.flux.utah.edu/download?uid=257) | SOSP2017；Crossref2017-10-14/PDF会议标注10-28，字段不同非新版本 | 2026-10-26 / 2026-10-26 | A1；16页文件第6–11页指定§3/3.1.1–3.1.3/3.3–3.4/4.1–4.2，辅助3.2/4.3开头；视觉第9/11页含Figures9/10，未全文/代码/原日志/复现。早转归属/新写日志依赖，恢复扩展ongoing；[来源](../../content/sources/paper-rocksteady.md)。研究高/启发高/可靠中 |
+| doi:10.1109/cloudsummit54781.2022.00009；Bita Fatemipour/Wei Shi/Marc St-Hilaire，[多源迁移](https://doi.org/10.1109/cloudsummit54781.2022.00009) | 2022 Cloud Summit10-20—21，17–22页 | 题录2026-10-12 / 2026-10-26尝试 | A；作者清单仍仅无实际href的pdf字样，另一作者页403，未取得摘要/正文，原unread不变，不推测COMS机制。新阅读可靠性不适用；旧缺口仍具研究价值 |
+| doi:10.1016/j.jpdc.2018.12.003；Mansouri/Buyya冷热对象工作 | online2018-12-21/print2019-04 | 2026-10-12 / 2026-10-26限定检索 | A；题名/Algorithm2/代码补查没有取得实现或作者计费澄清，搜索命中另一2017TCC工作未当同研究；没有新增正文深读，保留10-14真实范围 |
+| arxiv:2610.30868 v1；Jing Wei/Guanyi Chen/Qi Chen/Chuyu Zhang/Zheng Zhou/Chutian Wang/Jian Zhang，[uGDS: A User-Space Development Kit for High-Performance GPU Direct Storage](https://arxiv.org/abs/2610.30868v1) | 2026-10-22T07:45:58Z | 2026-10-26 / 2026-10-26 | B1；HTML§2.1–2.3/2.5–2.6/3.1–3.4、§4设置及4.3–4.6，4.2指定段；图仅图注/正文数字，未PDF/代码/复现。raw块接口、callback等待/同流顺序和特定SSD-only命中性能；[来源](../../content/sources/paper-ugds.md)。研究高/启发高/可靠中 |
+| arxiv:2610.30552 v1；Jianchang Su/Dawei Xiang/Yifan Zhang/Wei Zhang，[Repair Changes Which Layers to Remove: Exact Optima for Depth Pruning of Language Models](https://arxiv.org/abs/2610.30552v1) | 2026-10-22T00:18:10Z | 2026-10-26 / 2026-10-26 | B2；HTML§3–7/Tables1–4、AppendixE重点Tables11–12/Selection time/Calibration size/Repair fitting、G/Table14；未A全证明/B全算法/C/D/F全表/代码CSV/PDF/复现，未独立复推Fisher。有限复合目标/PPL与能力/Gemma折叠边界；[来源](../../content/sources/paper-repair-aware-depth-pruning.md)。研究高/启发高/可靠中 |
+| arxiv:2610.31479 v1；Kyrylo Yemets/Andrii Yaroshevych/Victor Muryn/Ostap Khomenko/Pavlo Kryven/Maksym Kmet/Maksym Shamrai/Mariya Hirna，[Evaluating the Applicability of LLM Inference Optimizations on Apple Silicon](https://arxiv.org/abs/2610.31479) | 2026-10-22T16:04:40Z | 2026-10-26 / 2026-10-26 | B；仅题录/摘要/history，匹配负载/实现和质量未核，暂缓，不建机制知识。研究高/启发高/可靠低 |
+| arxiv:2610.31165 v1；Roberto Passaro/Ariel Flint/Romualdo Pastor-Satorras/Andrea Baronchelli/Luca Maria Aiello，[Network topology shapes consensus and vulnerability in LLM populations](https://arxiv.org/abs/2610.31165) | 2026-10-22T12:22:40Z | 2026-10-26 / 2026-10-26 | B；仅题录/摘要/history，policy抽取、仿真/拓扑/对手定义未核，不外推真实多Agent安全，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.31526 v1；Lorenzo Sabug Jr./Eric Kerrigan，[Direct Inference on Admissible Sets (Diona)](https://arxiv.org/abs/2610.31526) | 2026-10-22T16:35:47Z | 2026-10-26 / 2026-10-26 | B；仅题录/摘要/history，覆盖证明、噪声/光滑性及首次预测/摊销成本未核，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.31646 v1；Stephen Chung/Wenyu Du，[Low-Bit N-Gram Embeddings for Language Models](https://arxiv.org/abs/2610.31646) | 2026-10-22T17:56:13Z | 2026-10-26 / 2026-10-26 | B；仅题录/摘要/history，table footprint与整模型驻留/速度、训练质量未核，不与KV量化混同，暂缓。研究中/启发中/可靠低 |
+| doi:10.1098/rstl.1883.0029；Osborne Reynolds，[An Experimental Investigation of the Circumstances which determine whether the Motion of Water shall be Direct or Sinuous, and of the Law of Resistance in Parallel Channels](https://archive.org/download/philtrans06508925/06508925.pdf) | 1883；原页Received and Read03-15，实验1880年，具体出版日未裁定 | 2026-10-26 / 2026-10-26 | C1；印刷935–936/938–948/951–963/973–975，视觉938/942/Figs3–5/943/954TableI/956/959；未其余正文及三个末尾图版、全表重析、现代后续或复现。相似参数/扰动/操作判据；[来源](../../content/sources/reynolds-pipe-flow-1883.md)。研究中/启发高/可靠中 |
+
+### 窗口、版本与访问范围
+
+B窗口2026-10-19T07:30:00+08:00—10-26T07:30:00+08:00，补上次10-23T07:40:24+08后遗漏，实核至10-26T07:36:04+08。选择性cs.DC/cs.CL/math.OC/physics.soc-ph recent首屏最新可见公告23日；未穷尽分页、期刊会议和版本替换。六份首提均22日UTC、早于上次终点，全部补遗漏。两选定研究的正式发表限定检索未获可核记录，IEEE入口robots阻拦，不据此声称没有发表。
+
+- A：Flux旧下载入口返回HTML/Invalid unique id，根download成功；ACM403，Crossref web不可读后代理内存API成功。多源/计费旧缺口未恢复，不算正文阅读；没有用不同论文假解原算法。
+- B：一次正文提取缺bs4后以Python标准库内存读取恢复，不安装依赖。RISK-KV2610.29544和SilentCueLoss2610.30026仍仅v1，仅版本核查。Hugo latest API仍v0.168.0/2026-10-13T17:24:15Z，Obsidian索引仍10-22 Desktop/Mobile1.15.0 Catalyst，CommonMark仍0.31.2/2024-01-28，不重推或升级。
+- C：UCL HTTPS及Royal Society DOI/直PDF403、HTTP变体超时、Archive stream不可访问；Archive metadata与download原扫描经现有代理成功，51页只读指定范围，不把Archive元数据01-01或其他题录12-31裁定为出版日。各入口同一canonical，不另增第二资料。
+
+四项均为AI候选，当前批次此前十二项保留，共十六项待审；没有新增真实评论，沉默不形成偏好。实际角色、模型/工具限制及同SHA审核构建/发布由主控当日回执记录，不预填成功。
+
+## 2026-10-23
+
+8份去重canonical候选A1/B6/C1、4次指定正文深读A1/B2/C1、4发现A1/B1/B2/C1。A为旧文新读，B六份新canonical为窗口补遗漏，C旧原文首次进入实验心理学；rPoA既有正文重取尝试、TDC版本入口、其他工具/版本及跨角色核查另列，不重复计数。没有伪造精确检索命中数、全文或复现。[晨报](../digests/2026-10-23.md)保留推理与边界，[回执](runs/2026-10-23.md)记录实际角色/失败/审核构建与发布。
+
+| canonical / 版本 / 入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围与决定 |
+| --- | --- | --- | --- |
+| arxiv:1506.02629；Dwork/Feldman/Hardt/Pitassi/Reingold/Roth，[Generalization in Adaptive Data Analysis and Holdout Reuse](https://arxiv.org/abs/1506.02629) | v1 2015-06-08T19:34:29Z；v2 09-25T19:04:32Z；NIPS2015卷28 | 2026-10-23 / 2026-10-23 | A1；会议九页文件§1/1.1–1.2pp1–5、§2定义/定理pp5–6、§3算法/定理/实验文字pp7–8；未长版完整证明/视觉图/代码/复现。同研究别名不重复。[来源](../../content/sources/dwork-adaptive-data-analysis-2015.md)；研究高/启发高/有限代数高、系统外推未验，整体可靠中 |
+| arxiv:2610.29544 v1；Wang Yuekai，[RISK-KV](https://arxiv.org/abs/2610.29544) | 2026-10-21T10:30:46Z | 2026-10-23 / 2026-10-23 | B1；HTML§III-A–C式1–12/Algorithm1、§IV-A/B式13–20、§V-A/B TablesI–III全表及主要文字、VI；图只图注，未PDF/代码/复现。raw历史省略/净predictor成本/质量与恢复基线分开。[来源](../../content/sources/paper-risk-kv.md)；研究中/启发高/可靠中 |
+| arxiv:2610.30026 v1；Yikai Zhao/Saurabh Pandey/Pradeep Kumar Misra，[What the Author Wrote, What the Agent Reads: Silent Cue Loss in Enterprise Document Ingestion](https://arxiv.org/abs/2610.30026) | 2026-10-21T16:51:25Z | 2026-10-23 / 2026-10-23 | B2；主文§3.1–3.2/4.1–4.8/5方法评价及Tables1–3；附录S1/S3/S4.1–4.3/S7/S9–S11/S16相关段、Table4/6指定部分；未全文/PDF/视觉/代码/原文档/复现。任务gold、micro/macro和表示边界保留。[来源](../../content/sources/paper-silent-cue-loss.md)；研究中/启发高/可靠中 |
+| arxiv:2610.29548 v1；Andrew Calcan/Alberto De Marchi/Scott B. Lindstrom，[Algorithm duality from resolvent Moreau identities](https://arxiv.org/abs/2610.29548) | 2026-10-21T10:35:33Z | 2026-10-23 / 2026-10-23 | B；仅abs题录/摘要/history，nonmonotone resolvent证明/收敛/benchmark未核，暂缓；研究中/启发高/可靠低 |
+| arxiv:2610.29787 v1；Yunze Wei等12作者，[D-Pingmesh: Dynamic Probing and Fault Localization for Reconfigurable Datacenter Networks](https://arxiv.org/abs/2610.29787) | arXiv2026-10-21T14:14:28Z | 2026-10-23 / 2026-10-23 | B；仅abs题录/摘要/history，探测控制面/混合路径/EM与负载未核，暂缓。abs related DOI10.1145/3828523.3857045只是同研究别名线索，正式发表日未核，不称首次发表的新研究；研究中/启发高/可靠低 |
+| arxiv:2610.29820 v1；Isaac Zhu/Alan Cao/Hugh Yin/Rocky Wang/Orion Wang/Hscos Zhang/Jack Li/Jason Zhao，[UlaCache: Unified Logical Addressing for Sparse LLM Serving](https://arxiv.org/abs/2610.29820) | 2026-10-21T14:46:11Z | 2026-10-23 / 2026-10-23 | B；仅abs题录/摘要/history，跨GPU/CPU逻辑地址、LRU、baseline/quality未核，暂缓；研究高/启发高/可靠低 |
+| arxiv:2610.29873 v1；Junhyeok Park/Jungeun Yoon/Kyungmin Kim/Hunsoon Lee/Shinyoung Ahn/Kangho Kim，[HAWK: Heterogeneity-Aware KV Cache Transfer for Efficient GPU-NPU Phase-Disaggregated LLM Inference](https://arxiv.org/abs/2610.29873) | 2026-10-21T15:25:35Z | 2026-10-23 / 2026-10-23 | B；仅abs题录/摘要/history，异构RDMA/layout硬件、SLO、成本功耗分母未核，暂缓；研究中/启发高/可靠低 |
+| doi:10.1037/h0054651；J.R.Stroop，[1935转录](https://psychclassics.yorku.ca/Stroop/) | 1935-12；J.Exp.Psych18(6):643–662 | 2026-10-23 / 2026-10-23 | C1；转录pp646–660问题/Experiment1–3/Summary与AppendixA，亲核TableI/III/V/VI与plan图片，未完整其余表/曲线/引用/后续复现。PDF仅前题录OCR、后指定页超时；不称全文或PDF通读。[来源](../../content/sources/stroop-interference-1935.md)；研究中/启发高/整体可靠中，历史任务对照可核、唯一机制未识别 |
+
+### 窗口、版本、工具与失败边界
+
+B窗口2026-10-16T07:30+08—10-23T07:30+08，补上次10-22T07:40:43+08后遗漏，实核至2026-10-23T07:40:24.103229+08。选择性查cs.DC/cs.CL/math.OC/cs.NI recent默认首屏，最新可见公告22日；未穷尽分页、领域、版本及期刊会议。六份首提均为10-21 UTC、早于昨日终点，属于窗口补遗漏。精确题名限定检索未取得其他正式全文，不证明没有正式出版。
+
+- A：rPoA既有正文重取web超时，无新读内容，不计新canonical/深读；TDC仅核仍v1，未新增正文。NIPS2015会议文与arXiv长版是同研究，未将Science同作者短文题录当深读。限定统计论证完成，系统数据/实现审计仍缺；不以此关闭评价问题。
+- B：两篇深读无影响限定结论的未恢复访问失败。KPage2610.28096与Budget2610.28392仍v1，只abs/history复查，不新增正文或解除旧缺口。Hugo官方news仍0.168.0/10-13，CommonMark仍0.31.2/2024-01-28，不升级本库。
+- 工具新状态：[Obsidian Desktop1.15.0](https://obsidian.md/changelog/2026-10-22-desktop-v1.15.0/)与[Mobile1.15.0](https://obsidian.md/changelog/2026-10-22-mobile-v1.15.0/)官方页均列10-22 Catalyst/Early access；搜索索引旧10-05，采用官方实读校正。不是公开稳定发布，不另算论文候选/第五发现，也不建议升级。
+- C：DOI页面open失败但官方题录搜索可见；York转录和表图可读。PDF后续指定页超时，关键表图由内存图片读取恢复；未把OCR前部或失败截图当全文/像素证据，不保存原文或中间扫描入库。
+
+继续唯一research/batch-2026-10-21/PR29，前三日累计十二候选仍待审，合并前不作正式知识或用户认可。0新增真实评论不推导偏好；公开区与私有区严格隔离，同SHA审核构建由主控回执记实。
+
+## 2026-10-22
+
+8 份去重候选 A1/B6/C1，4 次正文深读 A1/B2/C1，形成 A1/B1/B2/C1 四项。A 为既有研究实质增读（论文方法与两条完整官方讨论合为同一研究），B 为 6 份新 canonical、其中 2 份指定部分深读，C 为 1 份旧原文首次进入本库、本文三页全文视觉读。README、Git 对象/身份/样本重解析、版本和工具入口、跨角色核查另列，不重复计论文；未重做昨日 LRU。[晨报](../digests/2026-10-22.md)交代关键推理，[回执](runs/2026-10-22.md)由主控记录实际审核/构建及发布。
+
+| canonical / 版本 / 原始入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围与决定 |
+| --- | --- | --- | --- |
+| usenix:osdi20:yang；Yang/Yue/Rashmi，[论文](https://www.usenix.org/system/files/osdi20-yang.pdf)与官方 issues [3](https://github.com/twitter/cache-trace/issues/3)/[8](https://github.com/twitter/cache-trace/issues/8) | OSDI 2020；作者讨论 2021-03-29、2023-02-20—21 | 2026-10-21 / 2026-10-22 | A1；增 §2.1–2.2 p192，重读 §3.1–3.2 pp193–194；issue3 正文+4 评论/issue8 正文+3 评论完整 API 读，固定 README 全复读，固定 cluster026 重解析及 Git blob 历史核查。论文/公开实例/样本与排序版本分层，百万说明与 80,000 行未闭合，不推遗漏率。[来源](../../content/sources/paper-twitter-cache-workloads.md#metadata-followup)；研究中/启发中/作者与对象事实可靠高，生产代表性未验证，整体限定发现中 |
+| arxiv:2610.28096 v1；Junwei Feng 等，[KPage: Cross-Block Page Compaction for Hardware-Efficient Sparse Attention](https://arxiv.org/abs/2610.28096) | 2026-10-20T12:12:16Z | 2026-10-22 / 2026-10-22 | B1；HTML §1/Table1、§3.1–3.4.1 式1–6/Algorithm1、§4.1–4.6 文字及 Table2 全表，§4.7仅局部摘要；图仅图注，未全文/PDF/视觉/代码/复现。固定图物理页压实，kernel 计时排除元数据，GPU型号未明确；HTML DOI占位不当真实题录。[来源](../../content/sources/paper-kpage.md)；研究中/启发高/可靠中 |
+| arxiv:2610.28392 v1；Andrew Bond/Syed Izhan Khilji，[Budgeted Admission from Timestamped Capacity Records in Shared Clusters](https://arxiv.org/abs/2610.28392) | 2026-10-20T15:40:22Z | 2026-10-22 / 2026-10-22 | B2；HTML §I–III、IV-A/B Theorems1–5及证明/Algorithm1、V-A/B、VI-A–E/TableI、VIII–IX；VII仅浏览、图仅图注，未全文/PDF/视觉/代码/复现。外生概率/校准/逐前缀三层；32 guarded 全零动作不验证正动作保护。[来源](../../content/sources/paper-timestamped-admission.md)；研究中/启发高/整体可靠中，限定数学可核高/系统仅有限路径 |
+| arxiv:2610.28620 v1；Runguo Li/Dezhen Lu，[Weight Placement Is Not Enough: Synchronization in Multi-Node CPU Decoding of Ternary LLMs](https://arxiv.org/abs/2610.28620) | 2026-10-20T17:56:35Z | 2026-10-22 / 2026-10-22 | B；仅官方题录/摘要/history，NUMA同步、屏障和同kernel对照未读；暂缓，不建永久机制。研究中/启发高/阅读可靠低 |
+| arxiv:2610.28576 v1；Chenxu Niu/Batuhan Sencer/Wei Zhang/Yong Chen，[The Token-Energy Law of LLM Decode: Active Bytes and Realized Time Account for Joules per Token](https://arxiv.org/abs/2610.28576) | 2026-10-20T17:32:08Z | 2026-10-22 / 2026-10-22 | B；仅官方题录/摘要/history，observed decode time 的校准模型之能耗边界/holdout/外推和独立预测未核；暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.28300 v1；Karthik Prakhya/Zimeng Wang/Alp Yurtsever，[Primal-Dual Adaptive Subgradient Methods](https://arxiv.org/abs/2610.28300) | 2026-10-20T14:44:40Z | 2026-10-22 / 2026-10-22 | B；仅官方题录/摘要/history，Fenchel oracle/正则条件/常数与加速证明未核；暂缓。同名检索的 ICML2025 Dimension-Free… 标题/作者不同，排除别名，不额外计候选。研究中/启发高/可靠低 |
+| arxiv:2610.27198 v1；Mia Zender/Kye Shi/Abigail Hickok/Weiqi Chu/Mason A. Porter，[DeGroot Dynamics on Multiplex Networks with Directed and Acyclic Interlayer Connectivities](https://arxiv.org/abs/2610.27198) | 2026-10-19T19:34:07Z | 2026-10-22 / 2026-10-22 | B；仅官方题录/摘要/history，mild conditions/source layer与经验解释未读；暂缓，不与昨日交通阈值混同。研究中/启发高/可靠低 |
+| doi:10.1038/199947a0；F. J. Vine/D. H. Matthews，[Magnetic Anomalies Over Oceanic Ridges](https://www.nature.com/articles/199947a0)；[实际原扫描](https://courses.washington.edu/ess502/Vine_Matthews.pdf) | 1963-09-07，Nature199:947–949；PDF2005制作元数据不是发表年 | 2026-10-22 / 2026-10-22 | C1；本文全部三页视觉读，含正文/Figs1–4及图注/参考题录，不含949下一篇；未追原始测线/引用/后续年代尺，未数字化或复现。历史机制、正负≠极性、年龄—位置AI推导。[来源](../../content/sources/vine-matthews-oceanic-magnetic-anomalies-1963.md)；研究中/启发高/历史主张及限定代数可靠高，现实唯一识别/速率未核 |
+
+### 窗口、版本、排除与访问范围
+
+B 窗口为 2026-10-15T07:30:00+08:00—2026-10-22T07:30:00+08:00，补昨日核查终点 10-21T07:34:46+08 后遗漏，实际本轮核查至 10-22T07:40:43+08。选择性查 cs.DC/cs.PF/math.OC/physics.soc-ph recent 首屏、DC/OC new 开头与相关条目，最新可见公告 21 日；未穷尽分页、版本、领域或期刊会议。6 份首提均早于昨日终点，全部为窗口补遗漏，未把发现日冒充首发日。限定正式出版精确检索没有取得同名版本，不证明不存在。
+
+- A：官方讨论网页缺动态评论，经 GitHub API 完整取得；主控另独立核作者/profile及关键四评论。SNIA `http://iotta.snia.org/tracetypes/17` 本轮不可访问，未下载约 2.8 TB full 数据、未审采集/导出源码、未读第三方 PR10 代码，issue列表仅导航。100%采样配置不等于已审计绝无遗漏。
+- A 对象核查：固定README仍 c59112085b927c50acbe2d51175ebb09a9a52461（2020-11-05T03:08:32Z）；master 1c503676d6972d4394a360e09162149a6c00f516（2020-11-10T16:03:04Z）；初提交 cf828b5e83fdd65e6db7613ecb4c929df6ed7523（2020-10-13T03:56:14Z）、重命名/固定24347f630eca15f157a5f0e5925170c7a58815a6/当前样本均同blob f7e6f458c79ed4aedcb80aba713d18f10148e28d。仅元数据/重解析，未重做 LRU。
+- B：没有影响限定结论的未恢复访问失败；4 项仅摘要候选不能补写机制。旧版本 2610.25033/26428/22863/23328/21500/21035 仍 v1；2610.15755 仍 10-14T05:02:56Z 的 v2，只核 abs/history，未增正文或解除旧缺口。
+- C：Nature正文cookie重定向失败，大学原刊PDF成功取得并逐页视觉读取；网页解析版权行不计全文。三页原文/渲染只在仓库外临时目录，不存公开树；未把制作时间误作论文新版本。
+- 工具入口：Hugo latest 仍 v0.168.0（10-13T17:24Z），Obsidian最新公开条目10-05/Desktop与Mobile1.14，Catalyst10-01属历史；CommonMark仍0.31.2/2024-01-28。仅复查不计候选/深读，不推荐升级。
+
+当前唯一批次仍 research/batch-2026-10-21，基线 af525f779464752dfa4d08a8e895dc54cd93ef81，PR #29 open draft；10-21 四项候选继续待审，本日新增不覆盖。来源作者的旧评论不是用户反馈，0新增真实评论不推导认可或偏好。公开范围严格排除私有区与本地原始备份；审核/构建/发布以主控同 SHA 回执为准。
+
+## 2026-10-21
+
+8 份去重候选 A1/B6/C1，4 次指定正文深读 A1/B2/C1，形成 A1/B1/B2/C1 四项。A/B 为指定部分，C 为本文六张原扫描全读（不含 p.168 上篇，不追引用）。A 的 README 全读及 80,000 行样本解析/计算另列产物操作，不额外计论文深读；跨角色原文复核、版本入口和失败重试不重复计数。[晨报](../digests/2026-10-21.md)保留判断所需论证，[回执](runs/2026-10-21.md)由主控记录实际阶段和独立检查。
+
+| canonical / 版本 / 原始入口 | 首次发表/提交 | 首读 / 最近读 | 实际范围与决定 |
+| --- | --- | --- | --- |
+| usenix:osdi20:yang；Juncheng Yang/Yao Yue/K. V. Rashmi，[Twitter 缓存集群研究](https://www.usenix.org/conference/osdi20/presentation/yang) | OSDI 2020-11-04—06 | 2026-10-21 / 2026-10-21 | A；§3.1–3.2印刷193–194、§4.4–4.5印刷195–197含脚注3、§6.1–6.2印刷200，另浏览§6.3开头。官方README固定c59112085b927c50acbe2d51175ebb09a9a52461全读，cluster026固定24347f630eca15f157a5f0e5925170c7a58815a6全解析；同研究不另计候选。有限GET/LRU实际计算与主控独立复算，非全文/原论文复现或生产回放。[来源/哈希/代码](../../content/sources/paper-twitter-cache-workloads.md)；研究中/启发中/有限序列可靠高，代表性未验证 |
+| arxiv:2610.25033 v1；Zhufan Gu/Qizhe Tang/Yuxin Wang/Xun Zhou/Hui Feng，[PlaneZip: Lossless Bit-Plane Compression of Training Activations Offloaded over PCIe](https://arxiv.org/abs/2610.25033) | 2026-10-18T05:44:24Z | 2026-10-21 / 2026-10-21 | B1；HTML§II-A–III-D、IV、V-A正文/V-B–F、TablesI/II/IV，TableIII仅前部，图仅图注；未全文/视觉/源码/复现。[来源](../../content/sources/paper-planezip.md)；同事件模拟收益/CPU压缩比，不是GPU引擎原型；所读正文未见开销正式分母公式，不换算吞吐。研究中/启发高/可靠中 |
+| doi:10.1073/pnas.2532180123；别名 arxiv:2610.26428 v1；Mauro Faccin/Tomas Scagliarini/Manlio De Domenico，[Systemic collapse emergence from climate-induced perturbations in transportation networks](https://www.pnas.org/doi/10.1073/pnas.2532180123) | PNAS/Crossref online 2026-10-16、issue10-20；arXiv 10-19T13:54:12Z | 2026-10-21 / 2026-10-21 | B2；预印HTML§2.1–2.5、3、4.1–4.3，后增A.3–A.6文字/图注；未A.1/A.2/视觉/源码/复现，PNAS仅身份/日期。主控另核关键主文/方法；最终读取范围含真实后增附录，不沿用早消息“未读SI”。[来源](../../content/sources/paper-climate-transport-collapse.md)；保留近似阈值，另列AI条件界。研究中/启发高/可靠中 |
+| arxiv:2610.26171 v1；Xijia Wang/TianZhang He/Mohammad Goudarzi，[CEMA-Router: Infrastructure-Aware Batch Routing for LLM Inference in Cloud-Edge Systems](https://arxiv.org/abs/2610.26171) | 2026-10-19T11:03:04Z | 2026-10-21 / 2026-10-21 | B；仅官方题录/摘要/history，目标、质量和基线未核，暂缓，不建永久理解。研究中/启发中/可靠低 |
+| arxiv:2610.26743 v1；Vinit Ranjan/Daniel Deza/Anushka Acharya/Jisun Park/Bartolomeo Stellato，[FOMTools: Development and AI-Assisted Code Generation for First-Order Methods](https://arxiv.org/abs/2610.26743) | 2026-10-19T17:08:17Z | 2026-10-21 / 2026-10-21 | B；仅官方题录/摘要/history，验证集合、残差和生成代码边界未核，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.25519 v1；Mobina Kashaniyan/Ali Jannesari，[ATEST: Adaptive Resource-Aware Test-Time Scaling for LLM Inference](https://arxiv.org/abs/2610.25519) | 2026-10-18T20:23:11Z | 2026-10-21 / 2026-10-21 | B；仅官方题录/摘要/history，预算、拒答分母、干扰与尾部未核，暂缓。研究中/启发高/可靠低 |
+| arxiv:2610.26295 v1；Paul Franke-Bergmann/Maya Kuhlmann/Alexander Heß/Marc Leinweber/Rüdiger Kapitza/Hannes Hartenstein/Franz J. Hauck/Christian Berger，[Pangolin: Efficient DAG-based BFT State-Machine Replication with TEE-Accelerated Commitment](https://arxiv.org/abs/2610.26295) | 2026-10-19T12:43:35Z；KITopen1000198163记10-20为同预印登记 | 2026-10-21 / 2026-10-21 | B；官方题录/摘要/history及KIT登记身份，TEE、活性与比较基线未核，暂缓。研究中/启发高/可靠低 |
+| doi:10.1073/pnas.15.3.168；Edwin Hubble，[1929速度—距离原文](https://pmc.ncbi.nlm.nih.gov/articles/PMC522427/) | 期次1929-03-15；PNAS另列04-25，communicated01-17不代出版日 | 2026-10-21 / 2026-10-21 | C；本文六扫描p168下半标题起至173，含Tables1/2、方程/结果、Figure1、四条题录；另全读NASA转录、PNAS三图核对，同研究不重复计数。未追引文/重建拟合。[来源](../../content/sources/hubble-velocity-distance-1929.md)；近期发现旧资料，首次天文，研究中/启发高/限定可靠高 |
+
+### 窗口、版本与访问边界
+
+B 窗口为 2026-10-14T07:30:00+08:00—2026-10-21T07:30:00+08:00，实际核查至07:34:46，补上次终点10-20T07:34:55后遗漏。选择性检查 cs.DC/cs.PF/math.OC/physics.soc-ph recent 默认首屏、DC/OC new及局部替换，最新可见公告20日；不称穷尽分页、版本、期刊或会议。六候选都早于昨日核查终点，为本周补遗漏；限定检索没有取得更早发表记录，不证明不存在。
+
+- A：官方样本目录 web 打开失败，后经官方 API 和固定 raw 成功；样本元数据/语义缺口没有因此解除。论文全文未读，不按论文完整采集性质推断短样本。原始匿名 key 与行不存仓库。
+- B：Crossref web 失败后只读 API 恢复，Obsidian urllib403 后 web 恢复，bs4不可用改标准库内存解析；无影响限定结论的未恢复读取失败。未入选四项只有题录/摘要，不能补写机制。
+- C：PMC web 验证、ADS摘要405/PDF不可达，PNAS 后续部分入口 cookie/PDF失败；经公开 HTML 取得六张官方扫描逐页读取，NASA新路径转录辅助。失败入口不计深读，未把转录缺失的表图称为已读。
+- 既有 arxiv:2610.22863/23328/21500/21035 仍v1，2610.15755仍10-14的v2，仅版本入口复查，未新增正文或解除旧缺口。
+- Hugo latest v0.168.0、Obsidian公开公告10-05/Catalyst10-01、CommonMark0.31.2 均无本轮新推荐；只核入口，不升级工具，不计新来源或深读。
+
+### 批次与归属
+
+[PR #28](https://github.com/fsyv/fsyv.github.io/pull/28) 已合入核对的 origin/main `af525f779464752dfa4d08a8e895dc54cd93ef81`，今日新建唯一 `research/batch-2026-10-21`，当前 review 只列今日。历史来源、coverage 和晨报保留，合并不等于用户逐项确认，不升级 endorsement。真实评论、运行与最终审核由主控回执记录；没有从沉默或模拟意见推断偏好。
+
 ## 2026-10-20
 
 9 份去重候选 A2/B6/C1，5 次深入阅读 A2/B2/C1，形成 A1/B1/B2/C1 四项。A/B 为指定部分正文，C 为本文完整 12 张原扫描（不含上篇和参考文献追读）；不将题录筛选、版本复查或失败 PDF 当作深读。[晨报](../digests/2026-10-20.md)保留判断所需证据，[当日回执](runs/2026-10-20.md)由主控记录运行/审核/构建实际状态。

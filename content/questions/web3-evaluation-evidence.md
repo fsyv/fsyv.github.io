@@ -30,6 +30,10 @@ status: open
 - 以明确资源和控制目标评价分散程度；以设备、时间和分摊边界解释能源数字。涉及法律权利时另查一手法源与适用地区，不从技术名称推导。
 - 把证据整理回相关笔记：哪些主张获得支持，哪些需缩小范围，哪些被反例否定。只有问题限定的证据链已补齐，才考虑 resolved。
 
+## Review-2026-10-26
+
+到期复评仍为open。[Rocksteady迁移对照](../notes/storage-placement-and-migration.md#early-ownership-and-recovery)与[GPU直存执行条件](../notes/kv-cache-optimization.md#direct-storage-and-ordering)补充局部系统的机制和测量边界，没有补齐跨层基准、控制实体、完整服务路径或能耗证据。本轮优先可读迁移协议，不以局部数字替代跨系统验证；下次2026-11-02先选择可公开的服务场景与同口径对照对象，未选定前不重复搜一般综述。
+
 ## Links
 
 - 前置：[共识假设](../notes/web3-consensus-assumptions.md)、[扩容边界](../notes/web3-scaling-security.md)、[隐私层次](../notes/web3-privacy-layers.md)。

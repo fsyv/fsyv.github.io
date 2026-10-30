@@ -126,6 +126,62 @@ MRR 将 int4 记为 fp16 的四分之一大小，并计入同一 HBM；加入量
 
 因此下一步应在真实每副本容量和路由下，同时测恢复/传输成本与输出质量，再比较[逐请求服务目标](storage-latency-and-slo.md)。总 pooled 预算不能代替各副本约束，原生产轨迹不公开、生成器尚未取得，本页不照搬时限或建议直接部署 int4。[张量存活与峰值内存](tensor-liveness-and-peak-memory.md)在单次计算图中也区分存活、表示和分配器计费，但会话可淘汰重建与图内存活 root 不是同一模型。
 
+## Selective-reconstruction
+
+**2026-10-23 新增 AI 候选解释。** [RISK-KV 指定正文](../sources/paper-risk-kv.md)研究暂停请求恢复时，保留目标层组两侧精确KV anchors，省略中间组的历史KV，恢复时再用共享预测器重建。它先将anchor K逆RoPE，与同位置V共同预测目标层的normalized attention projection input，经过冻结模型的原投影得到K/V，K再施回原位置RoPE。在线不读取已删目标KV；仿射预测与原投影可折叠，但折叠等价仅针对相同预测计算，不代表预测就是精确KV。
+
+质量选择对每个请求比较相同target token上的paired NLL差 $d_r(S)=\ell_r(S)-\ell_r(\varnothing)$，其中 $S$ 为被重建的层组，空集是exact基线，$\ell_r$ 为请求 $r$ 的平均负对数似然。以平均差的bootstrap单侧90%上端不超过预算 $\epsilon$ 作经验门禁；先按单组风险/省字节排序，再重测联合前缀，不能直接加总单组损失，亦无全局最优保证。评估模型依次为Qwen2.5-0.5B-Instruct、Qwen2.5-1.5B-Instruct和TinyLlama-1.1B-Chat-v1.0，WikiText2采用512历史加512后续teacher-forcing，拟合、验证选择和独立测试分开；每模型三seed各八个paired测试请求。
+
+均值门禁不等于逐请求达标。TinyLlama、$\epsilon=0.002$ 的24独立评估请求中，MeanGate/Upper90/StableSplit分别有10/2/0个请求的观测paired NLL差超预算，平均省略1.667/0.667/0.333MiB；StableSplit约三分之二评估请求回退exact。0/24不是总体风险为零的证明，teacher-forced质量也不等于自由生成正确性。
+
+TableI的Qwen0.5B raw历史KV省略2MiB、33.3%，仍须扣预测器。原式净节省为
+
+$\Delta M=N M_{\mathrm{saved}}-M_{\mathrm{pred}}-M_{\mathrm{aux}},$
+
+其中 $N$ 为共享同模型/同topology预测器的请求数，$M_{\mathrm{saved}}$ 为每请求实际驱逐的历史KV字节，$M_{\mathrm{pred}}$ 为共享预测器，$M_{\mathrm{aux}}$ 为额外辅助驻留，须在同存储层计费。该配置四组FoldedFP32预测器约为单请求省略量的四倍，TableIII每组均值约2.002MiB，不能当精确bank总量。**AI简化算例：**假设共享预测器8MiB、每请求省2MiB、辅助为0，则净省 $(2N-8)$ MiB：一请求反增6MiB、四请求打平、至少五请求才净省。这不是作者精确bank测量。
+
+局部时延在RTX3060 Laptop GPU、batch1、512历史加同一个已知current token，比较从CPU token IDs重放513位置，与从CPU传保留KV、使用已驻GPU预测器重建完整KV再算同一next-token logits。五次预热、每模型八validation请求/每请求30次，按上述模型顺序，Replay/RISK均值60.66/40.09、125.41/48.99、114.07/34.50ms。该1.51/2.56/3.31倍只对这个恢复基线成立，不是与完整KV直接加载、真实无线或所有服务方案比较。之后decode已物化完整cache，不能声称长期GPU净节省。
+
+这在[近似复用边界](kv-cache-mechanism.md#approximate-reuse)之外，具体补上共享预测器摊销、均值风险/逐请求质量及恢复计时义务。尚未核代码、长上下文大模型或真实无线；与[逐请求联合成功](storage-latency-and-slo.md#joint-success)的联系是评价条件，不能由平均NLL或局部恢复时间直接推出联合SLO。
+
+## Direct-storage-and-ordering
+
+**2026-10-26 新增AI候选解释。** [uGDS指定正文](../sources/paper-ugds.md)在远程加载成本之外说明：即使payload由SSD直接经PCIe P2P DMA进入GPU，CPU提交命令、doorbell、完成队列和依赖同步仍能决定有效耗时。uGDS把这些控制放到CPU用户态，预注册移出pinning/地址转换；数据绕过主机staging不等于控制成本消失。
+
+异步入口快速排入host callback，但callback须等上游stream工作完成，再执行I/O并阻塞到DMA完成，才能放行下游kernel。同stream仍严格顺序；独立stream或无相互依赖的批请求才可重叠或乱序完成。跨NVMe、GPU、RDMA的生产者—消费者关系仍由应用events/完成令牌保证，不能因接口叫async就假设任意依赖都已隐藏。
+
+§4.6同16MiB读，单线程同步uGDS/GDS为5.54/5.78GiB/s，单异步stream为5.49/2.36GiB/s。同步接近而异步差异较大，支持检查有效执行路径；不表示物理链路上限提高，也没有独立隔离应用中所有因素。应用平台为A100-SXM4-40GB、Samsung990PRO、PCIeGen4×4/cross-root-port P2P；Qwen3-0.6B、vLLM0.20.1+cu129、LMCache0.5.1.dev35、PyTorch2.11.0+cu129、CUDA12.9，关闭vLLM内存automatic prefix caching、强制SSD-only cache hit。32,768token单请求中位TTFT为1915→715ms，AI复算减少约62.66%；只支持该命中路径，不覆盖miss、混合负载、长期稳定性或质量。
+
+完成方式也有成本取舍。Figure14在一线程/一QP/1MiB时，以发起线程CPU time/wall time计利用率，polling100%变为中断4.15%，时延232.6→245.3μs；中断涉及kernel MSI-X/eventfd/ppoll，不是整机CPU或能耗测量。硬件超时隔离handle并保留潜在DMA资源、等待外部reset是作者设计，未在本库故障注入验证。
+
+接口契约必须与性能一起比较：uGDS解绑目标SSD的kernel NVMe driver，按raw block/aligned offset访问，放弃通常POSIX目录、锁和OS page-cache coherency。cuFile-style入口不证明对普通文件应用语义透明。作者goodput图注为logical KV tokens/s，未见SLO阈值/成功分母，因此不能直接代入[联合服务成功](storage-latency-and-slo.md#joint-success)的goodput。下一步应先核同语义路径、buffer生命周期与完成依赖，再测完整请求；当前不建议据此直接替换生产存储。
+
+## Predictive-prefetch-and-staleness
+
+**2026-10-28 新增 AI 候选解释。** 预取还需知道下一次读哪些状态。[Liu、Xue 的 WorldPager v1 指定正文](../sources/paper-worldpager.md)在长时世界模型中，按匀速外推下一相机 pose，在当前 denoise 期间预取下一 chunk 的历史检索块。控制输入不表示未来动作已经给定；预测错或块未就绪时，系统可复用前一 chunk 的 stale retrieval set。因此其等待减少包含“允许检索内容晚一 chunk”的语义取舍，不能等同于精确原检索集合零等待。反量化仍在 compute stream，不能一并称为已隐藏。
+
+令 $r_{\rm new}$ 为下一 chunk 新读字节，$T_c$ 为可重叠的计算秒数，$B_c$ 为每 chunk 写出字节，$\mathrm{BW}_R$、$\mathrm{BW}_W$ 为有效读、写 B/s。来源的平均模型为
+
+$$
+t_{\rm stall}\approx\max(0,r_{\rm new}/\mathrm{BW}_R-T_c),\qquad
+\mathrm{BW}_W\ge B_c/T_c.
+$$
+
+**AI 单位复算：**取 a_yaw 报告的平均 $r_{\rm new}=121.5$ MB、$T_c=1.25$ s、$B_c=129.4$ MB，十进制读带宽 0.25GB/s 得到读取 0.486s、理想窗口余量 0.764s；持续写需至少 0.10352GB/s。均值留有余量不保证每次都赶上，预测错误、突发复访和读写争用仍可产生尾等待。
+
+RTX 4090 24GB、单 NVMe（顺序读 5.82GB/s）、32GiB cgroup 且无 swap 下，MG2 1.8B 每 chunk 12 帧、四次 denoise，检索三个旧 chunk。仅远端 int4、当前/sink/window bf16，每 chunk 存储由 bf16 486.6MB 减为含 scales 的 129.4MB。两条 synthetic dense-revisit 轨迹各 36 chunks、去一 warmup 后五 rollouts，各 165 稳态 chunks；时间没有置信区间。强制检索块来自 NVMe 的同一 a_yaw 对照为：
+
+| 策略 | 中位 chunk 时间 | 中位 retrieved-KV stall |
+| --- | --- | --- |
+| WorldPager 预取 | 1255.8ms | 0ms |
+| 按需，保留 LRU staging reuse | 1309.5ms | 60.2ms |
+
+后者 chunk 时间约长 4.3%，但这只是指定轨迹/实现；stall 排除反量化、写回，超过 0.5ms 才记为 stalled。软件 token-bucket 限速 0.25GB/s 时，另一 b1_ws 轨迹 median stall 0.03ms、p99 399ms；0.1/0.05GB/s 时，预取 p99 2621/6490ms 还高于按需的 2424/4844ms。均值模型和标题中的 zero 都不提供普遍尾等待保证。
+
+长时容量和记忆质量也分开。3000 chunks 相当于播放 37.5 分钟，但耗时 63.2 分钟、约 9.5fps；该轨迹从未回到已 spilled 的 chunk，不能独自证明长会话读回。另有 2000-chunk 三场景往返读盘测试。600-chunk 往返、五 seeds、每 tier 39 events 中，间隔超过 300 chunks 的 int4 对 bf16 的 MUSIQ 差为 −1.28，95% 事件级 bootstrap 区间 [−2.25,−0.36]（每事件先跨保留 seeds 平均）；短程无可测损失不覆盖长间隔。超过 341 chunks 的 RoPE 表限制另靠重新旋转处理，不能混归因为存储容量。
+
+这在加载成本之外增加“预测能否及时获得、是否改变检索语义”的证据义务。当前未读代码或复现；基线为作者重实现，ReWorld-style 还改了 fallback/bank 条件。应继续做同检索语义的突发复访、真实慢盘、尾等待及长间隔质量对照，暂不推广为 LLM KV 服务或实时生成保证。
+
 ## Revision
 
 2026-10-12：将重复的论文名列表重组为成本分类；移除缺少实验条件与可靠出处的性能倍数，区分分页、前缀复用、压缩及卸载。分类与成本模型均为 AI 候选。
@@ -135,3 +191,9 @@ MRR 将 int4 记为 fp16 的四分之一大小，并计入同一 HBM；加入量
 2026-10-19：旧解释已区分存储与传输，却未显式比较远程命中和本地重算。新证据为远程 KV 论文 §4–8 的指定部分；据线性模型解出带宽与前缀长度的共同条件，并保留单点拟合、对照及因果归因边界。候选新理解是“可复用不等于值得加载”，未获用户确认，未复现，见[来源](../sources/paper-remote-kv-load-or-recompute.md)。
 
 2026-10-20：原解释区分字节、放置与加载成本；新生产遥测/回放引入跨调用驻留时限和路由可访问性。依据指定阅读分开终生峰值/当前大小、重建调用/时间/质量，新增首触下界算术；候选新理解是容量需同时定义对象身份、生命期、表示与可访问性，尚未获用户确认或部署验证。
+
+2026-10-23：旧解释已区分压缩、驻留与加载，新RISK-KV证据补上可重建状态及共享预测器成本。候选修订将raw省略、同层净驻留、均值质量门禁与局部恢复计时分开；未获用户确认，未复现或部署。
+
+2026-10-26：旧解释将执行条件汇入有效带宽；uGDS新证据将CPU控制、SSD→GPU数据和完成顺序拆开，并揭示raw块设备与普通文件语义的差异。候选理解是直达数据路径、异步入口与语义等价须分别核验；未获用户确认、未复现或部署。
+
+2026-10-28：旧预取解释关注重叠与字节，新 WorldPager 证据引入下一检索集合的预测条件和 stale fallback。候选修订区分容量、等待范围、检索语义与长间隔质量；平均可覆盖不保证尾部，未获用户确认、未复现或部署。

@@ -97,6 +97,8 @@ $$
 
 ## Links
 
+- 应用目标的前置核查：[差分命中奖励与时间边界](cooperative-caching-and-learning.md#reward-and-horizon)先对应实际奖励、折扣、终端与罚项。最优性 bootstrap 目标不等于固定旧策略价值，目标排序等价也不提供本页统一估计误差证书。
+
 - 回应[原问题](../questions/greedy-value-improvement.md)：理论链条已形成候选，状态充分性、网络价值目标、误差证书和部署收益仍开放。
 - 前置于[协同缓存的局部决策](web3-cooperative-caching.md)与[学习目标](cooperative-caching-and-learning.md)：累计回报改善不由即时命中率单调性推出。
 - [Web3 地图](../maps/web3-foundations.md)安排先读真实策略改进，再读多智能体模型分解；这不表示缓存系统满足本页有限平稳 MDP 条件。
@@ -104,3 +106,5 @@ $$
 ## Evolution
 
 2026-10-20：P13 未审核候选已有精确改进、统一误差退步界和单状态反例；今日重新读取正式教材和 QMIX 指定部分，保留同一身份，补估计优势覆盖两端误差的保守切换门槛及正例。新理解将“argmax 更大”改写为状态/价值目标、逐状态优势、误差覆盖三项证据义务；全部仍是 AI 候选，用户未确认，应用未验证。
+
+2026-10-29候选补充：[终止、截断和处罚的统一目标分析](cooperative-caching-and-learning.md#terminal-bootstrap-followup)是本页策略改进之前的前置核查；只有确认比较的是同一目标，估计价值的改进论证才有对应对象。奖励排序恒等式仍不提供网络误差证书；实际实现审计未完成，用户只授权继续研究。

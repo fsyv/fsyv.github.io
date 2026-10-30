@@ -37,6 +37,8 @@ status: open
 
 ## Other-gaps
 
+- 2026-10-26新增[Rocksteady来源](../sources/paper-rocksteady.md)：早转归属与恢复依赖设计、迁移率/请求完成对照已整合到[迁移知识](../notes/storage-placement-and-migration.md#early-ownership-and-recovery)；多日志恢复扩展当时ongoing，未审实现。这不补齐表中多源正文或冷热计费澄清。
+
 - 2026-10-19 新增 [Squall 的指定正文证据](../sources/paper-squall.md)：具体在线重配置与故障恢复机制已整合到[迁移知识](../notes/storage-placement-and-migration.md#live-reconfiguration)。未审代码或复现实验；该系统证据不补齐表中多源迁移论文，也不解决其他系统的计费或可用性单位。
 
 - 2026-10-14 已增读 [CRANE](../sources/paper-crane.md) 与 [冷热对象迁移](../sources/paper-hot-cold-object-migration.md) 指定正文，完成机制/费用层面的候选整合；两者的可用性单位、启发式计费口径、切换协议与迁移期逐请求 SLO 仍有缺口。局部进展不关闭本问题。
@@ -52,3 +54,5 @@ status: open
 优先取得与三篇知识解释直接相关的模型与证明，再补可复现设置、代码、数据和对照。新读取必须更新对应来源的范围；发现矛盾先记录候选修订。补齐证据后先整合知识笔记，再关闭本问题。
 
 2026-10-19 回访：多源迁移论文仍只有题录，限定检索没有获得全文；冷热对象计费仍无实现或作者说明。已记录具体访问与证据障碍，状态保持 open，下次 2026-10-26；不把持续未读包装成新增知识。
+
+2026-10-26回访：多源作者清单仍只有无实际链接的pdf字样，另一作者页403，未取得摘要或正文；冷热对象限定题名/Algorithm2/代码检索仅命中另一2017TCC工作，未误作澄清。两旧缺口保持原阅读状态，下次2026-11-02先核原文/作者说明与Rocksteady实现证据，无新证据不重复摘要。
