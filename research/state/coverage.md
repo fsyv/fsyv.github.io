@@ -278,3 +278,33 @@ C最近三次为流体力学、放射化学、历史流行病学，没有重复�
 | [公共池资源与规则](../../content/notes/common-pool-resources-and-institutional-rules.md) | 新候选已整合；综述不是本轮独立原实验核验，缺完整收益参数、分组/顺序与制裁成本范围 | 2026-11-20，先读原实验设计 |
 
 C最近三次为放射化学、历史流行病学、制度分析，未重复；最近四次包括首次覆盖领域，机会未降为零。21天安排保留信息论11-02、因果11-03、数值11-04、生态11-05、机制设计11-06、统计物理11-09、遗传11-10、天文11-11、地球11-12、心理11-13、流体11-16、放射11-18、历史流行病11-19，新增制度分析11-20。真实反馈与角色、独立审核、同SHA构建和发布由[今日回执](runs/2026-10-30.md)记实，未预填成功。
+
+## 2026-11-02 新批次与实现证据
+
+PR29已合并；从实核最新origin/main a2386a2fd7196353a0b4aed64e5ba2177a40f7ac开始唯一research/batch-2026-11-02。旧日报/来源/反馈及其当时状态保留，旧候选归属不因合并自动改确认。当前批次3项待审。9canonical（A2/B6/C1）、4指定深读（A1/B2/C1），40/35/25仅投入参考，不称实测比例。
+
+| 通道 | 本轮实际进展与边界 | 归属与下一步 |
+| --- | --- | --- |
+| A | 到期迁移问题：首读Rocksteady作者固定历史实现的状态、重试、版本/tombstone、持久化及停表/提交函数；未编译/故障注入/论文图复算。多源/冷热无新入口未重复空搜；跨层场景未选定，原计划这部分未完成 | A1限定机制已整合，完整故障与同语义场景仍open；不把源码TODO判全系统缺实现 |
+| B | 10-26T07:30—11-02T07:30+08，last07:42:06，recent首屏至10-30；能耗新预印本补遗漏。uGDS v1/v2 HTML与README限范围复核、Repair版本复查，无新性能；另两摘要暂缓 | B1最终token/板卡能量/批量/平均时延已整合；prefill计量脚本未核，不证线上/整机收益。未穷尽也未核工具版本 |
+| C | **形态发生首次覆盖**：Turing1952原篇指定部分，43页视觉与AI模态/数值复算；两细胞局部稳定而空间差异增长 | C1新完整解释/来源/地图；未核非线性稳定图样、真实生物或跨系统等价，11-23先核非线性与实验识别 |
+
+### 当前回访安排
+
+以下更新当前计划，历史遗漏与失败仍保留；没有把未读/未执行写成没有新证据。
+
+| 问题 / 入口 | 本轮处理、具体障碍与未完成项 | 下次（上海） |
+| --- | --- | --- |
+| [迁移评价](../../content/questions/storage-migration-evaluation.md) / 3e05ac47-c0c2-4a68-9910-421b37b77760 | 到期已审Rocksteady固定函数，删除迁移态不直接执行但client重试；后台停表早于side-log提交。仍缺未搬旧键全交错、删除等待、故障注入及原日志对应 | 2026-11-09，先固定SHA执行/故障对象，不重复一般迁移率 |
+| [存储来源](../../content/questions/storage-source-evidence.md) / d6b61153-b16b-4d3b-a691-56a783c6da11 | 到期补实现局部证据；多源全文/冷热计费无新入口，连续障碍下未空搜、原读取状态保留，不以RAMCloud替代两原研究 | 2026-11-09，仅新原文/实现/作者说明推进 |
+| [跨层评价](../../content/questions/web3-evaluation-evidence.md) / b08fa18d-8644-4bbe-9d56-5a695c7829cc | 到期，优先迁移代码后未选完整服务场景/控制实体/能耗对照；此计划未完成。GPU板卡能量不补完整跨层能耗 | 2026-11-09，先限定可公开场景与同语义基线 |
+| [直存执行](../../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)、[剪枝修复](../../content/notes/depth-pruning-and-repair.md) | 到期，uGDS两版HTML可见文字仅横幅日期不同，README raw接口/POSIX未来；未PDF/图/TeX/源码差分或同语义尾部。Repair仍v1，未定位新代码不等不存在 | 2026-11-09，仅新原证/源码与可复核部署对象 |
+| [贪心价值](../../content/questions/greedy-value-improvement.md) | 用户继续深入请求保留；今天未空搜TDC终止/重置/terminal代码，既有解释完成不关闭应用审计 | 2026-11-04，明确作者URL/新版本再推进 |
+| [压缩重规划](../../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload)、[交通](../../content/notes/transport-delay-propagation-and-thresholds.md#clipped-balance)、[预测预取](../../content/notes/kv-cache-optimization.md#predictive-prefetch-and-staleness)、[结论范围](../../content/notes/claim-scope-and-evidence-synthesis.md) | 未到期，硬件原型/整步、代码数据/真实驱动、同语义尾部和rubric差异本轮未外查 | 2026-11-04，原安排保留 |
+| [基础验证](../../content/questions/foundations-validation.md)、[固定图执行](../../content/notes/attention-spatiotemporal.md#physical-execution)、[预算准入](../../content/notes/timestamped-admission-and-prefix-budgets.md)、[新鲜度控制](../../content/notes/storage-latency-and-slo.md#freshness-and-actuation) | sample导出/动态metadata/端到端、正动作guard与同负载窗口仍缺，本轮未外查，不称再核无成果 | 2026-11-05，原安排保留 |
+| [评价保证](../../content/questions/evidence-to-guarantees.md)、[笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md)、[KV选择性重建](../../content/notes/kv-cache-optimization.md#selective-reconstruction)、[文档信息](../../content/notes/document-cues-and-semantic-preservation.md)、[日志建议](../../content/notes/storage-latency-and-slo.md#patterns-and-end-to-end) | 评分时序/读者样本/同实现成本、净bank/原作者代码/真实gold、配对原测量与日间漂移仍缺，本轮优先到期实现与新领域 | 2026-11-06，原安排保留 |
+| [最终token与能量](../../content/notes/storage-latency-and-slo.md#accepted-tokens-and-energy) | 新候选已整合；作者decode表述与whole generation计量边界仍须脚本/时间戳，未执行同请求原测量 | 2026-11-09，先核prefill能量读取实现 |
+| [公共池制度](../../content/notes/common-pool-resources-and-institutional-rules.md) | 未到期，原实验参数/分组/顺序与成本边界未新读 | 2026-11-20，原安排保留 |
+| 信息论21天复评 | 公开正文/地图未见独立正式解释，账本只有10-12本地模拟范围，不能当已接受；本轮先新领域，不重复信息瓶颈摘要，没有外部增读 | 2026-11-09，先围绕公开问题与可读证明判增量 |
+
+C最近三次为历史流行病学、制度分析、形态发生，无重复；最近四次含首次领域，C机会未减为零。21天其余安排保留：因果11-03、数值11-04、生态11-05、机制11-06、统计物理11-09、遗传11-10、天文11-11、地球11-12、心理11-13、流体11-16、放射11-18、历史流行病11-19、制度11-20，新增形态发生11-23。没有新增真实评论或永久主题权重调整；独立审核与同SHA构建/发布见[当天回执](runs/2026-11-02.md)，不预填通过。

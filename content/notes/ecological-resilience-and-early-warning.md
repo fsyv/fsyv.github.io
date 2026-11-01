@@ -73,6 +73,8 @@ Scheffer 等 pp.57–58 的 Outlook 讨论突发外力、噪声变化、短序�
 
 ## Links
 
+- **方法扩展，非已验生态机制：**[反应扩散的两细胞例](diffusion-driven-pattern-instability.md)区分孤立/均匀扰动与非均匀空间模态；任意小空间差异的增长不同于本页有限扰动越过吸引域。两者共享局部线性化方法，不由此认定原生态系统发生同一种形态失稳。
+
 - 结构类比：[交通延误传播](transport-delay-propagation-and-thresholds.md)也区分持续外力与内在传播/吸收；它采用非负截断的离散积压，不能把雨驱增长界当作生态分岔或预警阈值，也不证明修复系统的同类映射。
 
 - 支持：[生态韧性与预警来源](../sources/ecological-resilience-foundations.md)明确两篇旧资料的定义、页码和未读范围。

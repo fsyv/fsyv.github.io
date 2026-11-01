@@ -14,7 +14,7 @@ read_status: partial
 
 - 作者：Jing Wei、Guanyi Chen、Qi Chen、Chuyu Zhang、Zheng Zhou、Chutian Wang、Jian Zhang。
 - 原题：*uGDS: A User-Space Development Kit for High-Performance GPU Direct Storage*，2026。
-- Canonical：[arXiv2610.30868v1](https://arxiv.org/abs/2610.30868v1)，首提2026-10-22T07:45:58Z；本轮仍仅v1。属于监测窗口补遗漏，非上次运行后新首发。
+- Canonical：[arXiv2610.30868](https://arxiv.org/abs/2610.30868)，首提v1于2026-10-22T07:45:58Z；当前已核v2于2026-10-23T01:57:07Z提交。10-26实际指定阅读固定v1，不能写成当时已核只有v1。属于监测窗口补遗漏，非上次运行后新首发。
 - 实际材料：[HTML](https://arxiv.org/html/2610.30868v1)，2026-10-26读取。
 
 ## Reading
@@ -40,3 +40,5 @@ Figure14用发起线程CPU time/wall time定义利用率：一线程/一QP/1MiB�
 ## Version-followup
 
 2026-10-28，题录/history核到v2于2026-10-23T01:57:07Z提交，纠正10-26研究账本/回执曾称“仅v1”的版本核查。10-26实际读取固定v1的范围仍保留；本轮没有比较或读取v2正文，不把v1机制与数字升级为v2证据，也不将旧更新称为今日新发表。历史run不追溯改写。
+
+2026-11-02，实际分别取得v1/v2 HTML，将可见文字归一空白逐行比较，仅见版本横幅日期不同；人工指定复查§2.1 raw语义。此范围不包含PDF、图像、TeX或源码差分，不能称两个完整版本相同。作者[ScaleX-IO/uGDS固定提交README](https://github.com/ScaleX-IO/uGDS/blob/05bada9174eed5055cf886fac385ff191cf86f6a/README.md)（committer时间2026-10-23T11:22:37Z）只读API Coverage/Roadmap：block-device fd/no filesystem，POSIX路径仍是未来计划；未读代码、故障或新性能实验。没有新增同语义/混合负载尾部证据，不重复推介性能数字。

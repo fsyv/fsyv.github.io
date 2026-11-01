@@ -35,6 +35,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 
 [模式诊断到端到端验证](../notes/storage-latency-and-slo.md#patterns-and-end-to-end)继续评价分支：先区分日志模式与根因，再核建议的语义和等价工作下配对总耗时；分类F1、建议减少或局部写步加速都不能跨过这些证据义务。
 
+[固定实现与完成口径](../notes/storage-placement-and-migration.md#implementation-and-completion)把Rocksteady设计推进到历史代码的状态、重试与停表事件，区分后台重放结束、side-log提交和恢复证据；[最终产出token与能量](../notes/storage-latency-and-slo.md#accepted-tokens-and-energy)则在同批量对照中分开板卡能量与平均时延，不能把能耗下降当成线上SLO通过。
+
 ## Sources
 
 阅读范围是本次记录，不能由“经典”或发表场所替代。完整作者与版本见各来源页。
@@ -46,8 +48,9 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 | 放置目标 | [纠删码存储的平均时延与成本联合优化](../sources/paper-erasure-coded-latency-cost.md)：平均时延/成本；[纠删码存储中的尾时延优化](../sources/paper-erasure-coded-tail-latency.md)：尾概率；[容量与负载约束下的地理数据放置](../sources/paper-capacity-load-data-placement.md)：容量、负载与传输成本 | 摘要 |
 | 迁移与动态管理 | [CRANE：副本迁移过程的调度](../sources/paper-crane.md)：过渡过程；[冷热对象的复制、读路由与迁移](../sources/paper-hot-cold-object-migration.md)：冷热、路由和成本；[边缘云 SaaS 的多目标副本放置与迁移](../sources/paper-edge-cloud-multiobjective-replication.md)：多目标与热点；[边缘节点的动态去中心化副本策略](../sources/paper-decentralized-edge-replication.md)：去中心化创建/删除 | CRANE §III–VI 指定部分；冷热对象模型、启发式与 §6.2 指定部分；其余摘要 |
 | 在线迁移协议 | [Squall](../sources/paper-squall.md)：路由复查、按需拉取、副本确认、恢复与节流的相互约束 | SIGMOD 2015 pp.301–309 §2.3–7.6 指定部分；同机架闭环负载，未审代码或复现，不能替代跨中心 SLO |
-| 早转归属的迁移 | [Rocksteady](../sources/paper-rocksteady.md)：按需读、新写日志与恢复依赖；字节率和请求完成可反向 | 2017指定§3–4/两页视觉；多日志恢复扩展当时ongoing，未审代码或复现 |
-| GPU直存执行 | [uGDS](../sources/paper-ugds.md)：CPU用户态控制、SSD→GPU DMA与完成依赖 | v1指定正文；raw块设备不保普通POSIX语义，性能限特定命中路径 |
+| 早转归属的迁移 | [Rocksteady](../sources/paper-rocksteady.md)：按需读、新写日志与恢复依赖；字节率和请求完成可反向 | 2017指定§3–4/两页视觉；11-02新增作者历史提交指定函数，未运行/故障注入或证明完整恢复 |
+| GPU直存执行 | [uGDS](../sources/paper-ugds.md)：CPU用户态控制、SSD→GPU DMA与完成依赖 | v1指定正文；v1/v2 HTML可见文字及README限范围复核，无新增性能或同语义证据 |
+| 投机解码能量 | [Only Accepted Tokens Count](../sources/paper-speculative-decoding-energy.md)：被拒候选成本、最终输出分母与批量/时延取舍 | v1指定正文/Tables1–4；GPU板卡与静态批次，prefill能量边界待代码，非线上SLO |
 | 混合设备 | [Harmonia：混合存储中的放置与迁移协调](../sources/paper-harmonia.md)：设备上的放置/迁移协调 | v4 摘要，不能直接替代副本模型 |
 | KV 访问 | [KV 卸载中的互连瓶颈](../sources/paper-kv-offloading-bottlenecks.md)：CPU 卸载互连；[异步预取 KV：用计算覆盖访存等待](../sources/paper-asynchronous-kv-prefetching.md)：L2 预取；[Kelle：KV 缓存与 eDRAM 协同设计](../sources/paper-kelle.md)：eDRAM 维护 | 摘要，属不同硬件层次 |
 | 放置与质量约束 | [Grace-Blackwell 微基准](../sources/paper-grace-blackwell-unified-memory.md)：物理放置、访问历史与计时边界；[CacheSmith](../sources/paper-cachesmith.md)：近似复用与质量/TTFT 联合成功 | v1 指定部分正文，未复现；微基准的 KV 应用仅为候选推论 |

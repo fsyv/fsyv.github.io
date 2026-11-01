@@ -31,6 +31,7 @@ description: "按照问题、前置依赖和学习顺序组织知识。"
 | [统计物理](statistical-physics.md) | 非平衡功怎样给出自由能，有限样本为何仍会漏掉关键事件？ |
 | [放射化学与持续转变](radiochemistry-and-transformation.md) | 恒定活性如何由生成与衰减平衡产生，分离和时间响应能识别什么？ |
 | [历史流行病学与自然实验](epidemiology-and-natural-experiments.md) | 供水变化、暴露分类、比较分母和观察期怎样限定历史效应？ |
+| [形态发生与空间动力学](morphogenesis-and-spatial-dynamics.md) | 局部稳定的反应为何能出现空间差异，数学机制怎样推进到生物证据？ |
 
 [知识实践地图](knowledge-practice.md)从“笔记应当多大”这一问题出发，说明笔记、资料与开放问题怎样协作。
 

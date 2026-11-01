@@ -56,3 +56,5 @@ status: open
 2026-10-19 回访：多源迁移论文仍只有题录，限定检索没有获得全文；冷热对象计费仍无实现或作者说明。已记录具体访问与证据障碍，状态保持 open，下次 2026-10-26；不把持续未读包装成新增知识。
 
 2026-10-26回访：多源作者清单仍只有无实际链接的pdf字样，另一作者页403，未取得摘要或正文；冷热对象限定题名/Algorithm2/代码检索仅命中另一2017TCC工作，未误作澄清。两旧缺口保持原阅读状态，下次2026-11-02先核原文/作者说明与Rocksteady实现证据，无新证据不重复摘要。
+
+2026-11-02回访：已读[Rocksteady固定作者实现的指定函数](../sources/paper-rocksteady.md#implementation-followup)，把迁移态CRUD/重试、版本/tombstone和停表/提交边界补回[迁移解释](../notes/storage-placement-and-migration.md#implementation-and-completion)，不再笼统称该系统未审代码。完整故障路径和原日志仍缺；多源/冷热计费没有新入口，本轮未重复外搜，不把静态代码替代两篇来源。uGDS的v1/v2 HTML可见文字与作者README也只作[限定复核](../sources/paper-ugds.md#version-followup)，未补同语义/混合负载尾部。保持open，2026-11-09优先新原文/作者澄清及可执行故障对象。

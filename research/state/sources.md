@@ -2,6 +2,24 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-11-02
+
+9份canonical候选/回访（A2/B6/C1），4次指定部分深读（A1/B2/C1），3项A1/B1/C1。A为旧作者实现首次读取，B一项新预印本补遗漏，C首次形态发生领域读旧论文。别名、索引与跨角色关键原证复核不重复计；没有搜索命中总数或实测投入比例。完整故障执行、跨层场景与能量prefill边界未完成，研究partial；[晨报](../digests/2026-11-02.md)给自足解释，[回执](runs/2026-11-02.md)记失败、角色和精确验证。
+
+| canonical / 版本 / 入口 | 首次发表或提交 | 首读 / 最近读 | 实际范围及决定 |
+| --- | --- | --- | --- |
+| doi:10.1145/3132747.3132784；Rocksteady论文/作者项目同研究 | SOSP2017，原登记与会议日见来源 | 2026-10-26 / 2026-11-02 | A；本轮只复既有论文记录/演示搜索索引，未重读论文正文；Utah网页超时/证书不匹配，slides无正文提取，不承担新增结论 |
+| github:utah-scs/RAMCloud；[固定d1f9c812提交](https://github.com/utah-scs/RAMCloud/commit/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a) | 2017-09-20T21:36:26Z，rocksteady-sosp2017分支 | 2026-11-02 / 2026-11-02 | A1；迁移、对象写删/重放、版本、协调持久化与RPC重试指定函数，1次源码深读，未读全repo/运行/故障注入。计时在side-log提交前停表，删除迁移态拒绝但client重试；[逐函数位置](../../content/sources/paper-rocksteady.md#implementation-followup)。研究高/启发高/局部事实高、端到端中 |
+| arxiv:2610.40287 v1；Ma等，[Only Accepted Tokens Count](https://arxiv.org/abs/2610.40287v1) | 2026-10-29T15:37:45Z | 2026-11-02 / 2026-11-02 | B1；HTML§2–3、4/4.1、5–10指定段/Tables1–4，图只注/邻段，无PDF/代码/原日志/复现；GPU板卡/静态批次/最终token分母，prefill能量实现未核。[来源](../../content/sources/paper-speculative-decoding-energy.md)。研究高/启发高/可靠中 |
+| arxiv:2610.30868；uGDS v1/v2 | v1 2026-10-22T07:45:58Z；v2 10-23T01:57:07Z | 2026-10-26 / 2026-11-02 | B旧回访；两版HTML可见文字归一空白逐行比较，只见版本横幅日期差，指定复核§2.1，保守计1深读。无PDF/图/TeX/源码差分，不称完整版本相同；[原来源更正](../../content/sources/paper-ugds.md#version-followup)保留v1实际范围。研究中/启发中/限定范围可靠中 |
+| github:ScaleX-IO/uGDS；[README固定05bada9](https://github.com/ScaleX-IO/uGDS/blob/05bada9174eed5055cf886fac385ff191cf86f6a/README.md) | committer 2026-10-23T11:22:37Z | 2026-11-02 / 2026-11-02 | B独立repo；仅读API Coverage/Roadmap，block-device fd/no filesystem，POSIX未来，无新性能/同语义证据，不读代码或故障。研究中/启发中/读取事实高 |
+| arxiv:2610.30552 v1；Repair | 2026-10-22T00:18:10Z | 2026-10-26 / 2026-11-02 | B旧回访；题录摘要/history与HTML code/github扫描，仍v1，未定位新实现不等无代码，不重读旧机制，不报新发现。研究中/启发中/现证据中 |
+| arxiv:2610.40562 v1；d’Amore等，[Nearly-Optimal Time-Sample Trade-off in Consensus Dynamics](https://arxiv.org/abs/2610.40562v1) | 2026-10-29T17:41:23Z | 2026-11-02 / 2026-11-02 | B仅题录/摘要，暂缓；同步随机有放回majority，不当已核Byzantine协议/证明。研究中/启发高/当前可靠低 |
+| arxiv:2610.39999 v1；Sun/Wei/Chen，[PhOS](https://arxiv.org/abs/2610.39999v1) | 2026-10-29T13:19:00Z | 2026-11-02 / 2026-11-02 | B仅题录/摘要，题录自述HPCC2026未独核正式发表；context去重/唤醒线索，未传播性能数字，暂缓。研究高/启发中/当前可靠低 |
+| doi:10.1098/rstb.1952.0012；Turing，[Caltech原篇](https://www.dna.caltech.edu/courses/cs191/paperscs191/turing.pdf) | 1952-08-14 | 2026-11-02 / 2026-11-02 | C1；印刷37–43/§4、§6 pp46–49指定段，43上部视觉；未全文/§10/实际生物，矩阵与等扩散为AI复算。MIT无文本/web超时，Marcon证书失败，最后小裁剪成功。[来源](../../content/sources/paper-turing-morphogenesis.md)。研究中/启发高/模型代数高、生物未验 |
+
+B选择性窗口2026-10-26T07:30—11-02T07:30+08，补10-30核查后遗漏；最后显式07:42:06+08，cs.DC/cs.LG/math.OC/physics.soc-ph recent默认首屏最新可见10-30。三新候选均早于10-30旧终点，属于补遗漏，不称终点后新发；未穷尽分页、期刊会议或版本，工具三入口本轮未核。一次gh带问号参数未quote被zsh拒绝，后用固定commit连接器读取成功。
+
 ## 2026-10-30
 
 11份canonical候选/回访（A3/B7/C1），6次指定正文深读（A3/B2/C1），3项A1/B1/C1；A是响应明确反馈的解释深化，不称新发表。原评分时序计划因用户询问转向而未完成，缓存实现审计仍缺作者代码，研究partial；选择性监测范围与任务状态分别记录。[晨报](../digests/2026-10-30.md)保留可独立理解的解释，[回执](runs/2026-10-30.md)保留运行细节。工具/别名/跨角色原文复核及Architect对三份B题录复核不重复计canonical或深读。

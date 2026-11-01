@@ -42,6 +42,8 @@ endorsement: ai-candidate
 
 ## Evidence
 
+**能量与服务目标分支：**理解完整生成链后，读[最终产出token与板卡能量](../notes/storage-latency-and-slo.md#accepted-tokens-and-energy)，先计入被拒draft的验证成本，再在同批量/同模型下比较能耗和平均时延。静态批次均值不替代逐请求尾部、质量或线上到达负载。
+
 [Transformer/视频/采样资料](../sources/foundations-transformer.md)、[KV 系统资料](../sources/foundations-kv-systems.md)和[Switch 资料](../sources/foundations-moe.md)均列出实际读取范围。没有来源或实验条件的性能倍数不构成比较依据。
 
 [Grace-Blackwell 微基准](../sources/paper-grace-blackwell-unified-memory.md)和[CacheSmith](../sources/paper-cachesmith.md)是 2026-10 的预印本指定部分阅读；前者不验证 LLM KV 服务，后者的离线代理不保证每次输出正确，两者未在本库复现。

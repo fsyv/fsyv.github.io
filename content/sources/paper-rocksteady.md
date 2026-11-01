@@ -18,7 +18,7 @@ read_status: partial
 
 ## Reading
 
-实际读文件第6–11页指定正文：§3主段、§3.1.1–3.1.3、§3.3–3.4、§4.1–4.2；辅助浏览§3.2和§4.3开头。视觉核文件第9页及第11页Figures9/10。没有通读16页、审代码、原始日志或复现。旧`/pubs/download`返回HTML、`/paper/download`返回Invalid unique id，根`/download`成功；ACM正文/PDF入口403。
+2026-10-26实际读文件第6–11页指定正文：§3主段、§3.1.1–3.1.3、§3.3–3.4、§4.1–4.2；辅助浏览§3.2和§4.3开头。视觉核文件第9页及第11页Figures9/10。当日没有通读16页、审代码、原始日志或复现。旧`/pubs/download`返回HTML、`/paper/download`返回Invalid unique id，根`/download`成功；ACM正文/PDF入口403。
 
 ## Evidence
 
@@ -30,7 +30,26 @@ read_status: partial
 
 ## Limits
 
-同机架实验不能外推跨数据中心SLO。§3.2实验DPDK驱动仍复制到发送缓冲，不能称实验全路径零拷贝。未核版本/删除竞争、日志依赖持久化和故障注入，不能由设计推出任意执行的恰好一次语义；也没有澄清冷热对象Algorithm2计费或多源迁移论文。
+同机架实验不能外推跨数据中心SLO。§3.2实验DPDK驱动仍复制到发送缓冲，不能称实验全路径零拷贝。10-26未审版本/删除竞争及日志依赖实现；11-02指定函数静态读取推进了局部机制，仍未完成全交错、故障注入或原实验复现，不能由设计推出任意执行的恰好一次语义。也没有澄清冷热对象Algorithm2计费或多源迁移论文。
+
+## Implementation-followup
+
+2026-11-02新增作者公开实现：utah-scs/RAMCloud的rocksteady-sosp2017分支，固定提交[d1f9c8125cbd53e7bcb48a769b2a0cb74854900a](https://github.com/utah-scs/RAMCloud/commit/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a)，提交时间2017-09-20T21:36:26Z。今日发现历史实现，未当作新发布或当代main。论文/项目同研究入口和该仓库分别计canonical；本轮只复既有论文记录/作者演示索引，新增深读是源码指定函数，未重读论文正文。
+
+| 指定位置 | 读到的证据与限度 |
+| --- | --- |
+| [MigrationManager 141–149](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/RocksteadyMigrationManager.cc#L141)、[469–494](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/RocksteadyMigrationManager.cc#L469)、[704–744](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/RocksteadyMigrationManager.cc#L704) | 起计、后台pull/replay完成停计，随后转SIDELOG_COMMIT；buffer.size计后台重放输入，除1024²，priority路径不加该变量。不是唯一payload、实际接纳字节或恢复总时长 |
+| [MigrationManager 993–1047](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/RocksteadyMigrationManager.cc#L993)、[MasterService 2520–2532](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/MasterService.cc#L2520) | 常规与priority side log均实际提交；991旧TODO不能解释为未commit |
+| [MasterService 2457–2517](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/MasterService.cc#L2457)、[MigrationManager 358–389](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/RocksteadyMigrationManager.cc#L358) | 锁源/等APPEND/返回safeVersion；目标迁移态/归属/raiseSafeVersion，不由名称推全版本保证 |
+| [ObjectManager 1343–1425](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L1343)、[566–581](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L566)、[MasterService 1925–1981](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/MasterService.cc#L1925) | 写允许迁移态，删除只NORMAL，迁移态UNKNOWN_TABLET；不是所有CRUD同路径 |
+| [RamCloud.h 975](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/RamCloud.h#L975)、[LinearizableObjectRpcWrapper.h 33](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/LinearizableObjectRpcWrapper.h#L33)、[ObjectRpcWrapper 87–108](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectRpcWrapper.cc#L87) | 删除上层继承路径最终对UNKNOWN_TABLET刷新映射/重发，不可仅据目标拒绝判最终失败或丢数据 |
+| [ObjectManager 717–756](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L717)、[832–856](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L832)、[905–1028](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L905) | incoming≤current时舍弃旧对象；另有tombstone重放，未验证所有竞争交错 |
+| [MigrationManager 57–91](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/RocksteadyMigrationManager.cc#L57)、[ObjectManager 2671–2691](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L2671) | TombstoneProtector与remover停/启，不能概括为删除记录无保护 |
+| [SegmentManager.h 376–414](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/SegmentManager.h#L376)、[SegmentManager.cc 688–705](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/SegmentManager.cc#L688)、[1202–1203](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/SegmentManager.cc#L1202)、[ObjectManager 3475–3483](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L3475) | safeVersion可落后已有版本，getter/raise路径未单独证未搬旧键新写必胜；也未构造已执行错误反例 |
+| [CoordinatorService 624–654](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/CoordinatorService.cc#L624)、[TableManager 643–694](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/TableManager.cc#L643) | 归属更新及持久化实际存在，不能称协调器不持久化 |
+| [MigrationManager 965–1074](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/RocksteadyMigrationManager.cc#L965)、[MasterService 2123–2170](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/MasterService.cc#L2123) | 提交阶段发起源tablet删除/orphan清理；teardown的drop-dependency RPC为TODO后转COMPLETED。只定位这条路径，不证明全仓库无恢复依赖实现 |
+
+作者Utah项目web超时/证书不匹配，未绕TLS；演示slides取到但未提取正文，只以搜索索引指路。没有编译、运行、故障注入、原始日志或论文图复算。局部代码事实可靠性高，端到端保证与原数值映射仍不足。新理解整合至[实现与完成口径](../notes/storage-placement-and-migration.md#implementation-and-completion)。
 
 ## Support
 

@@ -44,6 +44,8 @@ endorsement: ai-candidate
 
 ## Open-questions
 
+[形态发生与空间动力学](morphogenesis-and-spatial-dynamics.md)增加一个稳定性维度：孤立或均匀扰动稳定，不代表非均匀空间模态稳定。其[两细胞反例](../notes/diffusion-driven-pattern-instability.md)复用局部线性化方法，但并非本图生态系统的已验证机制，亦不把空间失稳等同于有限扰动越过吸引域。
+
 噪声强度、采样与控制参数同时变化时，哪些观测或扰动实验能区分恢复变慢与驱动变化？问题保留在[完整解释](../notes/ecological-resilience-and-early-warning.md)；尚无真实数据、误报率或提前量证据，不能标记已解决。潜在存储映射也只作待检验方向，不另建同义问题。
 
 [返回地图入口](_index.md)。
