@@ -32,6 +32,7 @@ description: "按照问题、前置依赖和学习顺序组织知识。"
 | [放射化学与持续转变](radiochemistry-and-transformation.md) | 恒定活性如何由生成与衰减平衡产生，分离和时间响应能识别什么？ |
 | [历史流行病学与自然实验](epidemiology-and-natural-experiments.md) | 供水变化、暴露分类、比较分母和观察期怎样限定历史效应？ |
 | [形态发生与空间动力学](morphogenesis-and-spatial-dynamics.md) | 局部稳定的反应为何能出现空间差异，数学机制怎样推进到生物证据？ |
+| [计量学与频率稳定度](metrology-and-frequency-stability.md) | 参考、平均窗口与相关噪声怎样决定稳定度，固定频偏为何可能不可见？ |
 
 [知识实践地图](knowledge-practice.md)从“笔记应当多大”这一问题出发，说明笔记、资料与开放问题怎样协作。
 

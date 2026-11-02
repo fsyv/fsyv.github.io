@@ -37,6 +37,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 
 [固定实现与完成口径](../notes/storage-placement-and-migration.md#implementation-and-completion)把Rocksteady设计推进到历史代码的状态、重试与停表事件，区分后台重放结束、side-log提交和恢复证据；[最终产出token与能量](../notes/storage-latency-and-slo.md#accepted-tokens-and-energy)则在同批量对照中分开板卡能量与平均时延，不能把能耗下降当成线上SLO通过。
 
+[混合模型检查点分层](../notes/kv-cache-optimization.md#hybrid-checkpoints)接续跨调用驻留：先核完整状态能否在匹配前缀处恢复，再按访问量与保留量安排KV和循环检查点。全请求尾部、命中差筛选子集均值及不同存储预算的基线必须分别比较；这不证明各混合引擎已组合。
+
 ## Sources
 
 阅读范围是本次记录，不能由“经典”或发表场所替代。完整作者与版本见各来源页。

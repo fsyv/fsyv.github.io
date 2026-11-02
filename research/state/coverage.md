@@ -1,6 +1,6 @@
 # 选题轮换与问题回访
 
-历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-10-30.md)记录发现，审核、构建和PR的精确结果由[当日回执](runs/2026-10-30.md)记录。模拟反馈与沉默均不推导偏好。
+历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-03.md)记录发现，审核、构建和PR的精确结果由[当日回执](runs/2026-11-03.md)记录。模拟反馈与沉默均不推导偏好。
 
 ## 截至2026-10-16的历史覆盖
 
@@ -308,3 +308,31 @@ PR29已合并；从实核最新origin/main a2386a2fd7196353a0b4aed64e5ba2177a40f
 | 信息论21天复评 | 公开正文/地图未见独立正式解释，账本只有10-12本地模拟范围，不能当已接受；本轮先新领域，不重复信息瓶颈摘要，没有外部增读 | 2026-11-09，先围绕公开问题与可读证明判增量 |
 
 C最近三次为历史流行病学、制度分析、形态发生，无重复；最近四次含首次领域，C机会未减为零。21天其余安排保留：因果11-03、数值11-04、生态11-05、机制11-06、统计物理11-09、遗传11-10、天文11-11、地球11-12、心理11-13、流体11-16、放射11-18、历史流行病11-19、制度11-20，新增形态发生11-23。没有新增真实评论或永久主题权重调整；独立审核与同SHA构建/发布见[当天回执](runs/2026-11-02.md)，不预填通过。
+
+
+## 2026-11-03 记录机制、混合状态与首次计量学
+
+复用research/batch-2026-11-02和Draft PR30；核过的origin/main仍a2386a2fd7196353a0b4aed64e5ba2177a40f7ac，无新main提交，昨日三候选不当已接受。10canonical（A3/B6/C1）、5指定部分深读（A2/B2/C1）、4发现；40/35/25为投入参考，未实测比例。TDC实际作者实现未定位，既定审计未完成，研究partial；选择性监测范围另列，不伪装穷尽。
+
+| 通道 | 本轮进展与条件 | 归属与下一步 |
+| --- | --- | --- |
+| A | 优先核TDC仍v1及限定代码入口，未定位，不重读奖励推导；转基础验证，Twemcache固定历史源码有采样后缓冲满discard，AI遗漏反例可双向改变LRU。没有2020部署/实际丢弃计数或CSV映射 | A1扩旧解释/来源/问题，未判公开样本实际遗漏，生产回放仍open |
+| B | 10-27T07:30—11-03T07:30+08，last07:43:28，四recent首屏最新11-02；六新候选均10-30首提/11-02公告。HiState与Flide指定正文深读，另四仅题录摘要暂缓 | B1完整检查点/分层，B2主干分支隔离/浮点边界，均未审代码/复现，不能将两个系统写成已组合 |
+| C | 计量学首次覆盖：Allan1966指定理论/关键式视觉，现代相邻差整理与AI平移例、独立/相关平均条件 | C1完整解释/来源/新地图；固定偏差不见于差分，不等于仪器准确或均值误差，11-24先核现实测量和CI |
+
+### 当前回访安排
+
+保留上方历史日期/失败；以下更新本轮实际触及及后续安排，未触及项不写成查过无结果。
+
+| 问题 / 入口 | 本轮处理与具体缺口 | 下次（上海） |
+| --- | --- | --- |
+| [贪心价值](../../content/questions/greedy-value-improvement.md) | 用户继续深入有效，TDC仍v1；精确题名及DRL-DC/PoCL限定搜索未定位作者实现，不等不存在，终止/重置/terminal审计仍缺 | 2026-11-04，保留原安排，仅明确代码/版本推进 |
+| [基础验证](../../content/questions/foundations-validation.md) | 提前取得记录器舍弃机制；完整采集/CSV映射未补齐，不重跑旧GET表。混合状态的正文不能代替同实现测量 | 2026-11-05先部署/导出证据；HiState/Flide实现11-10 |
+| 因果21天复评 | 主控仅复读公开main地图/笔记及P13历史候选，未外部增读；P13完整解释未审未合并，不复制当已接受，也不算今日新发现 | 2026-11-10围绕成功请求选择或明确公开问题再评 |
+| [压缩重规划](../../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload)、[交通](../../content/notes/transport-delay-propagation-and-thresholds.md#clipped-balance)、[预测预取](../../content/notes/kv-cache-optimization.md#predictive-prefetch-and-staleness)、[结论范围](../../content/notes/claim-scope-and-evidence-synthesis.md) | 未到期，本轮未新查硬件整步/代码数据/同语义尾部/rubric；不由新混合缓存论文替代 | 2026-11-04 |
+| [固定图](../../content/notes/attention-spatiotemporal.md#physical-execution)、[预算准入](../../content/notes/timestamped-admission-and-prefix-budgets.md)、[新鲜度控制](../../content/notes/storage-latency-and-slo.md#freshness-and-actuation) | 原实现/guard正动作及同负载窗口未新查，Flide仅另一种逻辑与物理布局条件 | 2026-11-05 |
+| [评价保证](../../content/questions/evidence-to-guarantees.md)、[笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md)、[选择性KV重建](../../content/notes/kv-cache-optimization.md#selective-reconstruction)、[文档信息](../../content/notes/document-cues-and-semantic-preservation.md)、[日志建议](../../content/notes/storage-latency-and-slo.md#patterns-and-end-to-end) | 未到期，本轮无新评分时序/读者样本/同实现成本、净bank/作者实现/配对原测量；不称再核无成果 | 2026-11-06 |
+| [迁移评价](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md)、[直存](../../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)、[剪枝](../../content/notes/depth-pruning-and-repair.md)、[最终token能量](../../content/notes/storage-latency-and-slo.md#accepted-tokens-and-energy) | 昨日安排保留，今天未新执行故障路径、多源/计费/完整场景、同语义尾部、剪枝代码和prefill计量 | 2026-11-09 |
+| [频率稳定度](../../content/notes/frequency-stability-and-allan-variance.md) | 新候选只有限定理论与AI算例，缺参考钟贡献、漂移/低频截止和有效自由度 | 2026-11-24，先原始测量与有限CI |
+
+C最近三次为制度分析、形态发生、计量学，无重复；最近四次含首次领域，C机会未降为零。21天后续保留数值11-04、生态11-05、机制11-06、信息论/统计物理11-09、遗传/因果11-10、天文11-11、地球11-12、心理11-13、流体11-16、放射11-18、历史流行病11-19、制度11-20、形态发生11-23，新增计量11-24。没有按沉默或单次评论永久改权重，旧采纳/反馈范围与历史回执不改；实际审核/构建见[今日回执](runs/2026-11-03.md)。

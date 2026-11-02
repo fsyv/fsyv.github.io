@@ -109,3 +109,16 @@ print('timestamp inversions', [
 固定 README 的最后修改仍为 `c59112085b927c50acbe2d51175ebb09a9a52461`（2020-11-05T03:08:32Z）；当前 master `1c503676d6972d4394a360e09162149a6c00f516` 最后提交为 2020-11-10T16:03:04Z。README 未记上述讨论细则。SNIA 完整 trace 入口本轮不可访问，未下载约 2.8 TB 数据；第三方修复 PR 代码未读。来源作者评论不是用户反馈。
 
 本日增量支持 [Zipf 笔记的范围分层](../notes/probability-zipf.md#sample-scope-followup)：请求采样配置、实例覆盖、时间窗口和导出版本分别核验；[基础验证问题](../questions/foundations-validation.md)仍 open，未完成生产语义回放。
+
+## Logging-followup
+
+2026-11-03增读旧实现及原采集说明。Twitter官方[Twemcache固定提交](https://github.com/twitter/twemcache/tree/8cfc4ca5e76ed936bd3786c8cc43ed47e7778c08)时间为2021-11-01T18:31:37Z，主要是退休说明；所读klog文件最后修改于2012-09-07，ASCII/时间文件最后修改于2017-09-29。没有证据将此提交等同于2020生产部署。本轮重读论文§3.1（印刷193–194页）及官方README字段，另指定深读下面函数/声明，未编译运行：
+
+- [src/mc_klog.c L398–416](https://github.com/twitter/twemcache/blob/8cfc4ca5e76ed936bd3786c8cc43ed47e7778c08/src/mc_klog.c#L398)：采样判断之后独立检查环形缓冲区剩余空间，不足则增加 `klog_discarded` 并返回。
+- [src/mc_klog.h L51–64](https://github.com/twitter/twemcache/blob/8cfc4ca5e76ed936bd3786c8cc43ed47e7778c08/src/mc_klog.h#L51)：每工作线程写本地缓冲区、采集器消费，消费跟不上可能舍弃并计数。
+- [src/mc_ascii.c L552–648、L878–1043](https://github.com/twitter/twemcache/blob/8cfc4ca5e76ed936bd3786c8cc43ed47e7778c08/src/mc_ascii.c#L552)：条件写及GET分别把结果status传给日志；响应构造不证明客户端成功收到回复。
+- [src/mc_time.c L124–151](https://github.com/twitter/twemcache/blob/8cfc4ca5e76ed936bd3786c8cc43ed47e7778c08/src/mc_time.c#L124)：协议expiry区分相对时长、绝对Unix时间与零值。另仅看 `scripts/klog/klogParser/klogFormat.py` 格式字段/模式，未审生产导出对应。
+
+论文报告把默认1/100请求采样改为100%；历史源码说明这种配置本身不排除缓冲满舍弃。没有取得生产部署版本、丢弃统计、完整采集和导出链，不能据此认定研究轨迹实际缺条。公开CSV七字段没有单列status，但value size等列如何由原始日志生成未核，亦不能断言结果信息全部不可恢复，或把原始expiry规则直接套到CSV TTL。
+
+本轮支持[采样与事件保留的区别](../notes/probability-zipf.md#logging-and-event-retention)。两个LRU序列是AI运行的教学例，不是生产遗漏率或Twemcache miss插入实验。采集完整性与[基础验证问题](../questions/foundations-validation.md)继续开放。

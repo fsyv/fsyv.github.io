@@ -24,6 +24,8 @@ endorsement: ai-candidate
 5. [跨调用驻留与可访问性](../notes/kv-cache-optimization.md#residency-and-accessibility)：再区分闲置时限、量化表示、路由身份及重建调用率，避免将 pooled 容量回放视为真实每副本/时延/质量结论。
 6. [逐请求质量与时延联合成功](../notes/storage-latency-and-slo.md#joint-success)：在理解精确与近似复用之后，判断节省计算是否同时达到任务质量和 TTFT 目标；两个边际通过率不能替代交集。
 
+在标准KV复用之后，读[混合层完整状态与分支隔离](../notes/kv-cache-mechanism.md#hybrid-state-and-forks)，再读[历史检查点的访问/保留量](../notes/kv-cache-optimization.md#hybrid-checkpoints)。先确认匹配边界可恢复，再决定状态放在哪一层；共享主干还须隔离兄弟分支，精确算术语义与浮点负载不变性分别检查。
+
 ## Branches
 
 - **另一种连接结构：**[视频时空注意力](../notes/attention-spatiotemporal.md)先以 token 数和连接范围解释联合/分解，再读[固定稀疏图的物理执行](../notes/attention-spatiotemporal.md#physical-execution)中页压实、tile 和掩码；减少连接与减少填充分别评价，非因果场景不自动满足 KV 复用前提。

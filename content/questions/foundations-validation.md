@@ -58,3 +58,9 @@ B 通道增加两项测量约束：[物理放置与访问历史](../notes/kv-cac
 
 
 2026-10-22，AI 候选进展：[样本范围增读](../notes/probability-zipf.md#sample-scope-followup)区分三层：原研究每 cluster 两个选中实例、请求采样配置 100%；公开 trace 按作者说明每 cluster 一个实例、无请求抽样；短 sample 的一般百万前缀说明与 cluster026 实际 80,000 行尚未闭合。100% 采样配置不等于已审计无日志遗漏，更不等于全 cluster 覆盖。作者另确认有 sorting bug 的重排版本，但未确定本样本逆序成因或秒内顺序。仍缺逐文件 manifest、导出脚本、sample→full 对应区间、`.sort` 版本及操作结果/寿命语义；不重做同 seed LRU，不把作者讨论当用户反馈。问题继续 **open**，2026-10-29 仅在取得这些新证据时推进。
+
+## Review-2026-11-03
+
+已把[采样与日志保留机制及双向反例](../notes/probability-zipf.md#logging-and-event-retention)整合回已有解释。Twemcache固定历史源码存在采样判断之后的缓冲满舍弃；尚无2020部署版本、实际丢弃/错误计数及原日志到CSV映射，不能判断具体公开样本实际丢条。完整生产回放须分别核采样配置、记录保留、导出保留及操作/寿命语义，状态保持open。11-05沿原计划先找明确部署/导出证据，不重复旧GET主表。
+
+[混合模型检查点](../notes/kv-cache-optimization.md#hybrid-checkpoints)和[分支隔离](../notes/kv-cache-mechanism.md#hybrid-state-and-forks)另补精确复用的状态条件；两份预印本正文并非本库同实现复现，不能替代本问题的真实端到端测量。实现与浮点负载不变性可于11-10先核原始代码。
