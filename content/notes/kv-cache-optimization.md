@@ -200,7 +200,7 @@ $$
 
 实验在Qwen3.5-9B、单H100 80GB、约45GiB GPU缓存、96GiB pinned CPU和150GiB disk预算下，最多24 live sessions，回放Weka与TraceLab约三小时请求流。GPU-only基线不含CPU/SSD；使用这些层次的扩展基线匹配相应预算。HiState全请求p99 TTFT相对GPU-only vLLM-Marconi最多改善5.73倍，不能解读为优于所有分层方案同样幅度。
 
-对作者按命中差筛选的reuse-sensitive子集，HiState与vLLM-`Disk*`的平均TTFT为Weka 2.66→1.29秒、TraceLab 1.77→0.96秒。子集定义为Disk*比无限缓存命中低至少5个百分点，或与HiState差至少5点；它不是全请求均值，也不能与前述全流量p99拼接。全请求中位数与Disk*大体相当、Weka略退，部分请求还会因删尾而退化。正文回放和合成mutation实验均未在本库复现，部署与尾部保证仍待源码和同语义验证。
+对作者按命中差筛选的reuse-sensitive子集，HiState与`vLLM-Disk*`的平均TTFT为Weka 2.66→1.29秒、TraceLab 1.77→0.96秒。子集定义为`Disk*`比无限缓存命中低至少5个百分点，或与HiState差至少5点；它不是全请求均值，也不能与前述全流量p99拼接。全请求中位数与`Disk*`大体相当、Weka略退，部分请求还会因删尾而退化。正文回放和合成mutation实验均未在本库复现，部署与尾部保证仍待源码和同语义验证。
 
 ## Revision
 
