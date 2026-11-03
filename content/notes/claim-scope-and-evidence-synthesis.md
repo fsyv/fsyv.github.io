@@ -23,6 +23,8 @@ SmoothScore 先抽出保留方向、范围和限定的总结性 claim，再对�
 
 按同一 aspect 比较很关键。**AI 对照例：**WorldPager 的指定 a_yaw 中位等待下降，可以支持“该配置下等待较少”；[同篇另一轨迹在软件限速下的 p99 反而变大](kv-cache-optimization.md#predictive-prefetch-and-staleness)，就限制了“所有负载尾等待都改善”。前后讨论的是不同负载和分位数，不能用一条有利中位等待遮住不利尾部。这个例子来自本库独立阅读，不是 SmoothScore 论文测过 WorldPager。
 
+2026-11-04新增AI评价例：[WorldPager重访相似性与画质](kv-cache-optimization.md#revisit-similarity-and-quality)进一步表明，LPIPS归一保留率超过100%与MUSIQ下降可以同时成立。两者比较的对象不同，不能用“记忆保留更高”支持“整体质量更好”；归一分母接近零时还需检查原始差值。该联系来自独立增读，不是SmoothScore论文的原实验。
+
 上述方法也有检索边界：它主要审报告自己引用的文档，未引用的反例可能仍然缺失。对支持和质疑各做一遍是审计启发，不是已经穷尽全部文献的证明。
 
 ## Full-documents-and-calibration

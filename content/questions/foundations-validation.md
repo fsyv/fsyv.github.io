@@ -64,3 +64,9 @@ B 通道增加两项测量约束：[物理放置与访问历史](../notes/kv-cac
 已把[采样与日志保留机制及双向反例](../notes/probability-zipf.md#logging-and-event-retention)整合回已有解释。Twemcache固定历史源码存在采样判断之后的缓冲满舍弃；尚无2020部署版本、实际丢弃/错误计数及原日志到CSV映射，不能判断具体公开样本实际丢条。完整生产回放须分别核采样配置、记录保留、导出保留及操作/寿命语义，状态保持open。11-05沿原计划先找明确部署/导出证据，不重复旧GET主表。
 
 [混合模型检查点](../notes/kv-cache-optimization.md#hybrid-checkpoints)和[分支隔离](../notes/kv-cache-mechanism.md#hybrid-state-and-forks)另补精确复用的状态条件；两份预印本正文并非本库同实现复现，不能替代本问题的真实端到端测量。实现与浮点负载不变性可于11-10先核原始代码。
+
+## Review-2026-11-04
+
+新增[会话缓存压力反馈](../notes/session-cache-pressure-and-metastability.md)说明服务率可能随缓存历史内生变化，固定外部到达率不能保证相同状态或可排空；[WorldPager评价轴](../notes/kv-cache-optimization.md#revisit-similarity-and-quality)又把相似性与画质分开。两项均为指定正文候选，未做本库同实现测量，问题保持open。
+
+数值分析21天复评仅复读正式笔记与地图，未做固定算子高精度参考实验；昨日Flide仍是未合并候选，也不补这个缺口。11-11先限定公开固定算子、参考精度和误差对象，再决定实验，避免重复理论摘要。

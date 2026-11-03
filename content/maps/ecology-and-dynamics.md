@@ -42,6 +42,8 @@ endorsement: ai-candidate
 
 [流体力学地图](fluid-mechanics-and-dynamic-similarity.md)提供结构类比：相似参数与入口扰动必须分开，染料混匀后还可能失去对下游状态的辨识能力。该联系帮助检查观测判据，未建立生态吸引域、分岔或预警量与管流的映射。
 
+[服务会话的缓存反馈](../notes/session-cache-pressure-and-metastability.md)提供有限扰动后持续退化的结构类比：延迟改变会话寿命与后续成本。计算服务的会话人口、流量和缓存不等于生态状态或资源，不搬用阈值，也不构成数学等价。
+
 ## Open-questions
 
 [形态发生与空间动力学](morphogenesis-and-spatial-dynamics.md)增加一个稳定性维度：孤立或均匀扰动稳定，不代表非均匀空间模态稳定。其[两细胞反例](../notes/diffusion-driven-pattern-instability.md)复用局部线性化方法，但并非本图生态系统的已验证机制，亦不把空间失稳等同于有限扰动越过吸引域。

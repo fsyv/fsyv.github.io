@@ -30,7 +30,7 @@ math: true
 
 ## 后续方向
 
-原定 2026-10-27 的应用回访于 10-28 执行，取得公开状态/奖励与 bootstrap 定义并补有限/持续任务分析。2026-10-29已按用户请求优先补统一终端与处罚推导，但未定位作者代码入口。2026-10-30仅检查明确URL/新版本；无新入口则2026-11-04回访environment/state、done/truncation/terminal bootstrap及罚项实现，不重复基础定理代替证据。
+原定 2026-10-27 的应用回访于 10-28 执行，取得公开状态/奖励与 bootstrap 定义并补有限/持续任务分析。2026-10-29已按用户请求优先补统一终端与处罚推导，但未定位作者代码入口。2026-10-30仅检查明确URL/新版本；11-04已按计划回访公开入口，仍无可归属作者实现；下一次11-11仅在明确代码入口或实质版本变化时推进environment/state、done/truncation/terminal bootstrap及罚项实现，有入口可提前，不重复基础定理代替证据。
 
 关联应用：[协同缓存收益复核](web3-caching-evaluation.md)。组织入口：[Web3 与协作决策地图](../maps/web3-foundations.md)。
 
@@ -45,3 +45,5 @@ math: true
 2026-10-29，响应[用户继续深入2026-10-28/A1](https://github.com/fsyv/fsyv.github.io/pull/29#issuecomment-6458746818)，已把[持续/有限终端/采集截断的统一推导、处罚最小反例和重置边界](../notes/cooperative-caching-and-learning.md#terminal-bootstrap-followup)整合回既有解释。数学推进不等于用户接受。限定公开检索未定位作者实现，终止/重置/终端价值的实际审计仍未完成，不能从论文公式断言缺陷。状态继续 **researching**；10-30只检查是否出现明确实现URL/新版本，无新入口则11-04按实现证据回访，不重复基础推导。
 
 2026-10-30，响应[用户询问统一式目标与证明对象](https://github.com/fsyv/fsyv.github.io/pull/29#issuecomment-6485979453)，在[目标一致性解释](../notes/cooperative-caching-and-learning.md#objective-and-proof)明确先检查任意两策略在两个累计目标下是否同排序，再谈网络学得准不准；写明持续等价目标的处罚比价。旧统一推导保留，实际终止/重置/价值审计仍未完成；这是候选解释深化，不是用户接受或部署验证，保持researching。
+
+2026-11-04，TDC题录/history仍v1，限定公开网页与公开仓库检索未定位可归属作者实现；不证明代码不存在。实际终止/重置/terminal bootstrap审计仍未完成，researching不变。今日WorldPager评价增量不代替此明确请求；11-11仅凭新入口/新版本推进，原数学解释与用户确认状态保留。

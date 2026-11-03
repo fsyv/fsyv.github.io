@@ -1,6 +1,6 @@
 # 选题轮换与问题回访
 
-历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-03.md)记录发现，审核、构建和PR的精确结果由[当日回执](runs/2026-11-03.md)记录。模拟反馈与沉默均不推导偏好。
+历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-04.md)记录发现，审核、构建和PR的精确结果由[当日回执](runs/2026-11-04.md)记录。模拟反馈与沉默均不推导偏好。
 
 ## 截至2026-10-16的历史覆盖
 
@@ -336,3 +336,34 @@ C最近三次为历史流行病学、制度分析、形态发生，无重复；�
 | [频率稳定度](../../content/notes/frequency-stability-and-allan-variance.md) | 新候选只有限定理论与AI算例，缺参考钟贡献、漂移/低频截止和有效自由度 | 2026-11-24，先原始测量与有限CI |
 
 C最近三次为制度分析、形态发生、计量学，无重复；最近四次含首次领域，C机会未降为零。21天后续保留数值11-04、生态11-05、机制11-06、信息论/统计物理11-09、遗传/因果11-10、天文11-11、地球11-12、心理11-13、流体11-16、放射11-18、历史流行病11-19、制度11-20、形态发生11-23，新增计量11-24。没有按沉默或单次评论永久改权重，旧采纳/反馈范围与历史回执不改；实际审核/构建见[今日回执](runs/2026-11-03.md)。
+
+
+## 2026-11-04 指标分母、会话反馈与首次晶体学
+
+复用唯一research/batch-2026-11-02与Draft PR30；实核origin/main仍a2386a2fd7196353a0b4aed64e5ba2177a40f7ac，无新main合并。此前七候选继续待审，今日四项后累计十一项，不将未合并候选当正式接受。10canonical（A3/B6/C1）、4指定部分深读（A1/B2/C1），40/35/25仅参考未实测。TDC实际实现审计未完成，研究partial；选择性监测范围另记。
+
+| 通道 | 本轮真实增量与边界 | 后续 |
+| --- | --- | --- |
+| A | TDC/PlaneZip仍v1，仅公开可得性复查无可归属作者实现；WorldPager新增§IV-F/V，分LPIPS归一保留率与画质、开发int2与封存int4 | A1评价轴候选已整合，不代替同语义尾部/实际终止审计；11-11仅新实现/原结果推进 |
+| B | 10-28T07:30—11-04T07:30+08，最终约07:40，四recent首屏至11-03；六新canonical两篇11-01/四篇11-02首提，均补昨日遗漏；两指定深读形成B1会话反馈、B2可行性泵，四摘要暂缓 | 非穷尽，未工具release。B1未核完整预测硬件，B2内凸收敛不保证整数外循环，源码/公平消融11-11 |
+| C | 晶体学首次覆盖，Bragg1922指定页/关键三图视觉，理想周期双中心强度与镜像例为AI | C1完整解释/来源/新地图；不把历史近似当现代理论，不推有限晶体精确峰顶/唯一反演，11-25补真实修正 |
+
+### 当前回访安排
+
+保留所有上方历史读取范围与失败，以下记录本轮触及和遗漏；没有外查的项目不写成“无新成果”。
+
+| 问题 / 入口 | 本轮处理与具体缺口 | 下次（上海） |
+| --- | --- | --- |
+| [贪心价值](../../content/questions/greedy-value-improvement.md) | 到期，TDC仍v1，限定公开网页/仓库未定位可归属作者入口；实际environment/state、终止/重置/terminal审计未完成，不重复奖励证明，researching | 2026-11-11，仅明确新入口或版本推进，有入口可提前 |
+| [压缩重规划](../../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload) | 到期仅PlaneZip版本/§VII可得性，原型仍future，未新硬件/整步；不由PDFP GPU计算替代训练压缩执行证据 | 2026-11-11，仅新原型/代码 |
+| [预测预取](../../content/notes/kv-cache-optimization.md#predictive-prefetch-and-staleness) | 到期新增评价轴和归一分母，仍无代码/原结果及同语义尾部；不是新版本，不重复旧等待数值 | 2026-11-11，先新原结果/实现 |
+| [交通](../../content/notes/transport-delay-propagation-and-thresholds.md#clipped-balance)、[结论范围](../../content/notes/claim-scope-and-evidence-synthesis.md) | 到期，因明确TDC回访与WorldPager评价增量，本轮未外查交通代码/数据及ClaimSmoothing rubric；评价例扩展不当原rubric已审 | 2026-11-05优先明确执行/评分入口 |
+| 数值分析21天复评 | 主控只读正式数值笔记/优化地图，理论无需重复，未测固定算子高精度参考；昨日Flide候选不当验证 | 2026-11-11，先明确算子/参考误差 |
+| [基础验证](../../content/questions/foundations-validation.md)、[固定图](../../content/notes/attention-spatiotemporal.md#physical-execution)、[预算准入](../../content/notes/timestamped-admission-and-prefix-budgets.md)、[新鲜度](../../content/notes/storage-latency-and-slo.md#freshness-and-actuation) | 原部署/导出、metadata摊销、guard正动作/同负载窗口未新查；新会话模型不能替代原实现 | 2026-11-05原安排 |
+| [评价保证](../../content/questions/evidence-to-guarantees.md)、[笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md)、[选择性重建](../../content/notes/kv-cache-optimization.md#selective-reconstruction)、[文档信息](../../content/notes/document-cues-and-semantic-preservation.md)、[日志建议](../../content/notes/storage-latency-and-slo.md#patterns-and-end-to-end) | 评分时序/读者样本/同实现净成本、净bank/作者实现/配对原测量均未新查，不改历史状态 | 2026-11-06原安排 |
+| [迁移评价](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md)、[直存](../../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)、[剪枝](../../content/notes/depth-pruning-and-repair.md)、[最终token能量](../../content/notes/storage-latency-and-slo.md#accepted-tokens-and-energy) | 未新执行故障路径/旧多源计费/完整场景/同语义尾部/剪枝实现/prefill计量，新模型与GPU优化不能替代 | 2026-11-09原安排 |
+| [新会话反馈](../../content/notes/session-cache-pressure-and-metastability.md)、[可行性泵](../../content/notes/feasibility-pump-and-continuous-projection.md) | 指定正文已整合，未审作者实现/原测量，模拟控制和配置组合边界保留 | 2026-11-11，先实现/配置与公平对照 |
+| [混合检查点](../../content/notes/kv-cache-optimization.md#hybrid-checkpoints)、[分支隔离](../../content/notes/kv-cache-mechanism.md#hybrid-state-and-forks) | 昨日候选未受用户确认，今天未新核源码与浮点执行 | 2026-11-10原安排 |
+| [晶体衍射](../../content/notes/bragg-diffraction-and-structural-inference.md) | 只有限定几何/代数与历史证据，缺真实强度修正、现代相位与唯一性原证 | 2026-11-25，先实际修正和额外信息 |
+
+C最近三次形态发生/计量学/晶体学，不重复；最近四次含新领域，C机会未降为零。21天后续保留生态11-05、机制11-06、信息论/统计物理11-09、遗传/因果11-10、天文11-11、地球11-12、心理11-13、流体11-16、放射11-18、历史流行病11-19、制度11-20、形态发生11-23、计量11-24，新增晶体11-25。数值今日完成本地复评、实验方向11-11。未依据沉默或单次反馈永久改主题权重，真实评论出处与实际审核/构建/发布见[当日回执](runs/2026-11-04.md)，未预填通过。

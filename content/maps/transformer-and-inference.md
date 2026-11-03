@@ -42,6 +42,10 @@ endorsement: ai-candidate
 
 **模型结构分支：**理解完整生成链之后，读[删除层与修复的复合目标](../notes/depth-pruning-and-repair.md)，再比较有限枚举、独立PPL、任务能力和部署成本。修复改变候选排序，不能先固定未修复最优或将PPL当全部能力。
 
+[会话缓存压力反馈](../notes/session-cache-pressure-and-metastability.md)在完整状态/驻留之后推进到内生负载：工具期不占decode也可能保留未来前缀需求。先分会话与调用，再看冲击恢复和SLO，不能用当前活跃decode数代替潜在工作集。
+
+[WorldPager相似性与画质](../notes/kv-cache-optimization.md#revisit-similarity-and-quality)补充预测预取分支：归一LPIPS保留率超100%仍可伴随画质下降，须保留指标、分母、开发/测试和位宽条件。
+
 ## Evidence
 
 **能量与服务目标分支：**理解完整生成链后，读[最终产出token与板卡能量](../notes/storage-latency-and-slo.md#accepted-tokens-and-energy)，先计入被拒draft的验证成本，再在同批量/同模型下比较能耗和平均时延。静态批次均值不替代逐请求尾部、质量或线上到达负载。
