@@ -80,7 +80,7 @@ $$
 
 规划还需给出可比较的峰值口径。TapeSAC用must-only实测step allocated峰，加上所有新增保存字节，在扣除non-PyTorch、实测碎片与约2%reserve的device预算内选择方案。原base已包括模型状态、通信与temporary；新增值按同时存活计费。在三个测试模型中峰接近反向开始，这样近似较贴合；若真实峰在更晚阶段，全部同时计费可能保守过计，不能称任意图的精确峰公式。
 
-作者先以beam search产生近似前沿，再在离散capacity与有限选点上用DP规划。每轮至多24个保存集合、每集合至多12个候选值的搜索没有遍历所有保存集合；后续DP精确不等于原问题的全局Pareto最优。
+作者先以beam search产生近似前沿，再在离散capacity与有限选点上用DP规划。每轮至多24个保存集合、每集合至多12个候选项（一项可包含共同保存的多个输出槽）的搜索没有遍历所有保存集合；后续DP精确不等于原问题的全局Pareto最优。
 
 实验需分开两种增量。在27B dense与35B MoE、各16GPU/2nodes/FSDP2的设置中，固定full-checkpointing save set、只换重放执行，step time下降3.0%/1.7%，reserved同或较低。允许规划使用90%设备预算后，相对full checkpointing下降6.3%/13.9%，其中35B reserved约31%升到75%。后一组省时包含更多保存内存，不能写成同内存成本收益。
 

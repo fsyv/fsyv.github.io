@@ -28,7 +28,7 @@ Kaihui Ren、Yifan Zhao等，*TapeSAC: Automated, Pareto-Optimal Fine-Grained Me
 
 §3.4.2采用must-only实测step allocated峰加所有新增保存字节，约束在扣除non-PyTorch占用、实测碎片与约2%reserve的device预算之内。模型状态、通信和temporary已在base中；新增保存值按同时计费。在三个测试模型中峰接近反向开始，这一近似较贴合；晚期峰可能保守过计。
 
-§3.4.3 beam search每轮最多保留24个保存集合、每集合至多含12个候选值，先构造近似前沿；之后DP在离散capacity和这些有限选点上求解。有限选点上的精确求解不证明原保存集合的全局Pareto最优，标题不能替代保证。
+§3.4.3 beam search每轮最多保留24个保存集合、每集合至多含12个候选项（一项可包含共同保存的多个输出槽），先构造近似前沿；之后DP在离散capacity和这些有限选点上求解。有限选点上的精确求解不证明原保存集合的全局Pareto最优，标题不能替代保证。
 
 ## comparisons
 
