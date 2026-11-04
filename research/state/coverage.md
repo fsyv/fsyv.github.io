@@ -1,6 +1,6 @@
 # 选题轮换与问题回访
 
-历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-04.md)记录发现，审核、构建和PR的精确结果由[当日回执](runs/2026-11-04.md)记录。模拟反馈与沉默均不推导偏好。
+历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-05.md)记录发现，审核、构建和PR的精确结果由[当日回执](runs/2026-11-05.md)记录。模拟反馈与沉默均不推导偏好。
 
 ## 截至2026-10-16的历史覆盖
 
@@ -367,3 +367,31 @@ C最近三次为制度分析、形态发生、计量学，无重复；最近四�
 | [晶体衍射](../../content/notes/bragg-diffraction-and-structural-inference.md) | 只有限定几何/代数与历史证据，缺真实强度修正、现代相位与唯一性原证 | 2026-11-25，先实际修正和额外信息 |
 
 C最近三次形态发生/计量学/晶体学，不重复；最近四次含新领域，C机会未降为零。21天后续保留生态11-05、机制11-06、信息论/统计物理11-09、遗传/因果11-10、天文11-11、地球11-12、心理11-13、流体11-16、放射11-18、历史流行病11-19、制度11-20、形态发生11-23、计量11-24，新增晶体11-25。数值今日完成本地复评、实验方向11-11。未依据沉默或单次反馈永久改主题权重，真实评论出处与实际审核/构建/发布见[当日回执](runs/2026-11-04.md)，未预填通过。
+
+## 2026-11-05 新批次、实际算子与群体谱系
+
+PR30已于11-04合并，prepare从双重核对的origin/main850802624926eb2d839dd3d9bec34d520cdff488建立唯一research/batch-2026-11-05。旧十一项在基线与PR30固定记录中保留，合并不自动升级endorsement。今日5项候选A1/B1/A2/C1/B2进入新清单；9canonical（A2/B6/C1）、5指定部分深读（A2/B2/C1），40/35/25为投入参考未实测比例。
+
+| 通道 | 实际增量与边界 | 下一步 |
+| --- | --- | --- |
+| A | 交通固定代码把传播底图/默认等边权与8点雨驱分开，补0/1000初态和有限停止；SmoothScore完整rubric补语义修订与逻辑力度 | 未运行交通输入/拟合/原图映射，未得73标注/程序或裁alpha差异；11-12按明确输入/新发布推进 |
+| B | 10-29T07:30—11-05T07:30+08，last07:38:10，四recent首屏至11-04；六候选均11-03首提/v1，补遗漏，两指定正文为舍入执行与按需重放 | 未源码/复现，尚未建立任意输入bitwise或全局最优保证；省时须区分显存预算。四摘要暂缓。工具索引补Obsidian发布阶段，未升级 |
+| C | **微生物群体遗传实验识别首次覆盖**：Luria–Delbrück1943指定原文与503/504/510视觉；独立培养/同培养分样、AI早晚Poisson与b1表型边界 | 扩既有遗传地图为分子复制/群体谱系两支，没有新造重复地图；11-26独立表型与异质模型 |
+
+### 当前回访安排
+
+历史失败与读取范围均保留；以下只更新本轮实际触及或延期项目，不把未外查写成没有新成果。
+
+| 问题 / 入口 | 本轮处理与具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [交通](../../content/notes/transport-delay-propagation-and-thresholds.md#implementation-and-inputs) | 已审指定调用链；传播/雨驱图和默认权重与论文映射未闭合，额外气候输入、拟合cache/参数和原图输出未运行 | 2026-11-12，先固定输入/配置及结果对应 |
+| [结论范围](../../content/notes/claim-scope-and-evidence-synthesis.md#semantic-repair-and-logical-strength) | 已读完整rubric与固定README；五档非唯一自动编辑算法，未得原标注/程序，alpha差异保留 | 2026-11-12，仅明确数据/代码或作者修订再复算 |
+| [基础验证](../../content/questions/foundations-validation.md)、[固定图](../../content/notes/attention-spatiotemporal.md#physical-execution)、[预算准入](../../content/notes/timestamped-admission-and-prefix-budgets.md)、[新鲜度](../../content/notes/storage-latency-and-slo.md#freshness-and-actuation) | 今日到期的Twitter部署导出、metadata/端到端、guard正动作和EdgePace同负载，因优先A两个具体入口与深读预算未外查，原计划这部分未完成；两新B不代替原对象 | 2026-11-12，明确实现/数据对象后推进，不重复旧GET表 |
+| [舍入执行](../../content/notes/kv-cache-mechanism.md#rounding-and-execution)、[按需重放](../../content/notes/tensor-liveness-and-peak-memory.md#demand-driven-replay) | 今日指定正文候选已整合，仍缺固定artifact、批次对照/线上稳定、具体硬件与实际峰位置 | 2026-11-12，优先实现与可复核条件 |
+| 生态21天复评 | 主控仅复读正式生态note/map；恢复率/吸引域/噪声反例已有完整解释，未新读外部证据或测真实预警，保留独立扰动/噪声/采样/误报漏报缺口 | 2026-11-26，先独立观测或扰动数据 |
+| [贪心价值](../../content/questions/greedy-value-improvement.md)、[压缩重规划](../../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload)、[预测预取](../../content/notes/kv-cache-optimization.md#predictive-prefetch-and-staleness) | 本轮未再空搜TDC入口、PlaneZip硬件或WorldPager同语义尾部；明确实现审计缺口保留，不重复奖励证明 | 2026-11-11原安排，仅新入口/版本/原测量 |
+| [评价保证](../../content/questions/evidence-to-guarantees.md)、[笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md)、[选择性重建](../../content/notes/kv-cache-optimization.md#selective-reconstruction)、[文档信息](../../content/notes/document-cues-and-semantic-preservation.md)、[日志建议](../../content/notes/storage-latency-and-slo.md#patterns-and-end-to-end) | 评分时序/真实读者/同实现成本、净bank/作者实现/配对原测量未新增；rubric不等于原评价数据或读者实证 | 2026-11-06原安排 |
+| [迁移评价](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md)、[直存](../../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)、[剪枝](../../content/notes/depth-pruning-and-repair.md)、[最终token能量](../../content/notes/storage-latency-and-slo.md#accepted-tokens-and-energy) | 未新执行故障、旧多源计费、完整场景、同语义尾部、剪枝实现或prefill计量；不由训练或浮点论文替代 | 2026-11-09原安排 |
+| [群体谱系](../../content/notes/fluctuation-tests-and-preexisting-variation.md) | 新增限定实验识别与AI例，完整选择前不吸附表型和异质机制未独立验证 | 2026-11-26，先选择前独立表型/替代模型 |
+
+C最近三次为计量/晶体/微生物群体遗传；后者与10-20的DNA分子复制是不同自身问题，扩同一遗传地图不重复知识。最近四次含首次领域，C机会未减为零，没有按历史兴趣或沉默改长期权重。21天其余安排保留：机制11-06、信息论/统计物理11-09、分子遗传/因果11-10、天文11-11、地球11-12、心理11-13、流体11-16、放射11-18、历史流行病11-19、制度11-20、形态11-23、计量11-24、晶体11-25；数值固定算子11-11，生态今日仅本地复评后至11-26。研究partial与选择性检索范围分开记录；真实独立审核、同SHA构建及发布由[当天回执](runs/2026-11-05.md)记实，不由旧回执继承通过。

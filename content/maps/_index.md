@@ -25,7 +25,7 @@ description: "按照问题、前置依赖和学习顺序组织知识。"
 | [地球物理与反演证据](geophysics-and-inverse-evidence.md) | 磁场异常怎样约束地壳运动，独立年代为何不可省？ |
 | [生态与动力学](ecology-and-dynamics.md) | 局部恢复、有限扰动与临界转变预警怎样区分？ |
 | [信息与激励](information-and-incentives.md) | 私人报告如何限制诚实、自愿与高收益方案的同时实现？ |
-| [分子遗传与实验识别](molecular-genetics-and-experimental-inference.md) | 哪些分布和追加处理能区分 DNA 复制机制，哪些结构结论仍未识别？ |
+| [遗传与实验识别](molecular-genetics-and-experimental-inference.md) | 密度分布与独立培养对照怎样区分分子复制、谱系历史及尚未识别的机制？ |
 | [实验心理学与机制识别](experimental-psychology-and-inference.md) | 任务、计分与练习对照怎样限制心理机制解释？ |
 | [流体力学与相似性](fluid-mechanics-and-dynamic-similarity.md) | 无量纲参数怎样组织实验，扰动和观察判据怎样限制转变阈值？ |
 | [统计物理](statistical-physics.md) | 非平衡功怎样给出自由能，有限样本为何仍会漏掉关键事件？ |
