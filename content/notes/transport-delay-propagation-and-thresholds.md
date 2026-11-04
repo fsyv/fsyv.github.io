@@ -110,6 +110,8 @@ $$
 
 ## Links
 
+- 结构类比：[反应扩散失稳](diffusion-driven-pattern-instability.md)也要求传播算子与本地动力联合分析。其自治连续两细胞矩阵不包含本页离散外力与非负截断，不能直接移用增长特征值或称数学等价。
+
 - 前置：[网络结构与模型检验](network-random-and-scale-free.md)先明确图的定义和证据；本篇增加外力、状态与吸收，属于解释的扩展，不是由幂律或枢纽推出风险。
 - 阅读路径：[概率与网络地图](../maps/probability-and-networks.md)安排结构模型之后再读动态实例。
 - 结构类比：[生态恢复与预警](ecological-resilience-and-early-warning.md)也要求区分内在动力和外部驱动；生态局部特征值、吸引域与交通截断积压没有已证明的数学等价。不能把本页阈值移作生态预警或存储修复界。

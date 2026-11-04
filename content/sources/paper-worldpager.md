@@ -38,3 +38,11 @@ RTX 4090 24GB、单 NVMe 顺序读 5.82GB/s，32GiB cgroup、无 swap，pinned �
 作者重实现全部基线；ReWorld-style 加入 stale fallback，且没有原 bank cap/training，不能当官方原实现横评。RoPE 表在 341 chunks 的独立限制通过重新旋转处理，不能与存储容量收益混为一因。第二 LingBot 只有系统指标，未观察一致性改善。未读代码、真实慢盘或 LLM 负载，不建议直接部署。
 
 支持[KV 预取的预测可得性与语义代价](../notes/kv-cache-optimization.md#predictive-prefetch-and-staleness)：容量、可预知检索、等待边界和质量应分别验证。其带宽例子是 AI 复算，不是作者硬件测量。
+
+## Quality-followup
+
+2026-11-04仍v1；指定增读§IV-F/§V，辅助复核§III-C、§IV-E TableVI及AppendixA的表说明/相关行，非附录全读。未PDF视觉、代码、原结果或复现。相较10-28新增的是指标及低位宽边界，不重复推介旧等待数字。
+
+作者的重访LPIPS保留率为 $(L_{\rm sw}-L_x)/(L_{\rm sw}-L_{\rm bf16})$；分母为正时，超过100%只说明比bf16的重访LPIPS更低，不表示MUSIQ或总体质量改善。Matrix-Game2.0（MG2，含action modules共1.8B）开发集6场景/2轨迹/seeds5–9，对称int2 retention120%、MUSIQ差−4.05，区间[−6.44,−2.01]；复制效应为作者机制解释，本轮未独立因果验证。封存测试4新场景/2轨迹/seeds5–9，int4 retention105%、MUSIQ差−0.06、区间[−0.19,+0.07]，条件不可混同，也不是等价性检验通过。
+
+支持[相似性与画质](../notes/kv-cache-optimization.md#revisit-similarity-and-quality)。0.30/0.20/0.18得到120%的算例为AI构造。研究价值中（补评价缺口）、启发价值高（归一收益不等画质）、可靠性中（指定正文，机制与原结果未独立验证）。同语义尾部和实现仍缺，11-11仅新代码/原结果入口再推进。

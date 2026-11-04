@@ -34,6 +34,10 @@ status: open
 
 到期复评仍为open。[Rocksteady迁移对照](../notes/storage-placement-and-migration.md#early-ownership-and-recovery)与[GPU直存执行条件](../notes/kv-cache-optimization.md#direct-storage-and-ordering)补充局部系统的机制和测量边界，没有补齐跨层基准、控制实体、完整服务路径或能耗证据。本轮优先可读迁移协议，不以局部数字替代跨系统验证；下次2026-11-02先选择可公开的服务场景与同口径对照对象，未选定前不重复搜一般综述。
 
+## Review-2026-11-02
+
+本轮优先读Rocksteady固定实现，补充[迁移状态、重试与计时边界](../notes/storage-placement-and-migration.md#implementation-and-completion)；没有选定跨层完整服务场景、控制实体与能耗对照，原计划此部分未完成。投机解码论文只测GPU板卡，不补齐跨层Web3完整能耗。仍open，2026-11-09先限定可公开的服务场景和同语义基线，再决定是否有可执行实验；不以局部代码或均值关闭总问题。
+
 ## Links
 
 - 前置：[共识假设](../notes/web3-consensus-assumptions.md)、[扩容边界](../notes/web3-scaling-security.md)、[隐私层次](../notes/web3-privacy-layers.md)。

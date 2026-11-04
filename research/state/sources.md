@@ -2,6 +2,62 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-11-04
+
+10份canonical候选/回访（A3/B6/C1）、4次指定部分深读（A1/B2/C1）、4发现B1/A1/B2/C1。A仅WorldPager新增正文深读；TDC与PlaneZip为版本/公开实现入口可得性复查，不重复旧证明。C由Sol题录初筛后Astra指定深读，跨角色原证复核/别名不重复计。TDC实际实现审计未完成，研究partial；[晨报](../digests/2026-11-04.md)自足解释，[回执](runs/2026-11-04.md)记失败、角色与真实验证状态。
+
+B窗口2026-10-28T07:30—11-04T07:30+08，最终核查约07:40+08；cs.DC/cs.CL/math.OC/cs.IR recent默认首屏最新11-03，选择性检索未穷尽分页、期刊会议、版本与工具release。六篇均v1；两篇11-01、四篇11-02首次提交，均早于昨日最终核查，是补遗漏。11-03是实际所读recent索引公告分组，不额外声称abs提供独立首次announcement字段。
+
+| canonical / 版本 / 入口 | 首次发表或提交 | 首读 / 最近读 | 实际范围及决定 |
+| --- | --- | --- | --- |
+| arxiv:2512.09961 v1；[TDC](https://arxiv.org/abs/2512.09961v1) | 2025-12-10T02:52:41Z | 2026-10-12 / 2026-11-04 | A旧回访，题录/history仍v1、限定公开网页/仓库入口未定位可归属作者实现；不等代码不存在。未重读奖励证明，实际终止/重置/terminal审计仍未完成，researching；11-11仅明确入口/版本推进 |
+| arxiv:2610.25033 v1；[PlaneZip](https://arxiv.org/abs/2610.25033v1) | 2026-10-18T05:44:24Z | 2026-10-21 / 2026-11-04 | A旧回访，仅题录/history、§VII结尾与公开入口，仍v1/原型未来工作；无新GPU硬件/整步证据，不重复旧模拟；11-11仅新原型或代码推进。研究中/启发中/当前可靠中 |
+| arxiv:2610.35529 v1；Liu/Xue，[WorldPager](https://arxiv.org/abs/2610.35529v1) | 2026-10-26T14:44:33Z | 2026-10-28 / 2026-11-04 | A1指定增读§IV-F/V，辅助III-C/IV-E TableVI/AppendixA表说明相关行，无PDF视觉/源码/原结果/复现；[原来源增量](../../content/sources/paper-worldpager.md#quality-followup)分LPIPS归一保留率与MUSIQ、开发int2/封存int4，copy effect仅作者解释。研究中/启发高/可靠中 |
+| arxiv:2611.02543 v1；Lu/Zhou/Lin/Ustiugov，[When Cache Pressure Becomes a Trap: Metastability in Agent Serving](https://arxiv.org/abs/2611.02543v1) | 2026-11-02T05:13:05Z | 2026-11-04 / 2026-11-04 | B1 HTML §2/3.1–3.4/5.1–5.3/6.6/7.1–7.2/9指定深读，§1背景；无PDF/代码/复现。[来源](../../content/sources/paper-agent-serving-metastability.md)分两次冲击、会话成功/调用量及模拟/硬件控制，人口模型不作普适阈值。研究高/启发高/可靠中 |
+| arxiv:2611.03629 v1；Liu/Lu/Mazumder，[PDFP: GPU-Accelerated Feasibility Pump via PDHG](https://arxiv.org/abs/2611.03629v1) | 2026-11-02T18:54:16Z | 2026-11-04 / 2026-11-04 | B2 HTML §3.1/4.1–4.3/5假设及Thm5.4/6.1–6.2主要算法guard/6.5/7.1–7.5/8.1–8.4 Table3；6.1后部分截断，无PDF/源码/复现。[来源](../../content/sources/paper-pdfp.md)限定单投影与整数外循环、计时/SGM10和配置组合，非最优性或纯投影消融。研究中/启发高/可靠中 |
+| arxiv:2611.02082 v1；Hamidreza Alikhani等，[Fairway: Load-Aware KV Cache Reuse for LLM Prefill Scheduling](https://arxiv.org/abs/2611.02082v1) | 2026-11-01T17:42:31Z | 2026-11-04 / 2026-11-04 | B仅题录/摘要/history；负载与复用调度线索，正文/公平对照未核，暂缓，不发布摘要性能。研究中/启发中/当前阅读可靠低 |
+| arxiv:2611.01735 v1；Yueyang Pan/Qianchao Zhu/Yuliang Liu/Teng Ma/Sanidhya Kashyap，[CacheWeave: Learning to Recompute for Efficient Position-Independent KV Caching](https://arxiv.org/abs/2611.01735v1) | 2026-11-01T09:35:55Z | 2026-11-04 / 2026-11-04 | B仅题录/摘要/history；位置独立KV与重算学习线索，正文正确性/质量与实现未核，暂缓。研究高/启发中/当前阅读可靠低 |
+| arxiv:2611.02975 v1；Youhe Jiang/Pavle Glušac/Binhang Yuan/Eiko Yoneki，[Introducing Cluster Efficiency to LLM Serving: Pooling Economical Accelerators over Fast Interconnects](https://arxiv.org/abs/2611.02975v1) | 2026-11-02T11:43:55Z | 2026-11-04 / 2026-11-04 | B仅题录/摘要/history；集群利用与互连线索，成本/能耗/公平硬件条件未深读，暂缓。研究中/启发高/当前阅读可靠低 |
+| arxiv:2611.03617 v1；Arda Uzunoglu等，[Tracing the Scientific Discovery Capacity of LLMs to Their Training Data](https://arxiv.org/abs/2611.03617v1) | 2026-11-02T18:50:54Z | 2026-11-04 / 2026-11-04 | B仅题录/摘要/history；训练数据与发现能力线索，因果干预/污染和计分未核，暂缓，不把摘要归因当结论。研究中/启发高/当前阅读可靠低 |
+| nobel:wl-bragg:crystal-diffraction:1922；[官方讲座](https://www.nobelprize.org/uploads/2018/06/wl-bragg-lecture.pdf) | 讲座1922-09-06，奖年1915 | 2026-11-04 / 2026-11-04 | C1首次晶体学；13页文本浏览，深读印刷371–372/378–379，372/378/379视觉核；未现代结构理论/真实晶体复现。[来源](../../content/sources/bragg-crystal-diffraction-1922.md)分几何与胞内排列，双中心/镜像例为AI理想模型。研究中/启发高/限定机制代数高、真实修正未核 |
+
+## 2026-11-03
+
+10份canonical候选/回访（A3/B6/C1），5次指定部分深读（A2/B2/C1），4发现A1/B1/B2/C1。TDC只核版本与限定实现入口，未重读奖励证明；Twitter论文/README/样本别名合一，Twemcache独立实现单计。C由Sol题录摘要初筛、Astra指定理论深读，同源跨角色复核不重计。TDC实际实现审计未完成，研究partial；[晨报](../digests/2026-11-03.md)为自足解释，[回执](runs/2026-11-03.md)保存角色、失败及最终审核/构建。
+
+B窗口2026-10-27T07:30+08—2026-11-03T07:30+08，最终核查07:43:28+08；cs.DC/cs.CL/math.OC/cs.IR recent默认首屏最新可见11-02，未穷尽分页、期刊会议及版本替换。六份新预印本均10-30首提、11-02公告，是补上次遗漏，非上次终点后首发。未核工具新版本，不把本机版本当最新。
+
+| canonical / 版本 / 入口 | 首次发表或提交 | 首读 / 最近读 | 实际范围及决定 |
+| --- | --- | --- | --- |
+| arxiv:2512.09961 v1；[TDC](https://arxiv.org/abs/2512.09961) | 2025-12-10T02:52:41Z | 2026-10-12 / 2026-11-03 | A旧回访；题录/history仍v1，精确题名+code/github/implementation和DRL-DC+PoCL限定搜索未定位可归属作者实现；不等于代码不存在。未重读奖励正文，非新发现，终止/重置/terminal审计未完成 |
+| usenix:osdi20:yang；[Twitter采集研究](https://www.usenix.org/system/files/osdi20-yang.pdf)与cache-trace README别名 | 2020，完整题录见原来源 | 2026-10-21 / 2026-11-03 | A指定深读§3.1印刷193–194页及README字段；不重跑样本/LRU表，无新采集版本或生产映射。论文100%是采样报告，不自动排除其他丢条路径 |
+| github:twitter/twemcache；[固定8cfc4ca](https://github.com/twitter/twemcache/tree/8cfc4ca5e76ed936bd3786c8cc43ed47e7778c08) | commit2021-11-01T18:31:37Z；klog文件最后改2012-09-07 | 2026-11-03 / 2026-11-03 | A1指定源码深读mc_klog.c/h、mc_ascii.c、mc_time.c相关函数及格式字段，不是全repo；[逐处位置](../../content/sources/paper-twitter-cache-workloads.md#logging-followup)。采样后环形缓冲满可discard，AI双向LRU例；无2020部署SHA/实际计数/导出链，不判公开轨迹实际丢失。研究中/启发中/局部机制高，生产对应未建立 |
+| arxiv:2610.41508 v1；Pan等，[HiState: Hierarchical Prefix Cache Management for Hybrid LLM Serving in Agentic Workloads](https://arxiv.org/abs/2610.41508v1) | 2026-10-30T09:59:44Z | 2026-11-03 / 2026-11-03 | B1指定HTML§1、§2.1–2.3、§3.1–3.3式1–7、§4.1–4.3正文/图注；无PDF视觉/代码/原trace/复现。完整边界状态、访问/保留量不对称；[来源](../../content/sources/paper-histate.md)保留GPU-only全流量p99和Disk*命中差子集均值的不同条件。研究高/启发高/可靠中 |
+| arxiv:2610.42148 v1；Li等，[Flide: Accelerating Decision Inference with Exact State Forking](https://arxiv.org/abs/2610.42148v1) | 2026-10-30T17:59:38Z | 2026-11-03 / 2026-11-03 | B2指定HTML§1/3.1–3.5/4.1–4.3代表行、Appendix A/B、D/Table9的4B、E/Table12与13局部/G；无PDF视觉/源码/运行。[来源](../../content/sources/paper-flide.md)区分逻辑隔离、精确算术、浮点负载不变与答案正确。研究高/启发高/可靠中 |
+| arxiv:2610.41825 v1；Lu等，[Where KV-Cache Error Lives in Looped Language Models: A Diagnostic Study of Ouro and Huginn](https://arxiv.org/abs/2610.41825v1) | 2026-10-30T14:44:49Z | 2026-11-03 / 2026-11-03 | B仅题录/摘要/history，局部误差与任务结果线索，正文/反证账本未核；暂缓，不传播摘要性能数字。研究中/启发高/当前阅读可靠低 |
+| arxiv:2610.42048 v1；Grimmer、Shen，[Exact Theory and Optimal Stepsizes for Stochastic Gradient Descent in Smooth Convex Minimization](https://arxiv.org/abs/2610.42048v1) | 2026-10-30T17:14:59Z | 2026-11-03 / 2026-11-03 | B仅题录/摘要/history，条件噪声/维度/最坏情形证明未读；暂缓，不推广到一般训练。研究中/启发高/当前阅读可靠低 |
+| arxiv:2610.41919 v1；Zand等，[Matching Workloads to Blackwell: Power-Resolved Benchmarking of NVIDIA B200 and B300 across HPC and AI Workloads](https://arxiv.org/abs/2610.41919v1) | 2026-10-30T15:51:19Z | 2026-11-03 / 2026-11-03 | B仅题录/摘要/history；PMBS2026接收为题录自述，未独立核会议，正文软硬件/功率对照未读；暂缓，不形成采购/因果结论。研究高/启发中/当前阅读可靠低 |
+| arxiv:2610.41905 v1；Zhang，[Completeness and Cost of Retrieval Structures for Multi-Tool Requests in LLM Agents](https://arxiv.org/abs/2610.41905v1) | 2026-10-30T15:40:02Z | 2026-11-03 / 2026-11-03 | B仅题录/摘要/history；多工具所需集合召回/成本线索，数据划分和下游关联未核；暂缓，不传播摘要成功率。研究中/启发高/当前阅读可靠低 |
+| allan:statistics-atomic-frequency-standards:1966；[NIST原篇](https://tf.nist.gov/general/pdf/7.pdf) | 1966，Proc.IEEE54(2)221–230 | 2026-11-03 / 2026-11-03 | C1首次计量学，指定§II-A/B/C/D印刷221–226，视觉223式11–15/225式21–24；无§III–IV实验/附录/CI/引用或钟复现。[来源](../../content/sources/allan-frequency-standards-1966.md)保留原频率单位/相位谱h和归一化区别。现代y/平移例/协方差为AI，非均值误差或现实准确度。研究中/启发高/限定代数高，现实钟未验证 |
+
+## 2026-11-02
+
+9份canonical候选/回访（A2/B6/C1），4次指定部分深读（A1/B2/C1），3项A1/B1/C1。A为旧作者实现首次读取，B一项新预印本补遗漏，C首次形态发生领域读旧论文。别名、索引与跨角色关键原证复核不重复计；没有搜索命中总数或实测投入比例。完整故障执行、跨层场景与能量prefill边界未完成，研究partial；[晨报](../digests/2026-11-02.md)给自足解释，[回执](runs/2026-11-02.md)记失败、角色和精确验证。
+
+| canonical / 版本 / 入口 | 首次发表或提交 | 首读 / 最近读 | 实际范围及决定 |
+| --- | --- | --- | --- |
+| doi:10.1145/3132747.3132784；Rocksteady论文/作者项目同研究 | SOSP2017，原登记与会议日见来源 | 2026-10-26 / 2026-11-02 | A；本轮只复既有论文记录/演示搜索索引，未重读论文正文；Utah网页超时/证书不匹配，slides无正文提取，不承担新增结论 |
+| github:utah-scs/RAMCloud；[固定d1f9c812提交](https://github.com/utah-scs/RAMCloud/commit/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a) | 2017-09-20T21:36:26Z，rocksteady-sosp2017分支 | 2026-11-02 / 2026-11-02 | A1；迁移、对象写删/重放、版本、协调持久化与RPC重试指定函数，1次源码深读，未读全repo/运行/故障注入。计时在side-log提交前停表，删除迁移态拒绝但client重试；[逐函数位置](../../content/sources/paper-rocksteady.md#implementation-followup)。研究高/启发高/局部事实高、端到端中 |
+| arxiv:2610.40287 v1；Ma等，[Only Accepted Tokens Count](https://arxiv.org/abs/2610.40287v1) | 2026-10-29T15:37:45Z | 2026-11-02 / 2026-11-02 | B1；HTML§2–3、4/4.1、5–10指定段/Tables1–4，图只注/邻段，无PDF/代码/原日志/复现；GPU板卡/静态批次/最终token分母，prefill能量实现未核。[来源](../../content/sources/paper-speculative-decoding-energy.md)。研究高/启发高/可靠中 |
+| arxiv:2610.30868；uGDS v1/v2 | v1 2026-10-22T07:45:58Z；v2 10-23T01:57:07Z | 2026-10-26 / 2026-11-02 | B旧回访；两版HTML可见文字归一空白逐行比较，只见版本横幅日期差，指定复核§2.1，保守计1深读。无PDF/图/TeX/源码差分，不称完整版本相同；[原来源更正](../../content/sources/paper-ugds.md#version-followup)保留v1实际范围。研究中/启发中/限定范围可靠中 |
+| github:ScaleX-IO/uGDS；[README固定05bada9](https://github.com/ScaleX-IO/uGDS/blob/05bada9174eed5055cf886fac385ff191cf86f6a/README.md) | committer 2026-10-23T11:22:37Z | 2026-11-02 / 2026-11-02 | B独立repo；仅读API Coverage/Roadmap，block-device fd/no filesystem，POSIX未来，无新性能/同语义证据，不读代码或故障。研究中/启发中/读取事实高 |
+| arxiv:2610.30552 v1；Repair | 2026-10-22T00:18:10Z | 2026-10-26 / 2026-11-02 | B旧回访；题录摘要/history与HTML code/github扫描，仍v1，未定位新实现不等无代码，不重读旧机制，不报新发现。研究中/启发中/现证据中 |
+| arxiv:2610.40562 v1；d’Amore等，[Nearly-Optimal Time-Sample Trade-off in Consensus Dynamics](https://arxiv.org/abs/2610.40562v1) | 2026-10-29T17:41:23Z | 2026-11-02 / 2026-11-02 | B仅题录/摘要，暂缓；同步随机有放回majority，不当已核Byzantine协议/证明。研究中/启发高/当前可靠低 |
+| arxiv:2610.39999 v1；Sun/Wei/Chen，[PhOS](https://arxiv.org/abs/2610.39999v1) | 2026-10-29T13:19:00Z | 2026-11-02 / 2026-11-02 | B仅题录/摘要，题录自述HPCC2026未独核正式发表；context去重/唤醒线索，未传播性能数字，暂缓。研究高/启发中/当前可靠低 |
+| doi:10.1098/rstb.1952.0012；Turing，[Caltech原篇](https://www.dna.caltech.edu/courses/cs191/paperscs191/turing.pdf) | 1952-08-14 | 2026-11-02 / 2026-11-02 | C1；印刷37–43/§4、§6 pp46–49指定段，43上部视觉；未全文/§10/实际生物，矩阵与等扩散为AI复算。MIT无文本/web超时，Marcon证书失败，最后小裁剪成功。[来源](../../content/sources/paper-turing-morphogenesis.md)。研究中/启发高/模型代数高、生物未验 |
+
+B选择性窗口2026-10-26T07:30—11-02T07:30+08，补10-30核查后遗漏；最后显式07:42:06+08，cs.DC/cs.LG/math.OC/physics.soc-ph recent默认首屏最新可见10-30。三新候选均早于10-30旧终点，属于补遗漏，不称终点后新发；未穷尽分页、期刊会议或版本，工具三入口本轮未核。一次gh带问号参数未quote被zsh拒绝，后用固定commit连接器读取成功。
+
 ## 2026-10-30
 
 11份canonical候选/回访（A3/B7/C1），6次指定正文深读（A3/B2/C1），3项A1/B1/C1；A是响应明确反馈的解释深化，不称新发表。原评分时序计划因用户询问转向而未完成，缓存实现审计仍缺作者代码，研究partial；选择性监测范围与任务状态分别记录。[晨报](../digests/2026-10-30.md)保留可独立理解的解释，[回执](runs/2026-10-30.md)保留运行细节。工具/别名/跨角色原文复核及Architect对三份B题录复核不重复计canonical或深读。

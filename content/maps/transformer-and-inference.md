@@ -24,6 +24,8 @@ endorsement: ai-candidate
 5. [跨调用驻留与可访问性](../notes/kv-cache-optimization.md#residency-and-accessibility)：再区分闲置时限、量化表示、路由身份及重建调用率，避免将 pooled 容量回放视为真实每副本/时延/质量结论。
 6. [逐请求质量与时延联合成功](../notes/storage-latency-and-slo.md#joint-success)：在理解精确与近似复用之后，判断节省计算是否同时达到任务质量和 TTFT 目标；两个边际通过率不能替代交集。
 
+在标准KV复用之后，读[混合层完整状态与分支隔离](../notes/kv-cache-mechanism.md#hybrid-state-and-forks)，再读[历史检查点的访问/保留量](../notes/kv-cache-optimization.md#hybrid-checkpoints)。先确认匹配边界可恢复，再决定状态放在哪一层；共享主干还须隔离兄弟分支，精确算术语义与浮点负载不变性分别检查。
+
 ## Branches
 
 - **另一种连接结构：**[视频时空注意力](../notes/attention-spatiotemporal.md)先以 token 数和连接范围解释联合/分解，再读[固定稀疏图的物理执行](../notes/attention-spatiotemporal.md#physical-execution)中页压实、tile 和掩码；减少连接与减少填充分别评价，非因果场景不自动满足 KV 复用前提。
@@ -40,7 +42,13 @@ endorsement: ai-candidate
 
 **模型结构分支：**理解完整生成链之后，读[删除层与修复的复合目标](../notes/depth-pruning-and-repair.md)，再比较有限枚举、独立PPL、任务能力和部署成本。修复改变候选排序，不能先固定未修复最优或将PPL当全部能力。
 
+[会话缓存压力反馈](../notes/session-cache-pressure-and-metastability.md)在完整状态/驻留之后推进到内生负载：工具期不占decode也可能保留未来前缀需求。先分会话与调用，再看冲击恢复和SLO，不能用当前活跃decode数代替潜在工作集。
+
+[WorldPager相似性与画质](../notes/kv-cache-optimization.md#revisit-similarity-and-quality)补充预测预取分支：归一LPIPS保留率超100%仍可伴随画质下降，须保留指标、分母、开发/测试和位宽条件。
+
 ## Evidence
+
+**能量与服务目标分支：**理解完整生成链后，读[最终产出token与板卡能量](../notes/storage-latency-and-slo.md#accepted-tokens-and-energy)，先计入被拒draft的验证成本，再在同批量/同模型下比较能耗和平均时延。静态批次均值不替代逐请求尾部、质量或线上到达负载。
 
 [Transformer/视频/采样资料](../sources/foundations-transformer.md)、[KV 系统资料](../sources/foundations-kv-systems.md)和[Switch 资料](../sources/foundations-moe.md)均列出实际读取范围。没有来源或实验条件的性能倍数不构成比较依据。
 

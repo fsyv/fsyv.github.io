@@ -23,7 +23,8 @@ endorsement: ai-candidate
 2. [右端同时变化时原基何时仍最优](../notes/lp-rhs-sensitivity-certificates.md)：再研究精确 LP 中固定矩阵/目标/基的证书，理解单项范围为何不能任意组合，以及充分区域之外为何仍可能可行。
 3. [总分配与存活峰值](../notes/tensor-liveness-and-peak-memory.md)：固定计算图后比较执行顺序，再检查模型内最优证书与实际 wrapper/allocator 的一致性；需额外掌握有向无环图、依赖与存活期。接着读[训练激活压缩与换出](../notes/tensor-liveness-and-peak-memory.md#compression-and-offload)，理解表示改变时为何必须重新建模准入、传输与重算。
 4. [剪枝与修复的复合目标](../notes/depth-pruning-and-repair.md)：改变允许变换后重新定义目标、搜索空间和实现开销；精确枚举仅消除该空间的搜索遗漏，不保证独立任务质量。前置为[Transformer完整生成链](../notes/transformer-generation.md)中的层结构，以及校准/测试的区别。
-5. 回到应用时分别列出“模型假设/可行性证书”和“实际误差/测量证据”，检查两层都有哪些缺口。这些分支尚未建立具体系统中的联合保证。
+5. [可行性泵与连续投影](../notes/feasibility-pump-and-continuous-projection.md)：在LP证书之后理解连续松弛、舍入与整数外循环，分开单次凸投影收敛、首个整数可行解和原MILP最优性，再检查GPU表示与计时边界。
+6. 回到应用时分别列出“模型假设/可行性证书”和“实际误差/测量证据”，检查两层都有哪些缺口。这些分支尚未建立具体系统中的联合保证。
 
 ## Connections
 
@@ -34,6 +35,8 @@ endorsement: ai-candidate
 内存调度与 [KV 驻留](../notes/kv-cache-optimization.md#residency-and-accessibility)都需明确对象寿命和容量计费，但单次图内 root 与跨调用可重建 session 不等价；最优逻辑峰也不保证更低物理显存或时延。
 
 [天文观测推断](astronomy-and-observational-inference.md)提供互补例子：共同距离标尺可由比例参数抵消，拟合残差不能独立识别绝对尺度；这不等于条件数大或算法不稳定。先分开可识别性与固定问题的计算误差，再判断各需什么证据。
+
+[晶体结构推断](crystallography-and-structural-inference.md)提供可识别性的互补问题：相同理想反射位置可对应不同胞内排列；额外信息不足不等于数值不稳定，精确求解也不会自动补回缺失信息。
 
 ## Questions
 

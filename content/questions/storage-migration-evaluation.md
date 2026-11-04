@@ -38,4 +38,6 @@ status: open
 
 ## Resolution
 
+2026-11-02回访取得[Rocksteady固定历史实现](../sources/paper-rocksteady.md#implementation-followup)，已整合[状态/重试与完成口径](../notes/storage-placement-and-migration.md#implementation-and-completion)：删除迁移态目标分支不直接执行但客户端会刷新重发，后台迁移率停表先于side-log提交。版本/tombstone与持久化已有指定函数证据；尚未运行全交错、故障注入或测删除等待，不能判完整恢复正确。旧多源正文与冷热Algorithm2本轮没有新入口，未重复空搜，阅读状态不升级。下次2026-11-09先核固定SHA的未搬旧键版本、删除等待及同语义故障对照，状态仍open。
+
 状态保持 open。完成后应先将测量口径与证据整合到放置/迁移笔记，再记录解决范围与仍不适用的条件。入口见[存储与服务地图](../maps/storage-and-serving.md)。
