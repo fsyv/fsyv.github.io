@@ -9,13 +9,20 @@
 | 2026-11-05/A2 | SmoothScore完整rubric的语义修订与逻辑力度，固定README公开范围 | [语义修订解释](../content/notes/claim-scope-and-evidence-synthesis.md#semantic-repair-and-logical-strength)、原来源/知识地图；拟采纳五档判断参照，不当唯一自动评分算法。73标注/程序未取得，alpha内部差异不裁定 | 待审 |
 | 2026-11-05/C1 | Luria–Delbrück1943独立培养与同培养分样、原表口径及AI双时段Poisson例 | [波动试验完整解释](../content/notes/fluctuation-tests-and-preexisting-variation.md)、新来源/遗传地图；拟采纳选择前克隆历史的限定识别，暂缓完整不吸附表型时序、任意高方差唯一机制或真实变异率估计 | 待审 |
 | 2026-11-05/B2 | TapeSAC按需求重放、保存收益的共享依赖与近似峰/有限搜索边界 | [保存集合解释](../content/notes/tensor-liveness-and-peak-memory.md#demand-driven-replay)、新来源/优化与推理路径；拟采纳训练机制和条件化数据，不推全局Pareto最优、无额外显存加速、推理KV或压缩引擎已验证 | 待审 |
+| 2026-11-06/A1 | rPoA 旧原文的随机数据哈希评分、DAC 登记/评审时序与可靠数据假设 | [评分与数据时序](../content/notes/reputation-and-consensus.md#score-and-data-timing)、原来源/开放问题/统计边界；拟采纳任务类型与信息边界，暂缓实际门槛、版本、重试清票、惩罚/申诉及真实攻防结论 | 待审 |
+| 2026-11-06/B1 | 历史 vLLM V0/SGLang 的分块配置、吞吐不足与 TTFT 排队放大对照 | [配置与排队](../content/notes/storage-latency-and-slo.md#configuration-and-queueing)、新来源与服务/推理地图；拟采纳条件化机制和数据，不当当前引擎排名、无混杂参数效果或缓存架构唯一归因 | 待审 |
+| 2026-11-06/C1 | Arrow 1950 多数循环、原五条件与两人证明；AI 计分/议程例 | [偏好聚合完整解释](../content/notes/social-choice-and-preference-aggregation.md)、新来源与信息地图独立分支；拟采纳限定逻辑，不当已复证多人现代定理、现实选举结论或激励/BFT 等价 | 待审 |
+| 2026-11-06/B2 | 非前缀复用的条件化缺失、已知目标干预与上下文兼容 | [上下文兼容](../content/notes/kv-cache-mechanism.md#contextual-compatibility)、新来源与推理地图；拟采纳 Q*/oracle 条件下的机制对照，暂缓总体准确率幅度、真实目标选择与同 GPU 时间下普适修复收益 | 待审 |
 
 ## 每日简报源文件
 
+- [2026-11-06](digests/2026-11-06.md)
 - [2026-11-05](digests/2026-11-05.md)
 
 ## 审核范围
 
-五项均为AI候选。接受、拒绝或暂缓请按日期/编号说明范围；继续研究与采纳分别记录，不要求当日合并。交通原输入/图输出映射、评分原标注/程序和旧实现审计缺口仍在；Twitter导出、KPage metadata、准入正动作及EdgePace同负载本轮未外查，研究保留partial。
+昨日五项与今日四项累计九项均为AI候选。接受、拒绝或暂缓请按日期/编号说明范围；继续研究与采纳分别记录，不要求当日合并。交通原输入/图输出映射、评分原标注/程序和旧实现审计缺口仍在；Twitter导出、KPage metadata、准入正动作及EdgePace同负载本轮未外查，研究保留partial。
 
-独立审核与同SHA构建的实际状态以[当天运行回执](state/runs/2026-11-05.md)为准，旧批次回执不覆盖本轮新增内容；这里不预填未来passed或发布成功。
+今日评分真实合约、公开读者/协同净成本及RISK/SilentCue/IOSage原对象仍缺，研究保留partial；旧项缺口不因新论文关闭。
+
+独立审核与同SHA构建的实际状态以[当天运行回执](state/runs/2026-11-06.md)为准，旧批次回执不覆盖本轮新增内容；这里不预填未来passed或发布成功。

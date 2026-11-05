@@ -28,6 +28,10 @@ endorsement: ai-candidate
 
 [舍入与执行条件](../notes/kv-cache-mechanism.md#rounding-and-execution)接在逻辑依赖与分支隔离之后：先固定随机性身份、输入和批组成，再核归约/舍入边界，最后单独比较容量与调度改变后的请求分组。ExactLoop的有限bitwise实验不等于完整服务任意负载或跨硬件恒同。
 
+[非前缀修复的上下文兼容](../notes/kv-cache-mechanism.md#contextual-compatibility)接在精确前缀与近似复用之后：先区分位置对齐和跨块条件化，再比较插入 full 目标与在当前 reuse 前文重算；条件 Q*、已知目标和 token 预算不能替代总体质量与部署时延。
+
+[配置与排队](../notes/storage-latency-and-slo.md#configuration-and-queueing)将引擎比较接到服务负载：先匹配历史版本的分块 prefill，再分开小吞吐缺口与累积 TTFT；不把旧版本比较当当前排名。
+
 ## Branches
 
 - **另一种连接结构：**[视频时空注意力](../notes/attention-spatiotemporal.md)先以 token 数和连接范围解释联合/分解，再读[固定稀疏图的物理执行](../notes/attention-spatiotemporal.md#physical-execution)中页压实、tile 和掩码；减少连接与减少填充分别评价，非因果场景不自动满足 KV 复用前提。

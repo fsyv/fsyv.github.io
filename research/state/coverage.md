@@ -395,3 +395,31 @@ PR30已于11-04合并，prepare从双重核对的origin/main850802624926eb2d839d
 | [群体谱系](../../content/notes/fluctuation-tests-and-preexisting-variation.md) | 新增限定实验识别与AI例，完整选择前不吸附表型和异质机制未独立验证 | 2026-11-26，先选择前独立表型/替代模型 |
 
 C最近三次为计量/晶体/微生物群体遗传；后者与10-20的DNA分子复制是不同自身问题，扩同一遗传地图不重复知识。最近四次含首次领域，C机会未减为零，没有按历史兴趣或沉默改长期权重。21天其余安排保留：机制11-06、信息论/统计物理11-09、分子遗传/因果11-10、天文11-11、地球11-12、心理11-13、流体11-16、放射11-18、历史流行病11-19、制度11-20、形态11-23、计量11-24、晶体11-25；数值固定算子11-11，生态今日仅本地复评后至11-26。研究partial与选择性检索范围分开记录；真实独立审核、同SHA构建及发布由[当天回执](runs/2026-11-05.md)记实，不由旧回执继承通过。
+
+
+## 2026-11-06 评分对象、排队与首次社会选择
+
+继续唯一 research/batch-2026-11-05 与 Draft PR32，核对的 origin/main 仍850802624926eb2d839dd3d9bec34d520cdff488，无新基线合并。昨日五候选保留，今日四项后累计九项待审，不以候选当正式认可。实际12份不同canonical（A1/B10/C1），包括B6新/3旧版本回访/1误开；指定部分深读4次（A1/B2/C1），40/35/25仅投入参考，未实测。
+
+| 通道 | 本轮实际推进与边界 | 后续 |
+| --- | --- | --- |
+| A | rPoA旧正文把哈希规则复算、DAC时序和可靠数据假设分开；真实合约/重试/门槛仍缺。公开读者与协同端到端仅本地复评，未外搜/未实验 | A1整合已有note/source/question，open；另两计划无实证不写成查过无结果 |
+| B | 10-30T07:30—11-06T07:30+08，last07:37:13；四recent首屏至11-05，六新v1均11-04首提。两指定正文补历史配置/队列和非前缀上下文兼容；四摘要暂缓 | 非穷尽，未tool release/源码/复现；三旧入口回访不关闭净bank/作者实现/配对数据缺口 |
+| C | **社会选择首次覆盖**：Arrow1950指定部分、341/342关键页视觉，循环/IIA/原条件两人机制；AI计分与议程例 | 扩现有信息激励地图独立分支，不新增重复地图；未读多人一般证明或现实选举数据，不映射为IC/BFT不可能 |
+
+### 当前回访安排
+
+保留全部历史范围与失败；下表更新本轮实际触及及遗漏，未检索项不称没有新成果。
+
+| 问题 / 入口 | 本轮进展或具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [评价与保证](../../content/questions/evidence-to-guarantees.md) | 到期，论文描述层面完成评分函数/对象/时序；真实合约版本、门槛/重试旧票/数据绑定、惩罚/申诉未核，保持open | 2026-11-13，仅明确代码或规格对象推进 |
+| [笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md) | 到期，仅本地复评，仍缺真实读者/公开对照及同实现轨迹/通信更新训练净成本；无新实证，不拿模板与两新B替代，原计划实证未完成 | 2026-11-13，先确定可公开读者/样本与同语义实验对象 |
+| [选择性重建](../../content/notes/kv-cache-optimization.md#selective-reconstruction)、[文档线索](../../content/notes/document-cues-and-semantic-preservation.md)、[模式诊断](../../content/notes/storage-latency-and-slo.md#patterns-and-end-to-end) | 到期，RISK/SilentCue/IOSage仍v1，限版本/外链/代码入口查；IOSage见Zenodo未开核，不能说无数据；净bank/明确作者实现/配对原测量未完成 | 2026-11-13，仅明确新入口/原数据推进 |
+| [配置与排队](../../content/notes/storage-latency-and-slo.md#configuration-and-queueing)、[上下文兼容](../../content/notes/kv-cache-mechanism.md#contextual-compatibility) | 新候选限历史两部署/三seed与Q*/oracle条件，仍缺当前版本同部署交错、无oracle质量时延 | 2026-11-13，先固定artifact与比较边界 |
+| 机制设计21天复评 | 主控复读正式private-information-and-trade及信息地图，旧q=5/6和报告时序已有完整解释，未新读外部机制资料；C为另一个问题，不当原交易实证 | 2026-11-27，围绕实际时序/机制对象再评，不重复旧例 |
+| [社会选择](../../content/notes/social-choice-and-preference-aggregation.md) | 只核限定原条件/两人机制；具体限制偏好域的充分性和多人一般证明未读 | 2026-11-27，先固定限制域、检查构造是否合法 |
+| [贪心价值](../../content/questions/greedy-value-improvement.md)、[压缩重规划](../../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload)、[预测预取](../../content/notes/kv-cache-optimization.md#predictive-prefetch-and-staleness) | TDC用户继续深入请求有效，今日未新搜作者实现；原终止/重置/terminal、PlaneZip硬件、WorldPager原结果缺口保留 | 2026-11-11原安排，明确新入口/版本可提前 |
+| [迁移评价](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 今日优先评分与新正文，未再执行故障/多源计费/完整跨层实验，不由KV条件实验替代 | 2026-11-09原安排 |
+
+C最近三次为晶体/微生物群体遗传/社会选择，无重复；最近四次含首次领域，独立机会未减少。其余既定回访保留：信息论/统计物理11-09、分子遗传/因果及混合状态11-10、数值固定算子/天文11-11、地球及11-05实现/数据对象11-12、心理11-13、流体11-16、放射11-18、历史流行病11-19、制度11-20、形态11-23、计量11-24、晶体11-25、生态/群体谱系11-26。没有从沉默或一次反馈改变长期权重；研究partial与选择性覆盖分别记录，实际独立审核、同SHA构建和发布见[当日回执](runs/2026-11-06.md)。
