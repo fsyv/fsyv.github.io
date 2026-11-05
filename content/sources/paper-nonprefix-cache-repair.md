@@ -32,7 +32,7 @@ Table 34 相同 270 题，插 full 目标、earlier reuse 时平均增量 0.11�
 
 已知目标所需 token 中位约 2.5%–3.3%，但现实目标未知；问题 attention 的目标命中最高 18.8%，58%–100% 选择最后块。BGE-M3 检索、移动 top 块至 question 前再重算的组合必须拆开选择、位置和重算贡献。5% token 预算不是等 GPU 时间。
 
-九 QA/API 设置相对 InfoFlow-style，同预算未经校正六项改善、Holm 后五项；同重排 token 对照分别四项、三项。LoCoMo 的 7–8B 整块修复无显著优势，检索错误可更差，部分 baseline 是简化实现，非完整原系统排名。
+九 QA/API 设置相对 InfoFlow-style，同预算未经校正六项改善、Holm 后五项；同重排 token 对照分别四项、三项。在 LoCoMo 的 7–8B 设置和 5% token 预算下，优先重算目标或检索会话未显著胜过各设置在开发集选出的 token 级规则；长会话可能超过预算，优先修所选会话也不表示总能重算整块，检索错误可更差，部分 baseline 是简化实现，非完整原系统排名。
 
 ## Support-and-limits
 
