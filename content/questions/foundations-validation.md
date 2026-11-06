@@ -70,3 +70,9 @@ B 通道增加两项测量约束：[物理放置与访问历史](../notes/kv-cac
 新增[会话缓存压力反馈](../notes/session-cache-pressure-and-metastability.md)说明服务率可能随缓存历史内生变化，固定外部到达率不能保证相同状态或可排空；[WorldPager评价轴](../notes/kv-cache-optimization.md#revisit-similarity-and-quality)又把相似性与画质分开。两项均为指定正文候选，未做本库同实现测量，问题保持open。
 
 数值分析21天复评仅复读正式笔记与地图，未做固定算子高精度参考实验；昨日Flide仍是未合并候选，也不补这个缺口。11-11先限定公开固定算子、参考精度和误差对象，再决定实验，避免重复理论摘要。
+
+## Review-2026-11-05
+
+已在[舍入与执行](../notes/kv-cache-mechanism.md#rounding-and-execution)补保留归约/舍入点的融合机制，以及随机性身份与服务批组成分别影响bitwise结果的证据；[按反向需求重放](../notes/tensor-liveness-and-peak-memory.md#demand-driven-replay)补保存集合的共享成本、实测峰近似及显存换时间。两篇预印本指定正文没有替代本库固定实现/负载的误差、端到端或allocator实测，问题保持open；11-12优先固定artifact、输入/批次和实际峰位置。
+
+原定今日的Twitter部署/导出链、KPage metadata、准入guard正动作与EdgePace同负载，因优先交通代码/rubric及本轮深读预算未外查；不能称再次查无新证据。均保留原缺口，11-12按明确代码/数据对象复评。

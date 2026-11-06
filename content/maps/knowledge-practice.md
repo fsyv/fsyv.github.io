@@ -22,7 +22,7 @@ description: "从笔记粒度出发，演示来源、理解和问题的学习顺
 
 1. **先了解约束。** 阅读[系统建设需求](../sources/knowledge-system-requirements.md)，理解为什么优先保存完整因果链，而不机械追求原子化。
 2. **再核对输入表示。** [文档转换与语义线索](../notes/document-cues-and-semantic-preservation.md)区分文字保留、标记保留和任务表现；它是比较编辑组织前的测量前提，不证明拆分有效。
-3. **再审综合范围。** [结论与整组证据](../notes/claim-scope-and-evidence-synthesis.md)检查同方面的支持、限制和冲突；有真实引用也不保证结论范围相称，模型评分不能代替用户判断。
+3. **再审综合范围。** [结论与整组证据](../notes/claim-scope-and-evidence-synthesis.md)检查同方面的支持、限制和冲突；有真实引用也不保证结论范围相称，模型评分不能代替用户判断。再读[语义修订与原句逻辑力度](../notes/claim-scope-and-evidence-synthesis.md#semantic-repair-and-logical-strength)：补条件与改中心量词不同，五档参照尚不构成唯一自动评分算法。
 4. **再审视候选方法。** 阅读[何时应把一篇知识笔记拆成多篇？](../notes/when-to-split-a-note.md)，查看建议条件及目标读者边界。
 5. **最后检查效果缺口。** 阅读[如何检验笔记拆分是否改善理解？](../questions/evaluate-note-splitting.md)，区分设计偏好、解析任务证据和仍需检验的人类理解效果。
 
