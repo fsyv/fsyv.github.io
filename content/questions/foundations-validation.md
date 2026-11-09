@@ -76,3 +76,7 @@ B 通道增加两项测量约束：[物理放置与访问历史](../notes/kv-cac
 已在[舍入与执行](../notes/kv-cache-mechanism.md#rounding-and-execution)补保留归约/舍入点的融合机制，以及随机性身份与服务批组成分别影响bitwise结果的证据；[按反向需求重放](../notes/tensor-liveness-and-peak-memory.md#demand-driven-replay)补保存集合的共享成本、实测峰近似及显存换时间。两篇预印本指定正文没有替代本库固定实现/负载的误差、端到端或allocator实测，问题保持open；11-12优先固定artifact、输入/批次和实际峰位置。
 
 原定今日的Twitter部署/导出链、KPage metadata、准入guard正动作与EdgePace同负载，因优先交通代码/rubric及本轮深读预算未外查；不能称再次查无新证据。均保留原缺口，11-12按明确代码/数据对象复评。
+
+## Review-2026-11-10
+
+[Flide 验证器定点核查](../notes/kv-cache-mechanism.md#verification-gates)给出了可测试的判据。分支与恢复检查允许低分差翻转，批次不变模式另有 head 数值相等门槛。复评先固定模型、输入和环境，关闭会话缓存时测批次影响，再单独对比指定边界恢复与冷算。分支对照也应独立记录，并核实际恢复 token、概率差和所有首选变化。HiState 仍缺可归属的作者实现，未运行 GPU 或比对高精度参考，问题继续 open。

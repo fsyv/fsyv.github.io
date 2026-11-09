@@ -32,6 +32,8 @@ endorsement: ai-candidate
 
 [配置与排队](../notes/storage-latency-and-slo.md#configuration-and-queueing)将引擎比较接到服务负载：先匹配历史版本的分块 prefill，再分开小吞吐缺口与累积 TTFT；不把旧版本比较当当前排名。
 
+读完混合状态的分叉与恢复，再看[Flide 验证门槛](../notes/kv-cache-mechanism.md#verification-gates)，将执行依赖、head 数值比较和首选容忍条件分别检查。
+
 ## Branches
 
 - **另一种连接结构：**[视频时空注意力](../notes/attention-spatiotemporal.md)先以 token 数和连接范围解释联合/分解，再读[固定稀疏图的物理执行](../notes/attention-spatiotemporal.md#physical-execution)中页压实、tile 和掩码；减少连接与减少填充分别评价，非因果场景不自动满足 KV 复用前提。

@@ -17,17 +17,22 @@
 | 2026-11-09/B1 | 保护项锚定乘数尺度，总量约束排除原样的稠密注意力；消融分开蒸馏与头间预算 | [训练门控与淘汰](../content/notes/kv-cache-optimization.md#attention-gates-and-eviction)及[指定表](../content/sources/paper-kv-eviction-gating.md)。拟采纳代数与限定对照，暂缓通用质量、时延或硬件收益 | 待审 |
 | 2026-11-09/C1 | 有限信道的状态无关后处理蕴含任意共同决策的风险顺序；等互信息不保证支配 | [观测与决策](../content/notes/blackwell-comparison-of-experiments.md)及[1951 原篇范围](../content/sources/blackwell-comparison-1951.md)。拟采纳正向推导和例子，暂缓一般逆向与应用验证 | 待审 |
 | 2026-11-09/B2 | 在批行同核及首拒绝纠正等条件下，投机校验保持参考 CTMC 轨迹分布，实测调用比和墙钟比不同 | [掩码扩散条件核](../content/notes/masked-diffusion-speculative-simulation.md)及[定理与测量](../content/sources/paper-specctmc.md)。拟采纳机制和有条件对照，暂缓任意实现的数值同核和线上加速 | 待审 |
+| 2026-11-10/A1 | Flide v0.1.11 固定源码中，分支与会话恢复仅把基准分差至少为 0.05 的首选变化记为失败。批次不变模式另核 head 数值相等 | [验证门槛](../content/notes/kv-cache-mechanism.md#verification-gates)、[固定实现](../content/sources/paper-flide.md#verifier-audit)及[开放问题](../content/questions/foundations-validation.md#review-2026-11-10)。拟采纳代码口径与算例，GPU 输出和 HiState 实现仍待验证 | 待审 |
+| 2026-11-10/B2 | 全未命中 FIFO 下，完成者轮次构成可以使陷阱吞吐高于或低于排空阈值 | [更新过程](../content/notes/session-cache-pressure-and-metastability.md#all-miss-renewal)与[模型及降流对照](../content/sources/paper-cache-trap-renewal.md)。拟采纳模型机制、条件化实验和完成口径，暂缓通用部署阈值 | 待审 |
+| 2026-11-10/C1 | 钆同位素配比可反推实际送达混合液的储液等效质量，条件性对比分液称量 | [质量守恒与损失算例](../content/notes/isotope-dilution-and-solution-mass.md)、[期刊表 4](../content/sources/paper-isotope-dilution-solution-mass.md#evidence)及[分析化学地图](../content/maps/analytical-chemistry-and-measurement.md)。拟采纳质量定义与校准解释，蒸发和漏滴的实际因果贡献仍待识别 | 待审 |
+| 2026-11-10/B1 | 经典双块 ADMM 的乘子步长有狭窄的统一收敛边界，并有精确求解的周期反例 | [收敛范围与投影机制](../content/notes/two-block-admm-multiplier-step.md)及[证书和构造](../content/sources/paper-admm-multiplier-step.md#evidence)。拟采纳有限维凸问题的条件和反例机制，暂缓精确端点及其他变体 | 待审 |
 
 ## 每日简报源文件
 
+- [2026-11-10](digests/2026-11-10.md)
 - [2026-11-09](digests/2026-11-09.md)
 - [2026-11-06](digests/2026-11-06.md)
 - [2026-11-05](digests/2026-11-05.md)
 
 ## 审核范围
 
-11-05 五项、11-06 四项及 11-09 四项累计十三项，均为 AI 候选。接受、拒绝或暂缓请按日期/编号说明范围；继续研究与采纳分别记录，不要求当日合并。11-05 的交通输入与原图映射、评分原标注和程序、Twitter 导出、KPage metadata、准入正动作及 EdgePace 同负载仍为原待核范围。
+11-05 五项、11-06 四项、11-09 四项及 11-10 四项累计十七项，均为 AI 候选。接受、拒绝或暂缓请按日期/编号说明范围；继续研究与采纳分别记录，不要求当日合并。11-05 的交通输入与原图映射、评分原标注和程序、Twitter 导出、KPage metadata、准入正动作及 EdgePace 同负载仍为原待核范围。
 
-11-06 的真实评分合约、公开读者、协同净成本及 RISK/SilentCue/IOSage 原对象仍缺。11-09 给出迁移同键版本的静态路径，运行、恢复、多源计费和跨层对照仍缺，研究为 partial。
+11-06 的真实评分合约、公开读者、协同净成本及 RISK/SilentCue/IOSage 原对象仍缺。11-09 给出迁移同键版本的静态路径，运行、恢复、多源计费和跨层对照仍缺，11-10 的源码审查补足 Flide 判据，HiState 作者实现与 GPU 对照仍缺，研究为 partial。
 
-独立审核与同SHA构建的实际状态以[当天运行回执](state/runs/2026-11-09.md)为准，旧批次回执不覆盖本轮新增内容；这里不预填未来passed或发布成功。
+独立审核与同SHA构建的实际状态以[当天运行回执](state/runs/2026-11-10.md)为准，旧批次回执不覆盖本轮新增内容；这里不预填未来passed或发布成功。

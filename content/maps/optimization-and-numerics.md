@@ -11,7 +11,7 @@ endorsement: ai-candidate
 
 ## Overview
 
-这条路径回答两个相邻但独立的问题：参数改变后，精确优化模型的结论是否仍成立；在固定数学问题上，有限精度计算是否可信。组织方式与新解释均为 AI 候选，当前从线性规划灵敏度、数值误差与内存调度三个分支展开。
+这条路径回答两个相邻但独立的问题：参数改变后，精确优化模型的结论是否仍成立；在固定数学问题上，有限精度计算是否可信。组织方式与新解释均为 AI 候选，当前路径连接线性规划灵敏度、迭代收敛和数值误差，也用内存调度、整数投影与模型剪枝说明保证范围的变化。
 
 ## Prerequisites
 
@@ -24,7 +24,8 @@ endorsement: ai-candidate
 3. [总分配与存活峰值](../notes/tensor-liveness-and-peak-memory.md)：固定计算图后比较执行顺序，再检查模型内最优证书与实际 wrapper/allocator 的一致性；需额外掌握有向无环图、依赖与存活期。接着读[训练激活压缩与换出](../notes/tensor-liveness-and-peak-memory.md#compression-and-offload)，理解表示改变时为何必须重新建模准入、传输与重算；再读[按需求重放和保存集合](../notes/tensor-liveness-and-peak-memory.md#demand-driven-replay)，共享上游使保存收益不相加，有限候选前沿上的DP不证明全局Pareto最优。
 4. [剪枝与修复的复合目标](../notes/depth-pruning-and-repair.md)：改变允许变换后重新定义目标、搜索空间和实现开销；精确枚举仅消除该空间的搜索遗漏，不保证独立任务质量。前置为[Transformer完整生成链](../notes/transformer-generation.md)中的层结构，以及校准/测试的区别。
 5. [可行性泵与连续投影](../notes/feasibility-pump-and-continuous-projection.md)：在LP证书之后理解连续松弛、舍入与整数外循环，分开单次凸投影收敛、首个整数可行解和原MILP最优性，再检查GPU表示与计时边界。
-6. 回到应用时分别列出“模型假设/可行性证书”和“实际误差/测量证据”，检查两层都有哪些缺口。这些分支尚未建立具体系统中的联合保证。
+6. [双块 ADMM 的乘子步长](../notes/two-block-admm-multiplier-step.md)另开连续优化迭代分支。先分开罚参数、两块更新和乘子反馈，再读约束像中的能量证书与投影周期。这一精确算术反例可和第一步的机器误差比较。
+7. 回到应用时分别列出“模型假设/可行性证书”和“实际误差/测量证据”，检查两层都有哪些缺口。这些分支尚未建立具体系统中的联合保证。
 
 [机器舍入与执行边界](../notes/kv-cache-mechanism.md#rounding-and-execution)为数值分支增加工程实例：固定批次下保留归约与舍入，和容量变化后的重新分组分别验证；不能用若干请求bit相同替代普遍稳定性证明。
 

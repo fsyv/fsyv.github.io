@@ -41,6 +41,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 
 [会话人口与缓存压力](../notes/session-cache-pressure-and-metastability.md)接在跨调用驻留之后：先识别tool期的未来前缀需求，再理解延迟—会话寿命—miss重算反馈。最后核会话goodput的完整成功条件，不能由call吞吐推断冲击后恢复。
 
+了解缓存压力后，再读[全未命中下的更新过程](../notes/session-cache-pressure-and-metastability.md#all-miss-renewal)。先数总剩余工作，再看完成会话的构成，避免用陷阱吞吐替代排空阈值。
+
 [服务配置与排队放大](../notes/storage-latency-and-slo.md#configuration-and-queueing)接续端到端目标：先核版本/分块 prefill，再核持续负载与吞吐不足，最后读时延分位数。它说明缓存结构之外的配置如何影响比较，不把残差全部归于单一架构。
 
 [同键版本顺序](../notes/storage-placement-and-migration.md#version-order-during-handoff)接续固定实现：先区分分配下界与单键已有版本，再核对新写确认和后台回放的先后。这个历史分支的静态推演给出恢复实验前应检查的正常执行条件。
