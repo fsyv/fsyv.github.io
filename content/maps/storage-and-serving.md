@@ -43,6 +43,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 
 [服务配置与排队放大](../notes/storage-latency-and-slo.md#configuration-and-queueing)接续端到端目标：先核版本/分块 prefill，再核持续负载与吞吐不足，最后读时延分位数。它说明缓存结构之外的配置如何影响比较，不把残差全部归于单一架构。
 
+[同键版本顺序](../notes/storage-placement-and-migration.md#version-order-during-handoff)接续固定实现：先区分分配下界与单键已有版本，再核对新写确认和后台回放的先后。这个历史分支的静态推演给出恢复实验前应检查的正常执行条件。
+
 ## Sources
 
 阅读范围是本次记录，不能由“经典”或发表场所替代。完整作者与版本见各来源页。

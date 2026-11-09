@@ -52,6 +52,10 @@ endorsement: ai-candidate
 
 [WorldPager相似性与画质](../notes/kv-cache-optimization.md#revisit-similarity-and-quality)补充预测预取分支：归一LPIPS保留率超100%仍可伴随画质下降，须保留指标、分母、开发/测试和位宽条件。
 
+[归一化门控与 KV 淘汰](../notes/kv-cache-optimization.md#attention-gates-and-eviction)接在容量优化之后。先检查连续训练能否保留原样的稠密注意力，再区分头内排序、推理槽数与头间分配。分数对照仅覆盖来源中的模型和负载。
+
+[掩码扩散的批量校验](../notes/masked-diffusion-speculative-simulation.md)是独立解码分支。先理解条件抽样，再区分预抽时钟与按序提交。相对于选定 CTMC 保持轨迹分布之后，再分别核目标串行调用数、单批成本和墙钟。
+
 ## Evidence
 
 **能量与服务目标分支：**理解完整生成链后，读[最终产出token与板卡能量](../notes/storage-latency-and-slo.md#accepted-tokens-and-energy)，先计入被拒draft的验证成本，再在同批量/同模型下比较能耗和平均时延。静态批次均值不替代逐请求尾部、质量或线上到达负载。

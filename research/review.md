@@ -13,16 +13,21 @@
 | 2026-11-06/B1 | 历史 vLLM V0/SGLang 的分块配置、吞吐不足与 TTFT 排队放大对照 | [配置与排队](../content/notes/storage-latency-and-slo.md#configuration-and-queueing)、新来源与服务/推理地图；拟采纳条件化机制和数据，不当当前引擎排名、无混杂参数效果或缓存架构唯一归因 | 待审 |
 | 2026-11-06/C1 | Arrow 1950 多数循环、原五条件与两人证明；AI 计分/议程例 | [偏好聚合完整解释](../content/notes/social-choice-and-preference-aggregation.md)、新来源与信息地图独立分支；拟采纳限定逻辑，不当已复证多人现代定理、现实选举结论或激励/BFT 等价 | 待审 |
 | 2026-11-06/B2 | 非前缀复用的条件化缺失、已知目标干预与上下文兼容 | [上下文兼容](../content/notes/kv-cache-mechanism.md#contextual-compatibility)、新来源与推理地图；拟采纳 Q*/oracle 条件下的机制对照，暂缓总体准确率幅度、真实目标选择与同 GPU 时间下普适修复收益 | 待审 |
+| 2026-11-09/A1 | Rocksteady 历史实现的早归属、普通写与后台回放在同一键上可能使用逆序版本 | [同键版本时序](../content/notes/storage-placement-and-migration.md#version-order-during-handoff)及[固定源码](../content/sources/paper-rocksteady.md#version-order)。拟采纳限定分支与静态推演，暂缓实际运行、恢复和部署判定 | 待审 |
+| 2026-11-09/B1 | 保护项锚定乘数尺度，总量约束排除原样的稠密注意力；消融分开蒸馏与头间预算 | [训练门控与淘汰](../content/notes/kv-cache-optimization.md#attention-gates-and-eviction)及[指定表](../content/sources/paper-kv-eviction-gating.md)。拟采纳代数与限定对照，暂缓通用质量、时延或硬件收益 | 待审 |
+| 2026-11-09/C1 | 有限信道的状态无关后处理蕴含任意共同决策的风险顺序；等互信息不保证支配 | [观测与决策](../content/notes/blackwell-comparison-of-experiments.md)及[1951 原篇范围](../content/sources/blackwell-comparison-1951.md)。拟采纳正向推导和例子，暂缓一般逆向与应用验证 | 待审 |
+| 2026-11-09/B2 | 在批行同核及首拒绝纠正等条件下，投机校验保持参考 CTMC 轨迹分布，实测调用比和墙钟比不同 | [掩码扩散条件核](../content/notes/masked-diffusion-speculative-simulation.md)及[定理与测量](../content/sources/paper-specctmc.md)。拟采纳机制和有条件对照，暂缓任意实现的数值同核和线上加速 | 待审 |
 
 ## 每日简报源文件
 
+- [2026-11-09](digests/2026-11-09.md)
 - [2026-11-06](digests/2026-11-06.md)
 - [2026-11-05](digests/2026-11-05.md)
 
 ## 审核范围
 
-昨日五项与今日四项累计九项均为AI候选。接受、拒绝或暂缓请按日期/编号说明范围；继续研究与采纳分别记录，不要求当日合并。交通原输入/图输出映射、评分原标注/程序和旧实现审计缺口仍在；Twitter导出、KPage metadata、准入正动作及EdgePace同负载本轮未外查，研究保留partial。
+11-05 五项、11-06 四项及 11-09 四项累计十三项，均为 AI 候选。接受、拒绝或暂缓请按日期/编号说明范围；继续研究与采纳分别记录，不要求当日合并。11-05 的交通输入与原图映射、评分原标注和程序、Twitter 导出、KPage metadata、准入正动作及 EdgePace 同负载仍为原待核范围。
 
-今日评分真实合约、公开读者/协同净成本及RISK/SilentCue/IOSage原对象仍缺，研究保留partial；旧项缺口不因新论文关闭。
+11-06 的真实评分合约、公开读者、协同净成本及 RISK/SilentCue/IOSage 原对象仍缺。11-09 给出迁移同键版本的静态路径，运行、恢复、多源计费和跨层对照仍缺，研究为 partial。
 
-独立审核与同SHA构建的实际状态以[当天运行回执](state/runs/2026-11-06.md)为准，旧批次回执不覆盖本轮新增内容；这里不预填未来passed或发布成功。
+独立审核与同SHA构建的实际状态以[当天运行回执](state/runs/2026-11-09.md)为准，旧批次回执不覆盖本轮新增内容；这里不预填未来passed或发布成功。

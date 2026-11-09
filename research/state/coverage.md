@@ -1,6 +1,6 @@
 # 选题轮换与问题回访
 
-历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-05.md)记录发现，审核、构建和PR的精确结果由[当日回执](runs/2026-11-05.md)记录。模拟反馈与沉默均不推导偏好。
+历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-09.md)记录发现，审核、构建和 PR 的精确结果由[当日回执](runs/2026-11-09.md)记录。模拟反馈与沉默均不推导偏好。
 
 ## 截至2026-10-16的历史覆盖
 
@@ -423,3 +423,26 @@ C最近三次为计量/晶体/微生物群体遗传；后者与10-20的DNA分子
 | [迁移评价](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 今日优先评分与新正文，未再执行故障/多源计费/完整跨层实验，不由KV条件实验替代 | 2026-11-09原安排 |
 
 C最近三次为晶体/微生物群体遗传/社会选择，无重复；最近四次含首次领域，独立机会未减少。其余既定回访保留：信息论/统计物理11-09、分子遗传/因果及混合状态11-10、数值固定算子/天文11-11、地球及11-05实现/数据对象11-12、心理11-13、流体11-16、放射11-18、历史流行病11-19、制度11-20、形态11-23、计量11-24、晶体11-25、生态/群体谱系11-26。没有从沉默或一次反馈改变长期权重；研究partial与选择性覆盖分别记录，实际独立审核、同SHA构建和发布见[当日回执](runs/2026-11-06.md)。
+
+## 2026-11-09 同键版本、注意力淘汰与决策信息
+
+复用 research/batch-2026-11-05 与 Draft PR #32，基线仍为 850802624926eb2d839dd3d9bec34d520cdff488。原九项继续待审，新增四项后累计十三项。三通道实际触及 9 个 canonical（A1/B6/C2），4 份指定部分深读（A1/B2/C1），40/35/25 为投入参考。发布和验证状态由[本日回执](runs/2026-11-09.md)记录。
+
+| 通道 | 推进 | 仍缺 |
+| --- | --- | --- |
+| A | 对 Rocksteady 固定历史提交增读并构造无故障的同键版本时序，整合既有迁移问题。多源、冷热计费、跨层与 TDC 仅作既有知识复评。 | 待验证真实运行、故障恢复、多源原文、计费与跨层同语义对照。 |
+| B | 11-02T10:06 至 11-09T10:06+08，外查至 10:13:19，6 个 arXiv 分类 recent 首屏至 11-06。新预印本三份，其中两份指定正文和一份仅摘要。另有三个旧源入口回访。 | 选择性监测，未穷尽分页、期刊会议、工具版本，也未审新预印本实现或复现。 |
+| C | 首次进入统计决策中的实验比较。Blackwell 1951 指定原文与视觉复核，有限信道的正向推导与两组算例。1953 原文访问受阻。 | 二状态逆向只读题旨，一般逆向与应用未验证。统计物理尾部采样仅本地复评。 |
+
+### 当前回访安排
+
+| 问题 / 入口 | 进展及障碍 | 下次（上海） |
+| --- | --- | --- |
+| [迁移评价](../../content/questions/storage-migration-evaluation.md) | 已取得限定历史源码反例。先核同键确认、回放与读取的执行证据，再加故障；仍 open。 | 2026-11-16 |
+| [存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 多源全文、冷热计费原始证据、跨层同语义实验仍缺。本轮只复评原材料，未对这些问题外查。 | 2026-11-16，只以新原文或明确同语义对象推进 |
+| [直存执行](../../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)、[剪枝修复](../../content/notes/depth-pruning-and-repair.md)、[最终 token 能量](../../content/notes/storage-latency-and-slo.md#accepted-tokens-and-energy) | 版本及入口回访尚未补齐 uGDS 同语义尾部、Repair 实现和 prefill 能量计量。 | 2026-11-16，仅新版本或明确入口 |
+| [KV 淘汰](../../content/notes/kv-cache-optimization.md#attention-gates-and-eviction)、[扩散模拟](../../content/notes/masked-diffusion-speculative-simulation.md) | 已整合两项指定正文。若继续，优先可检查的部署淘汰策略或相同目标核下的计时和数值路径。 | 2026-11-16 |
+| [观测与决策](../../content/notes/blackwell-comparison-of-experiments.md)、[非平衡功](../../content/notes/nonequilibrium-work-and-free-energy.md) | 新统计决策主题保留逆向与计算成本问题。统计物理复评保留低尾抽样与估计缺口，未新增外部材料。 | 2026-11-30，仅明确新对象 |
+| [贪心价值](../../content/questions/greedy-value-improvement.md) | PR #29 的 TDC 追问仍有效，本轮未复搜明确作者实现或版本。 | 2026-11-11 原安排 |
+
+C 最近三次为微生物群体遗传、社会选择、统计决策，保持独立探索机会。11-10 的分子遗传、因果和混合状态，以及其他既定安排保留。整体研究 partial，与选择性检索范围、独立审核和构建状态分别记录。
