@@ -26,13 +26,21 @@ endorsement: ai-candidate
 
 在标准KV复用之后，读[混合层完整状态与分支隔离](../notes/kv-cache-mechanism.md#hybrid-state-and-forks)，再读[历史检查点的访问/保留量](../notes/kv-cache-optimization.md#hybrid-checkpoints)。先确认匹配边界可恢复，再决定状态放在哪一层；共享主干还须隔离兄弟分支，精确算术语义与浮点负载不变性分别检查。
 
+[舍入与执行条件](../notes/kv-cache-mechanism.md#rounding-and-execution)接在逻辑依赖与分支隔离之后：先固定随机性身份、输入和批组成，再核归约/舍入边界，最后单独比较容量与调度改变后的请求分组。ExactLoop的有限bitwise实验不等于完整服务任意负载或跨硬件恒同。
+
+[非前缀修复的上下文兼容](../notes/kv-cache-mechanism.md#contextual-compatibility)接在精确前缀与近似复用之后：先区分位置对齐和跨块条件化，再比较插入 full 目标与在当前 reuse 前文重算；条件 Q*、已知目标和 token 预算不能替代总体质量与部署时延。
+
+[配置与排队](../notes/storage-latency-and-slo.md#configuration-and-queueing)将引擎比较接到服务负载：先匹配历史版本的分块 prefill，再分开小吞吐缺口与累积 TTFT；不把旧版本比较当当前排名。
+
+读完混合状态的分叉与恢复，再看[Flide 验证门槛](../notes/kv-cache-mechanism.md#verification-gates)，将执行依赖、head 数值比较和首选容忍条件分别检查。
+
 ## Branches
 
 - **另一种连接结构：**[视频时空注意力](../notes/attention-spatiotemporal.md)先以 token 数和连接范围解释联合/分解，再读[固定稀疏图的物理执行](../notes/attention-spatiotemporal.md#physical-execution)中页压实、tile 和掩码；减少连接与减少填充分别评价，非因果场景不自动满足 KV 复用前提。
 - **另一种容量扩展：**[稀疏 MoE](../notes/moe-routing.md)改变参与计算的专家参数；它与注意力/KV 是不同成本项，不能互当替代方案。
 
 - **执行中的另一项容量：**[张量存活与峰值内存](../notes/tensor-liveness-and-peak-memory.md)解释为何相同总分配仍有不同峰值，以及 allocator 怎样破坏逻辑模型；不是 KV 服务已验证。
-- **训练生命周期的边界对照：**[激活压缩与换出规划](../notes/tensor-liveness-and-peak-memory.md#compression-and-offload)研究 forward/backward 之间的保存与重算；表示、传输和排程必须联合评价，不从压缩比推出训练加速或推理 KV 收益。
+- **训练生命周期的边界对照：**[激活压缩与换出规划](../notes/tensor-liveness-and-peak-memory.md#compression-and-offload)研究 forward/backward 之间的保存与重算；表示、传输和排程必须联合评价，不从压缩比推出训练加速或推理 KV 收益。再读[按反向需求重放](../notes/tensor-liveness-and-peak-memory.md#demand-driven-replay)，区分改变必要计算集合与固定事件重排，并核共享依赖、峰值预算和额外显存。
 
 **恢复分支：**在精确复用与跨调用驻留之后，读[选择性KV重建](../notes/kv-cache-optimization.md#selective-reconstruction)，分开raw历史省略、共享预测器净成本、均值风险和局部恢复计时；不把512token小模型恢复结果写成生产无线迁移或长期decode净省。
 
@@ -45,6 +53,10 @@ endorsement: ai-candidate
 [会话缓存压力反馈](../notes/session-cache-pressure-and-metastability.md)在完整状态/驻留之后推进到内生负载：工具期不占decode也可能保留未来前缀需求。先分会话与调用，再看冲击恢复和SLO，不能用当前活跃decode数代替潜在工作集。
 
 [WorldPager相似性与画质](../notes/kv-cache-optimization.md#revisit-similarity-and-quality)补充预测预取分支：归一LPIPS保留率超100%仍可伴随画质下降，须保留指标、分母、开发/测试和位宽条件。
+
+[归一化门控与 KV 淘汰](../notes/kv-cache-optimization.md#attention-gates-and-eviction)接在容量优化之后。先检查连续训练能否保留原样的稠密注意力，再区分头内排序、推理槽数与头间分配。分数对照仅覆盖来源中的模型和负载。
+
+[掩码扩散的批量校验](../notes/masked-diffusion-speculative-simulation.md)是独立解码分支。先理解条件抽样，再区分预抽时钟与按序提交。相对于选定 CTMC 保持轨迹分布之后，再分别核目标串行调用数、单批成本和墙钟。
 
 ## Evidence
 

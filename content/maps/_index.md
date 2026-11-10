@@ -24,8 +24,8 @@ description: "按照问题、前置依赖和学习顺序组织知识。"
 | [天文学与观测推断](astronomy-and-observational-inference.md) | 距离标尺、方向修正与独立检验怎样分开？ |
 | [地球物理与反演证据](geophysics-and-inverse-evidence.md) | 磁场异常怎样约束地壳运动，独立年代为何不可省？ |
 | [生态与动力学](ecology-and-dynamics.md) | 局部恢复、有限扰动与临界转变预警怎样区分？ |
-| [信息与激励](information-and-incentives.md) | 私人报告如何限制诚实、自愿与高收益方案的同时实现？ |
-| [分子遗传与实验识别](molecular-genetics-and-experimental-inference.md) | 哪些分布和追加处理能区分 DNA 复制机制，哪些结构结论仍未识别？ |
+| [信息、激励与集体选择](information-and-incentives.md) | 私人报告如何限制交易，个人一致偏好又为何不保证集体一致？ |
+| [遗传与实验识别](molecular-genetics-and-experimental-inference.md) | 密度分布与独立培养对照怎样区分分子复制、谱系历史及尚未识别的机制？ |
 | [实验心理学与机制识别](experimental-psychology-and-inference.md) | 任务、计分与练习对照怎样限制心理机制解释？ |
 | [流体力学与相似性](fluid-mechanics-and-dynamic-similarity.md) | 无量纲参数怎样组织实验，扰动和观察判据怎样限制转变阈值？ |
 | [统计物理](statistical-physics.md) | 非平衡功怎样给出自由能，有限样本为何仍会漏掉关键事件？ |
@@ -33,6 +33,7 @@ description: "按照问题、前置依赖和学习顺序组织知识。"
 | [历史流行病学与自然实验](epidemiology-and-natural-experiments.md) | 供水变化、暴露分类、比较分母和观察期怎样限定历史效应？ |
 | [形态发生与空间动力学](morphogenesis-and-spatial-dynamics.md) | 局部稳定的反应为何能出现空间差异，数学机制怎样推进到生物证据？ |
 | [计量学与频率稳定度](metrology-and-frequency-stability.md) | 参考、平均窗口与相关噪声怎样决定稳定度，固定频偏为何可能不可见？ |
+| [分析化学与测量](analytical-chemistry-and-measurement.md) | 同位素配比怎样反推样本量，何时会与直接称量分开？ |
 | [晶体学与结构推断](crystallography-and-structural-inference.md) | 衍射位置怎样约束周期，强度又能区分哪些胞内排列？ |
 
 [知识实践地图](knowledge-practice.md)从“笔记应当多大”这一问题出发，说明笔记、资料与开放问题怎样协作。

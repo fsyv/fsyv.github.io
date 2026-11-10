@@ -45,4 +45,4 @@ endorsement: ai-candidate
 
 [概率资料阅读范围](../sources/foundations-probability.md)区分讲义定义和仅读的实证摘要；[网络资料](../sources/foundations-networks.md)区分理论生成模型与统计检验。真实流量的时间局部性及现实拓扑是否符合模型，保留在[边界检验问题](../questions/foundations-validation.md)，不以空标题代替已有解释。
 
-交通分支已在 2026-10-28 增加两站点固定/时变交换的推导与精确递推，负总净输入及每步连通都不足以单独保证有界；尚未给出一般充分条件。开放问题继续是实际非均匀雨场、运行图与非零初态下的近似误差。[公开实现入口](../sources/paper-climate-transport-collapse.md#implementation-followup)已核 README，执行函数、气候数据条件与真实无界阶段未核；2026-11-04 复评。
+交通分支已在2026-10-28增加两站点固定/时变交换的推导与精确递推，负总净输入及每步连通都不足以单独保证有界。11-05补[实现中的传播与雨驱图](../notes/transport-delay-propagation-and-thresholds.md#implementation-and-inputs)：该稳态入口默认等边权固定传播，8点count只用于雨驱，且存在0/1000双初态循环。先核边权与调用默认，再决定是否同语义比较；尚未运行或闭合论文流量加权/忙时图与原输入的对应。11-12先核配置与输出，异质雨场、一般充分条件及真实无界阶段仍开放。

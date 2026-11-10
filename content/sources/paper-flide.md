@@ -33,3 +33,14 @@ Appendix E/Table12的Qwen3.5-4B/RACE-all，默认14.3ms、C64吞吐118requests/s
 ## Support-and-limits
 
 支持[完整状态与分支隔离](../notes/kv-cache-mechanism.md#hybrid-state-and-forks)，和[HiState恢复条件](../notes/kv-cache-optimization.md#hybrid-checkpoints)是相关但独立的机制。研究价值高在扩精确复用条件，启发价值高在逻辑依赖与物理铺平可分；正文推导可核、系统未经运行，可靠性中。语义等价、浮点接近/bit不变与实际答案正确分别评价，不外推任意生成、跨硬件恒同或HiState已能直接组合。
+
+## Verifier-audit
+
+2026-11-10 复查论文仍为 v1，核对 HTML 指向的作者仓库，指定读取 [Flide v0.1.11 发布页](https://github.com/OmniJev/Flide/releases/tag/v0.1.11)和固定提交 50db86c0ce917ec76c190fa9fe2b21cfd544a8d9 的源码。发布于 2026-11-09T21:03:27Z，上海时间为次日 05:03。该验证文件可追溯到 [10 月 28 日的提交](https://github.com/OmniJev/Flide/commit/5b42b62788561d30a62722cef37f890c929bc113)，此次首次在知识库定点核查既有验证逻辑。
+
+- [verify.py L38–73](https://github.com/OmniJev/Flide/blob/50db86c0ce917ec76c190fa9fe2b21cfd544a8d9/flide/verify.py#L38-L73) 定义输出数值相等、最大概率坐标差和基准分差门槛。源码使用 Python 标量相等和张量数值相等。
+- [L107–149](https://github.com/OmniJev/Flide/blob/50db86c0ce917ec76c190fa9fe2b21cfd544a8d9/flide/verify.py#L107-L149) 分别运行单独请求、分支及批次对照。分支逐项检查后缀数与问题数相等的请求，批次按请求量选择 2、8、32 的测试轮次。混合批次在批次不变模式下额外检查 head 输出数值相等。
+- [L151–186](https://github.com/OmniJev/Flide/blob/50db86c0ce917ec76c190fa9fe2b21cfd544a8d9/flide/verify.py#L151-L186) 对增长状态比较缓存启用与关闭。会话恢复 token 为零时跳过。分支及会话检查均只把基准前两名概率相差至少 0.05 的首选变化计为失败。
+- [引擎计算入口](https://github.com/OmniJev/Flide/blob/50db86c0ce917ec76c190fa9fe2b21cfd544a8d9/flide/runtime/engine.py#L597-L693)可查询和更新同一引擎的缓存。[会话匹配](https://github.com/OmniJev/Flide/blob/50db86c0ce917ec76c190fa9fe2b21cfd544a8d9/flide/runtime/session.py#L68-L112)确认 token 前缀，[Qwen3.5 恢复](https://github.com/OmniJev/Flide/blob/50db86c0ce917ec76c190fa9fe2b21cfd544a8d9/flide/backbones/qwen35/graphs.py#L1155-L1195)同时恢复循环状态、卷积窗口和前缀 KV。
+
+支持[验证门槛与算例](../notes/kv-cache-mechanism.md#verification-gates)。源码能确定判据，研究价值在于限定通过的含义；启发在于先为相同执行条件定义数值和选择观测量。算例为 AI 推导。未执行 Flide，未将此处实现等同于上文论文 Appendix E 的实测设置或结果。

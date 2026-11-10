@@ -33,3 +33,14 @@ Table6 在 ResearcherBench 61 问题分别重新生成四臂：web、web 加 cal
 **来源内部未解决差异：**AppendixC 首段的 ordinal alpha 写 0.62 对 0.64，紧随 Table13 与 §5.1/Table3 则分别报告 judge–annotator1 0.68、人间 0.71。本库保留差异，按表描述时明确表号，不自行裁定正文或表哪处正确；该矛盾也不改变上述 exact 与阈值比例各自的定义。
 
 支持[结论范围与整组证据](../notes/claim-scope-and-evidence-synthesis.md)。评分仍有模型、rubric、抽取与引用集合边界，不能替代人工判断或扩展为本库读者理解效果。
+
+
+## Rubric-followup
+
+2026-11-05指定增读[v1 Appendix B.7/Table7](https://arxiv.org/html/2610.35793v1#A2.SS7)完整prompt。文本位于原HTML的`foreignObject`，普通抽取会漏掉；研究员实际读取原HTML并用PDF文本pp23–24互核，没有视觉核PDF页面。另复读AppendixC/Tables3/13与版本信息；仍v1，非新发表/新版本。
+
+五档以语义修订为参照：1 None，原句可保持；2 Append，补必要条件但中心判断不变；3 Revise，重要量词、适用域、比较或置信需改变；4 Recast，需大幅收窄或改为混合判断；5 Replace，中心结论需替换。原prompt前段要求按最小语义修订评分，后段又明确repair labels为结果而不是测试；故不能把它表述为已定义唯一的自动最小编辑算法。
+
+完整规则要求反证匹配原claim的逻辑力度和条件，保留存在/通常/总是等不同量词，不先弱化原句再打分；证据pass标签不是stance，也不按来源数投票。本库[相应解释](../notes/claim-scope-and-evidence-synthesis.md#semantic-repair-and-logical-strength)的量词例为AI说明，不冒充作者新增测量或自动打分。
+
+作者链接的[公开仓库固定提交c77a61e75577ca095187cad9f0ac8dd1cf72c103](https://github.com/tiasa2/SmoothScore/tree/c77a61e75577ca095187cad9f0ac8dd1cf72c103)根目录仅README，说明pipeline/data coming soon；[固定README](https://github.com/tiasa2/SmoothScore/blob/c77a61e75577ca095187cad9f0ac8dd1cf72c103/README.md)。这是所核入口的状态，不是全网代码不存在的断言。尚未取得73条原标注、评分程序或可据以复算alpha的原数据，原AppendixC文字与表格差异继续保留、不裁定哪处正确。研究价值中、启发价值高；规则原文可核，测量复算可靠性尚未闭合。

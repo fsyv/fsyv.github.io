@@ -51,6 +51,18 @@ read_status: partial
 
 作者Utah项目web超时/证书不匹配，未绕TLS；演示slides取到但未提取正文，只以搜索索引指路。没有编译、运行、故障注入、原始日志或论文图复算。局部代码事实可靠性高，端到端保证与原数值映射仍不足。新理解整合至[实现与完成口径](../notes/storage-placement-and-migration.md#implementation-and-completion)。
 
+## Version-order
+
+2026-11-09 在相同历史提交 d1f9c8125cbd53e7bcb48a769b2a0cb74854900a 增读普通写、分配器、归属和后台回放的指定函数。此处记录源码控制流，版本 8 与 2 的同键时序是[候选笔记](../notes/storage-placement-and-migration.md#version-order-during-handoff)的静态推演。没有执行代码或确认论文二进制使用该提交。
+
+| 读取位置 | 支持的局部结论 |
+| --- | --- |
+| [SegmentManager.cc 76–86](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/SegmentManager.cc#L76-L86)、[688–705](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/SegmentManager.cc#L688-L705)、[SegmentManager.h 394–414](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/SegmentManager.h#L394-L414)、[ObjectManager.cc 1343–1487](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L1343-L1487) | 分配器从 1 开始。覆盖已有对象时取对象版本加一，本地未命中时分配下一版本。覆盖时替换索引，分配下界不随该分支增长。 |
+| [MasterService.cc 2485–2506](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/MasterService.cc#L2485-L2506)、[RocksteadyMigrationManager.cc 326–389](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/RocksteadyMigrationManager.cc#L326-L389)、[迁移选项 16–42](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/RocksteadyMigrationManager.h#L16-L42) | 源锁定并等待追加后返回分配下界。目标抬升下界并进入迁移状态，采用早归属且开启后台回放时先确认归属再推进搬运。 |
+| [CoordinatorService.cc 624–642](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/CoordinatorService.cc#L624-L642)、[TableManager.cc 670–692](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/TableManager.cc#L670-L692) | 核对协调器归属变更的实际路径。 |
+| [RamCloud.cc 2947–2974](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/RamCloud.cc#L2947-L2974)、[MasterService.cc 3602–3662](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/MasterService.cc#L3602-L3662)、[Log.cc 154–210](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/Log.cc#L154-L210) | 普通无拒绝条件的写允许在目标迁移态执行，仅查本地对象。成功分支同步后返回。 |
+| [ObjectManager.cc 3523–3549、3583–3594](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L3523-L3594)、[回放 797–804、832–895](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L797-L895)、[AbstractLog.cc 190–205](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/AbstractLog.cc#L190-L205) | 后台拉取从源当前索引取仍存活的对象，历史覆盖墓碑未入该批。高版本对象在回放时替换索引，旧索引对象的释放不构成另一次版本比较。 |
+
 ## Support
 
 支持[迁移解释](../notes/storage-placement-and-migration.md#early-ownership-and-recovery)对归属、数据可读、重新复制及恢复依赖的区分；[迁移评价](../questions/storage-migration-evaluation.md)继续保留实现与服务测量缺口。

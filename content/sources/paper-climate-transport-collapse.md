@@ -39,3 +39,15 @@ Mauro Faccin、Tomas Scagliarini、Manlio De Domenico，*Systemic collapse emerg
 2026-10-28，主控重新读取 v1 HTML §2.1、2.4、4.1、4.3 与 arXiv history，仍仅 v1；没有全篇重读、视觉核图、审计执行函数或复现。新增知识是[截断总量恒等式及两站点反例](../notes/transport-delay-propagation-and-thresholds.md#clipped-balance)，均为 AI 推导，不能归为作者实验或新的发表。
 
 原文 §4.3 后的代码声明链接到 [CoMuNeLab/adaptsys_train-delays](https://github.com/CoMuNeLab/adaptsys_train-delays)。主控通过 GitHub connector 实读 default `main` 的 [README](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/main/README.md)，blob SHA `e79699b462b8c973039c28791b1fb1236d33e5f6`。README 仍使用 *Transport network response to external stressor fields* 题名，列出 `diffsys/main.py`、`models.py`、`code_steady_state.py` 和部分意大利数据，并说明额外气候数据从 Copernicus 获取。这里只核入口与范围，没有安装、执行或读取实现函数，不能说“没有代码”，也不能由 README 推出完整可复现。下一步是核已有实现的截断、矩阵归一、参数和数据取得条件。
+
+
+## Static-implementation
+
+2026-11-05指定部分增读作者仓库固定提交[8104d02cd15560dd1eccdd572018ca5c6d28757d](https://github.com/CoMuNeLab/adaptsys_train-delays/tree/8104d02cd15560dd1eccdd572018ca5c6d28757d)。研究员把所读main文件与该提交逐字比对相同，以下链接固定到该提交。不是新论文版本；未安装、执行、拟合或复算原图。
+
+- [code_steady_state.py L25–30](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/code_steady_state.py#L25)：`graph_adj`由`full=False`生成；[base.py L56–121](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/base.py#L56)的对应图构造使用全时段平均，不把它称8点传播图。
+- [code_steady_state.py L45–54](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/code_steady_state.py#L45)用8点子图的count产生雨驱；[L65–82](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/code_steady_state.py#L65)将`graph_adj`交Diffusion，并只传`base.params()`，没有在这条路径传`alt_graph`。同一段包含0与每站1000双初态循环。
+- [base.py L124–154](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/base.py#L124)只返回alpha/beta/gamma；[diffsys/models.py L313–349](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/diffsys/models.py#L313)的weight默认1.0，演化构造并缓存T；[diffsys/main.py L510–559](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/diffsys/main.py#L510)据数值权重构造无向邻接、列归一。因此“这条默认调用链为固定等边权传播”是基于代码的AI静态推论；不能仅因原图保留count便认定实际传播已用count。
+- [diffsys/models.py L351–370](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/diffsys/models.py#L351)在`generate`中注入、吸收并逐次非负截断；[L410–415](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/diffsys/models.py#L410)的`conclude_step`再次截断。停止判据位于[code_steady_state.py L76–129](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/code_steady_state.py#L76)：最多100000步、变化L1不超过1e-5或最大状态超过1e5；这些有限停止条件不是无限时收敛证明。
+
+实际阅读是上述相关脚本/函数与README数据取得说明，不是全仓审计。尚未核拟合cache、`optimize_pars`生成路径、ERA5原输入、论文图与指定脚本输出对应，或真实无界阶段。静态路径与论文流量加权/忙时冻结的表述尚未闭合，不裁定作者全部运行或论文错误。支持[实现与输入解释](../notes/transport-delay-propagation-and-thresholds.md#implementation-and-inputs)，研究价值高、启发价值高；局部代码机制可靠性高，实验映射可靠性仍有限。
