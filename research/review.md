@@ -1,38 +1,22 @@
-# 知识研究待审 · 2026-11-05 起
+# 知识研究待审 · 2026-11-11 起
 
-本批次从实核origin/main 850802624926eb2d839dd3d9bec34d520cdff488开始。上一批[PR30](https://github.com/fsyv/fsyv.github.io/pull/30)已合并，其十一项原清单保留在[固定提交](https://github.com/fsyv/fsyv.github.io/blob/ed52258e3b9d34c4ef62612a86a345096453e112/research/review.md)。合并不自动把AI候选改为user-confirmed。本页维护当前批次累计决定；发布程序直接展示最新晨报全文，后续往期全文在同PR保留。
+本批次基于已核对的远端 main 提交 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d。[上一批 PR #32](https://github.com/fsyv/fsyv.github.io/pull/32) 已合并，十七项原决定范围可查[上一批固定清单](https://github.com/fsyv/fsyv.github.io/blob/75be57ed38c8d5f47221ba515abf3d88f3876b3f/research/review.md)。这里维护本批的候选决定。新解释仍由用户选择是否采纳。
 
 | 日期 / 发现 | 具体提议与依据 | 知识位置及接受范围 | 决定 |
 | --- | --- | --- | --- |
-| 2026-11-05/A1 | 作者固定代码的传播/雨驱图、默认weight与矩阵归一、0/1000初态及有限停止条件 | [交通实现解释](../content/notes/transport-delay-propagation-and-thresholds.md#implementation-and-inputs)、原来源与网络地图；拟采纳限定调用链和AI权重例，暂缓论文全部实验同语义映射、阈值重标或错误裁决。未运行脚本 | 待审 |
-| 2026-11-05/B1 | ExactLoop指定正文的舍入边界、随机性身份与服务批组成对照 | [舍入与执行](../content/notes/kv-cache-mechanism.md#rounding-and-execution)、新来源/数值链接/推理地图；拟采纳机制与有限实验，暂缓任意输入、跨硬件bitwise、线上稳定和全部提速归因。未审代码 | 待审 |
-| 2026-11-05/A2 | SmoothScore完整rubric的语义修订与逻辑力度，固定README公开范围 | [语义修订解释](../content/notes/claim-scope-and-evidence-synthesis.md#semantic-repair-and-logical-strength)、原来源/知识地图；拟采纳五档判断参照，不当唯一自动评分算法。73标注/程序未取得，alpha内部差异不裁定 | 待审 |
-| 2026-11-05/C1 | Luria–Delbrück1943独立培养与同培养分样、原表口径及AI双时段Poisson例 | [波动试验完整解释](../content/notes/fluctuation-tests-and-preexisting-variation.md)、新来源/遗传地图；拟采纳选择前克隆历史的限定识别，暂缓完整不吸附表型时序、任意高方差唯一机制或真实变异率估计 | 待审 |
-| 2026-11-05/B2 | TapeSAC按需求重放、保存收益的共享依赖与近似峰/有限搜索边界 | [保存集合解释](../content/notes/tensor-liveness-and-peak-memory.md#demand-driven-replay)、新来源/优化与推理路径；拟采纳训练机制和条件化数据，不推全局Pareto最优、无额外显存加速、推理KV或压缩引擎已验证 | 待审 |
-| 2026-11-06/A1 | rPoA 旧原文的随机数据哈希评分、DAC 登记/评审时序与可靠数据假设 | [评分与数据时序](../content/notes/reputation-and-consensus.md#score-and-data-timing)、原来源/开放问题/统计边界；拟采纳任务类型与信息边界，暂缓实际门槛、版本、重试清票、惩罚/申诉及真实攻防结论 | 待审 |
-| 2026-11-06/B1 | 历史 vLLM V0/SGLang 的分块配置、吞吐不足与 TTFT 排队放大对照 | [配置与排队](../content/notes/storage-latency-and-slo.md#configuration-and-queueing)、新来源与服务/推理地图；拟采纳条件化机制和数据，不当当前引擎排名、无混杂参数效果或缓存架构唯一归因 | 待审 |
-| 2026-11-06/C1 | Arrow 1950 多数循环、原五条件与两人证明；AI 计分/议程例 | [偏好聚合完整解释](../content/notes/social-choice-and-preference-aggregation.md)、新来源与信息地图独立分支；拟采纳限定逻辑，不当已复证多人现代定理、现实选举结论或激励/BFT 等价 | 待审 |
-| 2026-11-06/B2 | 非前缀复用的条件化缺失、已知目标干预与上下文兼容 | [上下文兼容](../content/notes/kv-cache-mechanism.md#contextual-compatibility)、新来源与推理地图；拟采纳 Q*/oracle 条件下的机制对照，暂缓总体准确率幅度、真实目标选择与同 GPU 时间下普适修复收益 | 待审 |
-| 2026-11-09/A1 | Rocksteady 历史实现的早归属、普通写与后台回放在同一键上可能使用逆序版本 | [同键版本时序](../content/notes/storage-placement-and-migration.md#version-order-during-handoff)及[固定源码](../content/sources/paper-rocksteady.md#version-order)。拟采纳限定分支与静态推演，暂缓实际运行、恢复和部署判定 | 待审 |
-| 2026-11-09/B1 | 保护项锚定乘数尺度，总量约束排除原样的稠密注意力；消融分开蒸馏与头间预算 | [训练门控与淘汰](../content/notes/kv-cache-optimization.md#attention-gates-and-eviction)及[指定表](../content/sources/paper-kv-eviction-gating.md)。拟采纳代数与限定对照，暂缓通用质量、时延或硬件收益 | 待审 |
-| 2026-11-09/C1 | 有限信道的状态无关后处理蕴含任意共同决策的风险顺序；等互信息不保证支配 | [观测与决策](../content/notes/blackwell-comparison-of-experiments.md)及[1951 原篇范围](../content/sources/blackwell-comparison-1951.md)。拟采纳正向推导和例子，暂缓一般逆向与应用验证 | 待审 |
-| 2026-11-09/B2 | 在批行同核及首拒绝纠正等条件下，投机校验保持参考 CTMC 轨迹分布，实测调用比和墙钟比不同 | [掩码扩散条件核](../content/notes/masked-diffusion-speculative-simulation.md)及[定理与测量](../content/sources/paper-specctmc.md)。拟采纳机制和有条件对照，暂缓任意实现的数值同核和线上加速 | 待审 |
-| 2026-11-10/A1 | Flide v0.1.11 固定源码中，分支与会话恢复仅把基准分差至少为 0.05 的首选变化记为失败。批次不变模式另核 head 数值相等 | [验证门槛](../content/notes/kv-cache-mechanism.md#verification-gates)、[固定实现](../content/sources/paper-flide.md#verifier-audit)及[开放问题](../content/questions/foundations-validation.md#review-2026-11-10)。拟采纳代码口径与算例，GPU 输出和 HiState 实现仍待验证 | 待审 |
-| 2026-11-10/B2 | 全未命中 FIFO 下，完成者轮次构成可以使陷阱吞吐高于或低于排空阈值 | [更新过程](../content/notes/session-cache-pressure-and-metastability.md#all-miss-renewal)与[模型及降流对照](../content/sources/paper-cache-trap-renewal.md)。拟采纳模型机制、条件化实验和完成口径，暂缓通用部署阈值 | 待审 |
-| 2026-11-10/C1 | 钆同位素配比可反推实际送达混合液的储液等效质量，条件性对比分液称量 | [质量守恒与损失算例](../content/notes/isotope-dilution-and-solution-mass.md)、[期刊表 4](../content/sources/paper-isotope-dilution-solution-mass.md#evidence)及[分析化学地图](../content/maps/analytical-chemistry-and-measurement.md)。拟采纳质量定义与校准解释，蒸发和漏滴的实际因果贡献仍待识别 | 待审 |
-| 2026-11-10/B1 | 经典双块 ADMM 的乘子步长有狭窄的统一收敛边界，并有精确求解的周期反例 | [收敛范围与投影机制](../content/notes/two-block-admm-multiplier-step.md)及[证书和构造](../content/sources/paper-admm-multiplier-step.md#evidence)。拟采纳有限维凸问题的条件和反例机制，暂缓精确端点及其他变体 | 待审 |
+| 2026-11-11/A1 | 固定客户端控制和同计划日志把解除、完成和等待分开 | [客户端控制与会话验收](../content/notes/session-cache-pressure-and-metastability.md#client-gate-and-session-completion)及[固定原件](../content/sources/paper-cache-trap-renewal.md#rescue-artifact)。建议采纳固定观察窗结果与分列验收，暂缓自动触发及部署外推。 | 待审 |
+| 2026-11-11/B1 | 轨迹中按会话计数改善对已观测共享的辨认，真实结束界定单会话状态的寿命 | [会话生命周期与共享](../content/notes/kv-cache-optimization.md#session-lifecycle-and-sharing)及[轨迹来源](../content/sources/paper-storage-view-kv-cache.md)。建议采纳信号分工和限定对照，暂缓首次共享预测与有限容量收益。 | 待审 |
+| 2026-11-11/C1 | Gaia EDR3 的类星体绝对锚、近共同距离差分与校准传递 | [Gaia 视差标定](../content/notes/gaia-parallax-zero-point-calibration.md)及[原文定位](../content/sources/paper-gaia-edr3-parallax-bias.md)。建议采纳识别机制和加性偏差的结构类比，保留极红跨天区及其他发布版本的独立验证。 | 待审 |
+| 2026-11-11/B2 | 输运约束允许同一组边际，实际生成成本与目标函数仍有区别 | [输运预算与最大熵](../content/notes/transport-budget-and-conditional-entropy.md)及[预印本](../content/sources/paper-transport-entropy-dependence.md)。建议采纳有限矩下的耦合论证和一维高斯算例，暂缓一般对偶与具体采样表现。 | 待审 |
 
 ## 每日简报源文件
 
-- [2026-11-10](digests/2026-11-10.md)
-- [2026-11-09](digests/2026-11-09.md)
-- [2026-11-06](digests/2026-11-06.md)
-- [2026-11-05](digests/2026-11-05.md)
+- [2026-11-11](digests/2026-11-11.md)
 
 ## 审核范围
 
-11-05 五项、11-06 四项、11-09 四项及 11-10 四项累计十七项，均为 AI 候选。接受、拒绝或暂缓请按日期/编号说明范围；继续研究与采纳分别记录，不要求当日合并。11-05 的交通输入与原图映射、评分原标注和程序、Twitter 导出、KPage metadata、准入正动作及 EdgePace 同负载仍为原待核范围。
+可按日期和发现编号接受、拒绝或暂缓部分解释。继续研究另行记录，不以提出追问作为采纳。TDC 的实际终止、重置与终端价值处理仍待可归属的实现入口。
 
-11-06 的真实评分合约、公开读者、协同净成本及 RISK/SilentCue/IOSage 原对象仍缺。11-09 给出迁移同键版本的静态路径，运行、恢复、多源计费和跨层对照仍缺，11-10 的源码审查补足 Flide 判据，HiState 作者实现与 GPU 对照仍缺，研究为 partial。
+## 验证
 
-独立审核与同SHA构建的实际状态以[当天运行回执](state/runs/2026-11-10.md)为准，旧批次回执不覆盖本轮新增内容；这里不预填未来passed或发布成功。
+同提交独立审核、构建和发布的实际结果由[当日回执](state/runs/2026-11-11.md)记录。

@@ -58,6 +58,8 @@ endorsement: ai-candidate
 
 [掩码扩散的批量校验](../notes/masked-diffusion-speculative-simulation.md)是独立解码分支。先理解条件抽样，再区分预抽时钟与按序提交。相对于选定 CTMC 保持轨迹分布之后，再分别核目标串行调用数、单批成本和墙钟。
 
+读完驻留和[会话缓存压力反馈](../notes/session-cache-pressure-and-metastability.md)后，可以沿两条证据路径比较会话边界。[缓存生命周期与共享](../notes/kv-cache-optimization.md#session-lifecycle-and-sharing)先用块的读者身份辨认潜在寿命，再用轨迹判断回收信号。[客户端控制与完整会话验收](../notes/session-cache-pressure-and-metastability.md#client-gate-and-session-completion)再把等待队列清空、完成所有轮次和用户等待分别记账。
+
 ## Evidence
 
 **能量与服务目标分支：**理解完整生成链后，读[最终产出token与板卡能量](../notes/storage-latency-and-slo.md#accepted-tokens-and-energy)，先计入被拒draft的验证成本，再在同批量/同模型下比较能耗和平均时延。静态批次均值不替代逐请求尾部、质量或线上到达负载。
