@@ -60,6 +60,8 @@ endorsement: ai-candidate
 
 读完驻留和[会话缓存压力反馈](../notes/session-cache-pressure-and-metastability.md)后，可以沿两条证据路径比较会话边界。[缓存生命周期与共享](../notes/kv-cache-optimization.md#session-lifecycle-and-sharing)先用块的读者身份辨认潜在寿命，再用轨迹判断回收信号。[客户端控制与完整会话验收](../notes/session-cache-pressure-and-metastability.md#client-gate-and-session-completion)再把等待队列清空、完成所有轮次和用户等待分别记账。
 
+**模型变更与路由分支：**先读[跨权重移植](../notes/kv-cache-mechanism.md#cross-checkpoint-reuse)，区分缓存格式、任务得分、行为一致和同版本恢复。再读[用目标权重提前预填](../notes/kv-cache-optimization.md#routing-and-native-prefill)，比较目标原生状态的提前计算、缓存存续及对正在解码的普通流量的影响。两种方案分别改变状态来源和计算时点。
+
 ## Evidence
 
 **能量与服务目标分支：**理解完整生成链后，读[最终产出token与板卡能量](../notes/storage-latency-and-slo.md#accepted-tokens-and-energy)，先计入被拒draft的验证成本，再在同批量/同模型下比较能耗和平均时延。静态批次均值不替代逐请求尾部、质量或线上到达负载。

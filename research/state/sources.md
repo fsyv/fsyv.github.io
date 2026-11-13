@@ -2,6 +2,27 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-11-13
+
+本轮 12 个研究候选（A5、B5、C2），另核一条 ExactLoop 所引上游提交的导航元数据。指定深读 4 次（A1、B2、C1）。固定作者代码和论文按同一研究处理，跨角色复核不加计。[晨报](../digests/2026-11-13.md)与[回执](runs/2026-11-13.md)保留发现和实际范围。
+
+B 窗口为 2026-11-06T10:06:10 至 2026-11-13T10:06:10+08，补 11-11T07:38:30+08 后的公告空档，约 10:09:47–10:14:01+08 实查。cs.DC、cs.OS、cs.LG、cs.AI、math.OC、physics.soc-ph recent 首屏核到 11-11 列表。[arXiv 停发公告](https://blog.arxiv.org/2026/11/06/announcement-change-veterans-day/)预告 11-12 20:00 美东恢复，已查的公告列表与 RSS 未提供恢复批次清单，覆盖待补。
+
+| canonical / 版本 | 首次发表或提交 | 本轮触及 | 实际范围、价值与边界 |
+| --- | --- | --- | --- |
+| doi:10.1073/pnas.2532180123；arxiv:2610.26428 v1；作者代码固定 8104d02cd15560dd1eccdd572018ca5c6d28757d | PNAS online 2026-10-16 | 2026-11-13 | A1 旧研究原件增读，核公开日期、拟合、稳态和评分入口及一个缓存样本。静态错配与权重对照可核，论文外测映射未核。研究高、启发高，限定代码可靠高。[范围](../../content/sources/paper-climate-transport-collapse.md#validation-input-audit) |
+| doi:10.32604/cmes.2023.046826；[rPoA](https://www.techscience.com/CMES/v139n2/55355/html) | 2024-01-29 | 2026-11-13 | A 限作者和题名入口、出版商外链，无可归属 DAC/RMC 合约或部署材料。 |
+| arxiv:2512.09961 v1；[TDC-Cache](https://arxiv.org/abs/2512.09961v1) | 2025-12-10T02:52:41Z | 2026-11-13 | A 仅 history 及明确公开实现入口回访，仍 v1。终止、重置、终端价值缺作者执行证据。 |
+| arxiv:2610.35793 v1；[SmoothScore 作者仓库](https://github.com/tiasa2/SmoothScore/tree/c77a61e75577ca095187cad9f0ac8dd1cf72c103) | 2026-10-26T17:29:48Z | 2026-11-13 | A 仓库 HEAD 仍为原 README 提交，未取得原标注或程序。 |
+| arxiv:2611.05150 v1；[ExactLoop](https://arxiv.org/html/2611.05150v1) | 2026-11-03T16:25:43Z | 2026-11-13 | A 读 Appendix A 工件说明，上游项目只核提交元数据；未取得文章的修改快照、日志或历史执行入口。 |
+| arxiv:2611.14051 v1；[跨模型更新 KV](https://arxiv.org/abs/2611.14051v1) | 2026-11-10T13:17:04Z，11-11 公告 | 2026-11-13 | B1 指定 §§2–4 和附录 A–C。新预印本，移植后的任务得分、首 token 成本和行为比较。研究高、启发高、限定可靠中。[范围](../../content/sources/paper-kv-cache-across-model-updates.md) |
+| arxiv:2611.13176 v1；[ShadowPrefill](https://arxiv.org/abs/2611.13176v1) | 2026-11-09T19:59:25Z，11-11 公告 | 2026-11-13 | B2 指定 §§3–6、附录 D。新预印本，区分固定轨迹实机与带逐迭代预算的模拟。研究高、启发高、限定可靠中。[范围](../../content/sources/paper-shadowprefill.md) |
+| arxiv:2610.29544 v1；[RISK-KV](https://arxiv.org/abs/2610.29544v1) | 2026-10-21T10:30:46Z | 2026-11-13 | B 仍 v1，题录与版本回访，净预测器成本仍待实测。 |
+| arxiv:2610.30026 v1；[SilentCueLoss](https://arxiv.org/abs/2610.30026v1) | 沿用既有记录 | 2026-11-13 | B 仍 v1，题录与版本回访，未取得可归属实现。 |
+| arxiv:2610.36370 v1；[IOSage](https://arxiv.org/abs/2610.36370v1) | 2026-10-26T22:35:54Z | 2026-11-13 | B 仍 v1，题录与版本回访；外链题名仅能定位通用日志，未核方法配对的原始测量。 |
+| doi:10.3389/fpsyg.2014.01157；[两色同键 Stroop](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2014.01157/full) | 2014-10-14 | 2026-11-13 | C1 旧原始实验，指定引言、方法、结果、讨论、图 1–3 图注及脚注 1。研究高、启发高，限定设计证据高、机制外推中。[范围](../../content/sources/paper-stroop-two-to-one-mapping.md) |
+| doi:10.1027/1618-3169/a000530；[修改版同键设计](https://eprints.bournemouth.ac.uk/36444/) | 2021-12-15 文章日期 | 2026-11-13 | C 筛题录、摘要和接受稿引言及中性基线设计线索，未独立核结果分析。正文只采用摘要报告的语义冲突证据。 |
+
 ## 2026-11-11
 
 触及 11 个不同来源对象（A4、B5、C2），四次指定深读（A1、B2、C1）。A 的作者原件与昨日预印本同属一个研究，未重复当作新发表。题录、同源版本、正文镜像与跨角色复核不另计。[晨报](../digests/2026-11-11.md)记录四项候选，[回执](runs/2026-11-11.md)记录工具、失败及交付。

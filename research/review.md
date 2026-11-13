@@ -8,9 +8,14 @@
 | 2026-11-11/B1 | 轨迹中按会话计数改善对已观测共享的辨认，真实结束界定单会话状态的寿命 | [会话生命周期与共享](../content/notes/kv-cache-optimization.md#session-lifecycle-and-sharing)及[轨迹来源](../content/sources/paper-storage-view-kv-cache.md)。建议采纳信号分工和限定对照，暂缓首次共享预测与有限容量收益。 | 待审 |
 | 2026-11-11/C1 | Gaia EDR3 的类星体绝对锚、近共同距离差分与校准传递 | [Gaia 视差标定](../content/notes/gaia-parallax-zero-point-calibration.md)及[原文定位](../content/sources/paper-gaia-edr3-parallax-bias.md)。建议采纳识别机制和加性偏差的结构类比，保留极红跨天区及其他发布版本的独立验证。 | 待审 |
 | 2026-11-11/B2 | 输运约束允许同一组边际，实际生成成本与目标函数仍有区别 | [输运预算与最大熵](../content/notes/transport-budget-and-conditional-entropy.md)及[预印本](../content/sources/paper-transport-entropy-dependence.md)。建议采纳有限矩下的耦合论证和一维高斯算例，暂缓一般对偶与具体采样表现。 | 待审 |
+| 2026-11-13/A1 | 固定铁路拟合入口的测试折与评分日期错配，传播权重随入口不同 | [日期配对](../content/notes/transport-delay-propagation-and-thresholds.md#validation-pairing)及[固定证据](../content/sources/paper-climate-transport-collapse.md#validation-input-audit)。建议采纳代码路径与至少一对日期错配的证明，论文外测待核执行。 | 待审 |
+| 2026-11-13/B1 | 跨权重缓存移植的加载、任务效用和输出行为应分别验收 | [跨版本状态](../content/notes/kv-cache-mechanism.md#cross-checkpoint-reuse)及[配对来源](../content/sources/paper-kv-cache-across-model-updates.md)。建议采纳验收分项与有限对照，暂缓部署普遍保证。 | 待审 |
+| 2026-11-13/C1 | 同键试次控制按键预测后，净时差无法单独辨认竞争和促进 | [两色同键机制](../content/notes/stroop-interference-and-experimental-controls.md#two-to-one-mapping)及[原始实验](../content/sources/paper-stroop-two-to-one-mapping.md)。建议采纳配比与机制识别边界，修改版的实际对照留作研究。 | 待审 |
+| 2026-11-13/B2 | 目标模型预填缩短切换等待，普通负载可改变全调用表现 | [目标预填](../content/notes/kv-cache-optimization.md#routing-and-native-prefill)及[实机与模拟来源](../content/sources/paper-shadowprefill.md)。建议采纳实机分母与调度条件，暂缓模拟外推及新路由策略结论。 | 待审 |
 
 ## 每日简报源文件
 
+- [2026-11-13](digests/2026-11-13.md)
 - [2026-11-11](digests/2026-11-11.md)
 
 ## 审核范围
@@ -19,4 +24,4 @@
 
 ## 验证
 
-同提交独立审核、构建和发布的实际结果由[当日回执](state/runs/2026-11-11.md)记录。
+同提交独立审核、构建和发布的实际结果见 [11-13 回执](state/runs/2026-11-13.md)与 [11-11 回执](state/runs/2026-11-11.md)。

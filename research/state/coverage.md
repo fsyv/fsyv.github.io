@@ -481,3 +481,19 @@ C 最近三次为社会选择、统计决策、分析化学，保持独立探索
 | C | 天文回访。已有速度拟合的共同尺度问题，本轮从旧 Gaia EDR3 论文新增角度零点识别，另筛同主题几何标尺候选。 | 12-02 可优先查极红对象另一半球的独立样本，或查几何标尺如何进入速度拟合。无 EDR3 表复算或跨发布外推。 |
 
 [客户端恢复原件](../../content/notes/session-cache-pressure-and-metastability.md#client-gate-and-session-completion)已补一对原件与九次派生表。11-18 只在明确自动触发指标或对照原件可取时继续，待分离触发时点、上限与缓存容量。前几日其他未完成项沿历史日期与证据条件继续，不改旧回执。C 最近三次为统计决策、分析化学和天文回访，未重复主题。独立审核、构建和实际发布见[当日回执](runs/2026-11-11.md)。
+
+
+## 2026-11-13 铁路验证配对、跨权重缓存与心理机制识别
+
+延续 research/batch-2026-11-11 和 Draft PR #33，基线 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d。11-12 无可核晨报或回执。今日新增 A1、B1、C1、B2，累计八项待审。实际研究候选 12 项、指定深读四次，40/35/25 为投入参考。既有反馈和历史状态保留。研究仍为 partial，[当日回执](runs/2026-11-13.md)记录独立审核、构建与交付的实际结果。
+
+| 问题 / 入口 | 本轮推进或具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [交通模型](../../content/notes/transport-delay-propagation-and-thresholds.md#validation-pairing) | 用原日期表证明固定公开拟合评分至少一对日期不同，核实稳态与拟合权重及外部输入。未执行模型、未查原 ERA5 输入或实际参数与论文产物绑定。 | 2026-11-20，优先有作者原缓存或运行记录时推进。 |
+| [贪心价值与 TDC](../../content/questions/greedy-value-improvement.md)、[应用评价与保证](../../content/questions/evidence-to-guarantees.md) | TDC v1 与明确公开入口回访，无新的作者执行证据。rPoA 定向题名、作者及出版链接，仍缺可归属的评分合约，未运行。 | 2026-11-18 查 TDC 明确执行入口；2026-11-20 查 rPoA 指定合约或规格。 |
+| [笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存评价](../../content/questions/web3-caching-evaluation.md) | 仅本地复评，仍缺目标读者、公开对照样本和同实现同轨迹的端到端净成本。 | 2026-11-20，先固定可公开样本与对照，不重复一般实验设计。 |
+| [原标注与评分](../../content/notes/claim-scope-and-evidence-synthesis.md#semantic-repair-and-logical-strength)、[执行与舍入](../../content/notes/kv-cache-mechanism.md#rounding-and-execution) | 回访了公开 README 与工件说明。SmoothScore 原标注及执行程序、ExactLoop 修改快照与线上日志仍缺。TapeSAC 峰位置、Twitter 部署导出、metadata 端到端、guard 正动作及 EdgePace 同负载未另查。 | 2026-11-20，仅有明确工件、配置或原始测量时推进。 |
+| [跨权重状态](../../content/notes/kv-cache-mechanism.md#cross-checkpoint-reuse)、[路由预填](../../content/notes/kv-cache-optimization.md#routing-and-native-prefill) | 窗口内两份新论文指定深读，覆盖核至 11-11 公告。11-12 美东恢复批次未核。未复现同版恢复或路由服务，RISK/SilentCue/IOSage 仅回访版本或外链，11-06 同部署交错、无 oracle 质量时延及 11-11 摘要候选未深读。 | 2026-11-16 先补公告；2026-11-20 以固定恢复或服务运行对象复评两新篇和仍缺的实证。 |
+| [心理实验](../../content/maps/experimental-psychology-and-inference.md)、[地球物理](../../content/maps/geophysics-and-inverse-evidence.md) | 独立 C 深读两色同键原始实验，试次预测与净时差可核，机制分量及修改设计结果未审。11-12 到期的地球物理只做本地复评，未取得独立反转年代或跨脊剖面原件。 | 地球物理 2026-11-23 优先独立剖面和时间锚；心理 2026-12-04 先核修改设计的中性基线和结果。 |
+
+最近三次 C 为分析化学、天文及实验心理学，主题未重复。最近四次含此前未覆盖的分析化学，C 保有独立机会。原定其他回访沿历史日期继续。
