@@ -62,9 +62,13 @@ endorsement: ai-candidate
 
 **模型变更与路由分支：**先读[跨权重移植](../notes/kv-cache-mechanism.md#cross-checkpoint-reuse)，区分缓存格式、任务得分、行为一致和同版本恢复。再读[用目标权重提前预填](../notes/kv-cache-optimization.md#routing-and-native-prefill)，比较目标原生状态的提前计算、缓存存续及对正在解码的普通流量的影响。两种方案分别改变状态来源和计算时点。
 
+[工具调度与批次收尾](../notes/storage-latency-and-slo.md#batch-completion-and-environment)把工具期从会话容量问题推进到固定任务集。读法是先分开在场样本与同时运行的工具，再用批总时长、末段区间与终止语义判断调度效果。
+
 ## Evidence
 
 **能量与服务目标分支：**理解完整生成链后，读[最终产出token与板卡能量](../notes/storage-latency-and-slo.md#accepted-tokens-and-energy)，先计入被拒draft的验证成本，再在同批量/同模型下比较能耗和平均时延。静态批次均值不替代逐请求尾部、质量或线上到达负载。
+
+[请求能量归属](../notes/storage-latency-and-slo.md#request-energy-attribution)在确定硬件与总能量范围之后，解释什么时候可按使用者等分共享步骤或前缀块。连续批子集可能发生不同的执行步骤，归属证据需检查实际调度重放。
 
 [Transformer/视频/采样资料](../sources/foundations-transformer.md)、[KV 系统资料](../sources/foundations-kv-systems.md)和[Switch 资料](../sources/foundations-moe.md)均列出实际读取范围。没有来源或实验条件的性能倍数不构成比较依据。
 

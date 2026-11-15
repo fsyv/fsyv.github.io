@@ -42,4 +42,6 @@ status: open
 
 2026-11-09 回访补入[同键版本顺序的静态推演](../notes/storage-placement-and-migration.md#version-order-during-handoff)。早归属且后台回放开启时，固定历史实现中的目标写入可以确认较低版本，稍后回放仍存活的较高版本旧对象会改回索引。它给出应验证的同键时序。实际读写行为、日志恢复和删除等待没有运行证据。下次复评 2026-11-16，先围绕这一时序核对可公开复现的固定实现或测试，再考察故障及过渡期服务指标。
 
+2026-11-16 核到[固定历史实现的普通读](../sources/paper-rocksteady.md#client-visible-read)，把索引推演推进为[可测试的同目标两次读](../notes/storage-placement-and-migration.md#client-visible-version-order)。下次在能运行该提交的环境中固定同键旧值与较高版本、成功的新写以及两读之间的后台回放，分别记录响应中的值、版本与 side log 提交时点。等无故障时序得到实际日志，再判断能否构造跨日志故障对照。下次复评 2026-11-23，优先有同语义运行对象时推进。
+
 状态保持 open。完成后应先将测量口径与证据整合到放置/迁移笔记，再记录解决范围与仍不适用的条件。入口见[存储与服务地图](../maps/storage-and-serving.md)。

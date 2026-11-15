@@ -12,9 +12,14 @@
 | 2026-11-13/B1 | 跨权重缓存移植的加载、任务效用和输出行为应分别验收 | [跨版本状态](../content/notes/kv-cache-mechanism.md#cross-checkpoint-reuse)及[配对来源](../content/sources/paper-kv-cache-across-model-updates.md)。建议采纳验收分项与有限对照，暂缓部署普遍保证。 | 待审 |
 | 2026-11-13/C1 | 同键试次控制按键预测后，净时差无法单独辨认竞争和促进 | [两色同键机制](../content/notes/stroop-interference-and-experimental-controls.md#two-to-one-mapping)及[原始实验](../content/sources/paper-stroop-two-to-one-mapping.md)。建议采纳配比与机制识别边界，修改版的实际对照留作研究。 | 待审 |
 | 2026-11-13/B2 | 目标模型预填缩短切换等待，普通负载可改变全调用表现 | [目标预填](../content/notes/kv-cache-optimization.md#routing-and-native-prefill)及[实机与模拟来源](../content/sources/paper-shadowprefill.md)。建议采纳实机分母与调度条件，暂缓模拟外推及新路由策略结论。 | 待审 |
+| 2026-11-16/A1 | 固定历史实现可推出新写确认后同一目标的读值回退，读版本仍上升 | [同键读值顺序](../content/notes/storage-placement-and-migration.md#client-visible-version-order)及[普通读和提交源码](../content/sources/paper-rocksteady.md#client-visible-read)。采纳范围为静态客户端断言，实际运行和故障后值为后续验证。 | 待审 |
+| 2026-11-16/B1 | 固定使用者关系且共同成本只出现一次时可等分，连续批子集要核实际步分组 | [请求能量归属](../content/notes/storage-latency-and-slo.md#request-energy-attribution)及[StepSplit 的单卡冷缓存对照](../content/sources/paper-stepsplit.md)。建议采纳模型推导与冷缓存比较，保留跨窗口热缓存和整机计量问题。 | 待审 |
+| 2026-11-16/C1 | 单个湍斑的局部衰减与群体借裂分持续可由两种时间尺度分别检验 | [原解释的现代实验补充](../content/notes/reynolds-similarity-and-transition.md#puff-splitting-and-decay)及[Avila 等来源](../content/sources/avila-pipe-turbulence-onset-2011.md)。建议采纳脉冲、观测判据与时间尺度推论，临界值按限定估计表述。 | 待审 |
+| 2026-11-16/B2 | 固定批次中工具槽位与在场任务可分开，最后任务提早结束也可能伴随末段变长 | [工具并发与批次收尾](../content/notes/storage-latency-and-slo.md#batch-completion-and-environment)及[重放与真实工具测量](../content/sources/paper-agent-environment-coordination.md)。建议采纳两项对照的适用范围与末段口径，保留开放到达、逐请求成功及分数等价问题。 | 待审 |
 
 ## 每日简报源文件
 
+- [2026-11-16](digests/2026-11-16.md)
 - [2026-11-13](digests/2026-11-13.md)
 - [2026-11-11](digests/2026-11-11.md)
 
@@ -24,4 +29,4 @@
 
 ## 验证
 
-同提交独立审核、构建和发布的实际结果见 [11-13 回执](state/runs/2026-11-13.md)与 [11-11 回执](state/runs/2026-11-11.md)。
+同提交独立审核、构建和发布的实际结果见 [11-16 回执](state/runs/2026-11-16.md)、[11-13 回执](state/runs/2026-11-13.md)与 [11-11 回执](state/runs/2026-11-11.md)。

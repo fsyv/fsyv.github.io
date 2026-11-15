@@ -1,6 +1,6 @@
 # 选题轮换与问题回访
 
-历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-11.md)记录发现，审核、构建和 PR 的精确结果由[当日回执](runs/2026-11-11.md)记录。模拟反馈与沉默均不推导偏好。
+历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-16.md)记录发现，审核、构建和 PR 的精确结果由[当日回执](runs/2026-11-16.md)记录。模拟反馈与沉默均不推导偏好。
 
 ## 截至2026-10-16的历史覆盖
 
@@ -497,3 +497,19 @@ C 最近三次为社会选择、统计决策、分析化学，保持独立探索
 | [心理实验](../../content/maps/experimental-psychology-and-inference.md)、[地球物理](../../content/maps/geophysics-and-inverse-evidence.md) | 独立 C 深读两色同键原始实验，试次预测与净时差可核，机制分量及修改设计结果未审。11-12 到期的地球物理只做本地复评，未取得独立反转年代或跨脊剖面原件。 | 地球物理 2026-11-23 优先独立剖面和时间锚；心理 2026-12-04 先核修改设计的中性基线和结果。 |
 
 最近三次 C 为分析化学、天文及实验心理学，主题未重复。最近四次含此前未覆盖的分析化学，C 保有独立机会。原定其他回访沿历史日期继续。
+
+
+## 2026-11-16 同键读值、共享 GPU 计量、管流与工具调度
+
+复用 research/batch-2026-11-11 和 Draft PR #33，基线 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d。今日四项候选加入后累计十二项待审。共触及十二个研究对象，六次指定深读，投入比例只作参考。固定历史实现的同键读写和故障测试未运行，研究为 partial。[当天回执](runs/2026-11-16.md)记录实际研究与交付结果。
+
+| 问题 / 入口 | 本轮推进或具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [迁移评价](../../content/questions/storage-migration-evaluation.md) | 定点核对固定历史实现的普通读、日志同步与特定单测，提出两次读值和版本的断言。没有跨实际故障的运行日志。 | 2026-11-23，优先固定提交的无故障同键时序。 |
+| [存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 多源迁移外部入口受阻，仅核题录与会议片段。冷热费用发表稿和早稿仍缺可归属执行口径。跨层仅库内复评，缺同语义对照。 | 2026-11-23，优先可核正文、作者程序或完整跨层工作负载。 |
+| [GPU 直存](../../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)、[剪枝修复](../../content/notes/depth-pruning-and-repair.md)、[最终 token 能量](../../content/notes/storage-latency-and-slo.md#accepted-tokens-and-energy) | 回访题录版本。同语义直存尾部、修复执行与原投机解码预填能量代码证据未增。新逐请求归属建立另一项计量问题，不关闭旧预填缺口。 | 2026-11-23，仅新版本或明确执行入口。 |
+| [KV 淘汰](../../content/notes/kv-cache-optimization.md#attention-gates-and-eviction)、[扩散模拟](../../content/notes/masked-diffusion-speculative-simulation.md) | 两份 11-09 来源仅本地复评。仍缺可检查的部署淘汰策略或固定目标核下的计时和数值路径。 | 2026-11-23，仅新运行对象。 |
+| [逐请求能量归属](../../content/notes/storage-latency-and-slo.md#request-energy-attribution)、[工具并发与批结束](../../content/notes/storage-latency-and-slo.md#batch-completion-and-environment) | 11-11 补遗漏与 11-13 恢复公告各形成一项。能量限固定输出与冷缓存比较。工具派发限固定重放及实测特定配置，线上持续到达与原始执行数据未核。 | 2026-11-23，优先热缓存增量和同样本工具负载的可归属原件。 |
+| [流体力学](../../content/maps/fluid-mechanics-and-dynamic-similarity.md) | 独立复访流体的单斑衰减和空间更新问题。已获得单脉冲和压力计数的原始证据，未直接检验临界标度或有限尺寸。 | 2026-12-07，查群体空间关联、有限尺寸及临界标度。 |
+
+C 最近三次为天文、实验心理学和流体力学，无主题重复。近四次含分析化学首次覆盖，保留独立机会。11-17 仍按原计划复评 FIFO 运行材料和批次验收，并核 Huang、Liu 的新摘要线索。11-18 继续检查 TDC 执行入口。其余排期沿历史记录。
