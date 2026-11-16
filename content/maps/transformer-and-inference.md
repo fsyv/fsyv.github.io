@@ -32,7 +32,7 @@ endorsement: ai-candidate
 
 [配置与排队](../notes/storage-latency-and-slo.md#configuration-and-queueing)将引擎比较接到服务负载：先匹配历史版本的分块 prefill，再分开小吞吐缺口与累积 TTFT；不把旧版本比较当当前排名。
 
-读完混合状态的分叉与恢复，再看[Flide 验证门槛](../notes/kv-cache-mechanism.md#verification-gates)，将执行依赖、head 数值比较和首选容忍条件分别检查。
+读完混合状态的分叉与恢复，再看[Flide 验证门槛](../notes/kv-cache-mechanism.md#verification-gates)，先理解执行依赖、head 数值比较和首选容忍条件，再读[固定量化配置的对照](../notes/kv-cache-mechanism.md#quantization-and-validation)，区别同精度执行路径的验收和切换精度的误差。
 
 ## Branches
 
@@ -60,7 +60,7 @@ endorsement: ai-candidate
 
 读完驻留和[会话缓存压力反馈](../notes/session-cache-pressure-and-metastability.md)后，可以沿两条证据路径比较会话边界。[缓存生命周期与共享](../notes/kv-cache-optimization.md#session-lifecycle-and-sharing)先用块的读者身份辨认潜在寿命，再用轨迹判断回收信号。[客户端控制与完整会话验收](../notes/session-cache-pressure-and-metastability.md#client-gate-and-session-completion)再把等待队列清空、完成所有轮次和用户等待分别记账。
 
-**模型变更与路由分支：**先读[跨权重移植](../notes/kv-cache-mechanism.md#cross-checkpoint-reuse)，区分缓存格式、任务得分、行为一致和同版本恢复。再读[用目标权重提前预填](../notes/kv-cache-optimization.md#routing-and-native-prefill)，比较目标原生状态的提前计算、缓存存续及对正在解码的普通流量的影响。两种方案分别改变状态来源和计算时点。
+**模型变更、路由与上下文编辑分支：**先读[跨权重移植](../notes/kv-cache-mechanism.md#cross-checkpoint-reuse)，区分缓存格式、任务得分、行为一致和同版本恢复。再读[用目标权重提前预填](../notes/kv-cache-optimization.md#routing-and-native-prefill)，比较目标原生状态的提前计算、缓存存续及对正在解码的普通流量的影响。随后读[失效 KV 提案与精确验证](../notes/kv-cache-optimization.md#invalidated-kv-and-verification)，理解第三种路径怎样将旧状态限制在草稿，并用同传输消融衡量解码余量的收益。
 
 [工具调度与批次收尾](../notes/storage-latency-and-slo.md#batch-completion-and-environment)把工具期从会话容量问题推进到固定任务集。读法是先分开在场样本与同时运行的工具，再用批总时长、末段区间与终止语义判断调度效果。
 

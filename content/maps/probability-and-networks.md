@@ -45,6 +45,8 @@ endorsement: ai-candidate
 
 [反复评分与留出集复用](../notes/adaptive-validation-and-holdout-reuse.md)是独立统计分支：先读固定族诚实挑优反例，再用独立样本/有界分数推统一界，最后辨认自适应访问的新条件。它补评价选择规则，不由Zipf或网络幂律推出，也不假定真实缓存请求独立。
 
+[滚动预测的区间验证](../notes/epidemic-forecast-interval-validation.md)接续评分与独立验证：先对同样起报周和预测跨度比较区间评分、实际覆盖与历史基线，再看全系列选种能用到何时的信息。这里的预测结果会跨起报窗重叠。
+
 ## Sources-and-open
 
 [概率资料阅读范围](../sources/foundations-probability.md)区分讲义定义和仅读的实证摘要；[网络资料](../sources/foundations-networks.md)区分理论生成模型与统计检验。真实流量的时间局部性及现实拓扑是否符合模型，保留在[边界检验问题](../questions/foundations-validation.md)，不以空标题代替已有解释。

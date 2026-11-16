@@ -41,7 +41,7 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 
 [混合模型检查点分层](../notes/kv-cache-optimization.md#hybrid-checkpoints)接续跨调用驻留：先核完整状态能否在匹配前缀处恢复，再按访问量与保留量安排KV和循环检查点。全请求尾部、命中差筛选子集均值及不同存储预算的基线必须分别比较；这不证明各混合引擎已组合。
 
-[会话人口与缓存压力](../notes/session-cache-pressure-and-metastability.md)接在跨调用驻留之后：先识别tool期的未来前缀需求，再理解延迟—会话寿命—miss重算反馈。最后核会话goodput的完整成功条件，不能由call吞吐推断冲击后恢复。
+[会话人口与缓存压力](../notes/session-cache-pressure-and-metastability.md)接在跨调用驻留之后：先识别tool期的未来前缀需求，再理解延迟—会话寿命—miss重算反馈。再读[持续高命中与系统积压](../notes/session-cache-pressure-and-metastability.md#cache-recovery-and-session-backlog)，按命中窗口、净流出和固定到达队列的完整交付分别理解恢复。
 
 了解缓存压力后，再读[全未命中下的更新过程](../notes/session-cache-pressure-and-metastability.md#all-miss-renewal)。先数总剩余工作，再看完成会话的构成，避免用陷阱吞吐替代排空阈值。
 

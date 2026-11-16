@@ -16,8 +16,15 @@
 | 2026-11-16/B1 | 固定使用者关系且共同成本只出现一次时可等分，连续批子集要核实际步分组 | [请求能量归属](../content/notes/storage-latency-and-slo.md#request-energy-attribution)及[StepSplit 的单卡冷缓存对照](../content/sources/paper-stepsplit.md)。建议采纳模型推导与冷缓存比较，保留跨窗口热缓存和整机计量问题。 | 待审 |
 | 2026-11-16/C1 | 单个湍斑的局部衰减与群体借裂分持续可由两种时间尺度分别检验 | [原解释的现代实验补充](../content/notes/reynolds-similarity-and-transition.md#puff-splitting-and-decay)及[Avila 等来源](../content/sources/avila-pipe-turbulence-onset-2011.md)。建议采纳脉冲、观测判据与时间尺度推论，临界值按限定估计表述。 | 待审 |
 | 2026-11-16/B2 | 固定批次中工具槽位与在场任务可分开，最后任务提早结束也可能伴随末段变长 | [工具并发与批次收尾](../content/notes/storage-latency-and-slo.md#batch-completion-and-environment)及[重放与真实工具测量](../content/sources/paper-agent-environment-coordination.md)。建议采纳两项对照的适用范围与末段口径，保留开放到达、逐请求成功及分数等价问题。 | 待审 |
+| 2026-11-17/A1 | 长会话重放中，缓存命中恢复仍可伴随总积压增加 | [三项恢复条件](../content/notes/session-cache-pressure-and-metastability.md#cache-recovery-and-session-backlog)及[匹配试验](../content/sources/paper-bursts-outlast-themselves.md)。建议采纳指定到达窗结果与总积压的区别，线上控制待测。 | 待审 |
+| 2026-11-17/B1 | 经编辑的旧状态可提案，精确 KV 到齐后的同次验证决定提交 | [失效 KV 与精确验证](../content/notes/kv-cache-optimization.md#invalidated-kv-and-verification)及[受控重放](../content/sources/paper-callo.md)。建议采纳提交边界与传输和草稿两项实测，跨批及完整任务待验。 | 待审 |
+| 2026-11-17/C1 | 等步距音节对的辨别随标签边界变化，二步与三步实测整体超过标签预测 | [ABX 标签预测](../content/notes/phoneme-labels-and-abx-discrimination.md)及[1957 年原实验](../content/sources/liberman-phoneme-boundary-1957.md)。建议采纳原对照和条件化推导，类别形成需另外实验。 | 待审 |
+| 2026-11-17/B2 | 两个复杂模型在伦敦周死亡回测落后历史基线，公开复现的选种涉及全系列 | [区间与配置时点](../content/notes/epidemic-forecast-interval-validation.md)及[论文与代码](../content/sources/paper-epidemic-forecast-comparison.md)。建议采纳实测覆盖和选种时序判断，种子规则的评分影响须重算。 | 待审 |
+| 2026-11-17/A2 | Flide FP8 的独算与混批固定精度，批次不变与 FP8 显式组合时报错 | [量化及验证](../content/notes/kv-cache-mechanism.md#quantization-and-validation)及[固定源码和原测试](../content/sources/paper-flide.md#quantized-verifier-audit)。建议采纳静态配置与原实测范围，准确率与恢复仍待测。 | 待审 |
 
 ## 每日简报源文件
+
+- [2026-11-17](digests/2026-11-17.md)
 
 - [2026-11-16](digests/2026-11-16.md)
 - [2026-11-13](digests/2026-11-13.md)
@@ -29,4 +36,4 @@
 
 ## 验证
 
-同提交独立审核、构建和发布的实际结果见 [11-16 回执](state/runs/2026-11-16.md)、[11-13 回执](state/runs/2026-11-13.md)与 [11-11 回执](state/runs/2026-11-11.md)。
+同提交独立审核、构建和发布的实际结果见 [11-17 回执](state/runs/2026-11-17.md)、[11-16 回执](state/runs/2026-11-16.md)、[11-13 回执](state/runs/2026-11-13.md)与 [11-11 回执](state/runs/2026-11-11.md)。
