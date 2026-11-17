@@ -29,6 +29,8 @@ endorsement: ai-candidate
 
 [机器舍入与执行边界](../notes/kv-cache-mechanism.md#rounding-and-execution)为数值分支增加工程实例：固定批次下保留归约与舍入，和容量变化后的重新分组分别验证；不能用若干请求bit相同替代普遍稳定性证明。
 
+[精确求和与布局变化](../notes/certified-summation-and-layout-invariance.md)接在数值误差分支之后：先固定量化项，再核中间和证书、跨设备精确合并和最后舍入。它补充允许归约树变化的条件，不由逐位一致推出未量化目标的误差或训练质量。
+
 ## Connections
 
 与[存储与服务](storage-and-serving.md)的联系是建模启发：费用回本、可行迁移和计算证书各有条件。整数副本、时变约束与协议执行不自动符合 LP 右端扰动模型。

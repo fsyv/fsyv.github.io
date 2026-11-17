@@ -1,5 +1,5 @@
 ---
-title: "来源：TDC-Cache 公开预印本"
+title: "来源：TDC-Cache 公开文本与期刊身份"
 date: 2026-10-12
 draft: false
 tags: [caching, multi-agent, consensus]
@@ -54,3 +54,9 @@ Jinyu Chen, Long Shi, Taotao Wang, Jiaheng Wang, Wei Zhang. *TDC-Cache: A Trustw
 ## Objective-followup
 
 2026-10-30 Researcher重核v1 HTML V-B奖励式16–26邻接及VI-A/B，仍未读取或执行代码。今日[目标与证明对象解释](../notes/cooperative-caching-and-learning.md#objective-and-proof)响应用户的问题，将目标一致性与学习成功分开；从公开奖励反解的基目标、处罚比价及路径恒等式是AI代数，不是已核作者业务意图，也未填补终止/重置/bootstrap实现缺口。
+
+## Journal-identity-followup
+
+2026-11-18，arXiv history 仍仅 v1；本页算法判断继续依据该版本。新增第一方书目信息：[作者 UNSW 发表页 2026 年第 22 项](https://www2.ee.unsw.edu.au/~wzhang/Pub.html)列 *IEEE Transactions on Mobile Computing* 25(6):7672–7684，June 2026；[UNSW 机构作者页](https://www.unsw.edu.au/staff/wei-zhang)列 [doi:10.1109/tmc.2025.3643947](https://doi.org/10.1109/TMC.2025.3643947)。[Crossref 注册记录](https://api.crossref.org/works/10.1109/TMC.2025.3643947)与题名及出版月相符，指向 [IEEE 文档 11300725](https://ieeexplore.ieee.org/document/11300725/)。注册记录的 created 时间不是已核首次在线发表日。
+
+IEEE 正文与 stamp 访问受阻，未读取正式发表全文，不能比较其算法与 arXiv 的差异。DOI 与 arXiv 作为同研究别名，不重复计来源或当作今日新发表发现。限定公开题名、网页与 repository 查询仍未定位可归属作者实现，不证明代码不存在；终止、重置、terminal bootstrap 及罚项的实际审计继续开放。

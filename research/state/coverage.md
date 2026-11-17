@@ -527,3 +527,20 @@ C 最近三次为天文、实验心理学和流体力学，无主题重复。近
 | [实验心理学与机制识别](../../content/maps/experimental-psychology-and-inference.md) | C 首次覆盖语音知觉，已核等声学步距的辨别和仅类别模型的系统缺口。勘误式图与跨母语/非语音对照仍欠。 | 2026-12-08，优先对照是否固定声学维度和任务。 |
 
 C 最近三次为实验心理学的同键控制、流体力学与语音知觉的两种任务，语音知觉为此前未覆盖领域，保持独立探索。11-18 TDC 明确追问及既定回访顺序延续。
+
+
+## 2026-11-18 精确归约、采样预算、碳定年与遥测响应
+
+延续 research/batch-2026-11-11 与 Draft PR #33，基线 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d 未变。四项新增候选接续原十七项，累计二十一项；11 个研究对象，5 次指定部分深读。40/35/25 为投入参考，未实测各通道时长。TDC 实现等明确任务未完成，研究为 partial；选择性监测范围另见[来源账本](sources.md)与[回执](runs/2026-11-18.md)。
+
+| 问题 / 入口 | 本轮推进或具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [TDC 贪心价值](../../content/questions/greedy-value-improvement.md) | 已核期刊身份，正式全文访问受阻。限定公开查询未定位作者实现，终止/重置/terminal 审计仍未完成；不重复基础推导代替证据。 | 2026-11-25，仅作者实现、可取正式全文或实质版本变化。 |
+| [压缩重规划](../../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload)、[WorldPager](../../content/notes/kv-cache-optimization.md#revisit-similarity-and-quality) | 两文仍 v1，PlaneZip 原型仍列未来工作；WorldPager 未得可归属结果文件或同语义尾部原测量。 | 2026-11-25，仅新原型或作者执行原件。 |
+| [客户端控制](../../content/notes/session-cache-pressure-and-metastability.md#client-gate-and-session-completion) | RESCUE 固定源码仍是配置时点启用、双队列反馈解除；与 11-11 无实质新结论。自动触发、暂停时 KV 保留及跨负载运行未补。 | 2026-11-25，仅新控制代码或明确原件。 |
+| [输运实际采样](../../content/notes/transport-budget-and-conditional-entropy.md#multidimensional-sampling-and-budget) | 增读多维核并执行 AI 说明性采样，区分总预算、单次和有限批均。一般生成器、附加硬上限及性能未测。 | 2026-12-02，先固定明确生成器或业务硬约束。 |
+| [数值算子](../../content/notes/numerical-conditioning-and-stability.md)、[KV 有限容量](../../content/notes/kv-cache-optimization.md#session-lifecycle-and-sharing) | 未独立重测原定固定算子与高精度参考，也未取得同语义有限容量 KV 新运行证据。B1 的条件化训练路线不替代这些旧任务。 | 2026-11-25，须有固定算子/参考或可复现容量运行对象。 |
+| [精确归约](../../content/notes/certified-summation-and-layout-invariance.md)、[遥测响应](../../content/notes/telemetry-response-and-control-sufficiency.md) | 两份新预印本指定深读。内核契约/原日志、表2程序与真实动态充分性均未独立执行。 | 2026-11-25，仅可归属实现、原始日志或新版本推进。 |
+| [放射化学](../../content/maps/radiochemistry-and-transformation.md) | 从持续周转进入此前未覆盖的放射定年校准。已核独立标尺和多峰机制；未解决1902实验残余成因或现代ThX身份，未运行校准软件。 | 2026-12-09，固定曲线下比较单样本、年距序列与地层先验并保留相关误差。 |
+
+C 最近三次为流体力学、语音知觉、放射定年；近四次含此前未覆盖的语音知觉与定年校准，独立探索机会保留。11-19 历史流行病、11-20 交通/rPoA/读者与净成本、11-23 存储/跨层/地球物理及其他排期延续，不由今天的新项替代。实际审核与同提交构建由主控填写，未在此预填。

@@ -51,6 +51,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 
 [同键版本顺序](../notes/storage-placement-and-migration.md#version-order-during-handoff)接续固定实现：先区分分配下界与单键已有版本，再核对新写确认和后台回放的先后。这个历史分支的静态推演给出恢复实验前应检查的正常执行条件。
 
+[遥测与控制后的瞬态](../notes/telemetry-response-and-control-sufficiency.md)接续 SLO 指标：先核所调控制与所观测统计是否匹配，再比较静态增益与完整响应曲线。参考 Jackson 网络的充分性不自动适用于缓存反馈或真实服务率。
+
 ## Sources
 
 阅读范围是本次记录，不能由“经典”或发表场所替代。完整作者与版本见各来源页。

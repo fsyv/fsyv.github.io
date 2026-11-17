@@ -39,7 +39,11 @@ endorsement: ai-candidate
 
 ## Transport-and-entropy
 
-先复习边际、联合分布和条件概率，再读[输运预算与条件熵](../notes/transport-budget-and-conditional-entropy.md#marginals-and-couplings)的可行边际关系。随后核一维高斯例，辨认约束使用的耦合和实际生成的配对。有限矩、可取到的耦合与熵量定义是推导条件，任意分布的采样与实际成本仍开放。
+先复习边际、联合分布和条件概率，再读[输运预算与条件熵](../notes/transport-budget-and-conditional-entropy.md#marginals-and-couplings)的可行边际关系。随后核一维高斯例，辨认约束使用的耦合和实际生成的配对。再读[多维生成核与有限采样](../notes/transport-budget-and-conditional-entropy.md#multidimensional-sampling-and-budget)，按总费用分配各坐标尺度，区分期望预算、单次费用和有限批均。有限矩、可取到的耦合与熵量定义是推导条件，一般生成器和额外硬约束仍开放。
+
+## Telemetry-and-response
+
+[控制充分性与遥测响应](../notes/telemetry-response-and-control-sufficiency.md)可在联合与条件分布之后独立阅读。先定义平稳分布和双时协方差，再看控制的 score 为什么决定所需观测，最后用串联队列比较静态与瞬态。响应预测的充分条件和可逆聚合的存在条件是两个问题，后者还需新的过程假设。
 
 ## Validation-branch
 
