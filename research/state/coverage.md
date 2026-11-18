@@ -1,6 +1,6 @@
 # 选题轮换与问题回访
 
-历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-17.md)记录发现，审核、构建和 PR 的精确结果由[当日回执](runs/2026-11-17.md)记录。模拟反馈与沉默均不推导偏好。
+历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-19.md)记录发现，审核、构建和 PR 的精确结果由[当日回执](runs/2026-11-19.md)记录。模拟反馈与沉默均不推导偏好。
 
 ## 截至2026-10-16的历史覆盖
 
@@ -544,3 +544,19 @@ C 最近三次为实验心理学的同键控制、流体力学与语音知觉的
 | [放射化学](../../content/maps/radiochemistry-and-transformation.md) | 从持续周转进入此前未覆盖的放射定年校准。已核独立标尺和多峰机制；未解决1902实验残余成因或现代ThX身份，未运行校准软件。 | 2026-12-09，固定曲线下比较单样本、年距序列与地层先验并保留相关误差。 |
 
 C 最近三次为流体力学、语音知觉、放射定年；近四次含此前未覆盖的语音知觉与定年校准，独立探索机会保留。11-19 历史流行病、11-20 交通/rPoA/读者与净成本、11-23 存储/跨层/地球物理及其他排期延续，不由今天的新项替代。实际审核与同提交构建由主控填写，未在此预填。
+
+
+## 2026-11-19 比例补缺、固定注意力与持久压缩局部性
+
+继续唯一 research/batch-2026-11-11 与开放 Draft PR #33，基线 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d 未变。今日C1/A1/B1三项接续原二十一项，累计二十四项待审。8个去重研究对象、4次指定部分深读，另有AI固定算子执行；40/35/25仅投入参考，未实测时长。TDC执行审计等未完，研究partial，选择性监测范围和交付状态分别记录于[回执](runs/2026-11-19.md)。
+
+| 问题 / 入口 | 本轮推进或未选原因 | 下一次（上海） |
+| --- | --- | --- |
+| [历史供水比较](../../content/notes/water-supply-comparison-and-denominators.md#followup-denominators-and-imputation) | 到期回访1856后续，核人口估计/未知分类/关键表，推导比例补缺恒保率比及受限端点；未取得原名单、登记或旧错表根因，不能关闭个体因果问题。 | 2026-12-10，仅原公司名单或可归属逐区资料。 |
+| [固定数值算子](../../content/notes/numerical-conditioning-and-stability.md#fixed-attention-and-input-rounding)、[基础验证](../../content/questions/foundations-validation.md) | 已完成两键固定算子与100/160位参考，区分输入转换与算术误差、同范数方向。真实模型/格式/GPU、有限容量KV与生成影响仍缺。 | 2026-11-25，仅公开固定模型切片、格式和参考或明确容量运行。 |
+| [TDC贪心价值](../../content/questions/greedy-value-improvement.md) | 今日仅定点题录及作者代码查询，仍v1未定位实现；无实质新发现，不重复昨日书目或一般证明。 | 2026-11-25，仅作者实现、正式全文或实质版本。 |
+| [压缩记录与重排](../../content/notes/record-reordering-and-compression-granularity.md) | 新增持久布局完整解释，同记录/压缩器比较空间与读写；XM-Sparse已指定深读但择优独立存储主题，非否定领域。 | 2026-11-26，仅明确代码、冷映射/恢复及更新原件；XM优先真实容量与运行。 |
+| [评价与保证](../../content/questions/evidence-to-guarantees.md)、[笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md) | 未到明日排期；rPoA评分合约、公开目标读者/样本对照和同实现净成本仍缺，本日未另行外查。 | 2026-11-20，沿既定证据条件。 |
+| [迁移评价](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 未到23日；同键时序/恢复、冷热计费/多源全文与同语义跨层能耗等障碍保留，不由新压缩原型替代。 | 2026-11-23，沿既定工件/正文条件。 |
+
+C最近三次为语音知觉、放射定年与历史流行病回访，无连续主题重复；近四次含此前未覆盖的语音知觉和定年，C独立机会保留。11-20交通/原标注与跨权重路由、11-23地球物理/形态和其他原定回访继续，不由本日新项替代。没有新用户反馈，不推断长期兴趣变化。

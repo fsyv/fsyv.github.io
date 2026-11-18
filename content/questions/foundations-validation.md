@@ -84,3 +84,7 @@ B 通道增加两项测量约束：[物理放置与访问历史](../notes/kv-cac
 ## Review-2026-11-17
 
 [缓存恢复与积压](../notes/session-cache-pressure-and-metastability.md#cache-recovery-and-session-backlog)补入异构长会话重放中持续高命中、总积压仍增的实测对照。仍需在具有同一到达计划和完整观察窗的运行里记录全部到达/完成、期末在场及各状态等待，才能评估实际干预的净积压影响。吞吐、任务正确性与时延联合门槛仍待实测。
+
+## Review-2026-11-19
+
+[固定两键注意力验算](../notes/numerical-conditioning-and-stability.md#fixed-attention-and-input-rounding)已按原意图、binary64 已存状态和高精度参考分层完成 AI 说明性执行；相同范数扰动的方向不同也已比较。它推进固定算子这一最小步骤，不是训练模型、KV 量化或 GPU 结果。实际模型/query/mask/位置与状态格式、误差传到 logits 的路径及后续离散选择仍需另测，本问题保持 open。11-25 仅在能固定公开模型切片、实际格式与高精度参考时继续。

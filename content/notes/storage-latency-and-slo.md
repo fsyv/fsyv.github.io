@@ -212,3 +212,7 @@ prefill 为输入建立状态，decode 则持续为已有请求生成后续 toke
 [频率稳定度与平均窗口](frequency-stability-and-allan-variance.md)同样要求区分尺度与统计对象；相邻差可忽略固定偏移，不能代替本页端到端时延、P99或SLO，也没有验证两者服从相同噪声谱。
 
 [遥测响应与控制充分性](telemetry-response-and-control-sufficiency.md)补充干预后的预测问题：即使最终增益正确，缺少与控制匹配的双时统计仍可错估瞬态。该参考模型不等于本页真实 SLO 的端到端保证。
+
+## Compression-layout-and-io
+
+[记录内重排与压缩](record-reordering-and-compression-granularity.md#space-and-io-comparison)给出持久存储的具体取舍：同压缩器、同记录大小的空间减少，可以伴随完整写入变慢；冷数据、热映射的随机读也不包含首次元数据加载。这个实例支持先固定计时与缓存状态再比较，本页不由压缩比推导端到端 SLO。

@@ -25,20 +25,23 @@
 | 2026-11-18/A1 | 平方位移期望预算按维数分配，单次和有限批均仍会波动 | [多维采样增量](../content/notes/transport-budget-and-conditional-entropy.md#multidimensional-sampling-and-budget)及[同文增读](../content/sources/paper-transport-entropy-dependence.md#sampling-followup)。建议采纳高斯核、卡方推导与明确标记的 AI 采样；一般生成器、硬上限及性能另验。 | 待审 |
 | 2026-11-18/C1 | 更真实的碳定年曲线可使单样本多峰，已知年距序列增加约束 | [定年与独立标尺](../content/notes/radiocarbon-calibration-and-age-identifiability.md)、[IntCal20 证据](../content/sources/reimer-intcal20-2020.md)及放射地图。建议采纳曲线与反演机制，概率式限 AI 单样本近似，不采纳普遍年级精度或已复算区间。 | 待审 |
 | 2026-11-18/B2 | 控制匹配的双时统计支持参考队列瞬态，本地静态正确仍可瞬态错误 | [遥测响应解释](../content/notes/telemetry-response-and-control-sufficiency.md)、[定理和表 2](../content/sources/paper-tloe.md)及概率/服务地图。建议采纳 S+F 预测与可逆聚合的条件区分、限定数值反例，真实遥测和程序另验。 | 待审 |
+| 2026-11-19/C1 | 1856分母/归类与比例补缺恒保率比 | [供水后续](../content/notes/water-supply-comparison-and-denominators.md)。采纳原文链条与条件推导；端点非CI，旧错表与原登记仍缺。 | 待审 |
+| 2026-11-19/A1 | 注意力输入、已存问题与机器输出分层执行 | [固定算子](../content/notes/numerical-conditioning-and-stability.md)。采纳AI算例及方向对照，真实KV格式、GPU与生成效果待验。 | 待审 |
+| 2026-11-19/B1 | 记录内相似块重排的空间与读写取舍 | [压缩局部性](../content/notes/record-reordering-and-compression-granularity.md)。采纳机制与限定原型比较，冷映射、更新和恢复待验。 | 待审 |
 
 ## 每日简报源文件
 
+- [2026-11-19](digests/2026-11-19.md)
 - [2026-11-18](digests/2026-11-18.md)
 - [2026-11-17](digests/2026-11-17.md)
-
 - [2026-11-16](digests/2026-11-16.md)
 - [2026-11-13](digests/2026-11-13.md)
 - [2026-11-11](digests/2026-11-11.md)
 
 ## 审核范围
 
-本批次原十七项保留，本日增加四项，累计二十一项。可按日期和发现编号接受、拒绝或暂缓部分解释。继续研究另行记录，不以提出追问作为采纳。TDC 的实际终止、重置与终端价值处理仍待可归属的实现入口。
+本批次原二十一项保留，本日增加三项，累计二十四项。可按日期和发现编号接受、拒绝或暂缓部分解释。继续研究另行记录，不以提出追问作为采纳。TDC 的实际终止、重置与终端价值处理仍待可归属的实现入口。
 
 ## 验证
 
-同提交独立审核、构建和发布的实际结果见 [11-18 回执](state/runs/2026-11-18.md)、[11-17 回执](state/runs/2026-11-17.md)、[11-16 回执](state/runs/2026-11-16.md)、[11-13 回执](state/runs/2026-11-13.md)与 [11-11 回执](state/runs/2026-11-11.md)。
+同提交独立审核、构建和发布的实际结果见 [11-19 回执](state/runs/2026-11-19.md)、[11-18 回执](state/runs/2026-11-18.md)、[11-17 回执](state/runs/2026-11-17.md)、[11-16 回执](state/runs/2026-11-16.md)、[11-13 回执](state/runs/2026-11-13.md)与 [11-11 回执](state/runs/2026-11-11.md)。

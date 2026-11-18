@@ -53,6 +53,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 
 [遥测与控制后的瞬态](../notes/telemetry-response-and-control-sufficiency.md)接续 SLO 指标：先核所调控制与所观测统计是否匹配，再比较静态增益与完整响应曲线。参考 Jackson 网络的充分性不自动适用于缓存反馈或真实服务率。
 
+[压缩记录与物理邻接](../notes/record-reordering-and-compression-granularity.md)另开持久布局分支，接在放置概念之后：先看相似块能否共享匹配历史，再把逻辑恢复映射、存储空间与写入和随机读代价一起比较。它不改变副本数，也不是 KV 的近似删除。
+
 ## Sources
 
 阅读范围是本次记录，不能由“经典”或发表场所替代。完整作者与版本见各来源页。

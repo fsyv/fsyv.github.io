@@ -20,6 +20,7 @@ endorsement: ai-candidate
 ## Reading
 
 1. [问题敏感和算法不稳定怎样区分](../notes/numerical-conditioning-and-stability.md)：先固定问题、输入域、范数与允许扰动，通过三个反例建立条件数、前向/后向误差与残差的区别。
+   接着看同页[固定注意力与输入表示](../notes/numerical-conditioning-and-stability.md#fixed-attention-and-input-rounding)：将原意图、已存输入与机器输出分开，理解移位避免溢出与恢复丢失键差的区别。
 2. [右端同时变化时原基何时仍最优](../notes/lp-rhs-sensitivity-certificates.md)：再研究精确 LP 中固定矩阵/目标/基的证书，理解单项范围为何不能任意组合，以及充分区域之外为何仍可能可行。
 3. [总分配与存活峰值](../notes/tensor-liveness-and-peak-memory.md)：固定计算图后比较执行顺序，再检查模型内最优证书与实际 wrapper/allocator 的一致性；需额外掌握有向无环图、依赖与存活期。接着读[训练激活压缩与换出](../notes/tensor-liveness-and-peak-memory.md#compression-and-offload)，理解表示改变时为何必须重新建模准入、传输与重算；再读[按需求重放和保存集合](../notes/tensor-liveness-and-peak-memory.md#demand-driven-replay)，共享上游使保存收益不相加，有限候选前沿上的DP不证明全局Pareto最优。
 4. [剪枝与修复的复合目标](../notes/depth-pruning-and-repair.md)：改变允许变换后重新定义目标、搜索空间和实现开销；精确枚举仅消除该空间的搜索遗漏，不保证独立任务质量。前置为[Transformer完整生成链](../notes/transformer-generation.md)中的层结构，以及校准/测试的区别。
