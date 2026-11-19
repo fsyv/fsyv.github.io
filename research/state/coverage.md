@@ -560,3 +560,19 @@ C 最近三次为流体力学、语音知觉、放射定年；近四次含此前
 | [迁移评价](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 未到23日；同键时序/恢复、冷热计费/多源全文与同语义跨层能耗等障碍保留，不由新压缩原型替代。 | 2026-11-23，沿既定工件/正文条件。 |
 
 C最近三次为语音知觉、放射定年与历史流行病回访，无连续主题重复；近四次含此前未覆盖的语音知觉和定年，C独立机会保留。11-20交通/原标注与跨权重路由、11-23地球物理/形态和其他原定回访继续，不由本日新项替代。没有新用户反馈，不推断长期兴趣变化。
+
+
+## 2026-11-20 原实验净成本、裂纹系数与 CLOCK 容量
+
+继续唯一 research/batch-2026-11-11 与 Draft PR #33，基线 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d。今日 A1/C1/B1 加入原二十四项，累计二十七项待审。8 canonical 研究、6 次指定部分深读；40/35/25 为投入参考，未实测。研究仍为 partial，TDC 等执行缺口未由新结果替代，实际审核和发布见 [当天回执](runs/2026-11-20.md)。
+
+| 问题 / 入口 | 本轮推进或遗漏原因 | 下一次（上海） |
+| --- | --- | --- |
+| [公共池原实验](../../content/notes/common-pool-resources-and-institutional-rules.md#sanction-costs-and-selection) | 按10-30到期方向读1992原刊及1991前稿指定部分，核机会成本、扣制裁和制度自选；原始数据及全成本、随机选择仍缺。 | 2026-12-04，仅明确随机制度权限/同费率交流或完整成本原件。 |
+| [TDC](../../content/questions/greedy-value-improvement.md) | 题录仍v1，定点代码查询未定位作者执行入口；没有新算法审计，不把查询0项当实现不存在。 | 2026-11-25，沿作者实现、正式全文或实质版本条件。 |
+| [交通](../../content/notes/transport-delay-propagation-and-thresholds.md#validation-pairing)、[评价保证](../../content/questions/evidence-to-guarantees.md)、[笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md) | 今日仅库内复评；主线优先已有原实验。分别仍缺气候原缓存/可归属评分合约/目标读者配对/同实现同轨迹净成本，没有外查不能声称无新公开成果。 | 2026-11-27，优先上述可归属对象，避免重复一般设计。 |
+| [原标注与评分](../../content/notes/claim-scope-and-evidence-synthesis.md#semantic-repair-and-logical-strength)、[跨权重恢复与路由](../../content/notes/kv-cache-mechanism.md#cross-checkpoint-reuse) | 今日仅库内复评，原标注、修改快照和固定服务恢复/路由原件仍缺，未再次外查。 | 2026-11-27，仅明确工件、配置或原始运行。 |
+| [CLOCK与平均容量](../../content/notes/clock-ttl-approximation-and-capacity.md) | 新论文给独立更新近似，AI单槽对照区分匹配期望与真实槽位；作者trace及PH拟合未核。B另计费来源已读择优未入选，不视为否定领域。 | 2026-11-27，作者实现、PH拟合或真实容量误差原件；计费先核同收入/原附件。 |
+| [断裂力学](../../content/maps/fracture-mechanics-and-energy.md) | 首次新领域，原尺寸表/作者末注和现代能量式分开，尚未确定有限曲率、耗散及外推各贡献。 | 2026-12-11，优先匹配有限几何与独立耗散的原始证据。 |
+
+C 最近三次为放射定年、历史流行病回访和首次断裂力学，无重复主题；近四次含语音知觉与断裂的新领域，独立机会保留。11-23 存储/跨层/地球物理/形态、11-24 恢复/ADMM 等此前排期与具体障碍继续，不因今日新项覆盖。没有新用户反馈，不推断永久兴趣变化。

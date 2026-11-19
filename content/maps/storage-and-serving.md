@@ -55,6 +55,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 
 [压缩记录与物理邻接](../notes/record-reordering-and-compression-granularity.md)另开持久布局分支，接在放置概念之后：先看相似块能否共享匹配历史，再把逻辑恢复映射、存储空间与写入和随机读代价一起比较。它不改变副本数，也不是 KV 的近似删除。
 
+[CLOCK 的平均容量近似](../notes/clock-ttl-approximation-and-capacity.md)接在放置与服务指标之后：固定等大小对象与外生请求，先求长期命中，再问共同计时是否保留真实槽位约束。其 Poisson 单槽反例解释平均容量匹配为何仍可偏离原策略，不提供 KV 或协同学习的服务保证。
+
 ## Sources
 
 阅读范围是本次记录，不能由“经典”或发表场所替代。完整作者与版本见各来源页。

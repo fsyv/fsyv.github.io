@@ -45,6 +45,10 @@ endorsement: ai-candidate
 
 [控制充分性与遥测响应](../notes/telemetry-response-and-control-sufficiency.md)可在联合与条件分布之后独立阅读。先定义平稳分布和双时协方差，再看控制的 score 为什么决定所需观测，最后用串联队列比较静态与瞬态。响应预测的充分条件和可逆聚合的存在条件是两个问题，后者还需新的过程假设。
 
+## Cache-renewal-and-capacity
+
+[共同 TTL 与硬容量](../notes/clock-ttl-approximation-and-capacity.md)接在对象请求模型之后：先理解计数扫描为何耦合，再用驻留周期和 Little 关系求平均占用，最后以单槽反例区分近似与真实固定容量。它不要求请求符合 Zipf，也不将外生更新过程当会话反馈。
+
 ## Validation-branch
 
 [反复评分与留出集复用](../notes/adaptive-validation-and-holdout-reuse.md)是独立统计分支：先读固定族诚实挑优反例，再用独立样本/有界分数推统一界，最后辨认自适应访问的新条件。它补评价选择规则，不由Zipf或网络幂律推出，也不假定真实缓存请求独立。
