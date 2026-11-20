@@ -57,6 +57,8 @@ $$
 
 ## Links
 
+[Gaia 视差零点](gaia-parallax-zero-point-calibration.md#transferring-the-anchor)提供结构类比。对象差分能识别相对视差偏差，却保留共同的加性角度自由度；此处速度—距离拟合保留的是乘性距离尺度。两种标定都需要额外约束，但不能互相代替。
+
 - 依据：[Hubble 原文与阅读范围](../sources/hubble-velocity-distance-1929.md)保留六页扫描的事实位置及当时结论边界。
 - 阅读路径：[天文学与观测推断](../maps/astronomy-and-observational-inference.md)先分观测与标定，再读联合修正及独立检验。
 - 互补：[条件数、稳定性与残差](numerical-conditioning-and-stability.md)研究固定问题的输入敏感性和算法误差；本页展示另一个证据缺口，即共同标尺与参数的可抵消性。小残差不能独立识别尺度，与小残差不能保证解准确属于不同机制，未声称数学等价或算出天文条件数。

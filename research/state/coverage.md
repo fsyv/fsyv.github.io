@@ -1,6 +1,6 @@
 # 选题轮换与问题回访
 
-历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-09.md)记录发现，审核、构建和 PR 的精确结果由[当日回执](runs/2026-11-09.md)记录。模拟反馈与沉默均不推导偏好。
+历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-19.md)记录发现，审核、构建和 PR 的精确结果由[当日回执](runs/2026-11-19.md)记录。模拟反馈与沉默均不推导偏好。
 
 ## 截至2026-10-16的历史覆盖
 
@@ -469,3 +469,110 @@ C 最近三次为微生物群体遗传、社会选择、统计决策，保持独
 | [贪心价值](../../content/questions/greedy-value-improvement.md) | TDC 明确追问仍开放，保留作者实现与终止、重置和终端价值审计。 | 2026-11-11 原安排 |
 
 C 最近三次为社会选择、统计决策、分析化学，保持独立探索机会。其他既定回访沿历史记录继续，研究仍为 partial。
+
+## 2026-11-11 客户端验收、KV 生命周期、天文校准与输运熵
+
+上一批 PR #32 已合并。本轮基于核对的 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d 开始新批次 research/batch-2026-11-11。形成 A1、B1、C1、B2 四项候选，11 个不同来源对象，四次指定深读。A1 的原件与昨日已读论文同属一项研究。40/35/25 是投入参考，未实测。TDC 执行审计等仍缺，整体研究为 partial。
+
+| 通道 | 本次推进 | 证据缺口与回访 |
+| --- | --- | --- |
+| A | 以固定作者原件核客户端限流介入、双队列与全会话完成的区别。TDC、PlaneZip、WorldPager 仍为 v1，定向查阅未取得相应作者执行入口、新原型或同语义原结果。 | [TDC 问题](../../content/questions/greedy-value-improvement.md)仍在研究，11-18 仅凭可归属实现或版本推进。PlaneZip 与 WorldPager 同日仅按明确新证据复评。固定数值算子未独立重测，同日优先有可复现算子与高精度参考时推进。 |
+| B | 选择性扫描 arXiv 六类 recent 首屏至 11-10 公告，结合轨迹寿命和输运熵两份新预印本。工具发布索引仅作版本复核。 | 未覆盖全部公告页与会议。11-18 复评[同语义有限容量及命中保留](../../content/notes/kv-cache-optimization.md#session-lifecycle-and-sharing)与[实际采样成本](../../content/notes/transport-budget-and-conditional-entropy.md)，分别先查明确可复现数据和生成核。 |
+| C | 天文回访。已有速度拟合的共同尺度问题，本轮从旧 Gaia EDR3 论文新增角度零点识别，另筛同主题几何标尺候选。 | 12-02 可优先查极红对象另一半球的独立样本，或查几何标尺如何进入速度拟合。无 EDR3 表复算或跨发布外推。 |
+
+[客户端恢复原件](../../content/notes/session-cache-pressure-and-metastability.md#client-gate-and-session-completion)已补一对原件与九次派生表。11-18 只在明确自动触发指标或对照原件可取时继续，待分离触发时点、上限与缓存容量。前几日其他未完成项沿历史日期与证据条件继续，不改旧回执。C 最近三次为统计决策、分析化学和天文回访，未重复主题。独立审核、构建和实际发布见[当日回执](runs/2026-11-11.md)。
+
+
+## 2026-11-13 铁路验证配对、跨权重缓存与心理机制识别
+
+延续 research/batch-2026-11-11 和 Draft PR #33，基线 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d。11-12 无可核晨报或回执。今日新增 A1、B1、C1、B2，累计八项待审。实际研究候选 12 项、指定深读四次，40/35/25 为投入参考。既有反馈和历史状态保留。研究仍为 partial，[当日回执](runs/2026-11-13.md)记录独立审核、构建与交付的实际结果。
+
+| 问题 / 入口 | 本轮推进或具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [交通模型](../../content/notes/transport-delay-propagation-and-thresholds.md#validation-pairing) | 用原日期表证明固定公开拟合评分至少一对日期不同，核实稳态与拟合权重及外部输入。未执行模型、未查原 ERA5 输入或实际参数与论文产物绑定。 | 2026-11-20，优先有作者原缓存或运行记录时推进。 |
+| [贪心价值与 TDC](../../content/questions/greedy-value-improvement.md)、[应用评价与保证](../../content/questions/evidence-to-guarantees.md) | TDC v1 与明确公开入口回访，无新的作者执行证据。rPoA 定向题名、作者及出版链接，仍缺可归属的评分合约，未运行。 | 2026-11-18 查 TDC 明确执行入口；2026-11-20 查 rPoA 指定合约或规格。 |
+| [笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存评价](../../content/questions/web3-caching-evaluation.md) | 仅本地复评，仍缺目标读者、公开对照样本和同实现同轨迹的端到端净成本。 | 2026-11-20，先固定可公开样本与对照，不重复一般实验设计。 |
+| [原标注与评分](../../content/notes/claim-scope-and-evidence-synthesis.md#semantic-repair-and-logical-strength)、[执行与舍入](../../content/notes/kv-cache-mechanism.md#rounding-and-execution) | 回访了公开 README 与工件说明。SmoothScore 原标注及执行程序、ExactLoop 修改快照与线上日志仍缺。TapeSAC 峰位置、Twitter 部署导出、metadata 端到端、guard 正动作及 EdgePace 同负载未另查。 | 2026-11-20，仅有明确工件、配置或原始测量时推进。 |
+| [跨权重状态](../../content/notes/kv-cache-mechanism.md#cross-checkpoint-reuse)、[路由预填](../../content/notes/kv-cache-optimization.md#routing-and-native-prefill) | 窗口内两份新论文指定深读，覆盖核至 11-11 公告。11-12 美东恢复批次未核。未复现同版恢复或路由服务，RISK/SilentCue/IOSage 仅回访版本或外链，11-06 同部署交错、无 oracle 质量时延及 11-11 摘要候选未深读。 | 2026-11-16 先补公告；2026-11-20 以固定恢复或服务运行对象复评两新篇和仍缺的实证。 |
+| [心理实验](../../content/maps/experimental-psychology-and-inference.md)、[地球物理](../../content/maps/geophysics-and-inverse-evidence.md) | 独立 C 深读两色同键原始实验，试次预测与净时差可核，机制分量及修改设计结果未审。11-12 到期的地球物理只做本地复评，未取得独立反转年代或跨脊剖面原件。 | 地球物理 2026-11-23 优先独立剖面和时间锚；心理 2026-12-04 先核修改设计的中性基线和结果。 |
+
+最近三次 C 为分析化学、天文及实验心理学，主题未重复。最近四次含此前未覆盖的分析化学，C 保有独立机会。原定其他回访沿历史日期继续。
+
+
+## 2026-11-16 同键读值、共享 GPU 计量、管流与工具调度
+
+复用 research/batch-2026-11-11 和 Draft PR #33，基线 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d。今日四项候选加入后累计十二项待审。共触及十二个研究对象，六次指定深读，投入比例只作参考。固定历史实现的同键读写和故障测试未运行，研究为 partial。[当天回执](runs/2026-11-16.md)记录实际研究与交付结果。
+
+| 问题 / 入口 | 本轮推进或具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [迁移评价](../../content/questions/storage-migration-evaluation.md) | 定点核对固定历史实现的普通读、日志同步与特定单测，提出两次读值和版本的断言。没有跨实际故障的运行日志。 | 2026-11-23，优先固定提交的无故障同键时序。 |
+| [存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 多源迁移外部入口受阻，仅核题录与会议片段。冷热费用发表稿和早稿仍缺可归属执行口径。跨层仅库内复评，缺同语义对照。 | 2026-11-23，优先可核正文、作者程序或完整跨层工作负载。 |
+| [GPU 直存](../../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)、[剪枝修复](../../content/notes/depth-pruning-and-repair.md)、[最终 token 能量](../../content/notes/storage-latency-and-slo.md#accepted-tokens-and-energy) | 回访题录版本。同语义直存尾部、修复执行与原投机解码预填能量代码证据未增。新逐请求归属建立另一项计量问题，不关闭旧预填缺口。 | 2026-11-23，仅新版本或明确执行入口。 |
+| [KV 淘汰](../../content/notes/kv-cache-optimization.md#attention-gates-and-eviction)、[扩散模拟](../../content/notes/masked-diffusion-speculative-simulation.md) | 两份 11-09 来源仅本地复评。仍缺可检查的部署淘汰策略或固定目标核下的计时和数值路径。 | 2026-11-23，仅新运行对象。 |
+| [逐请求能量归属](../../content/notes/storage-latency-and-slo.md#request-energy-attribution)、[工具并发与批结束](../../content/notes/storage-latency-and-slo.md#batch-completion-and-environment) | 11-11 补遗漏与 11-13 恢复公告各形成一项。能量限固定输出与冷缓存比较。工具派发限固定重放及实测特定配置，线上持续到达与原始执行数据未核。 | 2026-11-23，优先热缓存增量和同样本工具负载的可归属原件。 |
+| [流体力学](../../content/maps/fluid-mechanics-and-dynamic-similarity.md) | 独立复访流体的单斑衰减和空间更新问题。已获得单脉冲和压力计数的原始证据，未直接检验临界标度或有限尺寸。 | 2026-12-07，查群体空间关联、有限尺寸及临界标度。 |
+
+C 最近三次为天文、实验心理学和流体力学，无主题重复。近四次含分析化学首次覆盖，保留独立机会。11-17 仍按原计划复评 FIFO 运行材料和批次验收，并核 Huang、Liu 的新摘要线索。11-18 继续检查 TDC 执行入口。其余排期沿历史记录。
+
+## 2026-11-17 缓存恢复、语音辨别与滚动预测
+
+复用 research/batch-2026-11-11 与 Draft PR #33，基线 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d。今日五项候选，累计十七项待审。12 个研究对象，指定深读六次，40/35/25 为投入参考。研究为 partial，未完成的执行核验和重现范围见[当天回执](runs/2026-11-17.md)。
+
+| 问题 / 入口 | 本轮推进或具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [缓存陷阱与完整会话验收](../../content/notes/session-cache-pressure-and-metastability.md) | 新读带热端容量边界的作者对照。仍缺同论文的 32B 公开运行日志。旧 FIFO/CUT 降流固定原件仅核指针，未复算。 | 2026-11-24，优先明确的日志或同计划、同会话口径。 |
+| [FP8 与验证门槛](../../content/notes/kv-cache-mechanism.md#verification-gates)、[基础验证](../../content/questions/foundations-validation.md) | 确认新版验证器和引擎拒绝规则，读到单设备贡献者报告。未运行 GPU 或恢复验证。HiState 仍缺作者实现。 | 2026-11-24，以固定模型、输入、GPU 和会话恢复边界为条件。 |
+| [双块 ADMM](../../content/notes/two-block-admm-multiplier-step.md) | 归档证书入口已定位，部分有理输入可复算。全频矩阵和投影证书未执行，精确端点未知。 | 2026-11-24，有独立验算或新端点证据时推进。 |
+| [推理优化](../../content/notes/kv-cache-optimization.md)及[验证数据复用](../../content/notes/adaptive-validation-and-holdout-reuse.md) | B 完成六类 11-16 公告扫描和前一公告补漏。新入选两项，分别保留请求与会话统计、同流量下的普通请求成本，以及固定事前种子与公开回顾性选种的区分。 | 2026-11-24，先核 Callo 普通流量分位和公开产物，再核另一预测种子流程可否评分。 |
+| [实验心理学与机制识别](../../content/maps/experimental-psychology-and-inference.md) | C 首次覆盖语音知觉，已核等声学步距的辨别和仅类别模型的系统缺口。勘误式图与跨母语/非语音对照仍欠。 | 2026-12-08，优先对照是否固定声学维度和任务。 |
+
+C 最近三次为实验心理学的同键控制、流体力学与语音知觉的两种任务，语音知觉为此前未覆盖领域，保持独立探索。11-18 TDC 明确追问及既定回访顺序延续。
+
+
+## 2026-11-18 精确归约、采样预算、碳定年与遥测响应
+
+延续 research/batch-2026-11-11 与 Draft PR #33，基线 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d 未变。四项新增候选接续原十七项，累计二十一项；11 个研究对象，5 次指定部分深读。40/35/25 为投入参考，未实测各通道时长。TDC 实现等明确任务未完成，研究为 partial；选择性监测范围另见[来源账本](sources.md)与[回执](runs/2026-11-18.md)。
+
+| 问题 / 入口 | 本轮推进或具体障碍 | 下次（上海） |
+| --- | --- | --- |
+| [TDC 贪心价值](../../content/questions/greedy-value-improvement.md) | 已核期刊身份，正式全文访问受阻。限定公开查询未定位作者实现，终止/重置/terminal 审计仍未完成；不重复基础推导代替证据。 | 2026-11-25，仅作者实现、可取正式全文或实质版本变化。 |
+| [压缩重规划](../../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload)、[WorldPager](../../content/notes/kv-cache-optimization.md#revisit-similarity-and-quality) | 两文仍 v1，PlaneZip 原型仍列未来工作；WorldPager 未得可归属结果文件或同语义尾部原测量。 | 2026-11-25，仅新原型或作者执行原件。 |
+| [客户端控制](../../content/notes/session-cache-pressure-and-metastability.md#client-gate-and-session-completion) | RESCUE 固定源码仍是配置时点启用、双队列反馈解除；与 11-11 无实质新结论。自动触发、暂停时 KV 保留及跨负载运行未补。 | 2026-11-25，仅新控制代码或明确原件。 |
+| [输运实际采样](../../content/notes/transport-budget-and-conditional-entropy.md#multidimensional-sampling-and-budget) | 增读多维核并执行 AI 说明性采样，区分总预算、单次和有限批均。一般生成器、附加硬上限及性能未测。 | 2026-12-02，先固定明确生成器或业务硬约束。 |
+| [数值算子](../../content/notes/numerical-conditioning-and-stability.md)、[KV 有限容量](../../content/notes/kv-cache-optimization.md#session-lifecycle-and-sharing) | 未独立重测原定固定算子与高精度参考，也未取得同语义有限容量 KV 新运行证据。B1 的条件化训练路线不替代这些旧任务。 | 2026-11-25，须有固定算子/参考或可复现容量运行对象。 |
+| [精确归约](../../content/notes/certified-summation-and-layout-invariance.md)、[遥测响应](../../content/notes/telemetry-response-and-control-sufficiency.md) | 两份新预印本指定深读。内核契约/原日志、表2程序与真实动态充分性均未独立执行。 | 2026-11-25，仅可归属实现、原始日志或新版本推进。 |
+| [放射化学](../../content/maps/radiochemistry-and-transformation.md) | 从持续周转进入此前未覆盖的放射定年校准。已核独立标尺和多峰机制；未解决1902实验残余成因或现代ThX身份，未运行校准软件。 | 2026-12-09，固定曲线下比较单样本、年距序列与地层先验并保留相关误差。 |
+
+C 最近三次为流体力学、语音知觉、放射定年；近四次含此前未覆盖的语音知觉与定年校准，独立探索机会保留。11-19 历史流行病、11-20 交通/rPoA/读者与净成本、11-23 存储/跨层/地球物理及其他排期延续，不由今天的新项替代。实际审核与同提交构建由主控填写，未在此预填。
+
+
+## 2026-11-19 比例补缺、固定注意力与持久压缩局部性
+
+继续唯一 research/batch-2026-11-11 与开放 Draft PR #33，基线 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d 未变。今日C1/A1/B1三项接续原二十一项，累计二十四项待审。8个去重研究对象、4次指定部分深读，另有AI固定算子执行；40/35/25仅投入参考，未实测时长。TDC执行审计等未完，研究partial，选择性监测范围和交付状态分别记录于[回执](runs/2026-11-19.md)。
+
+| 问题 / 入口 | 本轮推进或未选原因 | 下一次（上海） |
+| --- | --- | --- |
+| [历史供水比较](../../content/notes/water-supply-comparison-and-denominators.md#followup-denominators-and-imputation) | 到期回访1856后续，核人口估计/未知分类/关键表，推导比例补缺恒保率比及受限端点；未取得原名单、登记或旧错表根因，不能关闭个体因果问题。 | 2026-12-10，仅原公司名单或可归属逐区资料。 |
+| [固定数值算子](../../content/notes/numerical-conditioning-and-stability.md#fixed-attention-and-input-rounding)、[基础验证](../../content/questions/foundations-validation.md) | 已完成两键固定算子与100/160位参考，区分输入转换与算术误差、同范数方向。真实模型/格式/GPU、有限容量KV与生成影响仍缺。 | 2026-11-25，仅公开固定模型切片、格式和参考或明确容量运行。 |
+| [TDC贪心价值](../../content/questions/greedy-value-improvement.md) | 今日仅定点题录及作者代码查询，仍v1未定位实现；无实质新发现，不重复昨日书目或一般证明。 | 2026-11-25，仅作者实现、正式全文或实质版本。 |
+| [压缩记录与重排](../../content/notes/record-reordering-and-compression-granularity.md) | 新增持久布局完整解释，同记录/压缩器比较空间与读写；XM-Sparse已指定深读但择优独立存储主题，非否定领域。 | 2026-11-26，仅明确代码、冷映射/恢复及更新原件；XM优先真实容量与运行。 |
+| [评价与保证](../../content/questions/evidence-to-guarantees.md)、[笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md) | 未到明日排期；rPoA评分合约、公开目标读者/样本对照和同实现净成本仍缺，本日未另行外查。 | 2026-11-20，沿既定证据条件。 |
+| [迁移评价](../../content/questions/storage-migration-evaluation.md)、[存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 未到23日；同键时序/恢复、冷热计费/多源全文与同语义跨层能耗等障碍保留，不由新压缩原型替代。 | 2026-11-23，沿既定工件/正文条件。 |
+
+C最近三次为语音知觉、放射定年与历史流行病回访，无连续主题重复；近四次含此前未覆盖的语音知觉和定年，C独立机会保留。11-20交通/原标注与跨权重路由、11-23地球物理/形态和其他原定回访继续，不由本日新项替代。没有新用户反馈，不推断长期兴趣变化。
+
+
+## 2026-11-20 原实验净成本、裂纹系数与 CLOCK 容量
+
+继续唯一 research/batch-2026-11-11 与 Draft PR #33，基线 bc0cd97e74fd8b5e110ade6d1377ce546ebd428d。今日 A1/C1/B1 加入原二十四项，累计二十七项待审。8 canonical 研究、6 次指定部分深读；40/35/25 为投入参考，未实测。研究仍为 partial，TDC 等执行缺口未由新结果替代，实际审核和发布见 [当天回执](runs/2026-11-20.md)。
+
+| 问题 / 入口 | 本轮推进或遗漏原因 | 下一次（上海） |
+| --- | --- | --- |
+| [公共池原实验](../../content/notes/common-pool-resources-and-institutional-rules.md#sanction-costs-and-selection) | 按10-30到期方向读1992原刊及1991前稿指定部分，核机会成本、扣制裁和制度自选；原始数据及全成本、随机选择仍缺。 | 2026-12-04，仅明确随机制度权限/同费率交流或完整成本原件。 |
+| [TDC](../../content/questions/greedy-value-improvement.md) | 题录仍v1，定点代码查询未定位作者执行入口；没有新算法审计，不把查询0项当实现不存在。 | 2026-11-25，沿作者实现、正式全文或实质版本条件。 |
+| [交通](../../content/notes/transport-delay-propagation-and-thresholds.md#validation-pairing)、[评价保证](../../content/questions/evidence-to-guarantees.md)、[笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md) | 今日仅库内复评；主线优先已有原实验。分别仍缺气候原缓存/可归属评分合约/目标读者配对/同实现同轨迹净成本，没有外查不能声称无新公开成果。 | 2026-11-27，优先上述可归属对象，避免重复一般设计。 |
+| [原标注与评分](../../content/notes/claim-scope-and-evidence-synthesis.md#semantic-repair-and-logical-strength)、[跨权重恢复与路由](../../content/notes/kv-cache-mechanism.md#cross-checkpoint-reuse) | 今日仅库内复评，原标注、修改快照和固定服务恢复/路由原件仍缺，未再次外查。 | 2026-11-27，仅明确工件、配置或原始运行。 |
+| [CLOCK与平均容量](../../content/notes/clock-ttl-approximation-and-capacity.md) | 新论文给独立更新近似，AI单槽对照区分匹配期望与真实槽位；作者trace及PH拟合未核。B另计费来源已读择优未入选，不视为否定领域。 | 2026-11-27，作者实现、PH拟合或真实容量误差原件；计费先核同收入/原附件。 |
+| [断裂力学](../../content/maps/fracture-mechanics-and-energy.md) | 首次新领域，原尺寸表/作者末注和现代能量式分开，尚未确定有限曲率、耗散及外推各贡献。 | 2026-12-11，优先匹配有限几何与独立耗散的原始证据。 |
+
+C 最近三次为放射定年、历史流行病回访和首次断裂力学，无重复主题；近四次含语音知觉与断裂的新领域，独立机会保留。11-23 存储/跨层/地球物理/形态、11-24 恢复/ADMM 等此前排期与具体障碍继续，不因今日新项覆盖。没有新用户反馈，不推断永久兴趣变化。

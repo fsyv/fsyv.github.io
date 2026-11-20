@@ -35,17 +35,27 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 
 [模式诊断到端到端验证](../notes/storage-latency-and-slo.md#patterns-and-end-to-end)继续评价分支：先区分日志模式与根因，再核建议的语义和等价工作下配对总耗时；分类F1、建议减少或局部写步加速都不能跨过这些证据义务。
 
-[固定实现与完成口径](../notes/storage-placement-and-migration.md#implementation-and-completion)把Rocksteady设计推进到历史代码的状态、重试与停表事件，区分后台重放结束、side-log提交和恢复证据；[最终产出token与能量](../notes/storage-latency-and-slo.md#accepted-tokens-and-energy)则在同批量对照中分开板卡能量与平均时延，不能把能耗下降当成线上SLO通过。
+[固定实现与完成口径](../notes/storage-placement-and-migration.md#implementation-and-completion)把 Rocksteady 设计推进到历史代码的状态、重试与停表事件，区分后台重放结束、side log 提交和恢复证据。再看[同目标读值顺序](../notes/storage-placement-and-migration.md#client-visible-version-order)，把本地索引更新变为可以测试的客户端值与版本断言，并另行核查恢复摘要。
+
+[最终产出 token 与能量](../notes/storage-latency-and-slo.md#accepted-tokens-and-energy)在同批量对照中分开板卡能量与平均时延。[逐请求能量归属](../notes/storage-latency-and-slo.md#request-energy-attribution)接续最终产出计量，解释如何对共同执行步骤、共享前缀和改变调度的反事实分账。
 
 [混合模型检查点分层](../notes/kv-cache-optimization.md#hybrid-checkpoints)接续跨调用驻留：先核完整状态能否在匹配前缀处恢复，再按访问量与保留量安排KV和循环检查点。全请求尾部、命中差筛选子集均值及不同存储预算的基线必须分别比较；这不证明各混合引擎已组合。
 
-[会话人口与缓存压力](../notes/session-cache-pressure-and-metastability.md)接在跨调用驻留之后：先识别tool期的未来前缀需求，再理解延迟—会话寿命—miss重算反馈。最后核会话goodput的完整成功条件，不能由call吞吐推断冲击后恢复。
+[会话人口与缓存压力](../notes/session-cache-pressure-and-metastability.md)接在跨调用驻留之后：先识别tool期的未来前缀需求，再理解延迟—会话寿命—miss重算反馈。再读[持续高命中与系统积压](../notes/session-cache-pressure-and-metastability.md#cache-recovery-and-session-backlog)，按命中窗口、净流出和固定到达队列的完整交付分别理解恢复。
 
 了解缓存压力后，再读[全未命中下的更新过程](../notes/session-cache-pressure-and-metastability.md#all-miss-renewal)。先数总剩余工作，再看完成会话的构成，避免用陷阱吞吐替代排空阈值。
+
+[工具并发与批次收尾](../notes/storage-latency-and-slo.md#batch-completion-and-environment)与开放到达的缓存陷阱使用不同负载。先看固定任务集怎样在工具槽位受限时供给推理工作，再区分末任务终止、最后一段的长度以及会话成功。
 
 [服务配置与排队放大](../notes/storage-latency-and-slo.md#configuration-and-queueing)接续端到端目标：先核版本/分块 prefill，再核持续负载与吞吐不足，最后读时延分位数。它说明缓存结构之外的配置如何影响比较，不把残差全部归于单一架构。
 
 [同键版本顺序](../notes/storage-placement-and-migration.md#version-order-during-handoff)接续固定实现：先区分分配下界与单键已有版本，再核对新写确认和后台回放的先后。这个历史分支的静态推演给出恢复实验前应检查的正常执行条件。
+
+[遥测与控制后的瞬态](../notes/telemetry-response-and-control-sufficiency.md)接续 SLO 指标：先核所调控制与所观测统计是否匹配，再比较静态增益与完整响应曲线。参考 Jackson 网络的充分性不自动适用于缓存反馈或真实服务率。
+
+[压缩记录与物理邻接](../notes/record-reordering-and-compression-granularity.md)另开持久布局分支，接在放置概念之后：先看相似块能否共享匹配历史，再把逻辑恢复映射、存储空间与写入和随机读代价一起比较。它不改变副本数，也不是 KV 的近似删除。
+
+[CLOCK 的平均容量近似](../notes/clock-ttl-approximation-and-capacity.md)接在放置与服务指标之后：固定等大小对象与外生请求，先求长期命中，再问共同计时是否保留真实槽位约束。其 Poisson 单槽反例解释平均容量匹配为何仍可偏离原策略，不提供 KV 或协同学习的服务保证。
 
 ## Sources
 

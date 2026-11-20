@@ -37,9 +37,23 @@ endorsement: ai-candidate
 
 - **实验识别的结构类比：**[分子遗传地图](molecular-genetics-and-experimental-inference.md)从 DNA 示踪自身问题出发，用同平均/不同分布说明比较可观察预测的重要性；生物密度实验与网络构图并无数学等价。
 
+## Transport-and-entropy
+
+先复习边际、联合分布和条件概率，再读[输运预算与条件熵](../notes/transport-budget-and-conditional-entropy.md#marginals-and-couplings)的可行边际关系。随后核一维高斯例，辨认约束使用的耦合和实际生成的配对。再读[多维生成核与有限采样](../notes/transport-budget-and-conditional-entropy.md#multidimensional-sampling-and-budget)，按总费用分配各坐标尺度，区分期望预算、单次费用和有限批均。有限矩、可取到的耦合与熵量定义是推导条件，一般生成器和额外硬约束仍开放。
+
+## Telemetry-and-response
+
+[控制充分性与遥测响应](../notes/telemetry-response-and-control-sufficiency.md)可在联合与条件分布之后独立阅读。先定义平稳分布和双时协方差，再看控制的 score 为什么决定所需观测，最后用串联队列比较静态与瞬态。响应预测的充分条件和可逆聚合的存在条件是两个问题，后者还需新的过程假设。
+
+## Cache-renewal-and-capacity
+
+[共同 TTL 与硬容量](../notes/clock-ttl-approximation-and-capacity.md)接在对象请求模型之后：先理解计数扫描为何耦合，再用驻留周期和 Little 关系求平均占用，最后以单槽反例区分近似与真实固定容量。它不要求请求符合 Zipf，也不将外生更新过程当会话反馈。
+
 ## Validation-branch
 
 [反复评分与留出集复用](../notes/adaptive-validation-and-holdout-reuse.md)是独立统计分支：先读固定族诚实挑优反例，再用独立样本/有界分数推统一界，最后辨认自适应访问的新条件。它补评价选择规则，不由Zipf或网络幂律推出，也不假定真实缓存请求独立。
+
+[滚动预测的区间验证](../notes/epidemic-forecast-interval-validation.md)接续评分与独立验证：先对同样起报周和预测跨度比较区间评分、实际覆盖与历史基线，再看全系列选种能用到何时的信息。这里的预测结果会跨起报窗重叠。
 
 ## Sources-and-open
 

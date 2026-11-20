@@ -44,3 +44,13 @@ Appendix E/Table12的Qwen3.5-4B/RACE-all，默认14.3ms、C64吞吐118requests/s
 - [引擎计算入口](https://github.com/OmniJev/Flide/blob/50db86c0ce917ec76c190fa9fe2b21cfd544a8d9/flide/runtime/engine.py#L597-L693)可查询和更新同一引擎的缓存。[会话匹配](https://github.com/OmniJev/Flide/blob/50db86c0ce917ec76c190fa9fe2b21cfd544a8d9/flide/runtime/session.py#L68-L112)确认 token 前缀，[Qwen3.5 恢复](https://github.com/OmniJev/Flide/blob/50db86c0ce917ec76c190fa9fe2b21cfd544a8d9/flide/backbones/qwen35/graphs.py#L1155-L1195)同时恢复循环状态、卷积窗口和前缀 KV。
 
 支持[验证门槛与算例](../notes/kv-cache-mechanism.md#verification-gates)。源码能确定判据，研究价值在于限定通过的含义；启发在于先为相同执行条件定义数值和选择观测量。算例为 AI 推导。未执行 Flide，未将此处实现等同于上文论文 Appendix E 的实测设置或结果。
+
+## Quantized-verifier-audit
+
+2026-11-17 增读 [Flide v0.1.14 发布](https://github.com/OmniJev/Flide/releases/tag/v0.1.14)、[v0.1.16](https://github.com/OmniJev/Flide/releases/tag/v0.1.16) 固定提交 0a34895bac9dafb2af7a8be235718b7d269605b5 以及贡献者 Lumea-art 的[合并 PR #23 开帖测试报告](https://github.com/OmniJev/Flide/pull/23#issue-6331034801)。v0.1.14 发布于 2026-11-11T23:11:38Z。测试报告对应 PR head 01646ecea411ae9f61607c4abc693ec199f6855c，合并提交 ee6a919c2c1740743a3f4673ecd731145d23f358 进入 v0.1.14。指定范围如下。
+
+- [verify.py L60–95、110–186、194–204](https://github.com/OmniJev/Flide/blob/0a34895bac9dafb2af7a8be235718b7d269605b5/flide/verify.py#L60-L204)定位首选门槛、数值相等和 FP8 选项传入。独算、同请求分支与混批对照用同一个引擎，显式指定 FP8 就同用 FP8。
+- [engine.py L171–191](https://github.com/OmniJev/Flide/blob/0a34895bac9dafb2af7a8be235718b7d269605b5/flide/runtime/engine.py#L171-L191)拒绝 FP8 与批次不变模式并用。[fp8.py L90–106](https://github.com/OmniJev/Flide/blob/0a34895bac9dafb2af7a8be235718b7d269605b5/flide/kernels/fp8.py#L90-L106)的 FP8 线性路径用按 token 缩放的激活调用 torch._scaled_mm。
+- PR #23 的 “How it was tested” 记载一张 RTX 5090 Laptop 24GB、torch 2.14.1+cu132、Triton 3.8.0、OneJev1.6-0.8B、4 请求 6 个问题、关闭批次不变模式。FP8 的 fork/load 最大坐标概率差为 0.0301/0.0387，同一报告普通权重下为 0.00736/0.00665。FP8 fork/load 均显示 PASS，符合首选容忍条件的比较各为 6/6。FP8 load 显示 “same bits” 0/6，但源码执行的是数值相等检查。混批是两请求一组，报告未列完整逐题概率或会话恢复实测。
+
+[固定量化配置下的验证](../notes/kv-cache-mechanism.md#quantization-and-validation)据此限定能运行的配置与通过口径。研究价值高，因为新增选项容易被误读为量化误差对照。启发价值在于先确定参考路径，再决定要归因哪种扰动。固定代码的配置门槛可直接核对。概率差来自贡献者报告，未在 v0.1.16 上独立运行，FP8 相对普通权重的准确率与底层浮点差来源未测。

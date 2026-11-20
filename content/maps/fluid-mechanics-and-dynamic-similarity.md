@@ -22,7 +22,7 @@ endorsement: ai-candidate
 1. 从[完整管流解释的问题与尺度](../notes/reynolds-similarity-and-transition.md#similarity-parameter)定义直径、平均速度和运动黏度，理解原文半径符号与现代直径Re的区别。
 2. 读[染色实验](../notes/reynolds-similarity-and-transition.md#dye-experiment)，将TableI两行数量级对照与全部数据拟合分开，区分平均流速和局部状态。
 3. 再读[扰动与可观测性](../notes/reynolds-similarity-and-transition.md#disturbance-and-observability)，比较色线破坏和下游阻力律两个判据；进入现代稳定性问题前，先说明观察能否区分暂态与持续状态。
-4. 用[原始来源及实际范围](../sources/reynolds-pipe-flow-1883.md)复核历史实验，后续再扩展控制扰动、发展长度和观察时间的现代实验分支。
+4. 用[原始来源及实际范围](../sources/reynolds-pipe-flow-1883.md)复核历史实验，再读[脉冲扰动后湍斑衰减与裂分](../notes/reynolds-similarity-and-transition.md#puff-splitting-and-decay)，理解压力峰、观测时长和群体存续为什么需要不同的证据。
 
 ## Connections
 
@@ -30,8 +30,8 @@ endorsement: ai-candidate
 
 ## Questions
 
-- 同一Re下，改变扰动幅度、发展距离和观察时间，会怎样改变“持续”的判据？需要现代原始对照，现仅有历史实验指定范围。
-- 何种测速/压力观测能在染料混匀后辨认扰动是否衰减？需区分观测失去分辨力和物理状态不变。
+- 在指定脉冲生成单斑的条件下，有限管长和湍斑之间的空间作用如何改变群体持续概率？现代原文给出时间尺度估计，仍缺直接的临界标度和有限尺寸检验。
+- 在压力峰不能分开标记多个湍斑的条件下，何种观测能区分湍斑的扩展和合并？需区分观测失去分辨力和物理状态不变。
 - 何时真实装置确实满足无量纲几何、初边值及物性条件的相似？目前只有教学尺度推导，非完整相似性验证。
 
-2026-11-16先复评上述证据可得性；[返回主题地图](../maps/_index.md)。
+[返回主题地图](../maps/_index.md)。

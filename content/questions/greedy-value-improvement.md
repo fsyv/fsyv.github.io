@@ -47,3 +47,5 @@ math: true
 2026-10-30，响应[用户询问统一式目标与证明对象](https://github.com/fsyv/fsyv.github.io/pull/29#issuecomment-6485979453)，在[目标一致性解释](../notes/cooperative-caching-and-learning.md#objective-and-proof)明确先检查任意两策略在两个累计目标下是否同排序，再谈网络学得准不准；写明持续等价目标的处罚比价。旧统一推导保留，实际终止/重置/价值审计仍未完成；这是候选解释深化，不是用户接受或部署验证，保持researching。
 
 2026-11-04，TDC题录/history仍v1，限定公开网页与公开仓库检索未定位可归属作者实现；不证明代码不存在。实际终止/重置/terminal bootstrap审计仍未完成，researching不变。今日WorldPager评价增量不代替此明确请求；11-11仅凭新入口/新版本推进，原数学解释与用户确认状态保留。
+
+2026-11-18，限定公开入口回访仍未定位 TDC 作者实现；[来源页](../sources/published-tdc-cache-2025.md#journal-identity-followup)补上已核期刊身份，正式发表全文仍未比对。书目推进不等于终止、重置或终端价值审计完成，保持 researching。下次 2026-11-25 仅在明确作者实现、正式全文或实质版本变化可取时推进，不重复已有推导替代执行证据。
