@@ -162,6 +162,11 @@ Table 34 在相同的 270 个问题上改变较早块是否也来自 full：只�
 
 [归约树变化下的精确合并](certified-summation-and-layout-invariance.md)补充跨布局数值路线：它固定量化求和项并保持精确中间值，允许某些归约顺序改变；这与本页固定舍入和次序的路线互补，不自动验证任意 KV 恢复或引擎。
 
+## Live-migration-contract
+
+**2026-11-23 AI候选。** 同模型的[活迁移追赶](kv-cache-optimization.md#live-migration-and-log-backlog)进一步限定完整状态的时间边界：源公开 $y_h$ 时尚未把它消费进状态，目的应从该待输入token继续。循环状态、卷积与普通KV须一起对齐。随后用源权威token逐步覆盖目的输入且保留目的原生decode，可建立条件化执行参照；大批重放同一串token会改变投影等算术路径，不能据token相同推出逐位一致。该路径与[跨权重近似移植](#cross-checkpoint-reuse)对象不同，异构GPU的目的原生参照也不等于跨架构复现源设备输出。
+
+
 ## Revision
 
 2026-10-12：合并 KV 原理与 prefill/decode 旧解释；将复杂度口径拆为单步、全过程及内存，撤去固定50%提速和 decode 必然更快的说法。推导为 AI 候选。

@@ -2,6 +2,25 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-11-23
+
+本轮8个canonical研究对象（A2、B4、C2），3次指定正文深读（B2、C1）；A固定实现的构建配置核对另列，不是机制或运行结果深读。C两初筛含HH与Lorenz，只深读HH；Luria–Delbrück已于11-05覆盖，仅去重未增读。别名、镜像、主控跨角色复核和七旧题录/一仓库指针复查不重复计数。最终B1/C1两候选、A零发现；[晨报](../digests/2026-11-23.md)完整解释，[回执](runs/2026-11-23.md)如实记录执行缺口。
+
+B窗口2026-11-16T07:30至11-23T07:30+08，补11-20T07:33后的可见遗漏。约07:31入口浏览，07:32:46完成六recent首屏标题解析，最新11-20公告；展示/总量为DC50/90、PF24/24、OC50/262、soc-ph36/36、LG50/1263、AI50/1333。单引号class使首次解析0条，修正regex后读出真实标题，不把解析0条当无成果。未穷尽分页、替换、期刊会议或工具。以下四份B均11-20公告、首提早于上轮结束，属于补遗漏。
+
+| canonical / 版本 | 首发或指定版本 | 实际读取、价值与决定 |
+| --- | --- | --- |
+| doi:10.1145/3132747.3132784；[Rocksteady](../../content/sources/paper-rocksteady.md)及utah-scs/RAMCloud固定实现别名 | 原研究2017；固定d1f9c8125cbd53e7bcb48a769b2a0cb74854900a，2017-09-20T21:36:26Z | A只核[README开头](https://raw.githubusercontent.com/utah-scs/RAMCloud/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/README.md)、[.travis.yml依赖命令](https://raw.githubusercontent.com/utah-scs/RAMCloud/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/.travis.yml)、[GNUmakefile前186行](https://raw.githubusercontent.com/utah-scs/RAMCloud/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/GNUmakefile)。构建入口描述Ubuntu/GCC4.9及SSE/protobuf等条件，不同于当前Darwin arm64，docker/podman/python2/protoc无PATH命中；未尝试编译，不能称编译失败或不可移植。无新运行/日志/故障和论文binary↔SHA绑定，A零发现，不复制11-09/16静态推演。研究高/启发中；构建入口可靠高，客户端结果未验证。 |
+| doi:10.1109/cloudsummit54781.2022.00009；Bita Fatemipour、Wei Shi、Marc St-Hilaire，多源迁移研究 | 2022，pp17–22；沿旧未读取范围 | A定点核[Shi作者清单](https://www.csit.carleton.ca/wshi/?page_id=415)与[St-Hilaire清单](https://csit.carleton.ca/~msthilaire/publications.php)；前者pdf字样无实际链接，IEEE direct/staging不可读，目录仅截断摘要；Carleton学位库未定位不证明不存在。保持unread，不推COMS机制。研究高/启发中；题录可核、机制无证据。 |
+| arxiv:2611.26153v1，[Yu等活迁移](../../content/sources/paper-gated-deltanet-live-migration.md) | 2026-11-19T14:10:37Z首提 | B1指定HTML§§1–4、5.2–5.5、6.1–6.4及7，Tables1/2/4/5/7/8/9相关文字；图1–3仅图注。未PDF图像/源码/数据/复现。研究高/启发高/可靠中；原生执行、输入边界、队列与gap/release分工新增完整解释。 |
+| arxiv:2611.26619v1，[TideCache](https://arxiv.org/html/2611.26619v1)；Luo、Yao、Yang、Liu、Han、Hu | 2026-11-19T18:58:31Z首提 | B指定§§2.1–3.2/4.1、4.2选择传送/handshake/容量式、4.3/5.1–5.3/6–7；未视觉图/源码/复现。固定虚拟地址物理重映射、仅host已有前缀2slot流送、新生KV驻留可核；总带宽约束不保逐层deadline。巨模型仅48/36层，pool/stream/scheduler总效应不可只归流送。研究高/启发高/可靠中，择优B1，此篇不建永久页，11-30以逐层deadline、完整模型或明确原件回访。 |
+| arxiv:2611.26435v1，[Aggron](https://arxiv.org/abs/2611.26435v1)；Rishabh Ravi等 | 2026-11-19T17:09:37Z首提 | B只题录/摘要/history，head-of-line等待压缩有线索，质量、预测开销及真实调度未核，不引摘要性能数字为知识结论。研究高/启发高/摘要可靠低，暂缓，11-30先补原文。 |
+| arxiv:2611.26480v1，[Held While Waiting](https://arxiv.org/abs/2611.26480v1)；Mekhala Hithyshini Sreenivasa | 2026-11-19T17:40:09Z首提 | B只题录/摘要/history，CPU不计等待与会话环境保留涉及不同资源；原测量、共享隔离和模拟未核。研究高/启发高/摘要可靠低，不引密度或倍数为事实结论，11-30以原实验回访。 |
+| doi:10.1113/jphysiol.1952.sp004764，[Hodgkin–Huxley](../../content/sources/hodgkin-huxley-membrane-current-1952.md) | 1952，500–544；1952-03-10是收稿日 | C1新领域，Sol题录/片段初筛，Astra文本指定500–509、512–519、521–526、540–544相关段，523–524只浏览步骤；视觉505/507/512/518/520/525/541。PMC验证码、web截图无像素，仓库外临时扫描/Poppler视觉成功，非全文/复现。研究中/启发高；原读段和AI算术可靠高，分子解释未验。主控独立复核及算术见回执，不重复计深读。 |
+| Lorenz:Deterministic-Nonperiodic-Flow:1963；[MIT原PDF入口](https://wind.mit.edu/~emanuel/Lorenz/EdLorenz/Deterministic_63.pdf) | 1963旧资料 | C仅Sol题录/搜索片段初筛，库内无Lorenz命中；未指定深读，不给模型结论或性能判断。择优HH的新领域完整解释，保留候选，不将未入选视作否定领域。 |
+
+主控旧指针复查：uGDS2610.30868仍v2，作者仓库HEAD仍05bada9174eed5055cf886fac385ff191cf86f6a；Repair2610.30552、原投机能量2610.40287、StepSplit2611.13802、工具协同2611.16661、SpecCTMC2611.08362均仍v1。另误查IAPRepair2610.11114仍v1。以上只题录/history与一个仓库指针，不重读README、不计候选或深读，不推出不存在新作者工件；11-30以新原件触发回访。
+
 ## 2026-11-20
 
 本轮 8 个 canonical 研究对象（A2、B4、C2）、6 次指定部分深读（A2、B2、C2）。A 原实验两个版本合并为一个研究、两次实际指定阅读；C 两份原始/教学来源各计一个。别名、镜像及跨角色复核不重复计数，最终 A1/C1/B1 三项候选。[晨报](../digests/2026-11-20.md)提供完整解释，[回执](runs/2026-11-20.md)区分未完成执行与选择性覆盖。

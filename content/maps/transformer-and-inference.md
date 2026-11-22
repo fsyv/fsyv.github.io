@@ -34,6 +34,11 @@ endorsement: ai-candidate
 
 读完混合状态的分叉与恢复，再看[Flide 验证门槛](../notes/kv-cache-mechanism.md#verification-gates)，先理解执行依赖、head 数值比较和首选容忍条件，再读[固定量化配置的对照](../notes/kv-cache-mechanism.md#quantization-and-validation)，区别同精度执行路径的验收和切换精度的误差。
 
+## Live-migration-route
+
+在混合层完整状态与舍入条件之后，读[原生追赶和日志积压](../notes/kv-cache-optimization.md#live-migration-and-log-backlog)。先对齐已消费输入和待输入token，再确定数值参照，最后在相同KV处理下比较快照与增量。随后用[用户停顿和源释放](../notes/storage-latency-and-slo.md#migration-gap-and-release)检查服务目标，避免将小状态或后台传输直接推成短停顿。
+
+
 ## Branches
 
 - **另一种连接结构：**[视频时空注意力](../notes/attention-spatiotemporal.md)先以 token 数和连接范围解释联合/分解，再读[固定稀疏图的物理执行](../notes/attention-spatiotemporal.md#physical-execution)中页压实、tile 和掩码；减少连接与减少填充分别评价，非因果场景不自动满足 KV 复用前提。

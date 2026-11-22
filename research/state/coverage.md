@@ -1,6 +1,6 @@
 # 选题轮换与问题回访
 
-历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-19.md)记录发现，审核、构建和 PR 的精确结果由[当日回执](runs/2026-11-19.md)记录。模拟反馈与沉默均不推导偏好。
+历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-23.md)记录发现，审核、构建和 PR 的精确结果由[当日回执](runs/2026-11-23.md)记录。模拟反馈与沉默均不推导偏好。
 
 ## 截至2026-10-16的历史覆盖
 
@@ -576,3 +576,20 @@ C最近三次为语音知觉、放射定年与历史流行病回访，无连续�
 | [断裂力学](../../content/maps/fracture-mechanics-and-energy.md) | 首次新领域，原尺寸表/作者末注和现代能量式分开，尚未确定有限曲率、耗散及外推各贡献。 | 2026-12-11，优先匹配有限几何与独立耗散的原始证据。 |
 
 C 最近三次为放射定年、历史流行病回访和首次断裂力学，无重复主题；近四次含语音知觉与断裂的新领域，独立机会保留。11-23 存储/跨层/地球物理/形态、11-24 恢复/ADMM 等此前排期与具体障碍继续，不因今日新项覆盖。没有新用户反馈，不推断永久兴趣变化。
+
+
+## 2026-11-23 原生追赶、日志债与电压控制
+
+继续唯一research/batch-2026-11-11和Draft PR #33，basis bc0cd97e74fd8b5e110ade6d1377ce546ebd428d。A零发现，B1/C1两项加入原27项，累计29待审；旧候选不变成正式知识。8canonical、3次指定正文深读，A构建配置核对、七旧题录和一仓库指针另列。40/35/25仍为投入参考，未精确实测。TDC与历史执行任务未完成，整体partial；监测只覆盖真实可见首屏，不声称穷尽。
+
+| 问题 / 入口 | 今日进展或具体遗漏原因 | 下一次（上海） |
+| --- | --- | --- |
+| [迁移评价](../../content/questions/storage-migration-evaluation.md) / 3e05ac47-c0c2-4a68-9910-421b37b77760 | 固定历史构建入口可核，但本机未发现匹配的Linux/x86环境或作者运行日志；未编译，不称编译失败。无新同键读写/故障/论文binary绑定，不重复包装11-09/16推演。 | 2026-11-30，仅固定执行对象、作者日志或可运行测试。 |
+| [存储来源](../../content/questions/storage-source-evidence.md)、[跨层评价](../../content/questions/web3-evaluation-evidence.md) | 多源正文仍不可取，作者清单和学位库0命中不说明不存在；冷热计费与跨层仅库内复评，未外查，缺可归属计费和同语义全路径对照。 | 2026-11-30，以可核正文/作者程序/固定工作负载为条件。 |
+| [GPU直存](../../content/notes/kv-cache-optimization.md#direct-storage-and-ordering)、[修复剪枝](../../content/notes/depth-pruning-and-repair.md)、[最终token能量](../../content/notes/storage-latency-and-slo.md#accepted-tokens-and-energy) | 旧题录与uGDS库指针无版本增量；未补混合负载尾部、修复执行或预填原计量。 | 2026-11-30，仅新原件或实际同语义测量。 |
+| [KV门控与淘汰](../../content/notes/kv-cache-optimization.md#attention-gates-and-eviction)、[扩散模拟](../../content/notes/masked-diffusion-speculative-simulation.md)、[请求能量](../../content/notes/storage-latency-and-slo.md#request-energy-attribution)、[工具收尾](../../content/notes/storage-latency-and-slo.md#batch-completion-and-environment) | 门控只库内复评；其余旧题录仍v1，没有运行对象增量。未另核部署淘汰、固定核墙钟、热缓存归属或同样本工具原件。 | 2026-11-30，仅明确作者工件或原日志推进。 |
+| [活迁移](../../content/notes/kv-cache-optimization.md#live-migration-and-log-backlog) | 新预印本增完整输入边界、目的原生参照及同口径链路反转，gap与release分开。未审源码/复现，联合KV/GDN真实多请求和故障仍缺。TideCache另指定深读择优未入选；Aggron和Held While Waiting只摘要。 | 2026-11-30，优先联合实现和原始日志；其余按sources指定条件。 |
+| [地球物理](../../content/maps/geophysics-and-inverse-evidence.md)、[形态发生](../../content/maps/morphogenesis-and-spatial-dynamics.md) | 今日只库内复评，仍缺独立年代/跨脊剖面与真实物质/非线性图样原证。C保留新领域机会，未完成这两项外查，不说无新公开成果。 | 2026-11-30，以可得原件触发。 |
+| [电生理](../../content/maps/electrophysiology-and-dynamic-models.md) | C首次进入神经电生理，固定电压识别、恢复反馈预测及门控解释分开；原图上下刺激单位不同，AI算例非完整HH模拟。 | 2026-12-14，优先同速率复算Fig12及电容/K延迟原始对照。 |
+
+C最近三次为历史流行病回访、断裂力学和首次神经电生理，连续主题不重复；近四次含断裂与电生理的新领域，机会未因反馈减为零。TDC沿11-25仅作者实现/正式全文/实质版本回访；11-24恢复/ADMM与其他历史排期继续，不由今天的新项覆盖。未发现新增用户反馈，不推断永久兴趣变化。独立审核、构建与发布实际范围见[当日回执](runs/2026-11-23.md)。

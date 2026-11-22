@@ -216,3 +216,7 @@ prefill 为输入建立状态，decode 则持续为已有请求生成后续 toke
 ## Compression-layout-and-io
 
 [记录内重排与压缩](record-reordering-and-compression-granularity.md#space-and-io-comparison)给出持久存储的具体取舍：同压缩器、同记录大小的空间减少，可以伴随完整写入变慢；冷数据、热映射的随机读也不包含首次元数据加载。这个实例支持先固定计时与缓存状态再比较，本页不由压缩比推导端到端 SLO。
+
+## Migration-gap-and-release
+
+**2026-11-23 AI候选。** [活迁移的增量日志](kv-cache-optimization.md#live-migration-and-log-backlog)说明同一执行也有多个完成边界。handoff gap量最后一个源公开token到第一个目的新token之间的用户停顿；release量迁移通知到目的确认已取得可独立完成所需全部载荷，可能早于目的重建完成。源能退出、用户已经恢复输出和迁移期间输出率须分别报告。release只对应被迁移请求的源资源，不自动表示整机模型权重可以卸载。后台仍持续产生日志时，早开始传送也可能积累最终必须等待的队列；这是与[存储迁移完成](storage-placement-and-migration.md)的结构联系，状态语义和故障义务须分别核验。

@@ -81,6 +81,11 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 | 方法分类 | [数据复制与放置策略综述](../sources/paper-replication-placement-survey.md)：动态、元启发式、多准则与学习路线 | 仅摘要，不能据此排名 |
 | 待补原文 | [十篇已核题录的文献](../questions/storage-source-evidence.md#metadata-only)：广域片段、多源迁移、预测、RLRP、云边端、早期放置、RPCE、RTT、OASIS、Laser | 题录；不承担机制和数值结论 |
 
+## Inference-migration
+
+[同模型活迁移](../notes/kv-cache-optimization.md#live-migration-and-log-backlog)是读取传输成本之后的专门分支：源继续服务也继续产生日志，最终积压可使增量迁移比快照更慢。其用户停顿与源释放分项提供测量类比，但不替代持久副本迁移的一致性和故障恢复证据。
+
+
 ## Connections
 
 放置与缓存都在有限资源下选择数据，但语义不同：可重新取得的缓存可以淘汰，承担持久性的副本还需满足恢复与一致性条件。[协同缓存的学习目标](../notes/cooperative-caching-and-learning.md)帮助理解命中与路由的耦合；其中的价值分解条件不能直接推广到副本迁移。
