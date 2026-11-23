@@ -86,6 +86,10 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 [同模型活迁移](../notes/kv-cache-optimization.md#live-migration-and-log-backlog)是读取传输成本之后的专门分支：源继续服务也继续产生日志，最终积压可使增量迁移比快照更慢。其用户停顿与源释放分项提供测量类比，但不替代持久副本迁移的一致性和故障恢复证据。
 
 
+## Field-failure-calibration
+
+[年度故障计数与修复风险](../notes/storage-replica-reliability.md#annual-counts-and-repair-risk)接在故障域与修复窗口之后：用同一型号×年群体区分点预测、区间覆盖和宽度，再检查年度共冲击能否对应实际短修复窗。现场年度数据补充模型证据，但不能直接识别阵列内的联合失效或替代修复策略。
+
 ## Connections
 
 放置与缓存都在有限资源下选择数据，但语义不同：可重新取得的缓存可以淘汰，承担持久性的副本还需满足恢复与一致性条件。[协同缓存的学习目标](../notes/cooperative-caching-and-learning.md)帮助理解命中与路由的耦合；其中的价值分解条件不能直接推广到副本迁移。

@@ -2,6 +2,27 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-11-24
+
+本轮10个候选canonical对象：A4、B3、C初筛2、主控计量1；另对Callo与预测种子两旧题录复查，总共12个不同研究对象。指定部分深读5次：A1、B2、C1、计量1。A初分配3却实际核4，已报告并从全运行预算扣除；不隐去局部分配偏差。镜像、论文/数据/归档代码别名及跨角色重复核验不重复计数。最终A1/B1/C1三候选，完整正文见[当日晨报](../digests/2026-11-24.md)，运行状态见[回执](runs/2026-11-24.md)。
+
+B窗口2026-11-17T07:30—11-24T07:30+08，补昨日遗漏。07:36:50+08完成六recent首屏标题解析，最新11-23公告；展示/总量：DC50/93、PF23/23、OC50/257、soc-ph38/38、LG50/1274、AI50/1383。首次正则返回零标题，修复后读出真实索引，不把零解析当零论文。展示数不是全文阅读数，未穷尽分页、替换、会议期刊或工具更新。以下三新B对象均11-20首提，早于昨日监测终点，属于补遗漏。
+
+| canonical / 版本 | 首发或版本日期 | 实际范围、价值与决定 |
+| --- | --- | --- |
+| arxiv:2611.09169v1；[ADMM既有来源](../../content/sources/paper-admm-multiplier-step.md#independent-check)；作者periodic.json与归档为同研究 | 2026-11-06T08:51:05Z；仍v1；当前仓库HEAD b47d6b67a0a9ec4d4d9079d8e5f8ae6a73aff11b是11-06说明澄清 | A1重读§2 Cor2.3及Appendix C相关段；固定dbc85ba根README、endpoint README15–76、verify18–97、symbols符号/正性定义、gram15–83、intervals。独立重写复坐标有理区间，只读JSON数据未运行作者代码，2048代表/正残差/保守左延续通过。一般下界core全频/Bernstein/Lean未执行。研究高/启发高；有限上界见证可靠高，完整端点未知。12-01只凭独立全频证书和解析桥梁推进。 |
+| arxiv:2611.13412v1；[Huang/Liu恢复论文](../../content/sources/paper-bursts-outlast-themselves.md) | 2026-11-10T00:46:51Z；仍v1 | A仅题录/history及限定题名查询，未取到明确32B原始日志，不重复正文深读，不以无命中证明不存在。研究高/启发中；日志未验证，零新增结论。12-01以可归属原日志或同计划同会话对象推进。 |
+| arxiv:2610.42148v1；[Flide](../../content/sources/paper-flide.md)及[release v0.1.20](https://github.com/OmniJev/Flide/releases/tag/v0.1.20) | arXiv首提2026-10-30T17:59:38Z，仍v1；release2026-11-23T01:42:56Z，target_commitish68ab67a08a2d08deb84da37d4a88aebd78bd11a9 | A仅题录/history与新发行说明。说明涉及CUDA图内恢复、continuation两保存点和缓存预算等，不是实际执行或已审代码。研究高/启发中；声明可核、恢复效果未验。不转作第二深读，12-01以固定GPU/模型/输入/恢复边界审可归属对象。 |
+| arxiv:2610.41508v1；HiState，[作者发表页](https://panzaifeng.github.io/publications/) | 2026-10-30T09:59:44Z；仍v1 | A只题录/history、作者发表页和限定题名作者查询，页上只有论文/Bib入口；未定位作者实现不等于不存在。研究高/启发中；实现未验证。12-01有明确作者实现再推进。 |
+| arxiv:2611.27122v1；[Amer/Long Backblaze报告](../../content/sources/paper-backblaze-drive-failure-2026.md) | 2026-11-20T04:48:30Z首次arXiv提交、23公告；封面Draft2026-10-17，实验室更早公开日未核 | B1指定封面/摘要、§3.1–3.6对应数据与事件定义、§7.1/7.2.1–4/7.2.6诊断段、§9表25、§10.1.1设计/10.2表36/10.3表37–38、§15.1/15.4–8。174页仅部分正文，未PDF像素、源码、原数据或复现。Table38同169群点预测比.97/.99、95%覆盖44/92、宽.58/2.24；不统一解释为后验均值。研究高/启发高/可靠中，保留测试期开发复用与年度到修复窗限制。 |
+| arxiv:2611.27891v1；Guanning Zeng、Andrea Zanette，[Speculative Decoding Is Less Speculative Than You Think](https://arxiv.org/html/2611.27891v1) | 2026-11-20T17:33:21Z首提、23公告 | B第二指定深读：§2–3.3、§4.1–4.3/Tables1–2、§5.1相关段、Appendix A指定推导和B两命题证明；未代码/GPU。DICE使草稿分配先看固定验证随机量，异步预取仍需提案与自身接受随机量独立。研究高/启发高/限定可靠中，择优B1现场证据，不机械新增永久页。Table1各自原草稿吞吐百分比不能当全相对AR，摘要24.6pp口径不混用。12-01只以明确实现随机流/接受独立性回访。 |
+| arxiv:2611.27092v1；Faraz Tahmasebi、Michael Pellauer、Hyoukjun Kwon、Sitao Huang，[PLoQ](https://arxiv.org/abs/2611.27092v1) | 2026-11-20T04:07:37Z首提、23公告 | B仅题录/摘要/history。prompt预填估低秩基并在decode复用的线索；量化配置、质量与时延未深读，不引用性能为结论。研究中/启发高/摘要可靠低，12-01有明确范围/实现再筛。 |
+| doi:10.1042/bj0190338；[Briggs/Haldane1925](../../content/sources/briggs-haldane-enzyme-kinetics-1925.md) | 1925；03-09为收稿，publisher Jan01与之冲突，不认定精确发表日 | C1首次酶动力学。Sol仅题录/搜索索引初筛，Astra完整读338–339两页含参考目录并视觉核官方NCBI扫描；所引1913/1914未读。初筛“PDF可读”已纠正为索引可读，直取403/captcha不记成功；339括号式e²的OCR错误以扫描纠正。本轮AI两参数组/通量/冻结底物时间常数有理复算，非原实验。研究中/启发高；两页与算例可靠高，真实瞬态和统一误差界未验。 |
+| Michaelis-Menten:1913；[英语译本PDF](https://www.chem.uwec.edu/Chem352_F18/pages/readings/media/Michaelis_%26_Menton_1913.pdf) | 原文1913，开头收稿1913-02-04；译本信息只初筛 | C仅Sol标题/收稿开头及索引片段初筛，未全文或视觉核。与1925为不同canonical，不把参考目录当读过原作。择优1925短文，不形成此译本结论；2011再分析仅搜索附带命中未单独打开，不另计。 |
+| doi:10.6028/nist.sp.1065；[NIST SP1065](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication1065.pdf) | 2008；封面W.J.Riley、July2008，机构题录另列David A.Howe | 主控到期回访：题录/封面、§5.3和§5.4开头印刷37–38文字；web公式OCR有损，未据其式计算。截图未返像素，PDF下载成功但PATH无pdftotext/python无pypdf，不声称视觉或本地文字提取成功。有限区间需方差/噪声/平均因子/数据点/edf，未算真实记录CI。研究中/启发中/方法文字可靠中，不列独立发现。12-01以公开序列及采样/间隙/噪声/估计条件回访。 |
+
+另只复查旧题录：Callo arxiv:2611.18459与预测种子论文arxiv:2611.18389均仍v1，未重审原工件、普通流量分位或改变选种规则的评分影响；各自缺口保留，12-01仅明确原件推进。以上已计入总12对象，不计正文深读。40/35/25仅投入参考，未实测通道时长。研究仍partial，选择性监测完成与全任务完成分开。
+
 ## 2026-11-23
 
 本轮8个canonical研究对象（A2、B4、C2），3次指定正文深读（B2、C1）；A固定实现的构建配置核对另列，不是机制或运行结果深读。C两初筛含HH与Lorenz，只深读HH；Luria–Delbrück已于11-05覆盖，仅去重未增读。别名、镜像、主控跨角色复核和七旧题录/一仓库指针复查不重复计数。最终B1/C1两候选、A零发现；[晨报](../digests/2026-11-23.md)完整解释，[回执](runs/2026-11-23.md)如实记录执行缺口。

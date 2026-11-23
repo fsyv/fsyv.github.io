@@ -593,3 +593,19 @@ C 最近三次为放射定年、历史流行病回访和首次断裂力学，无
 | [电生理](../../content/maps/electrophysiology-and-dynamic-models.md) | C首次进入神经电生理，固定电压识别、恢复反馈预测及门控解释分开；原图上下刺激单位不同，AI算例非完整HH模拟。 | 2026-12-14，优先同速率复算Fig12及电容/K延迟原始对照。 |
 
 C最近三次为历史流行病回访、断裂力学和首次神经电生理，连续主题不重复；近四次含断裂与电生理的新领域，机会未因反馈减为零。TDC沿11-25仅作者实现/正式全文/实质版本回访；11-24恢复/ADMM与其他历史排期继续，不由今天的新项覆盖。未发现新增用户反馈，不推断永久兴趣变化。独立审核、构建与发布实际范围见[当日回执](runs/2026-11-23.md)。
+
+
+## 2026-11-24 上界见证、年度波动与酶准稳态
+
+继续唯一research/batch-2026-11-11及Draft PR #33，basis仍bc0cd97e74fd8b5e110ade6d1377ce546ebd428d。A1/B1/C1三项加入原29项，累计32待审；候选不转为正式知识。10候选canonical加2旧题录，共12研究对象；5次指定部分深读。A局部分配3实际4已据实报告并计全预算，未另增对象。40/35/25未实测。研究仍partial，TDC和原始运行审计未由新项替代；监测仅真实可见首屏。具体状态见[当日回执](runs/2026-11-24.md)。
+
+| 问题 / 入口 | 今日进展、遗漏理由或条件 | 下一次（上海） |
+| --- | --- | --- |
+| [ADMM乘子步长](../../content/notes/two-block-admm-multiplier-step.md#independent-upper-witness) | 旧上界见证2048循环支持代表、正残差和保守左延续独立验算，未执行下界core全频/Bernstein或Lean，精确端点未知。 | 2026-12-01，优先独立全频正性及完整解析桥梁。 |
+| [会话恢复](../../content/notes/session-cache-pressure-and-metastability.md#cache-recovery-and-session-backlog)与[验证门槛](../../content/notes/kv-cache-mechanism.md#verification-gates) | 32B与HiState题录仍v1，限定查询未取可归属原日志/实现；Flide v0.1.20为真实新发行，仅读说明，恢复/continuation声明未运行或审实现。 | 2026-12-01，只用明确原日志、固定模型/GPU/输入与恢复边界、作者实现推进。 |
+| [Callo与普通请求](../../content/notes/kv-cache-optimization.md#invalidated-kv-and-verification)、[预测区间与选种](../../content/notes/epidemic-forecast-interval-validation.md) | 仅题录/history仍v1；今日择优补现场故障与证书，没有重审普通流量分位/公开产物或重算选种评分。 | 2026-12-01，以可归属原件、随机种子时点和可评分对象触发。 |
+| [现场故障区间](../../content/notes/storage-replica-reliability.md#annual-counts-and-repair-risk) | 新入arXiv报告补同169型号年对照；保留开发复用、运营终点、年度边界和群拆分限制，未验证短修复窗。DICE择优未入选，PLoQ只摘要，不解释为否定领域。 | 2026-12-01，先核同群定义/退役/修复策略的短时原件；DICE随机流独立性与PLoQ具体配置另依明确工件。 |
+| [计量与稳定度](../../content/maps/metrology-and-frequency-stability.md) | 到期复读既有页并新增NIST1065印刷37–38方法文字，有限区间需edf/噪声/平均因子；无真实频率序列CI、参考钟贡献或视觉公式成功。 | 2026-12-01，公开序列、采样/间隙、参考贡献与匹配估计法齐备再推进。 |
+| [生化与酶动力学](../../content/maps/biochemistry-and-enzyme-kinetics.md) | C首次独立领域，原两页/视觉与AI反例分开；相同准稳态曲线不识别通量，冻结底物瞬态有区分预测，未检验实际仪器。 | 2026-12-15，优先可归属起始瞬态及采样/混合条件，区分结合物解离与催化。 |
+
+C最近三次为断裂力学、神经电生理和首次酶动力学，没有连续重复主题；近四次含多个此前未覆盖领域，独立机会保留。TDC沿11-25仅作者实现/可取正式全文/实质版本回访，晶体亦沿11-25原有独立结构证据方向；11-26压缩冷映射/真实容量及生态、11-27交通/rPoA/读者净成本/跨权重等、11-30存储/修复/能量/地球/形态等历史排期继续。九PR无新增fsyv反馈，不从沉默推断兴趣或长期权重。独立审核、构建和发布只以当日真实回执为准。

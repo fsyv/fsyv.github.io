@@ -37,6 +37,7 @@ description: "按照问题、前置依赖和学习顺序组织知识。"
 | [断裂力学与能量](fracture-mechanics-and-energy.md) | 裂纹怎样改变机械势能，尺度关系与系数怎样分别验证？ |
 | [电生理与动力学模型](electrophysiology-and-dynamic-models.md) | 固定电压识别的离子动力学怎样预测自由膜兴奋，预测为何不等于分子识别？ |
 | [晶体学与结构推断](crystallography-and-structural-inference.md) | 衍射位置怎样约束周期，强度又能区分哪些胞内排列？ |
+| [生化与酶动力学](biochemistry-and-enzyme-kinetics.md) | 饱和速率怎样由持续通量产生，相同曲线为何不唯一识别结合与解离？ |
 
 [知识实践地图](knowledge-practice.md)从“笔记应当多大”这一问题出发，说明笔记、资料与开放问题怎样协作。
 
