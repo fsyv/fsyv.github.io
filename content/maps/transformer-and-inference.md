@@ -34,6 +34,8 @@ endorsement: ai-candidate
 
 读完混合状态的分叉与恢复，再看[Flide 验证门槛](../notes/kv-cache-mechanism.md#verification-gates)，先理解执行依赖、head 数值比较和首选容忍条件，再读[固定量化配置的对照](../notes/kv-cache-mechanism.md#quantization-and-validation)，区别同精度执行路径的验收和切换精度的误差。
 
+[四位 KV 的内核与完整请求成本](../notes/kv-cache-optimization.md#four-bit-kernels-and-request-cost)接在表示与访问成本之后：先核软件解码的指令预算和等待重叠，再比较整步解码、实际混合表示容量与完整请求。H200 对照中，容量与 decode TPOT 的改善仍可被 prefill 抵消；质量配置和任务输入输出比例须随结果一起读取。
+
 ## Live-migration-route
 
 在混合层完整状态与舍入条件之后，读[原生追赶和日志积压](../notes/kv-cache-optimization.md#live-migration-and-log-backlog)。先对齐已消费输入和待输入token，再确定数值参照，最后在相同KV处理下比较快照与增量。随后用[用户停顿和源释放](../notes/storage-latency-and-slo.md#migration-gap-and-release)检查服务目标，避免将小状态或后台传输直接推成短停顿。

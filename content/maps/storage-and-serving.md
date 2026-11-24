@@ -81,6 +81,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 | 方法分类 | [数据复制与放置策略综述](../sources/paper-replication-placement-survey.md)：动态、元启发式、多准则与学习路线 | 仅摘要，不能据此排名 |
 | 待补原文 | [十篇已核题录的文献](../questions/storage-source-evidence.md#metadata-only)：广域片段、多源迁移、预测、RLRP、云边端、早期放置、RPCE、RTT、OASIS、Laser | 题录；不承担机制和数值结论 |
 
+[四位 KV 的内核与完整请求成本](../notes/kv-cache-optimization.md#four-bit-kernels-and-request-cost)接在表示与访问成本之后：先核软件解码的指令预算和等待重叠，再比较整步解码、实际混合表示容量与完整请求。H200 对照中，容量与 decode TPOT 的改善仍可被 prefill 抵消；质量配置和任务输入输出比例须随结果一起读取。
+
 ## Inference-migration
 
 [同模型活迁移](../notes/kv-cache-optimization.md#live-migration-and-log-backlog)是读取传输成本之后的专门分支：源继续服务也继续产生日志，最终积压可使增量迁移比快照更慢。其用户停顿与源释放分项提供测量类比，但不替代持久副本迁移的一致性和故障恢复证据。
@@ -89,6 +91,8 @@ LLM 分支沿[精确与近似复用](../notes/kv-cache-mechanism.md#approximate-
 ## Field-failure-calibration
 
 [年度故障计数与修复风险](../notes/storage-replica-reliability.md#annual-counts-and-repair-risk)接在故障域与修复窗口之后：用同一型号×年群体区分点预测、区间覆盖和宽度，再检查年度共冲击能否对应实际短修复窗。现场年度数据补充模型证据，但不能直接识别阵列内的联合失效或替代修复策略。
+
+[控制影响的传播次序](../notes/telemetry-response-and-control-sufficiency.md#propagation-order-and-independent-check)补充静态与双时统计的区别：两级稳定队列中，外部到达对下游占用的响应从二阶时间项开始，本地自协方差却从一阶开始。先固定控制直接改变的跳转，再选择遥测；参考模型复算不替代真实服务的动态验证。
 
 ## Connections
 

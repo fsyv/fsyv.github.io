@@ -45,6 +45,8 @@ endorsement: ai-candidate
 
 [控制充分性与遥测响应](../notes/telemetry-response-and-control-sufficiency.md)可在联合与条件分布之后独立阅读。先定义平稳分布和双时协方差，再看控制的 score 为什么决定所需观测，最后用串联队列比较静态与瞬态。响应预测的充分条件和可逆聚合的存在条件是两个问题，后者还需新的过程假设。
 
+[控制影响的传播次序](../notes/telemetry-response-and-control-sufficiency.md#propagation-order-and-independent-check)补充静态与双时统计的区别：两级稳定队列中，外部到达对下游占用的响应从二阶时间项开始，本地自协方差却从一阶开始。先固定控制直接改变的跳转，再选择遥测；参考模型复算不替代真实服务的动态验证。
+
 ## Cache-renewal-and-capacity
 
 [共同 TTL 与硬容量](../notes/clock-ttl-approximation-and-capacity.md)接在对象请求模型之后：先理解计数扫描为何耦合，再用驻留周期和 Little 关系求平均占用，最后以单槽反例区分近似与真实固定容量。它不要求请求符合 Zipf，也不将外生更新过程当会话反馈。

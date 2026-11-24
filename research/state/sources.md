@@ -2,6 +2,29 @@
 
 公开来源去重账本。DOI 小写、arXiv 按基础 ID 去重并记录版本；HTML/PDF/早稿别名不重复计数。未合并分支只提供去重证据，不是已接受知识。仅读题录/摘要、官方入口复查与正文深读分开计。
 
+## 2026-11-25
+
+本轮12个去重 canonical 研究对象：原A到期回访3、主控TLOE同研究增读1、B新候选4、C初筛2、晶体回访2。五次指定部分深读为TLOE、B两篇、C Rayleigh、晶体2013。论文/代码/扫描与跨角色重复核验不另计。最终B1/A2/A1/C1四发现；40/35/25仅投入参考，未实测比例。完整理解见[晨报](../digests/2026-11-25.md)，失败、真实审核与构建见[回执](runs/2026-11-25.md)。TDC执行与真实模型/GPU任务仍缺，研究partial不等于监测穷尽。
+
+B窗口2026-11-18T07:30—11-25T07:30+08，补11-24后遗漏。07:39:56.984612+08核六recent首屏至24日公告，展示/总数DC50/103、PF26/26、OC50/235、soc-ph35/35、LG50/1244、AI50/1440；DC24日35/35与23日15/17，PF/soc-ph完整五日，OC/LG/AI只24日首50。未穷尽分页、替换、会议期刊或工具release。四新B对象均在11-23首提、24公告，早于上次终点，按补遗漏而非终点后新发记录。
+
+| canonical / 版本 | 首发或版本日期 | 实际范围、价值与决定 |
+| --- | --- | --- |
+| arxiv:2512.09961v1；[TDC](../../content/sources/published-tdc-cache-2025.md) | 2025-12-10；题录仍v1 | 到期限定回访，IEEE机器人页/stamp不可取，ComputerSociety空壳，Crossref vor返回HTML非PDF；GitHub题名仓库查询0不能证明作者实现不存在。无新增正文/深读，不重复已有推导。研究高/启发中、实现未验证，12-02仅明确实现/正式全文/实质版本触发。 |
+| arxiv:2611.08902；[RESCUE既有来源](../../content/sources/paper-cache-trap-renewal.md) | 作者默认tip852600f4674255d886bab31e6ed27d28f937e46f为11-09 | 对冻结7bb94b的API compare仅两文档提交、四文档路径；控制/数据未变。仅指针与差异核查，无新深读或自动触发结论；研究中/启发中、运行未验。12-02仅新控制代码/明确原件。 |
+| arxiv:2611.21584v1；[CertiSum](../../content/sources/paper-certisum.md) | 2026-11-16；题录仍v1 | 外链与GitHub题名限定查询未定位作者实现；第三方ViewCode403，不作为作者证据。零新增发现/深读；研究高/启发中、完整内核未验证。12-02只明确实现、原日志或实质版本。 |
+| arxiv:2611.20780v1；[TLOE固定实现](../../content/sources/paper-tloe.md#implementation-and-independent-check) | 2026-11-16首提；作者固定提交e0ced5d91eaeb36af24c903f7fb9748aca1a7cd5为11-13T14:42:17Z | A1旧研究实现增读：README、exact/exact.py4–35、verify_tloe.py10–41及论文Table2/相关命题/AppB。独立均匀化/解析切线复算与短时传播推导，未运行作者SciPy或真实遥测。K70用截断乘积律初态并非作者精确截断稳态，K90/差分支持有限有效数字但非严格界。研究高/启发高、条件推导可核、数值非严格。12-02固定误差界或真实控制匹配对象。 |
+| arxiv:2611.30027v1；[Jian Zhang Hopper四位KV](../../content/sources/paper-hopper-four-bit-kv-decoding.md) | 2026-11-23T04:29:01Z首提、24公告 | B1指定§1说明/2、3–5、6表4/5、7表7/8与端到端/API段、8质量/PPL/表13/长上下文、9范围。未完整附录、PDF视觉、源码、日志或GPU。内核1.36倍不当整步1.16倍；混合配置容量1.63倍不当纯四位；同64×32K完整任务86.8/85.0s反转。研究高/启发高/原结果可靠中，生产外推未验。12-02固定GPU/完整质量配置/同负载原件。 |
+| arxiv:2611.29915v1；[Measuring GPU Memory Traffic on the NVIDIA GB10 Without C2C Telemetry](https://arxiv.org/html/2611.29915v1)；Panigrahy/Kota/Tyagi/Kebo/Mahapatra | 2026-11-23T02:12:32Z首提、24公告 | B第二指定深读§§I–V、TablesI–III、Fig1/2图注；未PDF像素、参考原作、源码/复现。32B sectors和总readmiss+write的C2C代理计数、copy双向需除二；一vLLM例不推广所有decode。作者pravaha-mem仅入口。研究高/启发高/方法可靠中，择优B1不另建永久页；12-02固定revision/分配类型/同负载。 |
+| arxiv:2611.31001v1；Guo/Jasin/Lin，[Congestion-Aware Adaptive Routing for LLM Classification](https://arxiv.org/abs/2611.31001v1) | 2026-11-23T16:53:45Z首提、24公告 | 只题录/摘要，证明与性能未核，不传播百分比。研究高/启发高/摘要可靠低，待明确模型和实现再筛。 |
+| arxiv:2611.31113v1；Ruben Navasardyan，[Attention Temperature Confounds Zero-Shot Context Extension](https://arxiv.org/abs/2611.31113v1) | 2026-11-23T17:52:37Z首提、24公告 | 只题录/摘要，原对照与结论未深核。研究中/启发高/摘要可靠低，未当独立发现。 |
+| doi:10.1080/14786447908639684；[Rayleigh1879](../../content/sources/rayleigh-optics-resolution-1879.md) | 1879-10；2009数字上线非首发 | C1首次波动光学。Sol题录/索引初筛，Astra原扫描261–267逐段与262/265–268及PlateVII视觉；268只至式5/表III，269–274/仪器/引用未读。PDF直取Error/429后下载/PDFKit恢复。等强独立双线、矩形孔径和固定照度AI比值；非圆孔通用数值或统计硬界。研究中/启发高、原式/扫描/代数可靠高、噪声仪器未验；12-16固定光子预算/明暗比观测模型。 |
+| doi:10.1098/rstl.1860.0005；[Maxwell1860原扫描](https://www.sunyopt.edu/labs/Zaidi/CurrentProjects/Maxwell%20-%201860%20-%20On%20the%20theory%20of%20compound%20colours%20and%20the%20relations%20of%20the%20colours%20of%20the%20spectrum.pdf) | 1860；01-05收稿、03-22宣读，2012数字上线非首发 | C备选只题录/索引及可达性初筛；PDF实际30页、原刊57–84及图，无可读文字行，未深读或视觉核，不沿初筛28页断言。择优Rayleigh，不产生色觉结论。 |
+| doi:10.1107/s0108767383001762；Flack1983 | 1983 | 晶体回访仅题录摘要、付费入口401，未购买或读正文，不据其标题承担新公式。研究高/启发中、摘要范围，转读可取2013同方向原件。 |
+| doi:10.1107/s2052519213010014；[Parsons/Flack/Wagner2013](../../content/sources/parsons-flack-wagner-absolute-structure-2013.md) | 2013-05-17在线、06-01卷期 | A2指定§1–2式1–6、§3.1–3.4、Table1 alanineB、§4.1/4.5/4.6/5；作者12页reprint可取，PMC验证码经文本入口恢复；两页视觉timeout未记成功。未supplement/原数据/精修。研究高/启发高/可靠中。复因子与反演畴AI例不等于真实参数或一般唯一性；12-02以公开反射对和误差条件推进。 |
+
+PlaneZip/WorldPager今天仅库内到期复评，没有外查，不能沿旧记录宣称当前仍v1。固定真实模型/GPU/KV容量亦未新增执行对象。晶体到期任务取得2013原证，但完整唯一性未关闭。所有资料仅读公开范围，候选不转为已接受知识。
+
 ## 2026-11-24
 
 本轮10个候选canonical对象：A4、B3、C初筛2、主控计量1；另对Callo与预测种子两旧题录复查，总共12个不同研究对象。指定部分深读5次：A1、B2、C1、计量1。A初分配3却实际核4，已报告并从全运行预算扣除；不隐去局部分配偏差。镜像、论文/数据/归档代码别名及跨角色重复核验不重复计数。最终A1/B1/C1三候选，完整正文见[当日晨报](../digests/2026-11-24.md)，运行状态见[回执](runs/2026-11-24.md)。

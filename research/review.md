@@ -36,8 +36,14 @@
 | 2026-11-24/A1 | 1024相位上界见证的全部循环支持与正残差通过独立区间验算 | [独立上界验证](../content/notes/two-block-admm-multiplier-step.md#independent-upper-witness)及固定数据。建议采纳有限见证和保守左延续的验证范围，一般收敛下界、精确端点仍待核。 | 待审 |
 | 2026-11-24/B1 | 同169型号×年中点预测接近总数，95%区间覆盖与宽度仍差异明显 | [年度故障与修复风险](../content/notes/storage-replica-reliability.md#annual-counts-and-repair-risk)及原表。建议采纳同群对照与年度/修复窗分层，未触碰终测、短时共同失效和原数据复算仍缺。 | 待审 |
 | 2026-11-24/C1 | 准稳态允许净催化流，相同饱和曲线可对应不同结合与解离 | [酶动力学解释](../content/notes/enzyme-quasi-steady-state-and-identifiability.md)、两页原文及新地图。建议采纳条件机制与AI算例，真实瞬态、完整动力学和统一误差界待验。 | 待审 |
+| 2026-11-25/B1 | 四位混合 KV 的指令/等待、整步与容量收益仍可被 prefill 抵消 | [Hopper 到完整请求的对照](../content/notes/kv-cache-optimization.md#four-bit-kernels-and-request-cost)及原文。建议采纳同条件性能链与质量边界，跨 GPU、真实负载与质量等价待验。 | 待审 |
+| 2026-11-25/A2 | 异常散射允许反演配对差，平均化可能丢掉信号 | [复因子与反演畴](../content/notes/bragg-diffraction-and-structural-inference.md#anomalous-scattering-and-inversion-pairs)及 2013 原文。建议采纳条件模型、AI 例与同数据不确定度比较，原始反射对/系统误差和完整唯一性待验。 | 待审 |
+| 2026-11-25/A1 | 两级稳定队列的下游真实响应从时间二阶开始，本地公式从一阶开始 | [传播次序与独立计算](../content/notes/telemetry-response-and-control-sufficiency.md#propagation-order-and-independent-check)及固定作者实现。建议采纳短时推导与有限数值复算范围，严格误差证书及真实遥测待验。 | 待审 |
+| 2026-11-25/C1 | 矩形孔径中央遮挡加深等强双线谷，同时损失光量并增强旁瓣 | [孔径与分辨判据](../content/notes/aperture-shaping-and-resolution-criteria.md)、原刊及新地图。建议采纳理想模型与 AI 比值，固定光子预算、噪声和明暗比下的表现待验。 | 待审 |
 
 ## 每日简报源文件
+
+- [2026-11-25](digests/2026-11-25.md)
 
 - [2026-11-24](digests/2026-11-24.md)
 - [2026-11-23](digests/2026-11-23.md)
@@ -51,8 +57,8 @@
 
 ## 审核范围
 
-本批次原二十九项保留，本日增加三项，累计三十二项。可按日期和发现编号接受、拒绝或暂缓部分解释。继续研究另行记录，不以提出追问作为采纳。TDC 的实际终止、重置与终端价值处理仍待可归属的实现入口。
+本批次原三十二项保留，本日增加四项，累计三十六项。可按日期和发现编号接受、拒绝或暂缓部分解释。继续研究另行记录，不以提出追问作为采纳。TDC 的实际终止、重置与终端价值处理仍待可归属的实现入口。
 
 ## 验证
 
-同提交独立审核、构建和发布的实际结果见 [11-24 回执](state/runs/2026-11-24.md)、[11-23 回执](state/runs/2026-11-23.md)、[11-20 回执](state/runs/2026-11-20.md)、[11-19 回执](state/runs/2026-11-19.md)、[11-18 回执](state/runs/2026-11-18.md)、[11-17 回执](state/runs/2026-11-17.md)、[11-16 回执](state/runs/2026-11-16.md)、[11-13 回执](state/runs/2026-11-13.md)与 [11-11 回执](state/runs/2026-11-11.md)。
+同提交独立审核、构建和发布的实际结果见 [11-25 回执](state/runs/2026-11-25.md)、[11-24 回执](state/runs/2026-11-24.md)、[11-23 回执](state/runs/2026-11-23.md)、[11-20 回执](state/runs/2026-11-20.md)、[11-19 回执](state/runs/2026-11-19.md)、[11-18 回执](state/runs/2026-11-18.md)、[11-17 回执](state/runs/2026-11-17.md)、[11-16 回执](state/runs/2026-11-16.md)、[11-13 回执](state/runs/2026-11-13.md)与 [11-11 回执](state/runs/2026-11-11.md)。

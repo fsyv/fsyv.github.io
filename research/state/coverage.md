@@ -1,6 +1,6 @@
 # 选题轮换与问题回访
 
-历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-23.md)记录发现，审核、构建和 PR 的精确结果由[当日回执](runs/2026-11-23.md)记录。模拟反馈与沉默均不推导偏好。
+历史候选只用于去重/轮换，未合并不是已接受知识。来源规范标识及分支完整SHA见[sources.md](sources.md)；[最新简报](../digests/2026-11-25.md)记录发现，审核、构建和 PR 的精确结果由[当日回执](runs/2026-11-25.md)记录。模拟反馈与沉默均不推导偏好。
 
 ## 截至2026-10-16的历史覆盖
 
@@ -609,3 +609,20 @@ C最近三次为历史流行病回访、断裂力学和首次神经电生理，�
 | [生化与酶动力学](../../content/maps/biochemistry-and-enzyme-kinetics.md) | C首次独立领域，原两页/视觉与AI反例分开；相同准稳态曲线不识别通量，冻结底物瞬态有区分预测，未检验实际仪器。 | 2026-12-15，优先可归属起始瞬态及采样/混合条件，区分结合物解离与催化。 |
 
 C最近三次为断裂力学、神经电生理和首次酶动力学，没有连续重复主题；近四次含多个此前未覆盖领域，独立机会保留。TDC沿11-25仅作者实现/可取正式全文/实质版本回访，晶体亦沿11-25原有独立结构证据方向；11-26压缩冷映射/真实容量及生态、11-27交通/rPoA/读者净成本/跨权重等、11-30存储/修复/能量/地球/形态等历史排期继续。九PR无新增fsyv反馈，不从沉默推断兴趣或长期权重。独立审核、构建和发布只以当日真实回执为准。
+
+
+## 2026-11-25 四位请求成本、反演配对、传播次序与波动光学
+
+继续唯一 research/batch-2026-11-11 与 Draft PR #33，basis仍bc0cd97e74fd8b5e110ade6d1377ce546ebd428d。原32项保留，新增B1/A2/A1/C1，累计36项待审，旧候选没有转为正式知识。12个canonical研究对象、5次指定部分深读；跨角色核验和同研究代码不重复计数。40/35/25未实测。TDC执行与真实GPU/模型任务未完成，研究partial；选择性索引范围和真实审核/构建/发布由[当日回执](runs/2026-11-25.md)分别记录。
+
+| 问题 / 入口 | 今日进展、具体障碍或遗漏原因 | 下一次（上海） |
+| --- | --- | --- |
+| [TDC贪心价值](../../content/questions/greedy-value-improvement.md) | 题录仍v1；正式IEEE全文/stamp未取，Crossref链接返回HTML非PDF。限定GitHub题名查询未定位实现，不证明不存在，终止/重置/terminal审计未完成。 | 2026-12-02，仅明确作者实现、正式全文或实质版本。 |
+| [客户端控制](../../content/notes/session-cache-pressure-and-metastability.md#client-gate-and-session-completion)、[精确归约](../../content/notes/certified-summation-and-layout-invariance.md) | RESCUE默认tip对固定实现仅文档改变，无新控制数据；CertiSum仍v1，未定位作者实现。未作新深读或运行，不重复旧结论。 | 2026-12-02，仅明确控制/内核实现、原日志或实质版本。 |
+| [PlaneZip重规划](../../content/notes/tensor-liveness-and-peak-memory.md#compression-and-offload)、[WorldPager](../../content/notes/kv-cache-optimization.md#revisit-similarity-and-quality)、[固定模型数值](../../content/notes/numerical-conditioning-and-stability.md#fixed-attention-and-input-rounding) | 今天仅库内复评，未外查PlaneZip/WorldPager，不能沿旧记录断言当前版本；真实模型/GPU切片与同语义KV容量执行未补。 | 2026-12-02，须有可归属原型、执行对象、固定配置或原测量。 |
+| [遥测响应](../../content/notes/telemetry-response-and-control-sufficiency.md#propagation-order-and-independent-check) | 固定作者程序指定增读，独立均匀化与解析切线复得Table2并推短时二阶/一阶差异。非作者全部实验、严格包围或真实遥测。 | 2026-12-02，固定截断误差界，或控制/平稳/观测匹配的真实对象。 |
+| [四位KV请求成本](../../content/notes/kv-cache-optimization.md#four-bit-kernels-and-request-cost) | 新原文补内核—整步—混合容量—完整请求。decode TPOT改善未抵消prefill，总时长反转；质量不显著非等价。GB10第二深读择优未选，不否定测量方法。 | 2026-12-02，固定GPU/完整质量配置/同负载端到端原件；GB10先核revision与分配类型。 |
+| [晶体反演](../../content/notes/bragg-diffraction-and-structural-inference.md#anomalous-scattering-and-inversion-pairs) | 到期从仅库内复评推进到Flack1983题录摘要及2013方法正文。异常散射、反演畴、配对保留和同数据不确定度分开；未精修或关闭完整唯一性。 | 2026-12-02，优先可归属反射对、波长、权重及系统误差条件。 |
+| [波动光学](../../content/maps/wave-optics-and-imaging.md) | C首次领域，Rayleigh原式/关键扫描与AI比值分开；固定照度等强双线谷加深伴光量减少/旁瓣增强，未纳入仪器噪声与统计估计。 | 2026-12-16，固定光子预算、明暗比、采样与观测误差模型后比较。 |
+
+C最近三次为神经电生理、酶动力学和波动光学，没有连续主题重复；近四次包含多个此前未覆盖领域，独立机会保留。11-26压缩冷映射/真实容量及生态、11-27交通/rPoA/读者净成本/原标注与跨权重/CLOCK、11-30存储/跨层/修复/能量/地球/形态和12-01恢复/ADMM/计量等既定排期继续。没有新增用户采纳反馈，不从沉默或单次反馈调整长期权重。只将已实际执行的研究记入本日，不回写旧运行状态。
