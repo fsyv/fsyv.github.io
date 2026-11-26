@@ -40,9 +40,14 @@
 | 2026-11-25/A2 | 异常散射允许反演配对差，平均化可能丢掉信号 | [复因子与反演畴](../content/notes/bragg-diffraction-and-structural-inference.md#anomalous-scattering-and-inversion-pairs)及 2013 原文。建议采纳条件模型、AI 例与同数据不确定度比较，原始反射对/系统误差和完整唯一性待验。 | 待审 |
 | 2026-11-25/A1 | 两级稳定队列的下游真实响应从时间二阶开始，本地公式从一阶开始 | [传播次序与独立计算](../content/notes/telemetry-response-and-control-sufficiency.md#propagation-order-and-independent-check)及固定作者实现。建议采纳短时推导与有限数值复算范围，严格误差证书及真实遥测待验。 | 待审 |
 | 2026-11-25/C1 | 矩形孔径中央遮挡加深等强双线谷，同时损失光量并增强旁瓣 | [孔径与分辨判据](../content/notes/aperture-shaping-and-resolution-criteria.md)、原刊及新地图。建议采纳理想模型与 AI 比值，固定光子预算、噪声和明暗比下的表现待验。 | 待审 |
+| 2026-11-27/B1 | PARK 联合控制的有效保留时长、单副本消融和双副本整组输出比较 | [联合路由与保留](../content/notes/kv-cache-optimization.md#joint-routing-and-retention)及原文。建议采纳机制与限定作者测量，实际 PARK 不继承精确 LP 策略保证，完整会话质量与恢复仍待验。 | 待审 |
+| 2026-11-27/A1 | 固定铁路误差条入口取折预测及中位参数预测包络，2024 观测索引另有静态日期断裂 | [折包络与覆盖](../content/notes/transport-delay-propagation-and-thresholds.md#fold-envelope-and-coverage)及固定代码/日期列。建议采纳指定路径解释，原图执行绑定、参数缓存和未来覆盖待核，未重估论文 0.80。 | 待审 |
+| 2026-11-27/B2 | AF3 固定 seed 跨平台 top1 差异超过已测重编译，排名翻转与质量下降分开 | [跨平台选择](../content/notes/numerical-conditioning-and-stability.md#af3-cross-platform-selection)及原表。建议采纳分项验收与作者有限测量，逐预测评分/阈值、具体误差运算和本库复算待核。 | 待审 |
+| 2026-11-27/C1 | 共同总体下的局域界、设置相关缺测反例与事件就绪的筛选条件 | [局域模型与试次](../content/notes/bell-local-models-and-event-ready-tests.md)、两份旧原文指定范围及新地图。建议采纳 AI 证明与教学反例，原逐试次、停止规则和完整统计复算待核。 | 待审 |
 
 ## 每日简报源文件
 
+- [2026-11-27](digests/2026-11-27.md)
 - [2026-11-25](digests/2026-11-25.md)
 
 - [2026-11-24](digests/2026-11-24.md)
@@ -57,8 +62,8 @@
 
 ## 审核范围
 
-本批次原三十二项保留，本日增加四项，累计三十六项。可按日期和发现编号接受、拒绝或暂缓部分解释。继续研究另行记录，不以提出追问作为采纳。TDC 的实际终止、重置与终端价值处理仍待可归属的实现入口。
+本批次原三十六项保留，本日增加四项，累计四十项。可按日期和发现编号接受、拒绝或暂缓部分解释。继续研究另行记录，不以提出追问作为采纳。TDC 的实际终止、重置与终端价值处理仍待可归属的实现入口。
 
 ## 验证
 
-同提交独立审核、构建和发布的实际结果见 [11-25 回执](state/runs/2026-11-25.md)、[11-24 回执](state/runs/2026-11-24.md)、[11-23 回执](state/runs/2026-11-23.md)、[11-20 回执](state/runs/2026-11-20.md)、[11-19 回执](state/runs/2026-11-19.md)、[11-18 回执](state/runs/2026-11-18.md)、[11-17 回执](state/runs/2026-11-17.md)、[11-16 回执](state/runs/2026-11-16.md)、[11-13 回执](state/runs/2026-11-13.md)与 [11-11 回执](state/runs/2026-11-11.md)。
+同提交独立审核、构建和发布的实际结果见 [11-27 回执](state/runs/2026-11-27.md)、[11-25 回执](state/runs/2026-11-25.md)、[11-24 回执](state/runs/2026-11-24.md)、[11-23 回执](state/runs/2026-11-23.md)、[11-20 回执](state/runs/2026-11-20.md)、[11-19 回执](state/runs/2026-11-19.md)、[11-18 回执](state/runs/2026-11-18.md)、[11-17 回执](state/runs/2026-11-17.md)、[11-16 回执](state/runs/2026-11-16.md)、[11-13 回执](state/runs/2026-11-13.md)与 [11-11 回执](state/runs/2026-11-11.md)。

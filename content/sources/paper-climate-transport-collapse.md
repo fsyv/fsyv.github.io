@@ -62,3 +62,15 @@ Mauro Faccin、Tomas Scagliarini、Manlio De Domenico，*Systemic collapse emerg
 - [code_steady_state.py L169–195](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/code_steady_state.py#L169-L195)写入 `data/ext_field_steady_state_bounds.json`，绘图入口从 `stats/` 读取同名文件。静态可见的两入口之间还需要实际文件来建立执行对应。
 
 支持[验证配对与算子对照](../notes/transport-delay-propagation-and-thresholds.md#validation-pairing)。静态日期和参数传递可以核验。仍缺作者原始气候输入、参数缓存、执行日志及论文 2024 测试与产物的绑定，不能由这段公开代码重估论文报告的关联。
+
+
+## Fold-envelope-audit
+
+2026-11-27 指定增读同一固定作者提交 [8104d02cd15560dd1eccdd572018ca5c6d28757d](https://github.com/CoMuNeLab/adaptsys_train-delays/tree/8104d02cd15560dd1eccdd572018ca5c6d28757d)，并核默认 tip 未变、arXiv 仍 v1；这是旧研究的新阅读范围，不是新版本。原文 v1 §2.3 图 2、3 图注及 §4.2 是本轮论文读取范围，未视觉核图，未找到该段指定的预测覆盖率或校准。
+
+- [code_fit_params_validate_errorbars.py L62–98](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/code_fit_params_validate_errorbars.py#L62-L98)用 `base.params(...,df='kfold')` 取得各折参数，再追加逐参数中位数 `stats`，对各行分别模拟并汇总。
+- [L140–155](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/code_fit_params_validate_errorbars.py#L140-L155)的 `predicted` 取 `stats`；`ci` 排除它之后取各折预测 min/max，再相对中心求差并 `clip(lower=0)`。[L314–320](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/code_fit_params_validate_errorbars.py#L314-L320)以 `xerr` 画日级横线；输出和主调用分别在 L400–401、585–588。
+- [base.py L124–154](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/base.py#L124-L154)区分 `kfold` 与 `ci` 分支；后者确有 bootstrap，但这条误差条入口没有选择它。参数缓存未取得，不能声称实际获得四组值或任何一天区间。
+- [误差条入口 L73–77](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/code_fit_params_validate_errorbars.py#L73-L77)准备 2024 雨峰却只加载 2021–2023 真实延误，[L126–127](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/code_fit_params_validate_errorbars.py#L126-L127)以当前 2024 日期索引。[base.py L259–268](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/base.py#L259-L268)只按给定年份读文件后合并，未额外加载 2024。本轮用标准库内存读取固定逐年 gzip 的日期列：2021/22/23 各 365 天且只属当年，2024 有 366 天；雨峰表共 1461 条覆盖四年。另一个 [code_validation.py L39–43](https://github.com/CoMuNeLab/adaptsys_train-delays/blob/8104d02cd15560dd1eccdd572018ca5c6d28757d/code_validation.py#L39-L43)明确读取 2024，不能笼统称作者所有验证路径均断裂。
+
+支持[折参数包络与覆盖率解释](../notes/transport-delay-propagation-and-thresholds.md#fold-envelope-and-coverage)。代码变动来源和日期域的局部机制可核，原图执行版本映射、实际预测端点和未来覆盖均未验；未下载 ERA5、执行拟合或重估 0.80。研究价值高、启发价值高，局部静态推论可靠性高，实验映射仍有缺口。

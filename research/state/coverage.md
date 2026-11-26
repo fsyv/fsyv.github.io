@@ -626,3 +626,21 @@ C最近三次为断裂力学、神经电生理和首次酶动力学，没有连�
 | [波动光学](../../content/maps/wave-optics-and-imaging.md) | C首次领域，Rayleigh原式/关键扫描与AI比值分开；固定照度等强双线谷加深伴光量减少/旁瓣增强，未纳入仪器噪声与统计估计。 | 2026-12-16，固定光子预算、明暗比、采样与观测误差模型后比较。 |
 
 C最近三次为神经电生理、酶动力学和波动光学，没有连续主题重复；近四次包含多个此前未覆盖领域，独立机会保留。11-26压缩冷映射/真实容量及生态、11-27交通/rPoA/读者净成本/原标注与跨权重/CLOCK、11-30存储/跨层/修复/能量/地球/形态和12-01恢复/ADMM/计量等既定排期继续。没有新增用户采纳反馈，不从沉默或单次反馈调整长期权重。只将已实际执行的研究记入本日，不回写旧运行状态。
+
+
+## 2026-11-27 联合保留、折间包络、跨平台排名与局域检验
+
+继续唯一 research/batch-2026-11-11、Draft PR #33，basis bc0cd97e74fd8b5e110ade6d1377ce546ebd428d 未变。原 36 决定逐行保留，新增 B1/A1/B2/C1，累计 40 项待审；未并知识不转为正式已接受。10 canonical 对象、6 次指定部分深读，40/35/25 未精确计时。TDC 与真实执行缺口未由新项替代，整体 partial；选择性监测与运行完成状态分开，见[当日回执](runs/2026-11-27.md)。未见 11-26 晨报，不推测原因、不伪造该日研究，原回访障碍继续记录。
+
+| 问题 / 入口 | 本日进展、具体障碍或遗漏理由 | 下次（上海） |
+| --- | --- | --- |
+| [交通验证](../../content/notes/transport-delay-propagation-and-thresholds.md#fold-envelope-and-coverage) | 增读同固定脚本的各折/中位参数包络、日期域及原图注，新增 A1。参数 cache、ERA5、原图执行版本仍缺；未运行或重估0.80。 | 2026-12-04，仅原参数/气候/图日志或明确覆盖校准对象。 |
+| [CLOCK容量近似](../../content/notes/clock-ttl-approximation-and-capacity.md) | 题录仍v1，§§2–4/6复读计深读；通用作者模拟库只README/目录/tip，未与PH分析及原trace绑定，零新发现，不称实现不存在。 | 2026-12-04，优先明确PH拟合/真实容量原件，连续无增量不重复一般解释。 |
+| [联合路由与保留](../../content/notes/kv-cache-optimization.md#joint-routing-and-retention) | PARK 新读提供有效保留期限、单副本消融和同栈整组三小时运行；理论精确LP与实际启发式分开。未源码/原日志、任务成功、完整会话或外生恢复。 | 2026-12-04，固定实现和同轨迹任务/请求/会话口径齐备再推进。 |
+| [数值与跨平台选择](../../content/notes/numerical-conditioning-and-stability.md#af3-cross-platform-selection) | AF3 新原文补固定模型、重编译对照、排名/阈值/成本分项；本库未运行GPU，原评分与精确误差运算未核。 | 2026-12-04，优先冻结评分表、候选身份和成功阈值复算。 |
+| [评价保证](../../content/questions/evidence-to-guarantees.md)、[笔记拆分](../../content/questions/evaluate-note-splitting.md)、[协同缓存](../../content/questions/web3-caching-evaluation.md) | 本日库内到期复评，A预算优先交通和CLOCK；没有新增评分合约、目标读者配对或同实现同轨迹净成本，未外查不能称无公开成果。 | 2026-12-04，仅明确可归属合约、公开样本或同轨迹对象；不重复一般设计。 |
+| [原标注与结论范围](../../content/notes/claim-scope-and-evidence-synthesis.md#semantic-repair-and-logical-strength)、[跨权重恢复](../../content/notes/kv-cache-mechanism.md#cross-checkpoint-reuse) | 到期仅库内复评，原标注/修改快照、固定服务恢复与路由原件仍缺；AF3新项不是跨权重KV验证。 | 2026-12-04，以明确快照/配置/原运行触发。 |
+| [压缩冷映射](../../content/notes/record-reordering-and-compression-granularity.md)、[生态](../../content/maps/ecology-and-dynamics.md) | 11-26原定回访未见该日日报，本轮未新增外查，不用今天新模型代替冷映射/恢复、真实容量和生态原证。 | 2026-12-03，优先明确工件；原障碍保留。 |
+| [量子相关与实验检验](../../content/maps/quantum-correlations-and-tests.md) | C 首次进入量子基础，两旧原文指定读；共同总体界和缺测反例为 AI 推导，事件就绪实例与p值条件分开。未逐试次与完整统计复现。 | 2026-12-18，优先原数据、停止规则和随机性界。 |
+
+C 最近三次为酶动力学、波动光学和首次量子基础，没有连续重复主题；近四次均保留新领域机会。11-30 存储/跨层/修复/能量/地球/形态、12-01 恢复/ADMM/计量与12-02 TDC/晶体/遥测等既定排期继续，不由新项覆盖。九个近期 PR 没有新增可信反馈，不从沉默调整长期权重。独立审核和同提交构建由主控实际执行后记录，不预填成功。

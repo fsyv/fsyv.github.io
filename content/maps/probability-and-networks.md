@@ -62,3 +62,9 @@ endorsement: ai-candidate
 [概率资料阅读范围](../sources/foundations-probability.md)区分讲义定义和仅读的实证摘要；[网络资料](../sources/foundations-networks.md)区分理论生成模型与统计检验。真实流量的时间局部性及现实拓扑是否符合模型，保留在[边界检验问题](../questions/foundations-validation.md)，不以空标题代替已有解释。
 
 交通分支已在2026-10-28增加两站点固定/时变交换的推导与精确递推，负总净输入及每步连通都不足以单独保证有界。11-05补[实现中的传播与雨驱图](../notes/transport-delay-propagation-and-thresholds.md#implementation-and-inputs)：该稳态入口默认等边权固定传播，8点count只用于雨驱，且存在0/1000双初态循环。先核边权与调用默认，再决定是否同语义比较；尚未运行或闭合论文流量加权/忙时图与原输入的对应。11-12先核配置与输出，异质雨场、一般充分条件及真实无界阶段仍开放。
+
+## Quantum-test-branch
+
+[量子相关与实验检验](quantum-correlations-and-tests.md)是条件概率之后的独立分支：先固定共同隐变量分布，再比较不同设置的相关；设置相关的缺测会改变被检验总体。它提供选择机制的结构对照，不是网络拓扑、经典服务通信或学习共识的数学等价。
+
+[交通折间包络](../notes/transport-delay-propagation-and-thresholds.md#fold-envelope-and-coverage)接续日期配对：先核哪些参数和输入在变，再问区间是否具有未来观测覆盖率。该固定入口的静态日期缺口尚未绑定原论文图，不能据此重估外测关联。

@@ -51,3 +51,7 @@ endorsement: ai-candidate
 [基础模型与真实负载的差距](../questions/foundations-validation.md)包含固定切片的状态扰动与高精度参考检验，仍 open。LP 分支尚需选择仅右端改变的真实应用，并检查退化/近奇异基的计算误差；没有应用数据时不宣称证书已落地。
 
 [返回主题地图](../maps/_index.md)。
+
+## Cross-platform-selection
+
+[AF3 的同种子跨平台测量](../notes/numerical-conditioning-and-stability.md#af3-cross-platform-selection)接在两键算子之后：先固定模型、输入与每 seed 的候选集合，再以同平台重编译作对照，分开连续坐标差、top1 身份变化和阈值成功。它提供作者实测而非本库复现，不能由可重复性推出质量或一般稳定性。

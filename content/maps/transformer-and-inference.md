@@ -86,3 +86,7 @@ endorsement: ai-candidate
 ## Open
 
 [可检验的机制边界](../questions/foundations-validation.md)保留缓存等价性、成本模型与实际延迟的差距，以及分解结构的表示代价；先看理论条件，再决定测量什么。
+
+## Joint-control-route
+
+在会话寿命与路由可访问性之后，读[联合路由、准入与保留](../notes/kv-cache-optimization.md#joint-routing-and-retention)：先用每字节和有效占用时间理解控制取舍，再读单副本保留消融与双副本整组比较。精确 LP 策略的渐近保证与实际 PARK 的启发控制分开，吞吐不替代会话成功与恢复。
