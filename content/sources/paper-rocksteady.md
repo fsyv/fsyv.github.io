@@ -63,6 +63,17 @@ read_status: partial
 | [RamCloud.cc 2947–2974](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/RamCloud.cc#L2947-L2974)、[MasterService.cc 3602–3662](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/MasterService.cc#L3602-L3662)、[Log.cc 154–210](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/Log.cc#L154-L210) | 普通无拒绝条件的写允许在目标迁移态执行，仅查本地对象。成功分支同步后返回。 |
 | [ObjectManager.cc 3523–3549、3583–3594](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L3523-L3594)、[回放 797–804、832–895](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L797-L895)、[AbstractLog.cc 190–205](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/AbstractLog.cc#L190-L205) | 后台拉取从源当前索引取仍存活的对象，历史覆盖墓碑未入该批。高版本对象在回放时替换索引，旧索引对象的释放不构成另一次版本比较。 |
 
+## Client-visible-read
+
+2026-11-16 增读相同的历史提交 `d1f9c8125cbd53e7bcb48a769b2a0cb74854900a`。以下是特定读、同步及单测的静态代码证据，未编译或运行。
+
+| 固定实现位置 | 能支持的事实 |
+| --- | --- |
+| [MasterService.cc 普通 READ](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/MasterService.cc#L1762-L1790) | 普通读把仅取值的请求交给对象管理器，并用响应头携带返回版本。 |
+| [ObjectManager.cc 迁入状态、本地查找和未命中](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L324-L412)、[命中返回](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/ObjectManager.cc#L497-L520) | 迁入态继续查本地索引。普通对象命中绕过未命中的按需拉取，经过拒绝规则及日志同步，才向输出追加对象值。 |
+| [Log.cc 同步指定引用](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/Log.cc#L221-L267)、[SideLog.cc 提交](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/SideLog.cc#L123-L145) | 主日志同步的非头部路径依赖该段已关闭且排队复制。Side log 提交包含关闭、等待段复制、注入和在后续头部摘要中加入日志。普通读的同步调用与这些提交条件须分别核对。 |
+| [MasterServiceTest.cc 源准备](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/MasterServiceTest.cc#L4645-L4661)、[按需拉取](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/MasterServiceTest.cc#L4792-L4830)、[模拟单服恢复](https://github.com/utah-scs/RAMCloud/blob/d1f9c8125cbd53e7bcb48a769b2a0cb74854900a/src/MasterServiceTest.cc#L4910-L4959) | 所读测试各自触及源准备、按需拉取或模拟单服务器日志段恢复。它们没有断言[目标两次普通读的候选顺序](../notes/storage-placement-and-migration.md#client-visible-version-order)。 |
+
 ## Support
 
 支持[迁移解释](../notes/storage-placement-and-migration.md#early-ownership-and-recovery)对归属、数据可读、重新复制及恢复依赖的区分；[迁移评价](../questions/storage-migration-evaluation.md)继续保留实现与服务测量缺口。

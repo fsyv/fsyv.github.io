@@ -34,7 +34,12 @@ description: "按照问题、前置依赖和学习顺序组织知识。"
 | [形态发生与空间动力学](morphogenesis-and-spatial-dynamics.md) | 局部稳定的反应为何能出现空间差异，数学机制怎样推进到生物证据？ |
 | [计量学与频率稳定度](metrology-and-frequency-stability.md) | 参考、平均窗口与相关噪声怎样决定稳定度，固定频偏为何可能不可见？ |
 | [分析化学与测量](analytical-chemistry-and-measurement.md) | 同位素配比怎样反推样本量，何时会与直接称量分开？ |
+| [断裂力学与能量](fracture-mechanics-and-energy.md) | 裂纹怎样改变机械势能，尺度关系与系数怎样分别验证？ |
+| [电生理与动力学模型](electrophysiology-and-dynamic-models.md) | 固定电压识别的离子动力学怎样预测自由膜兴奋，预测为何不等于分子识别？ |
 | [晶体学与结构推断](crystallography-and-structural-inference.md) | 衍射位置怎样约束周期，强度又能区分哪些胞内排列？ |
+| [生化与酶动力学](biochemistry-and-enzyme-kinetics.md) | 饱和速率怎样由持续通量产生，相同曲线为何不唯一识别结合与解离？ |
+| [波动光学与成像](wave-optics-and-imaging.md) | 有限孔径怎样形成像，谷、旁瓣与光量怎样限定分辨判据？ |
+| [量子相关与实验检验](quantum-correlations-and-tests.md) | 局域模型怎样约束共同试次，缺测筛选与事件就绪怎样改变检验？ |
 
 [知识实践地图](knowledge-practice.md)从“笔记应当多大”这一问题出发，说明笔记、资料与开放问题怎样协作。
 

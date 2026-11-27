@@ -32,3 +32,7 @@ John Snow，*On the Mode of Communication of Cholera*，2nd ed.，London: John C
 原Table IX Rest of London行视觉确认256,423/1,422/59，重算约55.455；p.81总房327,391减两公司房屋又得261,238，与该行仍不一致。未核底层登记，保留差异，不替作者裁定或擅改第三行。
 
 旧snowbook3网页fetch失败；新转录和同书扫描恢复。web截图失败/文字占位后，以已可用的urllib与pdftoppm内存渲染核两页；没有fitz，未安装依赖或把论文存入公开仓库。原文读取为部分，后续观察性研究的随机化、可比性和个体效应不因本页书目而自动成立。研究价值中、启发价值高、可靠性中。
+
+## Followup-1856
+
+2026-11-19 已新增[1856后续指定阅读](snow-cholera-water-supply-1856.md)与[同一笔记的分母/补缺推导](../notes/water-supply-comparison-and-denominators.md#followup-denominators-and-imputation)。这推进后续人口估计与未知分类，不追溯更改上文2026-10-29的实际阅读范围，也未修复Table IX第三行或消除旧七周的比例估计。

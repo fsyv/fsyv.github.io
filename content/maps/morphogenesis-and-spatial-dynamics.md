@@ -32,6 +32,8 @@ endorsement: ai-candidate
 
 [生态与动力学](ecology-and-dynamics.md)提供局部恢复与有限扰动的前置区别；本主题增加空间模态，尚未验证为既有生态问题的机制。[交通延误传播](../notes/transport-delay-propagation-and-thresholds.md)只有传播和本地动力须联合分析的结构类比，外力、离散步和截断使公式不能互换。
 
+[电压钳与自由膜动力学](../notes/voltage-clamp-and-membrane-dynamics.md)提供方法类比：先约束局部规律，再恢复反馈或耦合检验系统行为。形态模型的反应扩散和膜模型的电荷守恒、反转电位对象不同；预测部分现象不能各自唯一识别分子机制，本轮未证明两个模型等价。
+
 ## Open-questions
 
 哪些非线性反应会限制增长并形成稳定图样？如何测量真实物质、扩散与扰动，排除其他空间机制？这些问题留在[完整解释](../notes/diffusion-driven-pattern-instability.md#boundaries)；先补对应原证，再决定是否形成独立问题页。

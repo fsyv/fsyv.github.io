@@ -20,14 +20,17 @@ endorsement: ai-candidate
 ## Reading
 
 1. [问题敏感和算法不稳定怎样区分](../notes/numerical-conditioning-and-stability.md)：先固定问题、输入域、范数与允许扰动，通过三个反例建立条件数、前向/后向误差与残差的区别。
+   接着看同页[固定注意力与输入表示](../notes/numerical-conditioning-and-stability.md#fixed-attention-and-input-rounding)：将原意图、已存输入与机器输出分开，理解移位避免溢出与恢复丢失键差的区别。
 2. [右端同时变化时原基何时仍最优](../notes/lp-rhs-sensitivity-certificates.md)：再研究精确 LP 中固定矩阵/目标/基的证书，理解单项范围为何不能任意组合，以及充分区域之外为何仍可能可行。
 3. [总分配与存活峰值](../notes/tensor-liveness-and-peak-memory.md)：固定计算图后比较执行顺序，再检查模型内最优证书与实际 wrapper/allocator 的一致性；需额外掌握有向无环图、依赖与存活期。接着读[训练激活压缩与换出](../notes/tensor-liveness-and-peak-memory.md#compression-and-offload)，理解表示改变时为何必须重新建模准入、传输与重算；再读[按需求重放和保存集合](../notes/tensor-liveness-and-peak-memory.md#demand-driven-replay)，共享上游使保存收益不相加，有限候选前沿上的DP不证明全局Pareto最优。
 4. [剪枝与修复的复合目标](../notes/depth-pruning-and-repair.md)：改变允许变换后重新定义目标、搜索空间和实现开销；精确枚举仅消除该空间的搜索遗漏，不保证独立任务质量。前置为[Transformer完整生成链](../notes/transformer-generation.md)中的层结构，以及校准/测试的区别。
 5. [可行性泵与连续投影](../notes/feasibility-pump-and-continuous-projection.md)：在LP证书之后理解连续松弛、舍入与整数外循环，分开单次凸投影收敛、首个整数可行解和原MILP最优性，再检查GPU表示与计时边界。
-6. [双块 ADMM 的乘子步长](../notes/two-block-admm-multiplier-step.md)另开连续优化迭代分支。先分开罚参数、两块更新和乘子反馈，再读约束像中的能量证书与投影周期。这一精确算术反例可和第一步的机器误差比较。
+6. [双块 ADMM 的乘子步长](../notes/two-block-admm-multiplier-step.md)另开连续优化迭代分支。先分开罚参数、两块更新和乘子反馈，再读约束像中的能量证书与投影周期。再读[独立上界见证](../notes/two-block-admm-multiplier-step.md#independent-upper-witness)，理解循环对称、投影法向条件和有理区间怎样验证一个反例，仍与一般收敛下界分开。这一精确算术反例可和第一步的机器误差比较。
 7. 回到应用时分别列出“模型假设/可行性证书”和“实际误差/测量证据”，检查两层都有哪些缺口。这些分支尚未建立具体系统中的联合保证。
 
 [机器舍入与执行边界](../notes/kv-cache-mechanism.md#rounding-and-execution)为数值分支增加工程实例：固定批次下保留归约与舍入，和容量变化后的重新分组分别验证；不能用若干请求bit相同替代普遍稳定性证明。
+
+[精确求和与布局变化](../notes/certified-summation-and-layout-invariance.md)接在数值误差分支之后：先固定量化项，再核中间和证书、跨设备精确合并和最后舍入。它补充允许归约树变化的条件，不由逐位一致推出未量化目标的误差或训练质量。
 
 ## Connections
 
@@ -41,8 +44,14 @@ endorsement: ai-candidate
 
 [晶体结构推断](crystallography-and-structural-inference.md)提供可识别性的互补问题：相同理想反射位置可对应不同胞内排列；额外信息不足不等于数值不稳定，精确求解也不会自动补回缺失信息。
 
+[酶动力学的准稳态识别](../notes/enzyme-quasi-steady-state-and-identifiability.md)补充另一种缺口：两组不同结合/解离速率可以给出相同约化饱和曲线。提高数值精度不能在该观测层面区分它们，需要瞬态等额外观测；这是可识别性的方法联系，与ADMM收敛或机器稳定性没有等价关系。
+
 ## Questions
 
 [基础模型与真实负载的差距](../questions/foundations-validation.md)包含固定切片的状态扰动与高精度参考检验，仍 open。LP 分支尚需选择仅右端改变的真实应用，并检查退化/近奇异基的计算误差；没有应用数据时不宣称证书已落地。
 
 [返回主题地图](../maps/_index.md)。
+
+## Cross-platform-selection
+
+[AF3 的同种子跨平台测量](../notes/numerical-conditioning-and-stability.md#af3-cross-platform-selection)接在两键算子之后：先固定模型、输入与每 seed 的候选集合，再以同平台重编译作对照，分开连续坐标差、top1 身份变化和阈值成功。它提供作者实测而非本库复现，不能由可重复性推出质量或一般稳定性。

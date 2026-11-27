@@ -73,6 +73,76 @@ $$
 
 [基础验证问题](../questions/foundations-validation.md)保持 open，可先在公开固定切片上记录状态扰动、高精度参考输出、输出尺度和敏感方向，再研究整段推理。本文未做模型实验。
 
+## Fixed-attention-and-input-rounding
+
+**2026-11-19 新增 AI 候选与说明性验算。** 原先这里只提出固定 $F(K,V)$ 的检验方向；现在完成一个两键算子，分开输入表示损失与算术误差，尚未测训练模型或 GPU。理论背景来自 [Blanchard、Higham、Higham 的 softmax 论文指定部分](../sources/paper-logsumexp-softmax-numerics.md)；下述参数、推导和执行均为 AI 构造，不是论文实验或其误差定理的复现。
+
+固定一个 query 为 $q=1$ 、键维度 $d_k=1$ 、两个位置均可见、无额外位置偏置，值为 $V=(-1,1)$ 。这里仅改变键 $K=(k_1,k_2)$ 。精确注意力输出可先按权重定义，再化简为键差的函数：
+
+$$
+F(K)=\frac{-e^{k_1}+e^{k_2}}{e^{k_1}+e^{k_2}}
+=\tanh\!\left(\frac{k_2-k_1}{2}\right).
+$$
+
+因此 $K=(a,a+1)$ 对任意有限实数 $a$ 都给出 $\tanh(1/2)\approx0.4621171572600097585$ 。共同平移并未改变问题的精确答案。实际计算可先减最大键 $m=\max(k_1,k_2)$ ，求 $e_i=\exp(k_i-m)$ ，再求分母 $d=e_1+e_2$ 、权重 $p_i=e_i/d$ 和输出 $p_2-p_1$ 。这个移位避免直接计算很大的指数，但它操作的是**已经存入机器的输入**。
+
+要判断误差出现在哪一层，以下固定三个比较对象：原意图输入的精确输出 $F(K)$ 、已存 binary64 输入的高精度参考 $F(\widetilde K)$ ，以及 binary64 计算 $\widehat F(\widetilde K)$ 。算术误差只比较后两者；总误差比较机器输出与原意图。Python 3.15.2 arm64 标准库按上述先分别除再相减的顺序运行，Decimal 以 100 位精度取参考，160 位复查其首 99 位（精度加倍核查，不是严格区间证书）；研究员与主控按同一规范独立复算一致。
+
+| 原意图 $K=(a,a+1)$ | binary64 中的键差 | $F(\widetilde K)$ | 移位算法输出 | 算术绝对误差 |
+| --- | ---: | ---: | ---: | ---: |
+| $a=0$ | 1 | $0.4621171572600097585\ldots$ | 0.4621171572600098 | $3.35945\times10^{-17}$ |
+| $a=1000$ | 1 | 同上 | 0.4621171572600098 | 同上 |
+| $a=2^{53}$ | 0 | 0 | 0 | 0 |
+
+直接对 1000 求 binary64 `exp` 抛出 `OverflowError`，移位计算却保留了正常输出。这是改变算术路径的效果。第三行则不同：精确整数 $2^{53}+1$ 转成 binary64 时先舍入为 $2^{53}$ ，两个已存键相同，输出 0 正是该已存问题的答案。此时算术误差为零，总输出绝对误差仍为 $0.462117\ldots$ ；输入相对无穷范数误差仅为 $1/(2^{53}+1)\approx1.11022\times10^{-16}$ 。移位不会恢复在输入表示时已经丢失的键差，不能把这行称为 softmax 把已存问题算错。
+
+下面保留复算所需的核心代码。原意图使用整数直接构造 Decimal；已存输入使用 `Decimal.from_float`，避免将其十进制显示字符串误当精确机器值。先分别求权重再相减的求值顺序不能偷偷换成先合并分子，否则 binary64 末位可变。
+
+```python
+from decimal import Decimal, localcontext
+from math import exp
+
+with localcontext() as ctx:
+    ctx.prec = 100
+    def reference(k):
+        m = max(k)
+        e = [(x - m).exp() for x in k]
+        den = sum(e)
+        return e[1] / den - e[0] / den
+
+    for a in (0, 1000, 2**53):
+        intended = [Decimal(a), Decimal(a + 1)]
+        stored = [float(a), float(a + 1)]
+        m = max(stored)
+        e = [exp(x - m) for x in stored]
+        den = sum(e)
+        output = e[1] / den - e[0] / den
+        stored_ref = reference([Decimal.from_float(x) for x in stored])
+        arithmetic_error = Decimal.from_float(output) - stored_ref
+        total_error = Decimal.from_float(output) - reference(intended)
+        print(a, output, arithmetic_error, total_error)
+```
+
+扰动大小也不能脱离方向解释。在原键 $K=(0,0)$ 上取 $\varepsilon=2^{-20}$ ，比较无穷范数都为 $\varepsilon$ 的两个绝对扰动：共同移动 $(\varepsilon,\varepsilon)$ 仍输出 0；反向移动 $(\varepsilon,-\varepsilon)$ 则输出 $-\tanh(\varepsilon)\approx-9.536743164059609\times10^{-7}$ 。前者不改键差，后者改变键差。因为原输入和输出都为零，这里使用绝对输入/输出误差，不定义以零为分母的相对误差。
+
+这个算子补足的是固定问题的执行与方向性检验，而非真实 KV 量化效果。binary64 输入舍入与 FP8/BF16 缓存量化不是同一个扰动机制；改变 $q$ 、维度、位置规则、mask、 $V$ 或后续采样会改变问题。进入模型切片前仍须固定这些对象，分别保存原意图、实际存储状态与高精度参考，再追踪误差到 logits 和离散选择；一次局部反例不证明某种格式普遍可靠或不可靠。
+
+## Af3-cross-platform-selection
+
+**2026-11-27 新增 AI 候选。** 以前的两键例只执行了教学算子，并指出小连续误差不保证离散选择不变。[Pazienza 的 AlphaFold 3 新预印本](../sources/paper-alphafold3-reproducibility.md)提供真实模型的作者跨平台测量，将同平台重编译作为对照；本轮没有复现、读取原评分表或定位具体误差运算。
+
+作者固定 AF3 v3.0.4 checkpoint、权重、输入和设置，比较 TPU v5e/v6e 与 GPU L4。主比较使用 60 个不超过 1024 token 的蛋白—配体 target、每个五个 seed；每个 target×seed 产生五候选，以完整精度 score 最高者为 top1，共 300 次 prediction。三平台基线统一 portable XLA attention，但 TPU 还需七行非官方 patch；所谓跨平台包括硬件、编译后代码和后端默认，不能只归因为芯片。部分 target 可能在训练中见过，数据集也只覆盖这里的限定体系。
+
+同输入、同 seed 的 TPU v5e–v6e 比较有 54/300，即 18.0% 的 top1 样本身份翻转；两 TPU 各自重新编译的同平台对照都是 0/300。v6e–L4 的 top1 翻转为 20.7%，而 L4 重编译为 7.3%；相差 13.3 个百分点，95% 区间为 [8.7,18.0]。原区间按 target 做 10,000 次配对 bootstrap，不把 300 次当作独立二项试验。这组对照支持跨平台差异超出已测重编译噪声，而不是仅因忘记固定 seed。
+
+排名改变与预测更坏仍是不同问题。TPU 配对中，同索引候选配体坐标的中位 RMSD 为 0.0165 Å；top1 翻转后，实际返回不同候选的中位差为 0.18 Å。离散选择会把很小的候选分数差放大为返回对象变化。作者的近并列分析是事后探索，与这一机制一致，却没有定位精确计算因果链或给所有 score 的统一误差界。
+
+论文另以“对实验配体的对称性校正重原子 RMSD 小于 2 Å，且通过 PoseBusters 0.6.5 物理检查”定义成功。TPU 间成功标签翻转为 3.7%，v6e–L4 为 3.3%；翻转包括成功到失败和失败到成功，不能写成平均准确率下降。后者超过 L4 重编译的部分只有 1.7 个百分点，95% 区间 [−0.7,4.3] 含零，不能宣称已测出显著的跨平台成功劣化。九组比较中 top1 和成功都翻转的 39 个 case，有 33 个只改变蛋白最小距离检查的通过与否，说明阈值也须逐项辨认。
+
+提高精度的代价和效果同样需要配套读取。仅提高 float32 矩阵乘法内部计算精度设置（matmul precision），v6e–L4 的 top1 翻转仍为 20.7%；仅把结构主干网络（trunk）的中间表示升为 float32、后端保留默认时为 20.0%。两者合用后，五类加速器的十组配对降到 0.3%–2.0%，中位运行时间却约增至 1.43–1.58 倍。固定确定性 flag 可把 L4 的同平台重编译翻转降为零，跨 v6e–L4 仍为 21.0%。因此同平台可重复、跨平台相同以及质量正确需要分开验收；没有某个开关自动解决三者。
+
+当前增量是固定真实模型与重编译对照，仍不是本库的 GPU 验证或一般前向稳定性证明。[基础验证问题](../questions/foundations-validation.md)保持开放。2026-12-04 优先以冻结的逐 prediction 评分、候选身份和阈值复算，分开 score 漂移、选择切换与成功率；不以另找一个模型案例替代原测量审计。
+
 ## Links
 
 [优化与数值分析地图](../maps/optimization-and-numerics.md)先区分精确模型保证与有限精度计算。[LP 右端证书](lp-rhs-sensitivity-certificates.md)保证固定基在某区域内仍可行最优，不能据此断言数值求解稳定；两者是互补检查，而非同一结论的不同名称。
@@ -84,3 +154,5 @@ $$
 [频率稳定度](frequency-stability-and-allan-variance.md)提供另一项评价对象的对照：相邻差看不到固定频偏。这是方法联系，不能把时钟稳定度与本页前向/后向误差当同一定义。
 
 [舍入边界与服务批组成](kv-cache-mechanism.md#rounding-and-execution)提供执行层实例：保留归约次序和中间舍入可使指定融合路径在固定输入/批次下bit相同，容量改变后的重新分组仍可能改结果。它补充机器计算条件，不由有限请求一致证明普遍前向稳定、跨硬件恒同或答案正确。
+
+[精确归约与布局不变性](certified-summation-and-layout-invariance.md)补充另一条执行保证：固定量化求和项并精确保留部分和后，可以允许某些归约树变化。它保证指定对象的机器结果相同，与本页前向误差或稳定性仍是不同问题。
